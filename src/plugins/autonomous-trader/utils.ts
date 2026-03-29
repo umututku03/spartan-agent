@@ -14,6 +14,7 @@ import {
 //import { interface_accounts_ByIds } from './interfaces/int_accounts'
 import { PublicKey } from '@solana/web3.js';
 import { type Metawallet } from '../multiwallet/types';
+import { detectEthereumAddressesFromText } from '../multiwallet/utils/ethereum';
 
 // Type definitions for better type safety
 interface AskObject {
@@ -200,16 +201,21 @@ console.log('MULTIWALLET_SWAP sourceResult', sourceResult);
 // we return an array of what?
 // RENAME: to getAddressFromText
 export async function getWalletsFromText(runtime: IAgentRuntime, message: Memory): Promise<string[]> {
-  // what about partial?
-  // only works in the source context...
+  const text = message.content.text || '';
+  const sources = new Set<string>();
+
   const solanaService = runtime.getService('chain_solana') as any;
-  if (!solanaService) {
-    console.error('getWalletsFromText - CANT FIND chain_solana service')
-    return []
+  if (solanaService?.detectPubkeysFromString) {
+    for (const source of solanaService.detectPubkeysFromString(text)) {
+      sources.add(source);
+    }
   }
-  const sources = solanaService.detectPubkeysFromString(message.content.text)
-  // get by wallet name
-  return sources
+
+  for (const address of detectEthereumAddressesFromText(text)) {
+    sources.add(address);
+  }
+
+  return [...sources];
 }
 
 export async function acquireService(

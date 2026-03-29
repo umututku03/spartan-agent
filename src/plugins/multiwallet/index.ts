@@ -9,6 +9,7 @@ import { walletImportAction } from "./actions/act_wallet_import";
 import userMetawalletSwap from "./actions/act_wallet_swap";
 import userMetawalletSweep from "./actions/act_wallet_sweep";
 import userMetawalletXfer from "./actions/act_wallet_xfer";
+import ethereumLendingAction from "./actions/act_wallet_lending";
 //import userMetawalletBalance from "./actions/act_wallet_balance";
 
 //import userMetawalletSwapAll from "./actions/act_wallet_swap_all";
@@ -40,7 +41,7 @@ export const multiwalletPlugin: Plugin = {
   actions: [
     walletCreate, walletImportAction,
     // userMetawalletDelete, // need a confirmation or something
-    userMetawalletXfer, userMetawalletSwap, userMetawalletSweep,
+    userMetawalletXfer, userMetawalletSwap, userMetawalletSweep, ethereumLendingAction,
     // userMetawalletSwapAll, // need a confirmation or something
     userMetawalletList, // keep this enabled for the special formatting
     //userMetawalletBalance,

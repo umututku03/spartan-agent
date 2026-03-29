@@ -28,6 +28,11 @@ import { SOLANA_SERVICE_NAME } from '../../autonomous-trader/constants';
 // import type { SolanaService } from '../service'; // Commented out as module not found
 // import type { Item } from '../types'; // Commented out as module not found
 import { askLlmObject, takeItPrivate, getAccountFromMessage, getWalletsFromText, HasEntityIdFromMessage, getDataFromMessage } from '../../autonomous-trader/utils'
+import {
+    getEthereumWalletSummary,
+    isEthereumAddress,
+    swapEthereumExactIn,
+} from '../utils/ethereum';
 
 /**
  * Interface representing the content of a swap with a specific wallet.
@@ -39,6 +44,7 @@ interface SwapWalletContent extends Content {
     inputTokenCA: string | null;
     outputTokenCA: string | null;
     amount: string | number;
+    chain?: string;
 }
 
 /**
@@ -222,6 +228,18 @@ Example response:
 }
 \`\`\`
 
+Ethereum example:
+\`\`\`json
+{
+    "inputTokenSymbol": "ETH",
+    "outputTokenSymbol": "USDC",
+    "inputTokenCA": null,
+    "outputTokenCA": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "amount": 0.1,
+    "chain": "ethereum"
+}
+\`\`\`
+
 {{recentMessages}}
 
 Given the recent messages and wallet information below:
@@ -235,6 +253,7 @@ Extract the following information about the requested token swap:
 - Input token contract address if provided
 - Output token contract address if provided
 - Amount of input token to swap
+- Chain if the request explicitly mentions Ethereum
 
 Respond with a JSON markdown block containing only the extracted values. All fields are required`;
 
@@ -260,7 +279,7 @@ export default {
         }
         return true;
     },
-    description: 'Swap tokens from one of your wallets using Jupiter DEX.',
+    description: 'Swap tokens from one of your wallets using Solana Jupiter or Ethereum Uniswap V2.',
     handler: async (
         runtime: IAgentRuntime,
         message: Memory,
@@ -280,16 +299,14 @@ export default {
         }
         console.log('account', account)
 
-        // local agent wallet?
-        const validSources = account.metawallets.map(mw => mw.keypairs.solana.publicKey)
-        console.log('validSources', validSources)
-
         // the source might not just be in the last message
         // might be in the context...
 
         const sources = await getWalletsFromText(runtime, message)
-        console.log('sources', sources)
-        if (sources.length !== 1) {
+        const localWalletAddresses = account.metawallets.flatMap(mw => Object.values(mw.keypairs || {}).map((kp: any) => kp.publicKey))
+        const matchingSources = sources.filter(source => localWalletAddresses.includes(source))
+        console.log('sources', sources, 'matchingSources', matchingSources)
+        if (matchingSources.length !== 1) {
             callback?.(takeItPrivate(runtime, message, "Can't determine source wallet"))
             return {
                 success: false,
@@ -298,7 +315,7 @@ export default {
             }
         }
         const sourceResult = {
-            sourceWalletAddress: sources[0]
+            sourceWalletAddress: matchingSources[0]
         }
         /*
         const sourcePrompt = composePromptFromState({
@@ -340,13 +357,11 @@ export default {
         const userMetawallets = account.metawallets;
 
         // confirm wallet is in this list
-        let found: any[] = [];
+        let found: Array<{ chain: string; kp: any }> = [];
         for (const mw of userMetawallets) {
-            const kp = mw.keypairs.solana;
-            if (kp) {
-                //console.log('kp', kp);
-                if (kp.publicKey.toString() === sourceResult.sourceWalletAddress) {
-                    found.push(kp);
+            for (const [chain, kp] of Object.entries(mw.keypairs || {})) {
+                if (kp?.publicKey?.toString() === sourceResult.sourceWalletAddress) {
+                    found.push({ chain, kp });
                 }
             }
         }
@@ -364,29 +379,29 @@ export default {
         // gather possibilities
         let contextStr = '';
         const solanaService = runtime.getService(SOLANA_SERVICE_NAME) as any;
-        for (const kp of found) {
-            const pubKey = kp.publicKey;
-            contextStr += 'Wallet Address: ' + pubKey + '\n';
-            // get wallet contents
-            const pubKeyObj = new PublicKey(pubKey);
-            const [balances, heldTokens] = await Promise.all([
-                solanaService.getBalancesByAddrs([pubKey]),
-                solanaService.getTokenAccountsByKeypair(pubKeyObj),
-            ]);
-            const solBal = balances[pubKey]
-            contextStr += '  Token Address (Symbol)\n';
-            contextStr += '  So11111111111111111111111111111111111111111 ($sol) balance: ' + (solBal ?? 'unknown') + '\n';
-            console.log('solBal', solBal, 'heldTokens', heldTokens);
-            // loop on remaining tokens and output
-            for (const t of heldTokens) {
-                const amountRaw = t.account.data.parsed.info.tokenAmount.amount;
-                const ca = new PublicKey(t.account.data.parsed.info.mint);
-                const decimals = t.account.data.parsed.info.tokenAmount.decimals;
-                const balance = Number(amountRaw) / (10 ** decimals);
-                const symbol = await solanaService.getTokenSymbol(ca);
-                // subtract open positions from available amount
-                console.log('MULTIWALLET_SWAP symbol', symbol);
-                contextStr += '  ' + ca + ' ($' + symbol + ') balance: ' + balance + '\n';
+        for (const wallet of found) {
+            const pubKey = wallet.kp.publicKey;
+            if (wallet.chain === 'solana' && solanaService) {
+                contextStr += 'Wallet Address: ' + pubKey + '\n';
+                const pubKeyObj = new PublicKey(pubKey);
+                const [balances, heldTokens] = await Promise.all([
+                    solanaService.getBalancesByAddrs([pubKey]),
+                    solanaService.getTokenAccountsByKeypair(pubKeyObj),
+                ]);
+                const solBal = balances[pubKey]
+                contextStr += '  Chain: solana\n';
+                contextStr += '  Token Address (Symbol)\n';
+                contextStr += '  So11111111111111111111111111111111111111111 ($sol) balance: ' + (solBal ?? 'unknown') + '\n';
+                for (const t of heldTokens) {
+                    const amountRaw = t.account.data.parsed.info.tokenAmount.amount;
+                    const ca = new PublicKey(t.account.data.parsed.info.mint);
+                    const decimals = t.account.data.parsed.info.tokenAmount.decimals;
+                    const balance = Number(amountRaw) / (10 ** decimals);
+                    const symbol = await solanaService.getTokenSymbol(ca);
+                    contextStr += '  ' + ca + ' ($' + symbol + ') balance: ' + balance + '\n';
+                }
+            } else if (wallet.chain === 'ethereum') {
+                contextStr += await getEthereumWalletSummary(pubKey, runtime);
             }
             contextStr += '\n';
         }
@@ -431,8 +446,8 @@ export default {
 
         // find source keypair
         console.log('found', found)
-        const sourceKp = found.find(kp => kp.publicKey === sourceResult.sourceWalletAddress);
-        if (!sourceKp) {
+        const sourceWallet = found.find(wallet => wallet.kp.publicKey === sourceResult.sourceWalletAddress);
+        if (!sourceWallet) {
             console.warn('MULTIWALLET_SWAP Could not find the specified wallet')
             callback?.({ text: 'Could not find the specified wallet' });
             return {
@@ -443,38 +458,36 @@ export default {
         }
 
         // clean up symbols
-        content.inputTokenSymbol = content.inputTokenSymbol.replace('$', '')
-        content.outputTokenSymbol = content.outputTokenSymbol.replace('$', '')
+        content.inputTokenSymbol = content.inputTokenSymbol?.replace('$', '')
+        content.outputTokenSymbol = content.outputTokenSymbol?.replace('$', '')
+        const requestedChain = content.chain?.toLowerCase();
+        const selectedChain = requestedChain || sourceWallet.chain || (isEthereumAddress(sourceResult.sourceWalletAddress) ? 'ethereum' : 'solana');
 
         // Fix Handle SOL addresses
-        if (content.inputTokenSymbol?.toUpperCase() === 'SOL') {
+        if (selectedChain === 'solana' && content.inputTokenSymbol?.toUpperCase() === 'SOL') {
             content.inputTokenCA = 'So11111111111111111111111111111111111111112';
         }
-        if (content.outputTokenSymbol?.toUpperCase() === 'SOL') {
+        if (selectedChain === 'solana' && content.outputTokenSymbol?.toUpperCase() === 'SOL') {
             content.outputTokenCA = 'So11111111111111111111111111111111111111112';
         }
 
-        // attempt to check base58 encoding on each CA
-        // if fails, look it up from symbol
-        if (!solanaService.isValidSolanaAddress(content.inputTokenCA) || !solanaService.validateAddress(content.inputTokenCA)) {
-            // find it via symbol
-            const pubKeyObj = new PublicKey(sourceResult.sourceWalletAddress);
-            const heldTokens = await solanaService.getTokenAccountsByKeypair(pubKeyObj)
-            for (const t of heldTokens) {
-                const amountRaw = t.account.data.parsed.info.tokenAmount.amount;
-                const ca = new PublicKey(t.account.data.parsed.info.mint);
-                const decimals = t.account.data.parsed.info.tokenAmount.decimals;
-                const balance = Number(amountRaw) / (10 ** decimals);
-                const symbol = await solanaService.getTokenSymbol(ca);
-                if (symbol?.toUpperCase() === content.inputTokenSymbol?.toUpperCase()) {
-                    console.log('fixed input CA by symbol', symbol, '=>', t.pubkey.toString())
-                    content.inputTokenCA = ca;
-                    break
+        if (selectedChain === 'solana') {
+            if (!solanaService.isValidSolanaAddress(content.inputTokenCA) || !solanaService.validateAddress(content.inputTokenCA)) {
+                const pubKeyObj = new PublicKey(sourceResult.sourceWalletAddress);
+                const heldTokens = await solanaService.getTokenAccountsByKeypair(pubKeyObj)
+                for (const t of heldTokens) {
+                    const ca = new PublicKey(t.account.data.parsed.info.mint);
+                    const symbol = await solanaService.getTokenSymbol(ca);
+                    if (symbol?.toUpperCase() === content.inputTokenSymbol?.toUpperCase()) {
+                        console.log('fixed input CA by symbol', symbol, '=>', t.pubkey.toString())
+                        content.inputTokenCA = ca;
+                        break
+                    }
                 }
             }
-        }
-        if (!solanaService.isValidSolanaAddress(content.outputTokenCA) || !solanaService.validateAddress(content.outputTokenCA)) {
-            // outputTokenCA
+            if (!solanaService.isValidSolanaAddress(content.outputTokenCA) || !solanaService.validateAddress(content.outputTokenCA)) {
+                // outputTokenCA
+            }
         }
 
         // do best to ensure input
@@ -492,10 +505,53 @@ export default {
             };
         }
 
-        const secretKey = bs58.decode(sourceKp.privateKey);
-        const senderKeypair = Keypair.fromSecretKey(secretKey);
+        if (selectedChain === 'ethereum') {
+            try {
+                const swapResult = await swapEthereumExactIn({
+                    privateKey: sourceWallet.kp.privateKey,
+                    inputToken: content.inputTokenCA || content.inputTokenSymbol,
+                    outputToken: content.outputTokenCA || content.outputTokenSymbol,
+                    amount: content.amount,
+                }, runtime);
 
-        console.log('MULTIWALLET_SWAP built KP');
+                const responseText = `✅ Ethereum swap completed successfully!
+
+💰 **Tokens Swapped:**
+• ${content.amount} ${swapResult.inputToken.symbol} → ~${swapResult.quotedAmountOut} ${swapResult.outputToken.symbol}
+
+🔗 **Transaction Details:**
+• Transaction ID: \`${swapResult.hash}\`
+• Etherscan: https://etherscan.io/tx/${swapResult.hash}
+
+💼 **Wallet:** ${sourceResult.sourceWalletAddress}`;
+
+                callback?.(takeItPrivate(runtime, message, responseText))
+                return {
+                    success: true,
+                    text: responseText,
+                    data: {
+                        chain: 'ethereum',
+                        txid: swapResult.hash,
+                        amount: content.amount,
+                        inputToken: swapResult.inputToken.symbol,
+                        outputToken: swapResult.outputToken.symbol,
+                        outputAmount: swapResult.quotedAmountOut,
+                    }
+                };
+            } catch (error) {
+                logger.error('Error during Ethereum token swap:', error instanceof Error ? error.message : String(error));
+                const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+                callback?.(takeItPrivate(runtime, message, `Ethereum swap failed: ${errorMessage}`))
+                return {
+                    success: false,
+                    text: `Ethereum swap failed: ${errorMessage}`,
+                    error: errorMessage
+                };
+            }
+        }
+
+        const secretKey = bs58.decode(sourceWallet.kp.privateKey);
+        const senderKeypair = Keypair.fromSecretKey(secretKey);
 
         try {
             const connection = new Connection(
@@ -616,6 +672,21 @@ export default {
                 name: '{{name2}}',
                 content: {
                     text: "I'll help you swap 0.1 SOL for USDC",
+                    actions: ['MULTIWALLET_SWAP'],
+                },
+            },
+        ],
+        [
+            {
+                name: '{{name1}}',
+                content: {
+                    text: 'Swap 0.05 ETH for USDC from my wallet 0x1111111111111111111111111111111111111111',
+                },
+            },
+            {
+                name: '{{name2}}',
+                content: {
+                    text: "I'll swap 0.05 ETH for USDC on Ethereum",
                     actions: ['MULTIWALLET_SWAP'],
                 },
             },

@@ -18,7 +18,12 @@ import bs58 from 'bs58';
 import { v4 as uuidv4 } from 'uuid';
 import { UUID } from 'crypto';
 import { SOLANA_SERVICE_NAME } from '../../autonomous-trader/constants';
-import { askLlmObject, HasEntityIdFromMessage, takeItPrivate, messageReply, getAccountFromMessage } from '../../autonomous-trader/utils'
+import { askLlmObject, HasEntityIdFromMessage, takeItPrivate, messageReply, getAccountFromMessage, getWalletsFromText } from '../../autonomous-trader/utils'
+import {
+    getEthereumWalletSummary,
+    isEthereumAddress,
+    transferEthereumAsset,
+} from '../utils/ethereum';
 
 /**
  * Interface representing the content of a transfer with a specific address.
@@ -34,6 +39,7 @@ interface TransferAddressContent extends Content {
     senderWalletAddress: string;
     recipientWalletAddress: string;
     amount: string | number;
+    chain?: string;
 }
 
 /**
@@ -111,12 +117,24 @@ For SOL:
 }
 \`\`\`
 
+For Ethereum:
+\`\`\`json
+{
+    "tokenAddress": null,
+    "senderWalletAddress": "0x1111111111111111111111111111111111111111",
+    "recipientWalletAddress": "0x2222222222222222222222222222222222222222",
+    "amount": "0.05",
+    "chain": "ethereum"
+}
+\`\`\`
+
 {{recentMessages}}
 
 Extract the following information about the requested transfer:
 - Token contract address (use null for SOL transfers)
 - Recipient wallet address
 - Amount to transfer
+- Chain if the request explicitly mentions Ethereum
 `;
 
 const sourceAddressTemplate = `Respond with a JSON markdown block containing only the extracted values. Use null for any values that cannot be determined.
@@ -157,7 +175,7 @@ export default {
         'MULTIWALLET_PAY_TOKENS',
         'MULTIWALLET_PAY',
     ],
-    description: 'Transfer SOL or SPL tokens from a specified wallet to a specified Solana address.',
+    description: 'Transfer tokens from a specified wallet on Solana or Ethereum.',
     validate: async (runtime: IAgentRuntime, message: Memory) => {
         //logger.log('MULTIWALLET_TRANSFER Validating transfer from entity:', message.entityId);
 
@@ -189,13 +207,13 @@ export default {
         logger.log('MULTIWALLET_TRANSFER Starting TRANSFER_ADDRESS handler...');
         //console.log('options', options)
 
-        const sourcePrompt = composePromptFromState({
-            state: state,
-            template: sourceAddressTemplate,
-        });
-        const sourceResult = await runtime.useModel(ModelType.OBJECT_LARGE, {
-            prompt: sourcePrompt,
-        });
+        const sources = await getWalletsFromText(runtime, message)
+        const account = await getAccountFromMessage(runtime, message)
+        const localWalletAddresses = account.metawallets.flatMap(mw => Object.values(mw.keypairs || {}).map((kp: any) => kp.publicKey))
+        const matchingSources = sources.filter(source => localWalletAddresses.includes(source))
+        const sourceResult = {
+            sourceWalletAddress: matchingSources[0]
+        }
         console.log('MULTIWALLET_TRANSFER sourceResult', sourceResult)
 
         if (!sourceResult.sourceWalletAddress) {
@@ -225,20 +243,16 @@ export default {
           }
         }
         */
-        const account = await getAccountFromMessage(runtime, message)
-
         //const metawallets = await interfaceWalletService.getWalletByEmailEntityIds([message.entityId])
         const userMetawallets = account.metawallets
         //console.log('MULTIWALLET_TRANSFER wallets', userMetawallets)
 
         // confirm wallet is in this list
-        let found: any[] = []
+        let found: Array<{ chain: string; kp: any }> = []
         for (const mw of userMetawallets) {
-            const kp = mw.keypairs.solana
-            if (kp) {
-                console.log('kp', kp)
-                if (kp.publicKey.toString() === sourceResult.sourceWalletAddress) {
-                    found.push(kp)
+            for (const [chain, kp] of Object.entries(mw.keypairs || {})) {
+                if (kp?.publicKey?.toString() === sourceResult.sourceWalletAddress) {
+                    found.push({ chain, kp })
                 }
             }
         }
@@ -256,31 +270,29 @@ export default {
         // gather possibilities
         let contextStr = ''
         const solanaService = runtime.getService(SOLANA_SERVICE_NAME) as any;
-        for (const kp of found) {
-            const pubKey = kp.publicKey
-            contextStr += 'Wallet Address: ' + pubKey + '\n'
-            // get wallet contents
-            const pubKeyObj = new PublicKey(pubKey)
-            const [balances, heldTokens] = await Promise.all([
-                solanaService.getBalancesByAddrs([pubKey]),
-                solanaService.getTokenAccountsByKeypair(pubKeyObj),
-            ]);
-            const solBal = balances[pubKey]
-            contextStr += '  Token Address (Symbol)' + "\n"
-            contextStr += '  So11111111111111111111111111111111111111111 ($sol) balance: ' + (solBal ?? 'unknown') + "\n"
-            console.log('solBal', solBal, 'heldTokens', heldTokens)
-            // loop on remaining tokens and output
-            for (const t of heldTokens) {
-                // data.program, data.space, data.parsed
-                // data.parsed: .type and .info which has (isNative, mint, owner, state, tokenAmount)
-                //console.log('data', t.account.data) // parsed.info.mint
-                const amountRaw = t.account.data.parsed.info.tokenAmount.amount;
-                const mintKey = new PublicKey(t.account.data.parsed.info.mint);
-                const decimals = t.account.data.parsed.info.tokenAmount.decimals;
-                const balance = Number(amountRaw) / (10 ** decimals);
-                const symbol = await solanaService.getTokenSymbol(mintKey)
-                //console.log('MULTIWALLET_TRANSFER symbol', symbol)
-                contextStr += '  ' + t.pubkey.toString() + ' ($' + symbol + ') balance: ' + balance + "\n"
+        for (const wallet of found) {
+            const pubKey = wallet.kp.publicKey
+            if (wallet.chain === 'solana' && solanaService) {
+                contextStr += 'Wallet Address: ' + pubKey + '\n'
+                const pubKeyObj = new PublicKey(pubKey)
+                const [balances, heldTokens] = await Promise.all([
+                    solanaService.getBalancesByAddrs([pubKey]),
+                    solanaService.getTokenAccountsByKeypair(pubKeyObj),
+                ]);
+                const solBal = balances[pubKey]
+                contextStr += '  Chain: solana\n'
+                contextStr += '  Token Address (Symbol)\n'
+                contextStr += '  So11111111111111111111111111111111111111111 ($sol) balance: ' + (solBal ?? 'unknown') + "\n"
+                for (const t of heldTokens) {
+                    const amountRaw = t.account.data.parsed.info.tokenAmount.amount;
+                    const mintKey = new PublicKey(t.account.data.parsed.info.mint);
+                    const decimals = t.account.data.parsed.info.tokenAmount.decimals;
+                    const balance = Number(amountRaw) / (10 ** decimals);
+                    const symbol = await solanaService.getTokenSymbol(mintKey)
+                    contextStr += '  ' + t.pubkey.toString() + ' ($' + symbol + ') balance: ' + balance + "\n"
+                }
+            } else if (wallet.chain === 'ethereum') {
+                contextStr += await getEthereumWalletSummary(pubKey, runtime)
             }
             contextStr += '\n'
         }
@@ -322,9 +334,9 @@ export default {
 
         // find source keypair
         //in found
-        const sourceKp = found.find(kp => kp.publicKey === content.senderWalletAddress)
+        const sourceWallet = found.find(wallet => wallet.kp.publicKey === content.senderWalletAddress)
         //console.log('MULTIWALLET_TRANSFER sourceKp', sourceKp)
-        if (!sourceKp) {
+        if (!sourceWallet) {
             // FIXME
             // can be the model failing to match something
             console.warn('unknown address', content.senderWalletAddress, 'in', found)
@@ -334,10 +346,6 @@ export default {
                 error: 'WALLET_NOT_FOUND'
             }
         }
-        const secretKey = bs58.decode(sourceKp.privateKey);
-        const senderKeypair = Keypair.fromSecretKey(secretKey);
-        //console.log('MULTIWALLET_TRANSFER senderKeypair', senderKeypair)
-
         // Get the recipient address from options
         //const recipientAddress = options.recipientAddress as string;
         const recipientAddress = content.recipientWalletAddress
@@ -367,26 +375,35 @@ export default {
         }
 
         // Validate the recipient address
-        try {
-            new PublicKey(recipientAddress);
-        } catch (error) {
-            runtime.logger.info("Invalid recipient address provided.")
-            if (responses) {
-                responses.length = 0
-                const memory: Memory = {
-                    id: uuidv4() as UUID,
-                    entityId: message.entityId,
-                    roomId: message.roomId,
-                    content: {
-                        text: 'Invalid recipient address provided.',
-                        error: 'Invalid recipient address'
+        const selectedChain = content.chain?.toLowerCase() || sourceWallet.chain || (isEthereumAddress(sourceResult.sourceWalletAddress) ? 'ethereum' : 'solana');
+        if (selectedChain === 'solana') {
+            try {
+                new PublicKey(recipientAddress);
+            } catch (error) {
+                runtime.logger.info("Invalid recipient address provided.")
+                if (responses) {
+                    responses.length = 0
+                    const memory: Memory = {
+                        id: uuidv4() as UUID,
+                        entityId: message.entityId,
+                        roomId: message.roomId,
+                        content: {
+                            text: 'Invalid recipient address provided.',
+                            error: 'Invalid recipient address'
+                        }
                     }
+                    responses.push(memory)
                 }
-                responses.push(memory)
+                return {
+                    success: false,
+                    text: 'Invalid recipient address provided.',
+                    error: 'Invalid recipient address'
+                };
             }
+        } else if (!isEthereumAddress(recipientAddress)) {
             return {
                 success: false,
-                text: 'Invalid recipient address provided.',
+                text: 'Invalid Ethereum recipient address provided.',
                 error: 'Invalid recipient address'
             };
         }
@@ -419,79 +436,60 @@ export default {
         console.log('MULTIWALLET_TRANSFER ATTEMPTING SEND')
 
         try {
-            const solanaService = runtime.getService(SOLANA_SERVICE_NAME) as any;
-            if (!solanaService) {
-                throw new Error('Solana service not available');
-            }
+            if (selectedChain === 'ethereum') {
+                const transferResult = await transferEthereumAsset({
+                    privateKey: sourceWallet.kp.privateKey,
+                    recipient: recipientAddress,
+                    token: content.tokenAddress,
+                    amount: content.amount,
+                }, runtime);
+                return {
+                    success: true,
+                    text: `Sent ${content.amount} ${transferResult.token.symbol} on Ethereum. Transaction hash: ${transferResult.hash}`,
+                    data: {
+                        chain: 'ethereum',
+                        signature: transferResult.hash,
+                        amount: content.amount,
+                        sender: content.senderWalletAddress,
+                        recipient: recipientAddress,
+                    }
+                }
+            } else {
+                const secretKey = bs58.decode(sourceWallet.kp.privateKey);
+                const senderKeypair = Keypair.fromSecretKey(secretKey);
+                const solanaService = runtime.getService(SOLANA_SERVICE_NAME) as any;
+                if (!solanaService) {
+                    throw new Error('Solana service not available');
+                }
 
-            const recipientPubkey = new PublicKey(recipientAddress);
-            let signature: string;
+                const recipientPubkey = new PublicKey(recipientAddress);
+                let signature: string;
 
-            // Handle SOL transfer
-            if (content.tokenAddress === "So11111111111111111111111111111111111111111") {
-                const lamports = Number(content.amount) * 1e9;
-                signature = await solanaService.transferSol(senderKeypair, recipientPubkey, lamports);
-
-                runtime.logger.info(`Sent ${content.amount} SOL from ${content.senderWalletAddress} to ${recipientAddress}. Transaction hash: ${signature}`)
-                if (responses) {
-                    responses.length = 0
-                    const memory: Memory = {
-                        id: uuidv4() as UUID,
-                        entityId: message.entityId,
-                        roomId: message.roomId,
-                        content: {
-                            text: `Sent ${content.amount} SOL. Transaction hash: ${signature}`,
-                            success: true,
+                if (content.tokenAddress === "So11111111111111111111111111111111111111111") {
+                    const lamports = Number(content.amount) * 1e9;
+                    signature = await solanaService.transferSol(senderKeypair, recipientPubkey, lamports);
+                    return {
+                        success: true,
+                        text: `Sent ${content.amount} SOL. Transaction hash: ${signature}`,
+                        data: {
                             signature,
                             amount: content.amount,
                             sender: content.senderWalletAddress,
                             recipient: recipientAddress,
                         }
                     }
-                    responses.push(memory)
-                }
-                return {
-                    success: true,
-                    text: `Sent ${content.amount} SOL. Transaction hash: ${signature}`,
-                    data: {
-                        signature,
-                        amount: content.amount,
-                        sender: content.senderWalletAddress,
-                        recipient: recipientAddress,
-                    }
-                }
-            }
-            // Handle SPL token transfer
-            else {
-                const mintPubkey = new PublicKey(content.tokenAddress);
-                signature = await solanaService.transferSplToken(senderKeypair, recipientPubkey, mintPubkey, Number(content.amount));
-
-                runtime.logger.info(`Sent ${content.amount} tokens to ${recipientAddress}\nTransaction hash: ${signature}`)
-                if (responses) {
-                    responses.length = 0
-                    const memory: Memory = {
-                        id: uuidv4() as UUID,
-                        entityId: message.entityId,
-                        roomId: message.roomId,
-                        content: {
-                            text: `Sent ${content.amount} tokens to ${recipientAddress} from ${content.senderWalletAddress}\nTransaction hash: ${signature}`,
-                            success: true,
+                } else {
+                    const mintPubkey = new PublicKey(content.tokenAddress);
+                    signature = await solanaService.transferSplToken(senderKeypair, recipientPubkey, mintPubkey, Number(content.amount));
+                    return {
+                        success: true,
+                        text: `Sent ${content.amount} tokens to ${recipientAddress}\nTransaction hash: ${signature}`,
+                        data: {
                             signature,
                             amount: content.amount,
                             sender: content.senderWalletAddress,
                             recipient: recipientAddress,
                         }
-                    }
-                    responses.push(memory)
-                }
-                return {
-                    success: true,
-                    text: `Sent ${content.amount} tokens to ${recipientAddress}\nTransaction hash: ${signature}`,
-                    data: {
-                        signature,
-                        amount: content.amount,
-                        sender: content.senderWalletAddress,
-                        recipient: recipientAddress,
                     }
                 }
             }
@@ -554,6 +552,21 @@ export default {
                     options: {
                         recipientAddress: '3nMBmufBUBVnk28sTp3NsrSJsdVGTyLZYmsqpMFaUT9J',
                     },
+                },
+            },
+        ],
+        [
+            {
+                name: '{{name1}}',
+                content: {
+                    text: 'Send 0.02 ETH from 0x1111111111111111111111111111111111111111 to 0x2222222222222222222222222222222222222222',
+                },
+            },
+            {
+                name: '{{name2}}',
+                content: {
+                    text: 'Sending that on Ethereum now...',
+                    actions: ['MULTIWALLET_TRANSFER'],
                 },
             },
         ],

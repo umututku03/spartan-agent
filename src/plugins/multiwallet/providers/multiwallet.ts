@@ -2,6 +2,7 @@ import type { Action, IAgentRuntime, Memory, Provider, State } from '@elizaos/co
 import { addHeader, composeActionExamples, formatActionNames, formatActions } from '@elizaos/core';
 //import type { IToken } from '../types';
 import { getAccountFromMessage } from '../../autonomous-trader/utils'
+import { getEthereumWalletSummary } from '../utils/ethereum';
 
 function formatYYMMDD_HHMMSS(date) {
   const pad2 = num => num.toString().padStart(2, '0');
@@ -63,26 +64,26 @@ export const multiwalletProvider: Provider = {
     if (isDM) {
       // give private data about your wallets
       const account = await getAccountFromMessage(runtime, message)
-      const solanaWallets: any[] = []
-      const solanaPositions: any[] = []
+      const wallets: Array<{ chain: string; strategy: string; [key: string]: any }> = []
       for (const mw of account.metawallets) {
-        const kp = mw.keypairs.solana
-        if (kp) {
-          //console.log('kp', kp)
-          solanaWallets.push({ ...kp, strategy: mw.strategy })
+        for (const [chain, kp] of Object.entries(mw.keypairs || {})) {
+          wallets.push({ ...kp, chain, strategy: mw.strategy })
         }
       }
 
       // gather balance information for each of their wallets
-      // FIXME: could be parallelized
       const solanaService = runtime.getService('chain_solana') as any;
-      for (const kp of solanaWallets) {
+      for (const kp of wallets) {
         const pubKey = kp.publicKey
-        //console.log('USERWALLETS_DATA - kp', kp)
-        balanceStr += await solanaService.walletAddressToLLMString(pubKey)
+        if (kp.chain === 'solana' && solanaService) {
+          balanceStr += await solanaService.walletAddressToLLMString(pubKey)
+        } else if (kp.chain === 'ethereum') {
+          balanceStr += await getEthereumWalletSummary(pubKey, runtime)
+        }
         balanceStr += 'Current wallet: ' + pubKey + ' \n'
+        balanceStr += '  chain: ' + kp.chain + '\n'
         balanceStr += '  strategy: ' + kp.strategy + '\n'
-        if (kp.positions) {
+        if (kp.chain === 'solana' && kp.positions) {
           // we really can't list all positions
           balanceStr += '  positions in csv format:\n'
           balanceStr += '    CA,solAmount,openTimestamp,openDate,closeTimestamp,tokenAmount,status,pnl\n'

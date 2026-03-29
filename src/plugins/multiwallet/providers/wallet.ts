@@ -1,6 +1,7 @@
 import type { IAgentRuntime, Memory, Provider, State } from '@elizaos/core';
 import { getAccountFromMessage } from '../../autonomous-trader/utils'
 import { parseDateFilterFromMessage, applyDateFilterToAccount, formatDateFilterText } from '../../autonomous-trader/providers/date_filter'
+import { getEthereumWalletSummary } from '../utils/ethereum';
 
 /**
  * Provider for specific wallet details and positions
@@ -41,51 +42,29 @@ export const walletProvider: Provider = {
 
             // Process each metawallet
             for (const mw of filteredAccount.metawallets) {
-                const kp = mw.keypairs.solana
-                if (kp) {
+                for (const [chain, kp] of Object.entries(mw.keypairs || {})) {
                     const pubKey = kp.publicKey
 
-                    // Get wallet balance information
-                    const balanceInfo = await solanaService.walletAddressToLLMString(pubKey)
-
                     walletStr += `=== WALLET DETAILS ===\n`
+                    walletStr += `Chain: ${chain}\n`
                     walletStr += `Public Key: ${pubKey}\n`
                     walletStr += `Strategy: ${mw.strategy}\n`
-                    walletStr += `Balance Information:\n${balanceInfo}\n`
 
-                    // needs to be moved to an extension or something...
+                    if (chain === 'solana' && solanaService) {
+                        const balanceInfo = await solanaService.walletAddressToLLMString(pubKey)
+                        walletStr += `Balance Information:\n${balanceInfo}\n`
 
-                    // Position summary
-                    const totalPositions = kp.positions?.length || 0
-                    const openPositions = kp.positions?.filter(p => !p.close).length || 0
-                    const closedPositions = kp.positions?.filter(p => p.close).length || 0
+                        const totalPositions = kp.positions?.length || 0
+                        const openPositions = kp.positions?.filter(p => !p.close).length || 0
+                        const closedPositions = kp.positions?.filter(p => p.close).length || 0
 
-                    walletStr += `Position Summary:\n`
-                    walletStr += `  Total Positions: ${totalPositions}\n`
-                    walletStr += `  Open Positions: ${openPositions}\n`
-                    walletStr += `  Closed Positions: ${closedPositions}\n`
-
-                    // Calculate total PnL for closed positions
-                    let totalPnL = 0
-                    let totalPnLPercentage = 0
-                    let closedCount = 0
-
-                    if (kp.positions) {
-                        for (const p of kp.positions) {
-                            if (p.close && p.close.type !== 'unknown' && p.close.type !== 'unknwon') {
-                                const initialSol = parseFloat(p.solAmount)
-                                const finalSol = parseFloat(p.close.outAmount) / 1e9
-                                const pnl = finalSol - initialSol
-                                totalPnL += pnl
-                                totalPnLPercentage += (pnl / initialSol) * 100
-                                closedCount++
-                            }
-                        }
-                    }
-
-                    if (closedCount > 0) {
-                        const avgPnLPercentage = totalPnLPercentage / closedCount
-                        walletStr += `  Total PnL: ${totalPnL.toFixed(6)} SOL (${avgPnLPercentage > 0 ? '+' : ''}${avgPnLPercentage.toFixed(2)}% avg)\n`
+                        walletStr += `Position Summary:\n`
+                        walletStr += `  Total Positions: ${totalPositions}\n`
+                        walletStr += `  Open Positions: ${openPositions}\n`
+                        walletStr += `  Closed Positions: ${closedPositions}\n`
+                    } else if (chain === 'ethereum') {
+                        const balanceInfo = await getEthereumWalletSummary(pubKey, runtime)
+                        walletStr += `Balance Information:\n${balanceInfo}\n`
                     }
 
                     walletStr += `\n`

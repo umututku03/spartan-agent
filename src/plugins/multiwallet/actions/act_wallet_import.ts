@@ -14,6 +14,10 @@ import { HasEntityIdFromMessage, getAccountFromMessage, takeItPrivate, messageRe
 import CONSTANTS from '../../autonomous-trader/constants'
 const { Keypair } = require('@solana/web3.js');
 import bs58 from 'bs58'
+import {
+  detectEthereumPrivateKeysFromText,
+  privateKeyToEthereumAddress,
+} from '../utils/ethereum';
 
 // handle starting new form and collecting first field
 export const walletImportAction: Action = {
@@ -51,12 +55,6 @@ export const walletImportAction: Action = {
       return false;
     }
 
-    const solanaService = runtime.getService('chain_solana') as any;
-    if (!solanaService) {
-      runtime.logger.debug('WALLET_IMPORT validate skipped: chain_solana service missing');
-      return false;
-    }
-
     const messageText = message.content.text ?? '';
     runtime.logger.debug(
       `WALLET_IMPORT validate analyzing message text length=${messageText.length} sample=${messageText.slice(0, 80)}`
@@ -75,12 +73,18 @@ export const walletImportAction: Action = {
       );
     }
 
+    const solanaService = runtime.getService('chain_solana') as any;
     const solanaDetected = detectedKeysByChain.find(
       result => result.chain?.toLowerCase() === 'solana'
     );
     const solanaKeys = solanaDetected?.keys ?? [];
+    const ethereumKeys = detectEthereumPrivateKeysFromText(messageText);
 
-    if (!solanaKeys.length) {
+    if (!solanaKeys.length && !ethereumKeys.length) {
+      if (!solanaService) {
+        runtime.logger.debug('WALLET_IMPORT validate skipped: no supported private keys detected');
+        return false;
+      }
       runtime.logger.debug('WALLET_IMPORT validate falling back to direct Solana detection');
       const keys = solanaService.detectPrivateKeysFromString(messageText);
       runtime.logger.debug(`WALLET_IMPORT validate solana fallback detected keys count=${keys.length}`);
@@ -146,8 +150,8 @@ export const walletImportAction: Action = {
     const traderChainService = runtime.getService('INTEL_CHAIN') as any;
     const chains = await traderChainService.listActiveChains()
     console.log('chains', chains)
-
     const solanaService = runtime.getService('chain_solana') as any;
+
     const messageText = message.content.text ?? '';
     let detectedKeysByChain: Array<{ chain: string; keys: any[] }> = [];
     try {
@@ -167,7 +171,7 @@ export const walletImportAction: Action = {
     );
 
     let solanaKey = solanaDetected?.keys?.[0];
-    if (!solanaKey) {
+    if (!solanaKey && solanaService) {
       const fallbackKeys = solanaService.detectPrivateKeysFromString(messageText);
       runtime.logger.debug(
         `WALLET_IMPORT handler solana fallback detected keys count=${fallbackKeys.length}`
@@ -177,14 +181,7 @@ export const walletImportAction: Action = {
       runtime.logger.debug('WALLET_IMPORT handler using solana key detected via chain service');
     }
 
-    if (!solanaKey?.bytes) {
-      runtime.logger.warn('WALLET_IMPORT handler unable to resolve Solana private key bytes');
-      return;
-    }
-
-    const keypair = Keypair.fromSecretKey(solanaKey.bytes);
-    //console.log('privateKeyB58', keypair)
-    // keys[{ format, match, bytes }]
+    const ethereumPrivateKey = detectEthereumPrivateKeysFromText(messageText)[0];
 
     console.log('account', account)
     //callback(takeItPrivate(runtime, message, 'Thinking about making a meta-wallet'))
@@ -193,22 +190,41 @@ export const walletImportAction: Action = {
     const strat = containsStrats?.[0] || 'No trading strategy'
     const newWallet = {
       strategy: strat,
-      keypairs: {
-        solana: {
-          privateKey: bs58.encode(keypair.secretKey),
-          publicKey: keypair.publicKey.toBase58(),
-          type: 'imported',
-          createdAt: Date.now(),
-        },
-      }
+      keypairs: {}
     }
+
+    if (solanaKey?.bytes) {
+      const keypair = Keypair.fromSecretKey(solanaKey.bytes);
+      newWallet.keypairs.solana = {
+        privateKey: bs58.encode(keypair.secretKey),
+        publicKey: keypair.publicKey.toBase58(),
+        type: 'imported',
+        createdAt: Date.now(),
+      };
+    }
+
+    if (ethereumPrivateKey) {
+      newWallet.keypairs.ethereum = {
+        privateKey: ethereumPrivateKey,
+        publicKey: privateKeyToEthereumAddress(ethereumPrivateKey),
+        type: 'imported',
+        createdAt: Date.now(),
+      };
+    }
+
+    if (!Object.keys(newWallet.keypairs).length) {
+      runtime.logger.warn('WALLET_IMPORT handler unable to resolve supported private keys');
+      return;
+    }
+
     console.log('newWallet', newWallet)
 
     let str = '\n'
     str += '  Strategy: ' + strat + '\n'
-    str += '  Chain: solana\n'
-    //str += '    Private key: ' + newWallet.keypairs.solana.privateKey + ' (Write this down/save it somewhere safe, we will not show this again. This key allows you to spend the funds)\n'
-    str += '    Public key: ' + newWallet.keypairs.solana.publicKey + ' (This is the wallet address that you can publicly send to people)\n'
+    for (const chain of Object.keys(newWallet.keypairs)) {
+      str += '  Chain: ' + chain + '\n'
+      str += '    Public key: ' + newWallet.keypairs[chain].publicKey + ' (This is the wallet address that you can publicly send to people)\n'
+    }
 
     callback?.(takeItPrivate(runtime, message, 'Made a meta-wallet ' + str + ' please fund it to start trading'))
 
@@ -261,6 +277,21 @@ export const walletImportAction: Action = {
         name: '{{name2}}',
         content: {
           text: "I'll import that now",
+          actions: ['WALLET_IMPORT'],
+        },
+      },
+    ],
+    [
+      {
+        name: '{{name1}}',
+        content: {
+          text: 'Import wallet from 0x0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+        },
+      },
+      {
+        name: '{{name2}}',
+        content: {
+          text: "I'll import that Ethereum wallet now",
           actions: ['WALLET_IMPORT'],
         },
       },
