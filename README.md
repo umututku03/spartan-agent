@@ -8,6 +8,30 @@
 
 Spartan is your resident DeFi trading warlord—a no-BS tactician who blends alpha with attitude. Built on ElizaOS, Spartan is a sophisticated multi-chain DeFi agent with comprehensive capabilities for trading, analytics, market intelligence, and community engagement.
 
+## Project Note
+
+This repository is currently being used as an Ethereum-focused MVP for a school project.
+
+The current branch work is centered on adapting Spartan toward a simpler Ethereum agent that can demonstrate:
+
+- Ethereum wallet import
+- Ethereum wallet detection in chat flows
+- basic Ethereum transfers
+- basic AMM swaps on Ethereum
+- initial lending/borrowing primitives on Aave:
+  - `supply`
+  - `borrow`
+
+This means the upstream README still describes the broader Spartan platform, while this repo's current working focus is narrower: a locally testable Ethereum DeFi MVP rather than a full production deployment.
+
+For this project, the priority is:
+
+- getting a working local MVP
+- testing real Ethereum flows with a throwaway wallet
+- improving execution reliability before adding more features
+
+Some Ethereum work is still in progress and should be treated as MVP-stage rather than production-ready.
+
 **Key Capabilities:**
 - Multi-tenant wallet management with secure custody
 - Autonomous trading strategies across Solana and EVM chains
