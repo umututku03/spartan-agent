@@ -32,6 +32,20 @@ For this project, the priority is:
 
 Some Ethereum work is still in progress and should be treated as MVP-stage rather than production-ready.
 
+### Ethereum MVP docs
+
+The Ethereum DeFi logic (wallet import, in-chat detection, transfers, Uniswap V2 swaps, and
+Aave V3 supply/borrow) lives in `src/plugins/multiwallet/` — see
+`utils/ethereum.ts` and the `act_wallet_*` actions. Two docs cover how to run and verify it:
+
+- **[docs/ETH_MVP_SETUP.md](./docs/ETH_MVP_SETUP.md)** — setup + verification runbook. Run inside
+  the eliza monorepo, point `ETHEREUM_RPC_URL` at a local **Anvil mainnet fork**
+  (`anvil --fork-url <rpc>`), then drive all five pipeline stages end-to-end with a throwaway,
+  pre-funded key (no real funds at risk).
+- **[docs/ETH_MVP_DECISIONS.md](./docs/ETH_MVP_DECISIONS.md)** — decision log: every choice made
+  (monorepo run path, fork-based testing, import-only wallets, declaring `viem`, the
+  unit-test + fork verification strategy) and the rationale behind it.
+
 **Key Capabilities:**
 - Multi-tenant wallet management with secure custody
 - Autonomous trading strategies across Solana and EVM chains
