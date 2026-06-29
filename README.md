@@ -45,6 +45,9 @@ Aave V3 supply/borrow) lives in `src/plugins/multiwallet/` — see
 - **[docs/ETH_MVP_DECISIONS.md](./docs/ETH_MVP_DECISIONS.md)** — decision log: every choice made
   (monorepo run path, fork-based testing, import-only wallets, declaring `viem`, the
   unit-test + fork verification strategy) and the rationale behind it.
+- **[docs/ETH_MVP_NEXT_STEPS.md](./docs/ETH_MVP_NEXT_STEPS.md)** — concrete, copy-pasteable next
+  steps to run it: unit tests, a no-runtime on-chain smoke test against an Anvil fork, and the
+  full chat-driven agent e2e.
 
 **Key Capabilities:**
 - Multi-tenant wallet management with secure custody
