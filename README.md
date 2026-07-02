@@ -48,6 +48,8 @@ Aave V3 supply/borrow) lives in `src/plugins/multiwallet/` — see
 - **[docs/ETH_MVP_NEXT_STEPS.md](./docs/ETH_MVP_NEXT_STEPS.md)** — concrete, copy-pasteable next
   steps to run it: unit tests, a no-runtime on-chain smoke test against an Anvil fork, and the
   full chat-driven agent e2e.
+- **[docs/ETH_MVP_LIMITATIONS.md](./docs/ETH_MVP_LIMITATIONS.md)** — known MVP limitations and
+  the post-merge work list (CoW/V3 execution, multi-network, Aave health-factor guard, etc.).
 
 **Key Capabilities:**
 - Multi-tenant wallet management with secure custody
