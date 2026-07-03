@@ -15,7 +15,7 @@ import { mainnet } from 'viem/chains';
 
 const UNISWAP_V2_ROUTER = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D' as Address;
 const WETH_ADDRESS = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2' as Address;
-const AAVE_V3_POOL = '0x87870Bca3F3fD6335C3f4ce8392D69350B4fA4E2' as Address;
+const AAVE_V3_POOL = '0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2' as Address;
 
 const UNISWAP_V2_ROUTER_ABI = [
   {
@@ -308,6 +308,7 @@ async function ensureAllowance(
   privateKey: string,
   token: EthereumToken,
   amount: bigint,
+  spender: Address,
   runtime?: { getSetting?: (key: string) => string | undefined },
   rpcUrl?: string
 ) {
@@ -322,7 +323,7 @@ async function ensureAllowance(
     address: token.address,
     abi: erc20Abi,
     functionName: 'allowance',
-    args: [walletClient.account.address, UNISWAP_V2_ROUTER],
+    args: [walletClient.account.address, spender],
   }) as bigint;
 
   if (allowance >= amount) {
@@ -333,7 +334,7 @@ async function ensureAllowance(
     address: token.address,
     abi: erc20Abi,
     functionName: 'approve',
-    args: [UNISWAP_V2_ROUTER, maxUint256],
+    args: [spender, maxUint256],
     chain: mainnet,
     account: walletClient.account,
   });
@@ -425,7 +426,7 @@ export async function swapEthereumExactIn(
       account,
     });
   } else if (outputToken.isNative) {
-    await ensureAllowance(request.privateKey, inputToken, amountIn, runtime, rpcUrl);
+    await ensureAllowance(request.privateKey, inputToken, amountIn, UNISWAP_V2_ROUTER, runtime, rpcUrl);
     hash = await walletClient.writeContract({
       address: UNISWAP_V2_ROUTER,
       abi: UNISWAP_V2_ROUTER_ABI,
@@ -435,7 +436,7 @@ export async function swapEthereumExactIn(
       account,
     });
   } else {
-    await ensureAllowance(request.privateKey, inputToken, amountIn, runtime, rpcUrl);
+    await ensureAllowance(request.privateKey, inputToken, amountIn, UNISWAP_V2_ROUTER, runtime, rpcUrl);
     hash = await walletClient.writeContract({
       address: UNISWAP_V2_ROUTER,
       abi: UNISWAP_V2_ROUTER_ABI,
@@ -532,7 +533,7 @@ export async function executeEthereumLendingAction(
   let hash: Hex;
 
   if (request.action === 'supply') {
-    await ensureAllowance(request.privateKey, token, amount, runtime, rpcUrl);
+    await ensureAllowance(request.privateKey, token, amount, AAVE_V3_POOL, runtime, rpcUrl);
     hash = await walletClient.writeContract({
       account,
       chain: mainnet,
