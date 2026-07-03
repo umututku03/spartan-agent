@@ -339,7 +339,10 @@ async function ensureAllowance(
     account: walletClient.account,
   });
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 }
 
 export async function getEthereumWalletSummary(
@@ -447,7 +450,10 @@ export async function swapEthereumExactIn(
     });
   }
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 
   return {
     hash,
@@ -500,7 +506,10 @@ export async function transferEthereumAsset(
     });
   }
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 
   return {
     hash,
@@ -555,7 +564,10 @@ export async function executeEthereumLendingAction(
     });
   }
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 
   return {
     hash,
