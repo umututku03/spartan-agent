@@ -339,7 +339,10 @@ async function ensureAllowance(
     account: walletClient.account,
   });
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 }
 
 export async function getEthereumWalletSummary(
@@ -447,7 +450,10 @@ export async function swapEthereumExactIn(
     });
   }
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 
   return {
     hash,
@@ -500,7 +506,10 @@ export async function transferEthereumAsset(
     });
   }
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 
   return {
     hash,
@@ -541,6 +550,7 @@ export async function executeEthereumLendingAction(
       abi: AAVE_V3_POOL_ABI,
       functionName: 'supply',
       args: [token.address, amount, account.address, 0],
+      gas: 1_000_000n,
     });
   } else {
     hash = await walletClient.writeContract({
@@ -550,10 +560,14 @@ export async function executeEthereumLendingAction(
       abi: AAVE_V3_POOL_ABI,
       functionName: 'borrow',
       args: [token.address, amount, 2n, 0, account.address],
+      gas: 1_000_000n,
     });
   }
 
-  await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  if (receipt.status !== 'success') {
+    throw new Error(`Transaction reverted on-chain: ${hash}`);
+  }
 
   return {
     hash,
