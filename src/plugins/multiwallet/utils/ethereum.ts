@@ -541,6 +541,7 @@ export async function executeEthereumLendingAction(
       abi: AAVE_V3_POOL_ABI,
       functionName: 'supply',
       args: [token.address, amount, account.address, 0],
+      gas: 1_000_000n,
     });
   } else {
     hash = await walletClient.writeContract({
@@ -550,6 +551,7 @@ export async function executeEthereumLendingAction(
       abi: AAVE_V3_POOL_ABI,
       functionName: 'borrow',
       args: [token.address, amount, 2n, 0, account.address],
+      gas: 1_000_000n,
     });
   }
 
