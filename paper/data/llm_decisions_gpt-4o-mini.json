@@ -1,0 +1,1342 @@
+{
+  "2025-09-17": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-18": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-15": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-14": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-12": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-19": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-13": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-16": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-22": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2025-09-23": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-20": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-21": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-25": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns and high volatility warrant reduced exposure."
+  },
+  "2025-09-26": {
+    "exposure": 0.25,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2025-09-24": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2025-09-30": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-29": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy moves indicate increased risk."
+  },
+  "2025-10-01": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-02": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns and high volatility warrant reduced exposure."
+  },
+  "2025-09-27": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-03": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy moves indicate high volatility."
+  },
+  "2025-10-04": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2025-10-05": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-07": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy moves indicate increased risk."
+  },
+  "2025-10-09": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-06": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-10": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-11": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-13": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-14": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-15": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-16": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-17": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-18": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-19": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-20": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-08": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-12": {
+    "exposure": 0.25,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2025-10-21": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-22": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-23": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-25": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-24": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-27": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-26": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-29": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-28": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-30": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-10-31": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-03": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-01": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-02": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-04": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-05": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-06": {
+    "exposure": 0.25,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2025-11-07": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-08": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-10": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-12": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-11": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-13": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-09-28": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-14": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-15": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-16": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-17": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-19": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-20": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-21": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-09": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-22": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-18": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-23": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-24": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates choppy conditions, warranting reduced exposure."
+  },
+  "2025-11-26": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-25": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-28": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-27": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-30": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-01": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-11-29": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-03": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-04": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-06": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-02": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-05": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates choppy conditions, warranting reduced exposure."
+  },
+  "2025-12-07": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-08": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-10": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates choppy conditions, reducing exposure to manage risk."
+  },
+  "2025-12-11": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-12": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-13": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2025-12-14": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-09": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-15": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-16": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2025-12-18": {
+    "exposure": 0.25,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2025-12-17": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-20": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-19": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-21": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-22": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2025-12-23": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-24": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2025-12-26": {
+    "exposure": 0.25,
+    "reason": "Recent large and choppy moves indicate high volatility."
+  },
+  "2025-12-25": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate increased risk."
+  },
+  "2025-12-27": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-29": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2025-12-31": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2025-12-28": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy moves indicate high volatility."
+  },
+  "2025-12-30": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2026-01-01": {
+    "exposure": 0.3,
+    "reason": "Recent returns are choppy with high volatility."
+  },
+  "2026-01-02": {
+    "exposure": 0.35,
+    "reason": "Recent returns are choppy with high volatility."
+  },
+  "2026-01-03": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-05": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-01-04": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-06": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-01-08": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-01-07": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-01-09": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-01-10": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-01-11": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-01-12": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-01-13": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-01-14": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-15": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns and high volatility warrant reduced exposure."
+  },
+  "2026-01-16": {
+    "exposure": 0.35,
+    "reason": "Recent volatility is high, indicating choppy price behavior."
+  },
+  "2026-01-17": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-18": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-01-19": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-21": {
+    "exposure": 0.25,
+    "reason": "High recent volatility indicates increased risk."
+  },
+  "2026-01-20": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-01-22": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-26": {
+    "exposure": 0.25,
+    "reason": "High recent volatility indicates increased risk."
+  },
+  "2026-01-23": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-25": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-28": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-24": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-27": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-29": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-01": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-01-30": {
+    "exposure": 0.25,
+    "reason": "Recent large and choppy moves indicate high volatility."
+  },
+  "2026-01-31": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-02": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-03": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-05": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-04": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-07": {
+    "exposure": 0.2,
+    "reason": "High volatility and choppy recent returns warrant reduced exposure."
+  },
+  "2026-02-06": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-08": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-10": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-09": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-11": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-12": {
+    "exposure": 0.25,
+    "reason": "High volatility and recent large negative returns indicate increased risk."
+  },
+  "2026-02-17": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-13": {
+    "exposure": 0.2,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-14": {
+    "exposure": 0.2,
+    "reason": "High volatility and recent large negative returns indicate increased risk."
+  },
+  "2026-02-15": {
+    "exposure": 0.2,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-16": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-18": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-19": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-24": {
+    "exposure": 0.2,
+    "reason": "High volatility and recent large negative returns indicate increased risk."
+  },
+  "2026-02-23": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-22": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-21": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-20": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-25": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-27": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-26": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-01": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-03": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-02": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-02-28": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-04": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-05": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-06": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-07": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-08": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-09": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates choppy conditions, reducing exposure to manage risk."
+  },
+  "2026-03-11": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-10": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-12": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-14": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2026-03-15": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-17": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-16": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-13": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-18": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-20": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-22": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-19": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-23": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-21": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-26": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-24": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-27": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-29": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-25": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-30": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-31": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-02": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-04-01": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-03-28": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-05": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-04": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-04-03": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-06": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-07": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-08": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-04-09": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-11": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-12": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2026-04-13": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-14": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, so reduce exposure."
+  },
+  "2026-04-15": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-16": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-17": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-18": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-19": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates choppy conditions, warranting reduced exposure."
+  },
+  "2026-04-20": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-21": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-22": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-23": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-24": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-25": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-10": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-28": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-27": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-29": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-05-01": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy returns indicate high volatility."
+  },
+  "2026-04-26": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-04-30": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-05-03": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-05-02": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-05-04": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-05-05": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-06": {
+    "exposure": 0.35,
+    "reason": "Recent volatility is high, indicating choppy price behavior."
+  },
+  "2026-05-08": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-05-07": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-05-09": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-05-11": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-05-10": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-05-13": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-05-12": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-05-14": {
+    "exposure": 0.35,
+    "reason": "Recent returns are choppy with high volatility."
+  },
+  "2026-05-20": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-16": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-19": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns and high volatility warrant reduced exposure."
+  },
+  "2026-05-18": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-05-21": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-15": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-22": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-25": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-23": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-26": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-27": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-28": {
+    "exposure": 0.35,
+    "reason": "Recent returns are choppy with significant negative moves."
+  },
+  "2026-05-24": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-05-17": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-29": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-30": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-05-31": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high volatility and choppy behavior."
+  },
+  "2026-06-01": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-06-04": {
+    "exposure": 0.25,
+    "reason": "Recent large negative returns indicate high volatility and risk."
+  },
+  "2026-06-03": {
+    "exposure": 0.25,
+    "reason": "Recent large negative returns indicate high volatility and risk."
+  },
+  "2026-06-02": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-06-05": {
+    "exposure": 0.3,
+    "reason": "Recent large negative returns indicate high volatility and risk."
+  },
+  "2026-06-08": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-07": {
+    "exposure": 0.25,
+    "reason": "Recent large negative returns indicate high volatility and risk."
+  },
+  "2026-06-06": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-09": {
+    "exposure": 0.25,
+    "reason": "High recent volatility indicates increased risk."
+  },
+  "2026-06-12": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-10": {
+    "exposure": 0.25,
+    "reason": "High volatility and recent choppy returns warrant reduced exposure."
+  },
+  "2026-06-11": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-13": {
+    "exposure": 0.25,
+    "reason": "Recent large negative returns indicate high volatility and risk."
+  },
+  "2026-06-14": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-15": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-17": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-16": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-18": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-21": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-19": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-20": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-23": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-22": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-26": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-29": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-25": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-27": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-24": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-28": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-06-30": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-01": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-02": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-03": {
+    "exposure": 0.25,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-04": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-07": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-06": {
+    "exposure": 0.3,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-07-08": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-09": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-07-10": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-07-11": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-07-13": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-14": {
+    "exposure": 0.3,
+    "reason": "Recent large and choppy moves indicate increased risk."
+  },
+  "2026-07-12": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-15": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-16": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-18": {
+    "exposure": 0.3,
+    "reason": "Recent returns are choppy with high volatility."
+  },
+  "2026-07-20": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-21": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-05": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-22": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-07-23": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-07-24": {
+    "exposure": 0.35,
+    "reason": "High recent volatility suggests reducing exposure to manage risk."
+  },
+  "2026-07-25": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-19": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-26": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-28": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-30": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-07-29": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-07-27": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-07-31": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-08-01": {
+    "exposure": 0.35,
+    "reason": "Recent returns are choppy with high volatility."
+  },
+  "2026-08-03": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate high volatility, warranting reduced exposure."
+  },
+  "2026-08-02": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-08-05": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-08-04": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-08-06": {
+    "exposure": 0.35,
+    "reason": "Recent returns are choppy with high volatility."
+  },
+  "2026-08-07": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-08-10": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-08-11": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-08-09": {
+    "exposure": 0.35,
+    "reason": "Recent choppy returns indicate increased risk."
+  },
+  "2026-08-12": {
+    "exposure": 0.35,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  },
+  "2026-08-08": {
+    "exposure": 0.35,
+    "reason": "Recent returns are choppy with high volatility."
+  },
+  "2026-07-17": {
+    "exposure": 0.3,
+    "reason": "High volatility indicates increased risk, warranting reduced exposure."
+  }
+}
