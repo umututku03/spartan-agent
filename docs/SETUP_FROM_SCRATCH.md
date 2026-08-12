@@ -14,7 +14,8 @@ Assumed local paths (adjust to yours — examples are macOS):
 - this repo (Spartan): `~/dev/spartan-agent`
 - fixed `ethereum.ts`: from this repo, `src/plugins/multiwallet/utils/ethereum.ts`
 
-Related docs: `ETH_MVP_SETUP.md` (fork verification), `ETH_MVP_NEXT_STEPS.md` (tiered run),
+Related docs: `PHASE2_AGENT_CHAT.md` (agent boot + chat, VERIFIED on the VM),
+`ETH_MVP_SETUP.md` (fork verification), `ETH_MVP_NEXT_STEPS.md` (tiered run),
 `ETH_MVP_WORKLOG.md` (full history), `ETH_MVP_LIMITATIONS.md`, `PLAN_PROMPTS.md` (next phases).
 
 ---
@@ -168,6 +169,13 @@ DeFi execution is separately proven via `scripts/smoke.ts` on the fork.)
 | Model error: Groq `model_not_found` | Use `llama-3.3-70b-versatile` / `llama-3.1-8b-instant`. |
 | Model error: OpenAI `429 insufficient_quota` | Add credit to the OpenAI account. |
 | Tried to "match versions" with beta.57 and hit `zod/v3` not found | Don't — stay on `develop`. |
+| `bun run build` no-ops (no `dist`, no error) | The `bun run build → bun run build.ts` npm-script indirection silently no-op'd on this VM. Run **`bun run build.ts` directly** in each package. |
+| `bun: Exec format error: node_modules/.bin/bun` (or `bunx`) | The `bun` npm dep shipped a **Windows** `bun.exe`/`bunx.exe` as the `.bin` shim. `ln -sf $HOME/.bun/bin/bun node_modules/.bin/bun` and same for `bunx`. |
+| client `vite build`: `crypto.getRandomValues is not a function` / "Node 16" | vite ran under the system Node 16 (needs 20+). Use **`bun --bun x vite build`** to force the bun runtime. |
+| `elizaos start`: `ENOEXEC posix_spawn 'bunx'` from spartan `build.ts` | spartan's original `build.ts` shells out to `bunx vite`. Use this repo's node-only `build.ts` (only `dist/index.js` is needed at runtime; the web UI is already bundled in `@elizaos/server`). |
+| runtime auto-installs `@elizaos/plugin-solana` then aborts on `.cursor` submodule clone | The character listed Solana-stack plugins. Comment `plugin-solana/jupiter/evm/birdeye` in `src/index.ts` `character.plugins`; make `scripts/init-submodules.sh` a no-op (the `.cursor` submodule is Cursor IDE rules, unused). |
+| Edited plugins but the old list still loads | Old character cached in PGlite. `rm -rf packages/spartan/.eliza` before restart. |
+| Chat: greetings answered but bare `import my wallet 0x…` gets no reply (`IGNORE action` in log) | Expected Phase-2 boundary — the wallet action's `validate()` gates aren't met, so the LLM picks IGNORE for the bare command. Conversational replies work. Firing the action is Phase 3. |
 
 ## Fast checks that don't need the full agent (run in this repo, no monorepo)
 ```bash

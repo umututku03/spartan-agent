@@ -41,10 +41,10 @@ dotenv.config({ path: '../../.env' });
 export const character: Character = {
   name: 'Spartan',
   plugins: [
-    //'@elizaos/plugin-sql', // ensure we still compatible with postgres
-    '@elizaos/plugin-mysql',
+    '@elizaos/plugin-sql', // local DB (SQLite/PGlite) — no server needed
+    //'@elizaos/plugin-mysql', // needs a MySQL server
     // we need it to be smart and self-reliant
-    '@elizaos/plugin-anthropic',
+    //'@elizaos/plugin-anthropic', // needs ANTHROPIC_API_KEY
     //'@elizaos/plugin-groq',
     //'@elizaos/plugin-ollama', // local models + embeddings
     //'@elizaos/plugin-local-ai', // local embeddings
@@ -55,13 +55,13 @@ export const character: Character = {
     //...(process.env.OPENAI_API_KEY ? ['@elizaos/plugin-openai'] : []),
     //...(!process.env.OPENAI_API_KEY ? ['@elizaos/plugin-local-ai'] : []),
     //'@elizaos/plugin-twitter', // optional
-    '@elizaos/plugin-discord', // optional
-    '@elizaos/plugin-telegram', // optional
+    //'@elizaos/plugin-discord', // optional — needs a bot token
+    //'@elizaos/plugin-telegram', // optional — needs a bot token
     //'@elizaos/plugin-farcaster', // optional
     '@elizaos/plugin-bootstrap', // required
-    '@elizaos/plugin-solana', // required
-    '@elizaos/plugin-jupiter', // required
-    '@elizaos/plugin-evm', // optional
+    //'@elizaos/plugin-solana', // disabled for the Ethereum MVP (Solana stack; not in this monorepo)
+    //'@elizaos/plugin-jupiter', // disabled for the Ethereum MVP (Solana DEX)
+    //'@elizaos/plugin-evm', // disabled — we use our own multiwallet plugin for Ethereum
     //'@elizaos/plugin-rolodex', // optional
     //'@elizaos/plugin-trust', // optional
     //'@elizaos/plugin-memory', // optional
@@ -75,8 +75,8 @@ export const character: Character = {
     //'@elizaos/plugin-goals', // optional
     //'@elizaos/plugin-orca',
     //'@elizaos/plugin-action-bench',
-    '@elizaos/plugin-birdeye', // required
-    '@elizaos/plugin-coinmarketcap', // optional
+    //'@elizaos/plugin-birdeye', // disabled for the Ethereum MVP (Solana data)
+    //'@elizaos/plugin-coinmarketcap', // optional — needs an API key
     // still 0.x stuff
     //'@elizaos-plugins/plugin-coingecko', // optional
   ],
