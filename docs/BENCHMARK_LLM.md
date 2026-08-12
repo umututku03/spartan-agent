@@ -7,6 +7,20 @@ answer for this run: risk-aware prompting alone made both models cautious enough
 market, and the deterministic guard did not bind because the models never asked for more than the
 guard would allow.
 
+## Approach: two stages
+
+We evaluate in two deliberate stages. First (this document) is a deterministic reference run: the
+decision policy is fixed, the model calls are cached, there is no lookahead, and temperature is 0, so
+the metrics are exact and reproducible and the arms are directly comparable. This isolates two
+questions cleanly. Does the sizing logic behave as intended, and does the LLM-as-policy behave?
+
+The second stage, planned next, is an agent-in-the-loop proof of concept: the same decision logic is
+executed by the real Spartan agent, which fires actual swaps on the Anvil mainnet fork. That stage
+validates that the pipeline closes end to end (LLM decision to on-chain action through the deployed
+agent); it is slower and noisier, so it demonstrates capability rather than a cleaner number. The two
+stages answer different questions, reproducible measurement versus end-to-end validation, and the
+deterministic run comes first by design.
+
 ## Setup
 - Harness: `scripts/backtest-llm.ts`, sharing the no-lookahead stepping, cost model, and metrics with
   the deterministic backtest via `scripts/lib/backtest-core.ts`.
