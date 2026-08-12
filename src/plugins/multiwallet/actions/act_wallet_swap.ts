@@ -35,6 +35,7 @@ import {
     getEthereumTokenBalance,
 } from '../utils/ethereum';
 import { sizeSwap } from '../risk';
+import { RiskService } from '../services/srv_risk';
 
 /**
  * Interface representing the content of a swap with a specific wallet.
@@ -516,21 +517,35 @@ export default {
                     v && v !== 'null' && v !== 'undefined' && v !== '' ? v : undefined;
                 const inputSym = cleanTok(content.inputTokenSymbol) || 'ETH';
 
-                // --- Phase 4: deterministic regime-aware risk guard (pre-execution) ---
-                // Vol-target the swap size against the wallet's spendable balance of the input asset.
-                // When enforcing (default), clamp the amount; always annotate the reply. See docs/PHASE4_RISK.md.
+                // --- Phase 4 / 4.2: deterministic regime-aware risk guard (pre-execution) ---
+                // Vol-target the swap size against the wallet's spendable balance. Routed through the
+                // shared RiskService (single source of truth, cached regime); falls back to the pure
+                // sizeSwap guard if the service isn't available. When enforcing, clamp the amount to
+                // the sized budget (which also corrects absurd LLM-extracted amounts, since the budget
+                // never exceeds the spendable balance). The note is always surfaced in the reply.
                 let execAmount: string | number = content.amount;
                 let riskNote = '';
                 try {
-                    const spendable = await getEthereumTokenBalance(sourceWallet.kp.publicKey, inputSym, runtime);
-                    const guard = await sizeSwap({
-                        symbol: inputSym,
-                        spendableBalance: spendable,
-                        requestedAmount: Number(content.amount),
-                        runtime,
-                    });
-                    riskNote = guard.note;
-                    if (guard.enforced) execAmount = String(guard.amount);
+                    const risk = runtime.getService(RiskService.serviceType) as RiskService | null;
+                    if (risk) {
+                        const a = await risk.assessSwap({
+                            walletAddress: sourceWallet.kp.publicKey,
+                            symbol: inputSym,
+                            requestedAmount: Number(content.amount),
+                        });
+                        riskNote = a.note;
+                        if (risk.getConfig().enforce) execAmount = String(a.recommended);
+                    } else {
+                        const spendable = await getEthereumTokenBalance(sourceWallet.kp.publicKey, inputSym, runtime);
+                        const guard = await sizeSwap({
+                            symbol: inputSym,
+                            spendableBalance: spendable,
+                            requestedAmount: Number(content.amount),
+                            runtime,
+                        });
+                        riskNote = guard.note;
+                        if (guard.enforced) execAmount = String(guard.amount);
+                    }
                 } catch (e) {
                     riskNote = `Risk check skipped: ${(e as Error).message}`;
                 }

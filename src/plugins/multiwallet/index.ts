@@ -10,6 +10,7 @@ import userMetawalletSwap from "./actions/act_wallet_swap";
 import userMetawalletSweep from "./actions/act_wallet_sweep";
 import userMetawalletXfer from "./actions/act_wallet_xfer";
 import ethereumLendingAction from "./actions/act_wallet_lending";
+import riskAssessAction from "./actions/act_risk_assess";
 //import userMetawalletBalance from "./actions/act_wallet_balance";
 
 //import userMetawalletSwapAll from "./actions/act_wallet_swap_all";
@@ -28,20 +29,23 @@ import ethereumLendingAction from "./actions/act_wallet_lending";
 import { multiwalletProvider } from "./providers/multiwallet";
 import { walletProvider } from "./providers/wallet";
 import { tokenProvider } from "./providers/token";
+import { riskProvider } from "./providers/risk";
 //import { analyticsProvider } from "./providers/analytics";
 
 // Services
 import { InterfaceWalletService } from './services/srv_wallets';
+import { RiskService } from './services/srv_risk';
 
 export const multiwalletPlugin: Plugin = {
   name: 'multitenant wallet',
   description: 'Enduser wallet plugin',
   evaluators: [],
-  providers: [multiwalletProvider, walletProvider, tokenProvider],
+  providers: [multiwalletProvider, walletProvider, tokenProvider, riskProvider],
   actions: [
     walletCreate, walletImportAction,
     // userMetawalletDelete, // need a confirmation or something
     userMetawalletXfer, userMetawalletSwap, userMetawalletSweep, ethereumLendingAction,
+    riskAssessAction, // Phase 4.2: deterministic risk advisory (read-only)
     // userMetawalletSwapAll, // need a confirmation or something
     userMetawalletList, // keep this enabled for the special formatting
     //userMetawalletBalance,
@@ -51,7 +55,7 @@ export const multiwalletPlugin: Plugin = {
     //actionTokenScam, actionTokenRug,
     //spartanNews
   ],
-  services: [InterfaceWalletService],
+  services: [InterfaceWalletService, RiskService],
 };
 
 export default multiwalletPlugin;

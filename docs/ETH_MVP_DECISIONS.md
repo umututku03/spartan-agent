@@ -247,6 +247,13 @@ regime-responsive demo (`scripts/demo-risk.ts`), and a live check against real f
 (`guardBorrow`) action paths. Full details + honest caveats: `docs/PHASE4_RISK.md`. Still future: the
 LLM/regime decision layer, CoinGlass/DefiLlama/FRED inputs, and CoW-Protocol execution.
 
+**AGENT-INTEGRATED (Phase 4.2, 2026-08-12).** The risk layer is now native to the agent: a shared
+`RiskService` (single source of truth, cached regime), an always-on `RISK_GOVERNANCE` provider that
+injects the user's risk budget + "do not propose…" guidance into every turn (proactive awareness, not
+gated by LLM action-selection), and a read-only `RISK_ASSESS` advisory action. The swap/borrow guards
+route through the service; the swap clamp deterministically corrects absurd LLM-extracted amounts.
+30/30 unit tests; verified live on the fork. Details: `docs/PHASE4_2_AGENT_RISK.md`.
+
 ---
 
 ## Explicitly out of scope (future work)

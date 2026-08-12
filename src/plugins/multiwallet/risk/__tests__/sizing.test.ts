@@ -6,6 +6,7 @@ import {
   computePositionSize,
   projectedHealthFactor,
   healthFactorFloorDecision,
+  maxSafeBorrowBase,
   sizeSwapAmount,
   clamp,
 } from '../sizing';
@@ -187,6 +188,37 @@ describe('projectedHealthFactor & floor', () => {
     expect(refused.allowed).toBe(false);
     expect(refused.reason).toMatch(/refused/i);
     expect(healthFactorFloorDecision(Infinity, 1.5).allowed).toBe(true);
+  });
+});
+
+describe('maxSafeBorrowBase', () => {
+  it('inverts HF=floor: collateral*threshold/floor - debt', () => {
+    // 1000*0.8/1.5 - 0 = 533.33
+    expect(maxSafeBorrowBase(1000, 0, 0.8, 1.5)).toBeCloseTo(533.333, 2);
+  });
+
+  it('subtracts existing debt', () => {
+    // 1000*0.8/1.5 - 100 = 433.33
+    expect(maxSafeBorrowBase(1000, 100, 0.8, 1.5)).toBeCloseTo(433.333, 2);
+  });
+
+  it('never goes negative (already over-levered)', () => {
+    expect(maxSafeBorrowBase(1000, 900, 0.8, 1.5)).toBe(0);
+  });
+
+  it('a borrow of exactly maxSafeBorrow lands at the floor', () => {
+    const maxB = maxSafeBorrowBase(1000, 0, 0.8, 1.5);
+    const hf = projectedHealthFactor({
+      totalCollateralBase: 1000,
+      totalDebtBase: 0,
+      liquidationThreshold: 0.8,
+      newBorrowBase: maxB,
+    });
+    expect(hf).toBeCloseTo(1.5, 6);
+  });
+
+  it('returns 0 for a non-positive floor', () => {
+    expect(maxSafeBorrowBase(1000, 0, 0.8, 0)).toBe(0);
   });
 });
 

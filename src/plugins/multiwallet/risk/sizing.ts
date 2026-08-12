@@ -122,6 +122,25 @@ export function projectedHealthFactor(input: HealthFactorInput): number {
   return (Math.max(0, totalCollateralBase) * clamp(liquidationThreshold, 0, 1)) / debt;
 }
 
+/**
+ * The largest ADDITIONAL borrow (in base units) that keeps the projected health factor at exactly
+ * the floor — i.e. invert HF = collateral·liqThreshold / (debt + newBorrow) = floor for newBorrow:
+ *   maxNewBorrow = collateral·liqThreshold/floor − debt   (clamped at 0).
+ * Powers the "how much can I safely borrow?" answer.
+ */
+export function maxSafeBorrowBase(
+  totalCollateralBase: number,
+  totalDebtBase: number,
+  liquidationThreshold: number,
+  floor: number
+): number {
+  if (!(floor > 0)) return 0;
+  const capacity =
+    (Math.max(0, totalCollateralBase) * clamp(liquidationThreshold, 0, 1)) / floor -
+    Math.max(0, totalDebtBase);
+  return Math.max(0, capacity);
+}
+
 /** Allow the borrow only if the projected HF stays at or above the floor. */
 export function healthFactorFloorDecision(projectedHF: number, floor: number): HealthFactorDecision {
   const allowed = projectedHF >= floor;
