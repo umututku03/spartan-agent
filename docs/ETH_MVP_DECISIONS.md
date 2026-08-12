@@ -239,6 +239,14 @@ it's where we should differentiate.
   instance of "don't get oversized" — refuse to borrow below a target HF (e.g. 1.5). This is small,
   deterministic, and arguably should move from "out of scope" into near-term work.
 
+**IMPLEMENTED (Phase 4, 2026-08-12).** The deterministic risk-governance CORE now exists in
+`src/plugins/multiwallet/risk/`: volatility-targeting + fractional-Kelly + hard wallet cap sizing, and
+an Aave health-factor floor on borrow (default 1.5). Pure math, 25 passing unit tests, a
+regime-responsive demo (`scripts/demo-risk.ts`), and a live check against real fork Aave state
+(`scripts/verify-hf-guard.ts`). Wired as pre-execution guards in the swap (`sizeSwap`) and borrow
+(`guardBorrow`) action paths. Full details + honest caveats: `docs/PHASE4_RISK.md`. Still future: the
+LLM/regime decision layer, CoinGlass/DefiLlama/FRED inputs, and CoW-Protocol execution.
+
 ---
 
 ## Explicitly out of scope (future work)

@@ -94,6 +94,21 @@ const AAVE_V3_POOL_ABI = [
     ],
     outputs: [],
   },
+  {
+    // read-only: current account risk state, used by the pre-borrow health-factor guard
+    type: 'function',
+    name: 'getUserAccountData',
+    stateMutability: 'view',
+    inputs: [{ name: 'user', type: 'address' }],
+    outputs: [
+      { name: 'totalCollateralBase', type: 'uint256' },
+      { name: 'totalDebtBase', type: 'uint256' },
+      { name: 'availableBorrowsBase', type: 'uint256' },
+      { name: 'currentLiquidationThreshold', type: 'uint256' },
+      { name: 'ltv', type: 'uint256' },
+      { name: 'healthFactor', type: 'uint256' },
+    ],
+  },
 ] as const;
 
 const KNOWN_TOKENS: Record<string, { address?: Address; symbol: string; decimals: number; isNative?: boolean }> = {
@@ -577,4 +592,79 @@ export async function executeEthereumLendingAction(
     amount: String(request.amount),
     protocol: 'aave-v3',
   };
+}
+
+/** Aave v3 account risk state (read-only) — inputs to the pre-borrow health-factor guard. */
+export type AaveUserAccountData = {
+  /** All amounts in Aave's base currency (USD, 8 decimals) as raw numbers. */
+  totalCollateralBase: number;
+  totalDebtBase: number;
+  availableBorrowsBase: number;
+  /** Liquidation threshold as a FRACTION in [0,1] (Aave reports basis points). */
+  liquidationThreshold: number;
+  /** Loan-to-value as a fraction in [0,1]. */
+  ltv: number;
+  /** Aave's reported health factor (1e18-scaled → plain number; Infinity when no debt). */
+  healthFactor: number;
+};
+
+/**
+ * Read Aave v3 `getUserAccountData` for a wallet. Read-only; safe to call before deciding whether a
+ * borrow is allowed. Base amounts are USD with 8 decimals; we return them as plain numbers.
+ */
+export async function getAaveUserAccountData(
+  walletAddress: string,
+  runtime?: { getSetting?: (key: string) => string | undefined },
+  rpcUrl?: string
+): Promise<AaveUserAccountData> {
+  if (!isEthereumAddress(walletAddress)) {
+    throw new Error('Invalid Ethereum wallet address');
+  }
+  const publicClient = getPublicClient(runtime, rpcUrl);
+  const res = (await publicClient.readContract({
+    address: AAVE_V3_POOL,
+    abi: AAVE_V3_POOL_ABI,
+    functionName: 'getUserAccountData',
+    args: [walletAddress as Address],
+  })) as readonly [bigint, bigint, bigint, bigint, bigint, bigint];
+
+  const [totalCollateralBase, totalDebtBase, availableBorrowsBase, liqThresholdBps, ltvBps, hfRaw] =
+    res;
+  const MAX_UINT = (1n << 256n) - 1n; // Aave returns type(uint256).max HF when there is no debt
+  return {
+    totalCollateralBase: Number(totalCollateralBase),
+    totalDebtBase: Number(totalDebtBase),
+    availableBorrowsBase: Number(availableBorrowsBase),
+    liquidationThreshold: Number(liqThresholdBps) / 10000,
+    ltv: Number(ltvBps) / 10000,
+    healthFactor: hfRaw >= MAX_UINT ? Infinity : Number(hfRaw) / 1e18,
+  };
+}
+
+/**
+ * Spendable balance of an asset for a wallet, in human units (read-only). Native ETH for the
+ * ETH/native token, ERC-20 `balanceOf` otherwise. Used by the swap sizing guard.
+ */
+export async function getEthereumTokenBalance(
+  walletAddress: string,
+  tokenSymbolOrAddress: string,
+  runtime?: { getSetting?: (key: string) => string | undefined },
+  rpcUrl?: string
+): Promise<number> {
+  if (!isEthereumAddress(walletAddress)) {
+    throw new Error('Invalid Ethereum wallet address');
+  }
+  const publicClient = getPublicClient(runtime, rpcUrl);
+  const token = await resolveEthereumToken(tokenSymbolOrAddress, runtime, rpcUrl);
+  if (token.isNative || !token.address) {
+    const bal = await publicClient.getBalance({ address: walletAddress as Address });
+    return Number(formatEther(bal));
+  }
+  const bal = (await publicClient.readContract({
+    address: token.address,
+    abi: erc20Abi,
+    functionName: 'balanceOf',
+    args: [walletAddress as Address],
+  })) as bigint;
+  return Number(formatUnits(bal, token.decimals));
 }

@@ -14,7 +14,9 @@ import { askLlmObject, getAccountFromMessage, getWalletsFromText, HasEntityIdFro
 import {
     executeEthereumLendingAction,
     getEthereumWalletSummary,
+    getAaveUserAccountData,
 } from '../utils/ethereum';
+import { guardBorrow } from '../risk';
 
 interface LendingContent extends Content {
     action: 'supply' | 'borrow';
@@ -152,6 +154,34 @@ const ethereumLendingAction: Action = {
                 text: ethereumWalletOnlyMessage,
                 error: 'NO_ETHEREUM_WALLET'
             };
+        }
+
+        // --- Phase 4: deterministic health-factor floor guard (pre-execution) on borrow ---
+        // Refuse a borrow that would push the projected Aave health factor below the configured floor.
+        // Base currency is USD (8 decimals); newBorrowBase assumes ~$1/token (accurate for the
+        // stablecoin borrows in scope; MVP approximation otherwise). See docs/PHASE4_RISK.md.
+        if (content.action === 'borrow') {
+            try {
+                const accountData = await getAaveUserAccountData(wallet.publicKey, runtime);
+                const BASE = 1e8;
+                const newBorrowBase = Number(content.amount) * BASE;
+                const decision = guardBorrow({
+                    accountData: {
+                        totalCollateralBase: accountData.totalCollateralBase,
+                        totalDebtBase: accountData.totalDebtBase,
+                        liquidationThreshold: accountData.liquidationThreshold,
+                    },
+                    newBorrowBase,
+                    runtime,
+                });
+                if (!decision.allowed) {
+                    const msg = `⛔ Borrow blocked by the risk layer: ${decision.reason}. Supply more collateral or borrow a smaller amount.`;
+                    callback?.(takeItPrivate(runtime, message, msg));
+                    return { success: false, text: msg, error: 'HEALTH_FACTOR_FLOOR' };
+                }
+            } catch (e) {
+                logger.warn('Health-factor guard skipped: ' + (e instanceof Error ? e.message : String(e)));
+            }
         }
 
         try {

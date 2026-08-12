@@ -32,7 +32,9 @@ import {
     getEthereumWalletSummary,
     isEthereumAddress,
     swapEthereumExactIn,
+    getEthereumTokenBalance,
 } from '../utils/ethereum';
+import { sizeSwap } from '../risk';
 
 /**
  * Interface representing the content of a swap with a specific wallet.
@@ -512,17 +514,40 @@ export default {
                 // in resolveEthereumToken. Normalize those away and fall back to the symbol.
                 const cleanTok = (v: any) =>
                     v && v !== 'null' && v !== 'undefined' && v !== '' ? v : undefined;
+                const inputSym = cleanTok(content.inputTokenSymbol) || 'ETH';
+
+                // --- Phase 4: deterministic regime-aware risk guard (pre-execution) ---
+                // Vol-target the swap size against the wallet's spendable balance of the input asset.
+                // When enforcing (default), clamp the amount; always annotate the reply. See docs/PHASE4_RISK.md.
+                let execAmount: string | number = content.amount;
+                let riskNote = '';
+                try {
+                    const spendable = await getEthereumTokenBalance(sourceWallet.kp.publicKey, inputSym, runtime);
+                    const guard = await sizeSwap({
+                        symbol: inputSym,
+                        spendableBalance: spendable,
+                        requestedAmount: Number(content.amount),
+                        runtime,
+                    });
+                    riskNote = guard.note;
+                    if (guard.enforced) execAmount = String(guard.amount);
+                } catch (e) {
+                    riskNote = `Risk check skipped: ${(e as Error).message}`;
+                }
+
                 const swapResult = await swapEthereumExactIn({
                     privateKey: sourceWallet.kp.privateKey,
-                    inputToken: cleanTok(content.inputTokenCA) || cleanTok(content.inputTokenSymbol),
+                    inputToken: cleanTok(content.inputTokenCA) || inputSym,
                     outputToken: cleanTok(content.outputTokenCA) || cleanTok(content.outputTokenSymbol),
-                    amount: content.amount,
+                    amount: execAmount,
                 }, runtime);
 
                 const responseText = `✅ Ethereum swap completed successfully!
 
 💰 **Tokens Swapped:**
-• ${content.amount} ${swapResult.inputToken.symbol} → ~${swapResult.quotedAmountOut} ${swapResult.outputToken.symbol}
+• ${execAmount} ${swapResult.inputToken.symbol} → ~${swapResult.quotedAmountOut} ${swapResult.outputToken.symbol}
+
+🛡️ **Risk layer:** ${riskNote}
 
 🔗 **Transaction Details:**
 • Transaction ID: \`${swapResult.hash}\`
