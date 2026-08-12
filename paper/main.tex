@@ -34,7 +34,9 @@ realized volatility from about 88\% to 60\% per year and reduced maximum drawdow
 relative to holding ETH, without claiming any excess return. A follow-up places a language model in
 the decision loop and executes its choices through the real agent on the fork; across three models
 from two providers the behaviour is dominated by risk posture rather than model choice, reported as an
-illustrative result rather than a performance claim.
+illustrative result rather than a performance claim. Measured against an external benchmark's own ETH
+task, data, and metrics, our contamination-free policy lands among published LLM agents while a naive
+price-only LLM does not.
 \end{abstract}
 
 \section{Introduction and the gap}\label{sec:intro}
@@ -320,6 +322,41 @@ the fork does not advance through the six days, and the exposure-to-swap mapping
 two stages answer different questions, reproducible measurement and end-to-end execution; details are
 in \texttt{docs/BENCHMARK\_LLM.md}.
 
+\subsection{Comparison against an external benchmark}\label{sec:external}
+The evaluations above use our own harness, so we also measured the same policy against a published
+external benchmark. We chose InvestorBench~\cite{investorbench}, which includes an ETH-USD task with
+open data and per-model results. Its full harness requires a multi-GPU serving stack, a vector
+database, a memory agent, and an embedding model, so we did not run it. Instead we reproduced its ETH
+task on its exact price series, test window (3 Apr to 5 Nov 2023, 186 daily returns), and metric
+definitions, porting its formulas verbatim, and compared our policy to its published numbers. As a
+check that the reproduction is faithful, buy-and-hold through our pipeline matches its reported ETH
+buy-and-hold to three decimals (cumulative return 4.53\%, Sharpe 0.146, annualized volatility 41.82\%,
+maximum drawdown 29.89\%) with nothing tuned to fit.
+
+On this window our contamination-free volatility-targeted policy returns 2.28\% (Sharpe 0.08), between
+the benchmark's GPT-4 (1.52\%) and buy-and-hold (4.53\%), and trims drawdown slightly below holding
+ETH. The window was gently rising, so a policy whose job is to cut exposure when volatility spikes
+gives up a little upside; that is the same guard whose payoff in a falling market appears in
+Section~\ref{sec:llm}. A stripped-down variant, \texttt{gpt-4o-mini} making daily buy/sell/hold calls
+from a price-only prompt, returned $-11.70\%$, close to the benchmark's weakest reported backbone
+(Llama-3.1-70B at $-11.89\%$). We do not read that as a like-for-like model verdict: our LLM arm omits
+the news and memory that the benchmark's agents receive, and the 2023 window predates the model's
+training cutoff, so it is contamination-prone. The point is narrower and, we think, defensible: on an
+external benchmark's own task, data, and metrics, a simple auditable sizing rule lands among published
+LLM agents, while a naive directional LLM without a risk layer is fragile. The honesty ledger of what
+matches and what differs is in \texttt{docs/BENCHMARK\_EXTERNAL.md}; Figure~\ref{fig:external} shows the
+comparison.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/investorbench_eth.pdf}
+\caption{InvestorBench ETH task (3 Apr to 5 Nov 2023): our arms (blue) against the benchmark's
+published agents (gray). Our reproduced buy-and-hold matches their published value exactly, validating
+the setup; our deterministic policy lands mid-pack, and a price-only LLM arm (starred, contamination-prone
+and without the benchmark's news and memory) is among the weakest.}
+\label{fig:external}
+\end{figure}
+
 \section{Limitations and reproducibility}\label{sec:limits}
 The honest caveats are as follows. A fork is not live trading: state is pinned, there are no
 adversarial counterparties, and MEV is absent. The backtest is one asset over one year with single
@@ -334,9 +371,11 @@ sizing functions have unit tests (\code{bun test src/plugins/multiwallet/risk});
 the fork smoke test, the risk demo, and the backtest are scripts in \code{scripts/}; and the backtest
 ships with the exact ETH price series it used so its numbers can be regenerated offline.
 
-Future work is the part we have not earned yet: a multi-seed, multi-asset, out-of-sample evaluation
-against a standardized benchmark; scaling the LLM-in-the-loop evaluation of Section~\ref{sec:llm}
-(more assets, seeds, and a third-party benchmark harness); richer
+Future work is the part we have not earned yet. Section~\ref{sec:external} compares our policy to a
+published benchmark's ETH task on its own data and metrics, but we reproduced the protocol rather than
+running the benchmark's full harness, and our LLM arm omits its news and memory. The next steps are a
+multi-seed, multi-asset, out-of-sample evaluation inside that harness end to end; scaling the
+LLM-in-the-loop evaluation of Section~\ref{sec:llm} (more assets, seeds, and providers); richer
 regime inputs (funding, open interest, on-chain flows, macro); and MEV-protected execution for larger
 orders.
 
