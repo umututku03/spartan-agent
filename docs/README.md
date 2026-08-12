@@ -8,6 +8,7 @@ Welcome to the comprehensive Spartan documentation! This directory contains deta
 
 - **[Quick Start Guide](./QUICKSTART.md)** - Get Spartan running in 10 minutes
 - **[Demo Runbook](./DEMO.md)** - Timed two-section demo: the live agent, then the evaluation and paper
+- **[Project Workbook](./WORKBOOK.md)** - The full logbook: origins, research, every decision, what broke, and what is left for later
 - **[Main README](../README.md)** - Project overview and features
 
 ### Core Documentation
