@@ -38,6 +38,9 @@ The Ethereum DeFi logic (wallet import, in-chat detection, transfers, Uniswap V2
 Aave V3 supply/borrow) lives in `src/plugins/multiwallet/` — see
 `utils/ethereum.ts` and the `act_wallet_*` actions. Two docs cover how to run and verify it:
 
+- **[docs/DEMO.md](./docs/DEMO.md)** — demo runbook: a timed two-section walkthrough (the live agent
+  doing real on-chain swaps/supply, then the evaluation and the whitepaper), with a one-command driver
+  (`scripts/demo-e2e.ts`) as a reliable fallback.
 - **[docs/ETH_MVP_SETUP.md](./docs/ETH_MVP_SETUP.md)** — setup + verification runbook. Run inside
   the eliza monorepo, point `ETHEREUM_RPC_URL` at a local **Anvil mainnet fork**
   (`anvil --fork-url <rpc>`), then drive all five pipeline stages end-to-end with a throwaway,

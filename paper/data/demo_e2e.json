@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "wallet": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "agentId": "479233fd-b0e7-0f50-9d88-d4c9ea5b0de0",
+    "session": "0f40654c-ffc7-46e5-b6e7-5734a0e1f699",
+    "note": "capability demo at a single fork block; live LLM action-selection retried; not a backtest"
+  },
+  "steps": [
+    {
+      "step": "swap",
+      "txHash": "0x9c829a531caced54e0b013d6c65c0112a01760afa45c0f8b586b0abeb62642cd",
+      "status": "0x1",
+      "block": 25736341,
+      "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    },
+    {
+      "step": "risk_assess",
+      "privateReply": true,
+      "capturedFromLog": null
+    }
+  ]
+}
