@@ -132,9 +132,17 @@ the **absolute** CLI path (the relative `../cli` breaks through the copy).
 ```bash
 cd ~/dev/eliza/packages/spartan
 bun ~/dev/eliza/packages/cli/dist/index.js start
-# watch for:  "Loaded character: Spartan"  ->  "Started 1 agents"
-# then open http://localhost:3000  and pick the Spartan agent
+# watch for:  "Loaded character: Spartan"  ->  "Started 1 agents"  ->  ":3000"
 ```
+
+### Accessing the web UI (when the agent runs on a remote VM)
+The agent serves on the VM's `localhost:3000`, which your laptop browser can't reach directly.
+Open an **SSH tunnel from your laptop** (add `-L 3000:localhost:3000` to your normal ssh command):
+```bash
+ssh -L 3000:localhost:3000 utkuu@utkuu-vm.cerebras.aws     # or utkuu@172.31.51.116
+```
+Keep that session open, then open **http://localhost:3000** in your laptop browser and pick the
+Spartan agent. (On a fully local machine, just open http://localhost:3000 directly — no tunnel.)
 
 ## 10. Test in the web UI (anvil running)
 ```
