@@ -16,7 +16,7 @@ console.log('Live Aave account data (fork) for', wallet);
 console.log(`  totalCollateralBase = $${(acct.totalCollateralBase / BASE).toFixed(2)}`);
 console.log(`  totalDebtBase       = $${(acct.totalDebtBase / BASE).toFixed(2)}`);
 console.log(`  liquidationThreshold= ${(acct.liquidationThreshold * 100).toFixed(1)}%`);
-console.log(`  Aave healthFactor   = ${acct.healthFactor === Infinity ? '∞' : acct.healthFactor.toFixed(3)}`);
+console.log(`  Aave healthFactor   = ${acct.healthFactor === Infinity ? 'inf' : acct.healthFactor.toFixed(3)}`);
 
 for (const borrowUsd of [20, 50, 300]) {
   const d = guardBorrow({
@@ -28,6 +28,6 @@ for (const borrowUsd of [20, 50, 300]) {
     newBorrowBase: borrowUsd * BASE,
   });
   console.log(
-    `  borrow $${String(borrowUsd).padStart(3)} -> ${d.allowed ? '✅ ALLOWED' : '⛔ REFUSED'}  (${d.reason})`
+    `  borrow $${String(borrowUsd).padStart(3)} -> ${d.allowed ? 'ALLOWED' : 'REFUSED'}  (${d.reason})`
   );
 }

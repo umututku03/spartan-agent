@@ -1,11 +1,11 @@
 /**
- * Deterministic position-sizing math. Every function here is PURE (numbers in → numbers out), so it
+ * Deterministic position-sizing math. Every function here is PURE (numbers in -> numbers out), so it
  * is fully unit-testable offline and the LLM is never involved in the multiply-by-size step.
  *
  * The final position size is the MINIMUM of three independent risk constraints:
- *   1. volatility-target:   f = σ_target / σ_realized   (lean on forecastable vol, not direction)
- *   2. fractional-Kelly:    f = λ · μ / σ²              (growth-optimal, shrunk by λ)
- *   3. wallet cap:          f ≤ maxWalletPct            (hard concentration limit)
+ *   1. volatility-target:   f = sigma_target / sigma_realized   (lean on forecastable vol, not direction)
+ *   2. fractional-Kelly:    f = lambda * mu / sigma^2              (growth-optimal, shrunk by lambda)
+ *   3. wallet cap:          f <= maxWalletPct            (hard concentration limit)
  * Taking the min means the most conservative constraint always wins.
  */
 import type {
@@ -43,8 +43,8 @@ export function realizedVolatility(prices: number[], periodsPerYear = 365): numb
 }
 
 /**
- * Volatility-targeting fraction: f = σ_target / σ_realized, clamped to [0, maxFraction].
- * As realized vol rises the fraction shrinks — the core regime-responsive behaviour.
+ * Volatility-targeting fraction: f = sigma_target / sigma_realized, clamped to [0, maxFraction].
+ * As realized vol rises the fraction shrinks - the core regime-responsive behaviour.
  * If realized vol is 0/unknown we cannot target, so we defer to the cap (return maxFraction).
  */
 export function volTargetFraction(
@@ -57,9 +57,9 @@ export function volTargetFraction(
 }
 
 /**
- * Fractional-Kelly fraction: f = λ · μ / σ², clamped to [0, maxFraction].
- * μ = expected per-period return (edge), σ² = variance of returns, λ = shrinkage in (0,1].
- * With no edge estimate the Kelly arm should not bind — callers pass maxFraction to neutralize it.
+ * Fractional-Kelly fraction: f = lambda * mu / sigma^2, clamped to [0, maxFraction].
+ * mu = expected per-period return (edge), sigma^2 = variance of returns, lambda = shrinkage in (0,1].
+ * With no edge estimate the Kelly arm should not bind - callers pass maxFraction to neutralize it.
  */
 export function fractionalKelly(
   expectedReturn: number,
@@ -89,7 +89,7 @@ export function computePositionSize(input: SizingInput): SizingResult {
     typeof regime.expectedReturn === 'number' && typeof regime.variance === 'number';
   const fractionalKellyValue = hasEdge
     ? fractionalKelly(regime.expectedReturn!, regime.variance!, config.kellyFraction, Infinity)
-    : Infinity; // no edge estimate → Kelly non-binding
+    : Infinity; // no edge estimate -> Kelly non-binding
 
   const breakdown = {
     volatilityTarget,
@@ -112,7 +112,7 @@ export function computePositionSize(input: SizingInput): SizingResult {
 
 /**
  * Aave health factor projected AFTER a prospective borrow:
- *   HF = (collateral · liquidationThreshold) / (debt + newBorrow)
+ *   HF = (collateral * liquidationThreshold) / (debt + newBorrow)
  * liquidationThreshold is a FRACTION in [0,1]. HF = Infinity when there is no debt at all.
  */
 export function projectedHealthFactor(input: HealthFactorInput): number {
@@ -124,8 +124,8 @@ export function projectedHealthFactor(input: HealthFactorInput): number {
 
 /**
  * The largest ADDITIONAL borrow (in base units) that keeps the projected health factor at exactly
- * the floor — i.e. invert HF = collateral·liqThreshold / (debt + newBorrow) = floor for newBorrow:
- *   maxNewBorrow = collateral·liqThreshold/floor − debt   (clamped at 0).
+ * the floor - i.e. invert HF = collateral*liqThreshold / (debt + newBorrow) = floor for newBorrow:
+ *   maxNewBorrow = collateral*liqThreshold/floor - debt   (clamped at 0).
  * Powers the "how much can I safely borrow?" answer.
  */
 export function maxSafeBorrowBase(
@@ -144,14 +144,14 @@ export function maxSafeBorrowBase(
 /** Allow the borrow only if the projected HF stays at or above the floor. */
 export function healthFactorFloorDecision(projectedHF: number, floor: number): HealthFactorDecision {
   const allowed = projectedHF >= floor;
-  const hfStr = projectedHF === Infinity ? '∞' : projectedHF.toFixed(3);
+  const hfStr = projectedHF === Infinity ? 'inf' : projectedHF.toFixed(3);
   return {
     allowed,
     projectedHF,
     floor,
     reason: allowed
-      ? `projected health factor ${hfStr} ≥ floor ${floor.toFixed(2)}`
-      : `projected health factor ${hfStr} < floor ${floor.toFixed(2)} — borrow refused to avoid liquidation risk`,
+      ? `projected health factor ${hfStr} >= floor ${floor.toFixed(2)}`
+      : `projected health factor ${hfStr} < floor ${floor.toFixed(2)} - borrow refused to avoid liquidation risk`,
   };
 }
 

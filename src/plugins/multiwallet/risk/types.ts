@@ -3,7 +3,7 @@
  *
  * This is the project's novel contribution (see docs/ETH_MVP_DECISIONS.md Decision 7): the layer
  * between signal ("what to trade") and execution ("how to trade") that answers "HOW MUCH to risk
- * given the regime." All sizing math is deterministic — the LLM is never in the multiply-by-size
+ * given the regime." All sizing math is deterministic - the LLM is never in the multiply-by-size
  * step. Grounded in arXiv:2512.00417 (prediction is the weak axis, so size on forecastable vol) and
  * arXiv:2501.00826 (which omits the slippage/regime realism we add).
  */
@@ -14,7 +14,7 @@ export interface RiskConfig {
   targetVol: number;
   /** Hard cap on any single position as a fraction of the wallet (e.g. 0.25 = 25%). */
   maxWalletPct: number;
-  /** Kelly shrinkage factor λ in (0,1]; 0.5 = "half-Kelly". */
+  /** Kelly shrinkage factor lambda in (0,1]; 0.5 = "half-Kelly". */
   kellyFraction: number;
   /** Aave health-factor floor; a borrow that would push HF below this is refused (e.g. 1.5). */
   hfFloor: number;
@@ -28,9 +28,9 @@ export interface RiskConfig {
 export interface RegimeSignal {
   /** Annualized realized volatility of the traded asset. */
   realizedVol: number;
-  /** Where realizedVol came from — for transparency in logs/replies. */
+  /** Where realizedVol came from - for transparency in logs/replies. */
   source: 'live' | 'fallback' | 'provided';
-  /** Optional expected per-period return (edge) for the Kelly arm; omitted → Kelly not binding. */
+  /** Optional expected per-period return (edge) for the Kelly arm; omitted -> Kelly not binding. */
   expectedReturn?: number;
   /** Optional variance of returns for the Kelly arm. */
   variance?: number;

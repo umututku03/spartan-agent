@@ -170,7 +170,7 @@ const ethereumLendingAction: Action = {
                         amount: Number(content.amount),
                     });
                     if (risk.getConfig().enforce && a.allowed === false) {
-                        const msg = `⛔ Borrow blocked by the risk layer: ${a.note} Supply more collateral or borrow a smaller amount.`;
+                        const msg = `Borrow blocked by the risk layer: ${a.note} Supply more collateral or borrow a smaller amount.`;
                         callback?.(takeItPrivate(runtime, message, msg));
                         return { success: false, text: msg, error: 'HEALTH_FACTOR_FLOOR' };
                     }

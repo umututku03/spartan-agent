@@ -6,7 +6,7 @@
 import type { RiskConfig } from './types';
 
 export const DEFAULT_RISK_CONFIG: RiskConfig = {
-  targetVol: 0.5, // 50%/yr — a moderate crypto target-vol
+  targetVol: 0.5, // 50%/yr - a moderate crypto target-vol
   maxWalletPct: 0.25, // never risk more than 25% of the wallet in one position
   kellyFraction: 0.5, // half-Kelly (standard prudent shrinkage)
   hfFloor: 1.5, // refuse borrows that would push Aave HF below 1.5 (Decision 7)

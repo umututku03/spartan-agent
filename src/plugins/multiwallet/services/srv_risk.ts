@@ -12,7 +12,7 @@ import { getCacheTimed, setCacheTimed } from '../../autonomous-trader/utils';
 
 /** Aave v3 base currency is USD with 8 decimals. */
 const AAVE_BASE = 1e8;
-/** Cache regime reads for 5 minutes — a regime read on stale data is worse than none (Decision 7). */
+/** Cache regime reads for 5 minutes - a regime read on stale data is worse than none (Decision 7). */
 const REGIME_TTL_MS = 5 * 60 * 1000;
 
 export interface SwapAssessment {
@@ -85,7 +85,7 @@ export class RiskService extends Service {
     const volPct = (regime.realizedVol * 100).toFixed(0);
     const note =
       `${params.symbol}: realized vol ~${volPct}%/yr (${regime.source}); ` +
-      `vol-targeted max ≈ ${result.size.toFixed(6)} ${params.symbol} ` +
+      `vol-targeted max ~ ${result.size.toFixed(6)} ${params.symbol} ` +
       `(${(result.fraction * 100).toFixed(1)}% of ${spendable.toFixed(4)}, bound by ${result.boundedBy}).`;
     return {
       spendable,
@@ -131,14 +131,14 @@ export class RiskService extends Service {
           totalDebtBase: acct.totalDebtBase,
           liquidationThreshold: acct.liquidationThreshold,
         },
-        newBorrowBase: params.amount * AAVE_BASE, // ~$1/token — accurate for stablecoins
+        newBorrowBase: params.amount * AAVE_BASE, // ~$1/token - accurate for stablecoins
         config,
       });
       base.projectedHF = decision.projectedHF;
       base.allowed = decision.allowed;
-      base.note = `${decision.reason}. Safe additional borrow ≈ $${maxSafeBorrowUsd.toFixed(2)} (floor ${config.hfFloor}).`;
+      base.note = `${decision.reason}. Safe additional borrow ~ $${maxSafeBorrowUsd.toFixed(2)} (floor ${config.hfFloor}).`;
     } else {
-      base.note = `Collateral $${base.collateralUsd.toFixed(2)}, debt $${base.debtUsd.toFixed(2)}, HF ${acct.healthFactor === Infinity ? '∞' : acct.healthFactor.toFixed(2)}; safe additional borrow ≈ $${maxSafeBorrowUsd.toFixed(2)} (floor ${config.hfFloor}).`;
+      base.note = `Collateral $${base.collateralUsd.toFixed(2)}, debt $${base.debtUsd.toFixed(2)}, HF ${acct.healthFactor === Infinity ? 'inf' : acct.healthFactor.toFixed(2)}; safe additional borrow ~ $${maxSafeBorrowUsd.toFixed(2)} (floor ${config.hfFloor}).`;
     }
     return base;
   }

@@ -3,8 +3,8 @@ import { getAccountFromMessage } from '../../autonomous-trader/utils';
 import { RiskService } from '../services/srv_risk';
 
 /**
- * RISK_GOVERNANCE provider (Phase 4.2). Injects the deterministic risk state — current regime
- * (realized vol), the vol-targeted max position, and Aave health-factor headroom — into the agent's
+ * RISK_GOVERNANCE provider (Phase 4.2). Injects the deterministic risk state - current regime
+ * (realized vol), the vol-targeted max position, and Aave health-factor headroom - into the agent's
  * context on every DM turn. This is what makes the risk layer AGENT-INTEGRATED: Spartan's replies are
  * risk-aware and it self-limits its own proposals, regardless of which action the LLM ends up picking.
  * The deterministic guards in the swap/lending handlers remain the hard backstop.
@@ -21,7 +21,7 @@ export const riskProvider: Provider = {
     const empty = { data: {}, values: {}, text: '' };
     try {
       // Not DM-gated: the account is resolved from the message author's own stable id, so this only
-      // ever surfaces THIS user's own risk budget in their own turn — safe in the 1:1 web/Sessions
+      // ever surfaces THIS user's own risk budget in their own turn - safe in the 1:1 web/Sessions
       // channel (reported as GROUP) as well as real DMs. Returns empty unless a verified account with
       // an Ethereum wallet resolves.
       const account = await getAccountFromMessage(runtime, message);

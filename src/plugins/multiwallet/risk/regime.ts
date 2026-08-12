@@ -3,10 +3,10 @@
  *
  * The volatility MATH lives in sizing.ts (pure, unit-tested). This file only fetches the input
  * series from a FREE, keyless source (CoinGecko market_chart) and degrades gracefully to a
- * configured fallback vol when the network/API is unavailable — a guard must never hard-fail open.
+ * configured fallback vol when the network/API is unavailable - a guard must never hard-fail open.
  *
  * Future, richer regime inputs (Decision 7): CoinGlass (funding / OI / CVD / liquidations),
- * DefiLlama (on-chain / TVL), FRED (macro). All should be freshness-gated — a regime read on stale
+ * DefiLlama (on-chain / TVL), FRED (macro). All should be freshness-gated - a regime read on stale
  * data is worse than none (a top CryptoBench failure mode).
  */
 import { realizedVolatility } from './sizing';
@@ -41,7 +41,7 @@ export async function fetchRecentPrices(
     const prices: number[] = (json?.prices ?? []).map((p: [number, number]) => p[1]);
     return prices.length >= 2 ? prices : null;
   } catch {
-    return null; // network/timeout/parse — caller falls back
+    return null; // network/timeout/parse - caller falls back
   }
 }
 

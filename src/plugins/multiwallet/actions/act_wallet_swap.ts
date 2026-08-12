@@ -67,7 +67,6 @@ function isSwapWalletContent(content: SwapWalletContent): boolean {
         console.warn('bad amount', typeof (content.amount), content.amount)
         return false;
     }
-    console.log('contents good')
     return true;
 }
 
@@ -85,13 +84,11 @@ async function getTokenDecimals(connection: Connection, mintAddress: string): Pr
         'parsed' in tokenAccountInfo.value.data
     ) {
         const parsedInfo = tokenAccountInfo.value.data.parsed?.info;
-        console.log('parsedInfo', parsedInfo)
         // tokenAmount?
         if (parsedInfo && typeof parsedInfo?.decimals === 'number') {
             return parsedInfo.decimals;
         }
     }
-    console.log('getTokenDecimals tokenAccountInfo', tokenAccountInfo)
     throw new Error('Unable to fetch token decimals');
 }
 
@@ -131,7 +128,6 @@ async function swapToken(
             amount: adjustedAmount,
             slippageBps: 200,
         });
-        //console.log('quoteData', quoteData)
 
         /*
         const quoteResponse = await fetch(
@@ -161,7 +157,6 @@ async function swapToken(
             userPublicKey: walletPublicKey.toBase58(),
             slippageBps: 200.
         });
-        //console.log('swapData', swapData)
 
         /*
         const swapResponse = await fetch('https://lite-api.jup.ag/swap/v1/swap', {
@@ -272,12 +267,10 @@ export default {
     validate: async (runtime: IAgentRuntime, message: Memory) => {
         // they have to be registered
         if (!await HasEntityIdFromMessage(runtime, message)) {
-            console.log('MULTIWALLET_SWAP validate - author not found')
             return false
         }
         const account = await getAccountFromMessage(runtime, message)
         if (!account) {
-            //console.log('WALLET_CREATION validate - registration not found')
             return false;
         }
         return true;
@@ -300,7 +293,6 @@ export default {
                 error: 'ACCOUNT_NOT_FOUND'
             }
         }
-        console.log('account', account)
 
         // the source might not just be in the last message
         // might be in the context...
@@ -308,7 +300,6 @@ export default {
         const sources = await getWalletsFromText(runtime, message)
         const localWalletAddresses = account.metawallets.flatMap(mw => Object.values(mw.keypairs || {}).map((kp: any) => kp.publicKey))
         const matchingSources = sources.filter(source => localWalletAddresses.includes(source))
-        console.log('sources', sources, 'matchingSources', matchingSources)
         if (matchingSources.length !== 1) {
             callback?.(takeItPrivate(runtime, message, "Can't determine source wallet"))
             return {
@@ -328,11 +319,9 @@ export default {
         const sourceResult = await runtime.useModel(ModelType.OBJECT_LARGE, {
             prompt: sourcePrompt,
         });
-        console.log('MULTIWALLET_SWAP sourceResult', sourceResult);
         */
 
         if (!sourceResult.sourceWalletAddress) {
-            console.log('MULTIWALLET_SWAP cant determine source wallet address');
             return {
                 success: false,
                 text: 'Could not determine source wallet address',
@@ -347,12 +336,10 @@ export default {
         const serviceType = 'AUTONOMOUS_TRADER_INTERFACE_WALLETS';
         let interfaceWalletService = runtime.getService(serviceType) as any;
         while (!interfaceWalletService) {
-            console.log(asking, 'waiting for', serviceType, 'service...');
             interfaceWalletService = runtime.getService(serviceType) as any;
             if (!interfaceWalletService) {
                 await new Promise((waitResolve) => setTimeout(waitResolve, 1000));
             } else {
-                console.log(asking, 'Acquired', serviceType, 'service...');
             }
         }
 
@@ -370,14 +357,12 @@ export default {
         }
 
         if (!found.length) {
-            console.log('MULTIWALLET_SWAP did not find any local wallet with this source address', sourceResult);
             return {
                 success: false,
                 text: 'No local wallet found with this source address',
                 error: 'WALLET_NOT_FOUND'
             };
         }
-        console.log('MULTIWALLET_SWAP found', found);
 
         // gather possibilities
         let contextStr = '';
@@ -408,7 +393,6 @@ export default {
             }
             contextStr += '\n';
         }
-        console.log('contextStr', contextStr);
 
         const swapPrompt = composePromptFromState({
             state: state,
@@ -436,7 +420,6 @@ export default {
 
         if (content === null) {
             //return this.handler(runtime, message, state, _options, callback, responses)
-            console.log('no usable llm response')
             callback?.({ text: 'Could not figure out the request' });
             return {
                 success: false,
@@ -445,10 +428,8 @@ export default {
             }
         }
 
-        console.log('MULTIWALLET_SWAP content', content);
 
         // find source keypair
-        console.log('found', found)
         const sourceWallet = found.find(wallet => wallet.kp.publicKey === sourceResult.sourceWalletAddress);
         if (!sourceWallet) {
             console.warn('MULTIWALLET_SWAP Could not find the specified wallet')
@@ -482,7 +463,6 @@ export default {
                     const ca = new PublicKey(t.account.data.parsed.info.mint);
                     const symbol = await solanaService.getTokenSymbol(ca);
                     if (symbol?.toUpperCase() === content.inputTokenSymbol?.toUpperCase()) {
-                        console.log('fixed input CA by symbol', symbol, '=>', t.pubkey.toString())
                         content.inputTokenCA = ca;
                         break
                     }
@@ -496,7 +476,6 @@ export default {
         // do best to ensure input
         // do best to ensure output
 
-        console.log('MULTIWALLET_SWAP content after fix', content);
 
         // check for input & output
         if (!isSwapWalletContent(content)) {
@@ -557,18 +536,18 @@ export default {
                     amount: execAmount,
                 }, runtime);
 
-                const responseText = `✅ Ethereum swap completed successfully!
+                const responseText = `Ethereum swap completed successfully!
 
-💰 **Tokens Swapped:**
-• ${execAmount} ${swapResult.inputToken.symbol} → ~${swapResult.quotedAmountOut} ${swapResult.outputToken.symbol}
+**Tokens Swapped:**
+- ${execAmount} ${swapResult.inputToken.symbol} -> ~${swapResult.quotedAmountOut} ${swapResult.outputToken.symbol}
 
-🛡️ **Risk layer:** ${riskNote}
+**Risk layer:** ${riskNote}
 
-🔗 **Transaction Details:**
-• Transaction ID: \`${swapResult.hash}\`
-• Etherscan: https://etherscan.io/tx/${swapResult.hash}
+**Transaction Details:**
+- Transaction ID: \`${swapResult.hash}\`
+- Etherscan: https://etherscan.io/tx/${swapResult.hash}
 
-💼 **Wallet:** ${sourceResult.sourceWalletAddress}`;
+**Wallet:** ${sourceResult.sourceWalletAddress}`;
 
                 callback?.(takeItPrivate(runtime, message, responseText))
                 return {
@@ -602,7 +581,6 @@ export default {
             const connection = new Connection(
                 runtime.getSetting('SOLANA_RPC_URL') || 'https://api.mainnet-beta.solana.com'
             );
-            console.log('1')
 
             const swapResult = (await swapToken(
                 connection,
@@ -613,7 +591,6 @@ export default {
                 runtime
             )) as { swapTransaction: string; quoteResponse?: any };
 
-            console.log('2')
 
             const transactionBuf = Buffer.from(swapResult.swapTransaction, 'base64');
             const transaction = VersionedTransaction.deserialize(transactionBuf);
@@ -654,16 +631,16 @@ export default {
             const solscanLink = `https://solscan.io/tx/${txid}`;
 
             // Format response with all details
-            const responseText = `✅ Swap completed successfully!
+            const responseText = `Swap completed successfully!
 
-💰 **Tokens Swapped:**
-• ${content.amount} ${content.inputTokenSymbol} → ${outputAmount} ${content.outputTokenSymbol}
+**Tokens Swapped:**
+- ${content.amount} ${content.inputTokenSymbol} -> ${outputAmount} ${content.outputTokenSymbol}
 
-🔗 **Transaction Details:**
-• Transaction ID: \`${txid}\`
-• Solscan: ${solscanLink}
+**Transaction Details:**
+- Transaction ID: \`${txid}\`
+- Solscan: ${solscanLink}
 
-💼 **Wallet:** ${sourceResult.sourceWalletAddress}`;
+**Wallet:** ${sourceResult.sourceWalletAddress}`;
             /*
             responses.length = 0;
             const memory: Memory = {

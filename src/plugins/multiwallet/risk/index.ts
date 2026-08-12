@@ -1,5 +1,5 @@
 /**
- * Deterministic, regime-aware position-sizing layer — public surface.
+ * Deterministic, regime-aware position-sizing layer - public surface.
  *
  * The two guard entry points the action handlers call:
  *   - sizeSwap:    clamp a swap's input amount to the vol-targeted size (advisory unless enforcing)
@@ -33,7 +33,7 @@ export interface SwapGuardResult {
 
 /**
  * Pre-execution swap guard. Fetches the regime (live vol w/ fallback), risk-sizes the input amount,
- * and — when enforcing — returns the clamped amount. Always returns a note explaining the decision.
+ * and - when enforcing - returns the clamped amount. Always returns a note explaining the decision.
  */
 export async function sizeSwap(params: {
   symbol: string; // input asset symbol, e.g. "ETH"
@@ -57,7 +57,7 @@ export async function sizeSwap(params: {
   if (!clamped) {
     note = `Risk check OK: ${params.requestedAmount} ${params.symbol} within the vol-targeted size (realized vol ~${volPct}%/yr, source ${regime.source}, bound by ${result.boundedBy}).`;
   } else if (config.enforce) {
-    note = `Risk-sized ${params.requestedAmount} → ${recommended.toFixed(6)} ${params.symbol}: realized vol ~${volPct}%/yr > target ${tgtPct}%/yr (bound by ${result.boundedBy}, cap ${(config.maxWalletPct * 100).toFixed(0)}% of wallet).`;
+    note = `Risk-sized ${params.requestedAmount} -> ${recommended.toFixed(6)} ${params.symbol}: realized vol ~${volPct}%/yr > target ${tgtPct}%/yr (bound by ${result.boundedBy}, cap ${(config.maxWalletPct * 100).toFixed(0)}% of wallet).`;
   } else {
     note = `Risk advisory (not enforced): recommend ${recommended.toFixed(6)} ${params.symbol} vs requested ${params.requestedAmount} (realized vol ~${volPct}%/yr; set RISK_ENFORCE=1 to auto-size).`;
   }

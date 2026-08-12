@@ -16,7 +16,7 @@ import { RiskService } from '../services/srv_risk';
 
 /**
  * RISK_ASSESS (Phase 4.2): a read-only, deterministic risk advisory. Answers "how much should/can I
- * swap or borrow?" using the RiskService — NO trade is executed. Complements the RISK_GOVERNANCE
+ * swap or borrow?" using the RiskService - NO trade is executed. Complements the RISK_GOVERNANCE
  * provider (always-on context) and the swap/lending guards (hard backstop).
  */
 const riskAssessAction: Action = {
@@ -29,7 +29,7 @@ const riskAssessAction: Action = {
     'RISK_CHECK',
   ],
   description:
-    'Report the deterministic risk budget for the user\'s Ethereum wallet — the volatility-targeted max swap size and the safe Aave borrow headroom before the health-factor floor. Read-only; does not execute a trade.',
+    'Report the deterministic risk budget for the user\'s Ethereum wallet - the volatility-targeted max swap size and the safe Aave borrow headroom before the health-factor floor. Read-only; does not execute a trade.',
   validate: async (runtime: IAgentRuntime, message: Memory) => {
     if (!(await HasEntityIdFromMessage(runtime, message))) return false;
     const account = await getAccountFromMessage(runtime, message);
@@ -73,10 +73,10 @@ const riskAssessAction: Action = {
     ]);
 
     let text = `Risk assessment for ${ethAddress}\n`;
-    text += `Policy: target vol ${(cfg.targetVol * 100).toFixed(0)}%/yr · wallet cap ${(cfg.maxWalletPct * 100).toFixed(0)}% · Aave HF floor ${cfg.hfFloor} · enforcement ${cfg.enforce ? 'ON' : 'advisory'}\n`;
-    if (swap) text += `• Max ETH swap now: ~${swap.maxSize.toFixed(6)} ETH — ${swap.note}\n`;
-    if (borrow) text += `• Aave: ${borrow.note}\n`;
-    if (!swap && !borrow) text += 'Could not read live wallet/market state right now — try again shortly.\n';
+    text += `Policy: target vol ${(cfg.targetVol * 100).toFixed(0)}%/yr * wallet cap ${(cfg.maxWalletPct * 100).toFixed(0)}% * Aave HF floor ${cfg.hfFloor} * enforcement ${cfg.enforce ? 'ON' : 'advisory'}\n`;
+    if (swap) text += `- Max ETH swap now: ~${swap.maxSize.toFixed(6)} ETH - ${swap.note}\n`;
+    if (borrow) text += `- Aave: ${borrow.note}\n`;
+    if (!swap && !borrow) text += 'Could not read live wallet/market state right now - try again shortly.\n';
 
     callback?.(takeItPrivate(runtime, message, text));
     return {

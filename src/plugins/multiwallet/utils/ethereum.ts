@@ -594,7 +594,7 @@ export async function executeEthereumLendingAction(
   };
 }
 
-/** Aave v3 account risk state (read-only) — inputs to the pre-borrow health-factor guard. */
+/** Aave v3 account risk state (read-only) - inputs to the pre-borrow health-factor guard. */
 export type AaveUserAccountData = {
   /** All amounts in Aave's base currency (USD, 8 decimals) as raw numbers. */
   totalCollateralBase: number;
@@ -604,7 +604,7 @@ export type AaveUserAccountData = {
   liquidationThreshold: number;
   /** Loan-to-value as a fraction in [0,1]. */
   ltv: number;
-  /** Aave's reported health factor (1e18-scaled → plain number; Infinity when no debt). */
+  /** Aave's reported health factor (1e18-scaled -> plain number; Infinity when no debt). */
   healthFactor: number;
 };
 
