@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "wallet": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "model": "gpt-4o-mini",
+    "steps": 6,
+    "fired": 6,
+    "note": "capability demo at a single fork block; illustrative exposure->swap mapping; not a historical backtest"
+  },
+  "steps": [
+    {
+      "date": "2026-08-07",
+      "exposure": 0.35,
+      "amount": 0.065,
+      "txHash": "0xfb5d6ce27e342df40b6eef874b3b631961bc330c57476affcf9e90f554b1b718",
+      "status": "0x1",
+      "block": 25736332,
+      "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    },
+    {
+      "date": "2026-08-08",
+      "exposure": 0.35,
+      "amount": 0.07,
+      "txHash": "0xd3616142d4879cd3ddb0bc4fdc3f7ea0cbe0942ccd4e7a6fd40a728a6c9a325d",
+      "status": "0x1",
+      "block": 25736333,
+      "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    },
+    {
+      "date": "2026-08-09",
+      "exposure": 0.35,
+      "amount": 0.075,
+      "txHash": "0xe49582d03d2fcf193601e10c36ff5c7319d6bf447e396d183dce1e69d8bcbe48",
+      "status": "0x1",
+      "block": 25736334,
+      "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    },
+    {
+      "date": "2026-08-10",
+      "exposure": 0.35,
+      "amount": 0.08,
+      "txHash": "0xa105123ceb50035bd162072fd8b8e52c2638ad3f78cb8ed5188ce2e80b7df2c4",
+      "status": "0x1",
+      "block": 25736335,
+      "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    },
+    {
+      "date": "2026-08-11",
+      "exposure": 0.35,
+      "amount": 0.085,
+      "txHash": "0x2797da97f962eefba3790864c1945a8b805c2fe801df535b85054c562bf409eb",
+      "status": "0x1",
+      "block": 25736336,
+      "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    },
+    {
+      "date": "2026-08-12",
+      "exposure": 0.35,
+      "amount": 0.09,
+      "txHash": "0x9bb31cd5a364f921fa8ba6737e805f7009ffc0abb53ec66eb9f5804f13f99cf1",
+      "status": "0x1",
+      "block": 25736337,
+      "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+    }
+  ]
+}

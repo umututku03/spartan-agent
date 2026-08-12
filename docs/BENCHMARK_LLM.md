@@ -75,6 +75,36 @@ llm-raw returned -7.1% at 18.2% vol and -13.0% drawdown. All three stayed cautio
    binding case is visible in the deterministic backtest (`docs/PHASE4_RISK.md` and
    `scripts/backtest-sizing.ts`), where capping an always-on position cuts volatility and drawdown.
 
+## Stage 2: agent-in-the-loop (proof of concept)
+
+Stage 1 measured the policy by calling the model APIs directly. Stage 2 closes the loop through the
+real deployed agent: we replay the model's own cached decisions and have the running Spartan agent
+execute each one as an actual swap on the Anvil mainnet fork. Script: `scripts/agent-loop-poc.ts`;
+results in `paper/data/agent_loop_poc.json`.
+
+Six consecutive daily decisions from `gpt-4o-mini` (7-12 Aug 2026) were each turned into a chat
+command (`swap <amount> ETH for USDC from my wallet 0xf39Fd6...2266`), which the agent parsed and
+executed via its `MULTIWALLET_SWAP` action against the fork. All six produced confirmed transactions
+(status success) from the imported wallet:
+
+| Day | Exposure | Swap (ETH) | Tx hash | Block | Status |
+|---|---:|---:|---|---:|---|
+| 2026-08-07 | 0.35 | 0.065 | `0xfb5d6ce2...b718` | 25736332 | ok |
+| 2026-08-08 | 0.35 | 0.070 | `0xd3616142...325d` | 25736333 | ok |
+| 2026-08-09 | 0.35 | 0.075 | `0xe49582d0...be48` | 25736334 | ok |
+| 2026-08-10 | 0.35 | 0.080 | `0xa105123c...f2c4` | 25736335 | ok |
+| 2026-08-11 | 0.35 | 0.085 | `0x2797da97...09eb` | 25736336 | ok |
+| 2026-08-12 | 0.35 | 0.090 | `0x9bb31cd5...9cf1` | 25736337 | ok |
+
+What this shows and does not show. It shows the pipeline closes end to end: an LLM decision becomes a
+real on-chain action through the deployed agent, six times in sequence. It is a capability demo at a
+single forked block, not a historical backtest: the fork does not advance through the six calendar
+days, the swaps just accumulate at one block, and the exposure-to-swap mapping is illustrative (each
+day's target exposure maps to a small de-risking ETH->USDC swap, nudged slightly per step so each
+command is distinct on-chain). Action selection is non-deterministic, so the driver retries a command
+until the swap action fires. The performance numbers stay with the stage-1 harness; stage 2 is the
+integration check.
+
 ## Honest caveats
 - One asset (ETH), one year, one seed (temperature 0), and a period that was almost entirely a
   downtrend. A cautious agent wins by construction in a bear market; this says little about bull or
