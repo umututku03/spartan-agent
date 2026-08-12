@@ -109,11 +109,22 @@ done
 ```
 
 ## 8. Start the mainnet fork (Terminal A — leave running)
+
+**On this Cerebras Linux VM (glibc 2.34), the native `anvil` binary won't run** (it needs
+glibc 2.35). Docker is installed, so run `anvil` in a container — same deterministic accounts,
+exposed on `127.0.0.1:8545`:
+```bash
+docker run --rm -d --name anvil -p 8545:8545 ghcr.io/foundry-rs/foundry:latest \
+  "anvil --host 0.0.0.0 --fork-url https://eth-mainnet.g.alchemy.com/v2/<YOUR_KEY>"
+docker logs -f anvil     # watch it fork; Ctrl-C to stop watching (container keeps running)
+```
+On a machine with glibc ≥ 2.35 (recent macOS/Linux) you can instead run it natively:
 ```bash
 anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/<YOUR_KEY>
-# prints 10 funded dev accounts; account (0) key:
-#   0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 ```
+Either way, account (0) — the throwaway wallet used below — is:
+`0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80`.
+Stop the container later with `docker rm -f anvil`.
 
 ## 9. Run Spartan (Terminal B)
 Run **from `packages/spartan`** (so it loads the Spartan character, not the default Eliza) and use
