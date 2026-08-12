@@ -63,22 +63,33 @@ export async function getEntityIdFromMessage(runtime: IAgentRuntime, message: Me
   //return createUniqueUuid(runtime, message.metadata.fromId);
   //console.log('getEntityIdFromMessage message', message)
 
-  // ensureEntity because I don't think the clients are going to build it
-  if (message?.metadata?.sourceId) {
-    const entityId: UUID = message.metadata.sourceId
-    const entity = await runtime.getEntityById(entityId);
-    if (!entity) {
-      const success = await runtime.createEntity({
-        id: entityId,
-        names: [],
-        //names: [message.names],
-        //metadata: entityMetadata,
-        metadata: {}, // Empty metadata for now
-        agentId: runtime.agentId,
-      });
-    }
+  // Resolve a STABLE per-user id. Spartan was built for Discord/Telegram where metadata.sourceId is a
+  // stable platform user id. Over the ElizaOS central-bus / Sessions (web-UI) transport, however,
+  // metadata.sourceId is the per-MESSAGE id (it changes on every message), so the multi-step
+  // register -> verify -> account flow can never resolve the same user twice. The stable per-user id
+  // is carried at metadata.raw.senderId (= the session userId); fall back to authorId, then the
+  // legacy sourceId. We namespace it via createUniqueUuid so a given user always maps to the SAME
+  // deterministic entity UUID.
+  const md: any = message?.metadata ?? {};
+  const stableSource = md?.raw?.senderId ?? md?.authorId ?? md?.sourceId;
+  if (!stableSource) {
+    return undefined;
   }
-  return message?.metadata?.sourceId
+  const entityId = createUniqueUuid(runtime, String(stableSource)) as UUID;
+
+  // ensureEntity because I don't think the clients are going to build it
+  const entity = await runtime.getEntityById(entityId);
+  if (!entity) {
+    await runtime.createEntity({
+      id: entityId,
+      names: [],
+      //names: [message.names],
+      //metadata: entityMetadata,
+      metadata: {}, // Empty metadata for now
+      agentId: runtime.agentId,
+    });
+  }
+  return entityId;
 }
 
 export async function HasEntityIdFromMessage(runtime: IAgentRuntime, message: Memory): Promise<boolean> {

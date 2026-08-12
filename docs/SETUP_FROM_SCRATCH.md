@@ -176,6 +176,10 @@ DeFi execution is separately proven via `scripts/smoke.ts` on the fork.)
 | runtime auto-installs `@elizaos/plugin-solana` then aborts on `.cursor` submodule clone | The character listed Solana-stack plugins. Comment `plugin-solana/jupiter/evm/birdeye` in `src/index.ts` `character.plugins`; make `scripts/init-submodules.sh` a no-op (the `.cursor` submodule is Cursor IDE rules, unused). |
 | Edited plugins but the old list still loads | Old character cached in PGlite. `rm -rf packages/spartan/.eliza` before restart. |
 | Chat: greetings answered but bare `import my wallet 0x…` gets no reply (`IGNORE action` in log) | Expected Phase-2 boundary — the wallet action's `validate()` gates aren't met, so the LLM picks IGNORE for the bare command. Conversational replies work. Firing the action is Phase 3. |
+| Account never becomes verified over web-UI/Sessions; register→verify resolve to different users | The central bus sets `metadata.sourceId` per-MESSAGE. This repo's `getEntityIdFromMessage` (Phase 3) keys off the stable `metadata.raw.senderId` instead — pull the latest `ethereum-amm-agent`. |
+| `updateComponent error … value.toISOString is not a function` / `violates foreign key constraint` on verify | **Required monorepo patch:** in `packages/plugin-sql/src/base.ts` `updateComponent`, replace the `.set({ ...component, updatedAt: new Date() })` with `.set({ data: component.data, updatedAt: new Date() })` (a component is updated by id; identity/FK/createdAt columns are immutable and callers pass numeric createdAt / bogus fallback FKs). Rebuild plugin-sql. See `docs/PHASE3_ACTIONS.md` §3. |
+| Swap fails `Unsupported Ethereum token: null` | The LLM returned the string `"null"` for a token CA. Fixed in this repo's `act_wallet_swap.ts` (`cleanTok`). Pull latest. |
+| Action offered but agent replies instead of firing it | LLM tool-selection is non-deterministic — re-send the same command 1–3×. Not a bug. See `docs/PHASE3_ACTIONS.md` §4. |
 
 ## Fast checks that don't need the full agent (run in this repo, no monorepo)
 ```bash

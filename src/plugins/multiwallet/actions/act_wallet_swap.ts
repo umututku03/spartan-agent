@@ -507,10 +507,15 @@ export default {
 
         if (selectedChain === 'ethereum') {
             try {
+                // The LLM sometimes fills contract-address fields with the literal string "null"/
+                // "undefined" (not a real null), which `||` would treat as a valid token and blow up
+                // in resolveEthereumToken. Normalize those away and fall back to the symbol.
+                const cleanTok = (v: any) =>
+                    v && v !== 'null' && v !== 'undefined' && v !== '' ? v : undefined;
                 const swapResult = await swapEthereumExactIn({
                     privateKey: sourceWallet.kp.privateKey,
-                    inputToken: content.inputTokenCA || content.inputTokenSymbol,
-                    outputToken: content.outputTokenCA || content.outputTokenSymbol,
+                    inputToken: cleanTok(content.inputTokenCA) || cleanTok(content.inputTokenSymbol),
+                    outputToken: cleanTok(content.outputTokenCA) || cleanTok(content.outputTokenSymbol),
                     amount: content.amount,
                 }, runtime);
 
