@@ -9,7 +9,6 @@ import { multiwalletPlugin } from './plugins/multiwallet';
 import { traderPlugin } from './plugins/trading';
 import { degenIntelPlugin } from './plugins/degenIntel';
 //import { analyticsPlugin } from './plugins/analytics';
-//import { communityInvestorPlugin } from './plugins/communityInvestor';
 
 import { kolPlugin } from './plugins/kol';
 import { coinMarketingPlugin } from './plugins/coin_marketing';
