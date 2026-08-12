@@ -38,7 +38,7 @@ export interface BorrowAssessment {
 }
 
 /**
- * Single source of truth for the deterministic risk layer (Phase 4.2). Wraps the pure risk core
+ * Single source of truth for the deterministic risk layer. Wraps the pure risk core
  * (src/plugins/multiwallet/risk) plus the read-only ethereum helpers, and caches the regime.
  * Consumed by the risk provider, the RISK_ASSESS action, and the swap/lending guards.
  */

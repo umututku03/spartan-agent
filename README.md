@@ -52,27 +52,27 @@ Aave V3 supply/borrow) lives in `src/plugins/multiwallet/` — see
   the post-merge work list (CoW/V3 execution, multi-network, Aave health-factor guard, etc.).
 
 **Key Capabilities:**
-- Multi-tenant wallet management with secure custody
-- Autonomous trading strategies across Solana and EVM chains
-- Advanced analytics with technical indicators and AI-powered insights
-- Market intelligence gathering and sentiment analysis
+- Multi-tenant wallet management with per-user custody
+- Automated trading strategies across Solana and EVM chains
+- Token analytics with technical indicators
+- Market intelligence and sentiment analysis
 - Community-driven investment with trust scoring
-- Chrome extension for seamless browser integration
-- MCP (Model Context Protocol) agents for AI integrations
+- Chrome extension for browser integration
+- MCP (Model Context Protocol) agents
 
-Spartan is built with a modular plugin architecture, allowing you to use only the features you need.
+Spartan uses a modular plugin architecture, so you can enable only the features you need.
 
 ## Core Features
 
-- **🏦 Multi-Tenant Wallet System**: Secure, user-specific wallet management with import/export capabilities
-- **📊 Advanced Analytics**: Comprehensive token analytics powered by Birdeye, CoinMarketCap, and Codex
-- **🤖 Autonomous Trading**: AI-driven trading strategies with risk management and position tracking
-- **🔍 Market Intelligence**: Real-time sentiment analysis, trending tokens, and whale activity monitoring
-- **👥 Community Investment**: Trust-based recommendation system with performance tracking
-- **🌐 Multi-Chain Support**: Solana, Ethereum, Base, and other EVM-compatible chains
-- **🎯 Technical Analysis**: 14+ technical indicators including MACD, RSI, Bollinger Bands, and more
-- **🔌 Browser Extension**: Chrome extension for DeFi interactions directly from your browser
-- **🤝 MCP Integration**: AI agents for analytics, charting, and market data via Model Context Protocol
+- **Multi-Tenant Wallet System**: per-user wallet management with import/export
+- **Analytics**: token analytics via Birdeye, CoinMarketCap, and Codex
+- **Autonomous Trading**: automated trading strategies with risk management and position tracking
+- **Market Intelligence**: sentiment analysis, trending tokens, and whale-activity monitoring
+- **Community Investment**: trust-based recommendation system with performance tracking
+- **Multi-Chain Support**: Solana, Ethereum, Base, and other EVM-compatible chains
+- **Technical Analysis**: 14+ indicators including MACD, RSI, and Bollinger Bands
+- **Browser Extension**: Chrome extension for DeFi interactions from the browser
+- **MCP Integration**: agents for analytics, charting, and market data via Model Context Protocol
 
 ## Project Structure
 
@@ -88,8 +88,6 @@ spartan/
 │   │   ├── trading/                # Trading strategies & position management
 │   │   ├── multiwallet/            # Multi-tenant wallet system
 │   │   ├── degenIntel/             # Market intelligence & sentiment
-│   │   ├── communityInvestor/      # Community-driven investment
-│   │   ├── autofunTrader/          # Auto.fun trading strategies
 │   │   ├── kol/                    # KOL (Key Opinion Leader) features
 │   │   └── coin_marketing/         # Coin marketing tools
 │   ├── assets/                     # Images and logos
@@ -364,13 +362,6 @@ npm run dev
 ```
 Set `VITE_API_URL` in your `.env` to point to the Spartan backend.
 
-**Community Investor Frontend:**
-```bash
-cd src/plugins/communityInvestor/frontend
-npm install  # if needed
-npm run dev
-```
-
 **Build Production Frontend:**
 ```bash
 npm run build-frontend
@@ -388,7 +379,7 @@ See **[MCP Integration Guide](./spartan-mcp/INTEGRATION.md)** for setup and usag
 
 Spartan includes 10+ specialized plugins for comprehensive DeFi functionality:
 
-### 🔐 Account Registration Plugin (`account`)
+### Account Registration Plugin (`account`)
 User account management and registration system for ElizaOS.
 
 **Features:**
@@ -403,7 +394,7 @@ User account management and registration system for ElizaOS.
 
 ---
 
-### 📊 Analytics Plugin (`analytics`)
+### Analytics Plugin (`analytics`)
 Comprehensive analytics platform integrating Birdeye, CoinMarketCap, and Codex.
 
 **Features:**
@@ -422,7 +413,7 @@ Comprehensive analytics platform integrating Birdeye, CoinMarketCap, and Codex.
 
 ---
 
-### ⚔️ Autonomous Trader Plugin (`autonomous-trader`)
+### Autonomous Trader Plugin (`autonomous-trader`)
 Core Spartan product utilities and holder verification.
 
 **Features:**
@@ -436,7 +427,7 @@ Core Spartan product utilities and holder verification.
 
 ---
 
-### 📈 Trading Plugin (`trading`)
+### Trading Plugin (`trading`)
 Multi-strategy trading engine with position management.
 
 **Features:**
@@ -455,7 +446,7 @@ Multi-strategy trading engine with position management.
 
 ---
 
-### 💼 Multiwallet Plugin (`multiwallet`)
+### Multiwallet Plugin (`multiwallet`)
 Multi-tenant wallet management system.
 
 **Features:**
@@ -473,7 +464,7 @@ Multi-tenant wallet management system.
 
 ---
 
-### 🔍 DegenIntel Plugin (`degenIntel`)
+### DegenIntel Plugin (`degenIntel`)
 Market intelligence, sentiment analysis, and data aggregation.
 
 **Features:**
@@ -495,48 +486,14 @@ Market intelligence, sentiment analysis, and data aggregation.
 
 ---
 
-### 👥 Community Investor Plugin (`communityInvestor`)
-Community-driven investment with trust scoring and leaderboards.
-
-**Features:**
-- Trust-based recommendation system
-- Performance tracking and scoring
-- Community leaderboard
-- Trade decision processing
-- Scam detection with penalties/bonuses
-- React frontend for leaderboard display
-
-**Services:** `CommunityInvestorService`
-
-**Routes:** Leaderboard API, trust scores, recommendations
-
-**Events:** Trade execution, recommendation updates, trust score changes
-
----
-
-### 🤖 Autofun Trader Plugin (`autofunTrader`)
-Autonomous trading strategies for auto.fun platform.
-
-**Features:**
-- Automated buy signal generation (every 5 minutes)
-- Position monitoring and sell signals
-- Integration with auto.fun IDL contracts
-- Raydium vault support
-
-**Services:** `DegenTradingService`
-
-**Tasks:** `AFTRADER_GOTO_MARKET` (buy signals), `AFTRADER_CHECK_POSITIONS` (sell signals)
-
----
-
-### 📣 KOL Plugin (`kol`)
+### KOL Plugin (`kol`)
 Key Opinion Leader features (minimal implementation, ready for extension).
 
 **Status:** Initialized framework ready for custom KOL features
 
 ---
 
-### 🪙 Coin Marketing Plugin (`coin_marketing`)
+### Coin Marketing Plugin (`coin_marketing`)
 Coin marketing and promotion tools.
 
 **Features:**
@@ -547,19 +504,19 @@ Coin marketing and promotion tools.
 
 ---
 
-### 🌐 Chrome Extension
+### Chrome Extension
 
 Browser extension for seamless DeFi integration with token balances, swaps, and AI-powered trading advice.
 
-**📖 [View Chrome Extension Documentation](./chrome-extension/README.md)**
+**[View Chrome Extension Documentation](./chrome-extension/README.md)**
 
 ---
 
-### 🤝 Spartan MCP (Model Context Protocol)
+### Spartan MCP (Model Context Protocol)
 
 AI agents for analytics, charting, and market data using Model Context Protocol with x402 payment integration.
 
-**📖 [View MCP Integration Guide](./spartan-mcp/INTEGRATION.md)**
+**[View MCP Integration Guide](./spartan-mcp/INTEGRATION.md)**
 
 ---
 
@@ -597,7 +554,6 @@ export const spartan: ProjectAgent = {
     degenIntelPlugin,           // Market intelligence
     multiwalletPlugin,          // Wallet management
     traderPlugin,               // Trading strategies
-    // communityInvestorPlugin, // Community investment
     // kolPlugin,               // KOL features
     // coinMarketingPlugin,     // Marketing tools
   ],
@@ -936,7 +892,7 @@ MIT License - see LICENSE file for details
 
 ## Acknowledgments
 
-Built with ❤️ using ElizaOS by ShawMakesMagic and the Eliza Labs team.
+Built with using ElizaOS by ShawMakesMagic and the Eliza Labs team.
 
 Special thanks to:
 - DegenSpartan for the inspiration

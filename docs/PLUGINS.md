@@ -10,10 +10,8 @@ Complete reference for all Spartan plugins, their features, and usage.
 4. [Trading Plugin](#trading-plugin)
 5. [Multiwallet Plugin](#multiwallet-plugin)
 6. [DegenIntel Plugin](#degenintel-plugin)
-7. [Community Investor Plugin](#community-investor-plugin)
-8. [Autofun Trader Plugin](#autofun-trader-plugin)
-9. [KOL Plugin](#kol-plugin)
-10. [Coin Marketing Plugin](#coin-marketing-plugin)
+7. [KOL Plugin](#kol-plugin)
+8. [Coin Marketing Plugin](#coin-marketing-plugin)
 
 ---
 
@@ -854,148 +852,6 @@ See `spartan-mcp/INTEGRATION.md` for complete API documentation.
 
 ---
 
-## Community Investor Plugin
-
-**Name:** `communityInvestor`  
-**Purpose:** Community-driven investment with trust scoring
-
-### Features
-
-- Trust-based recommendation system
-- Performance tracking
-- Community leaderboard
-- Scam detection with penalties
-- Trade decision processing
-- React frontend
-
-### Services
-
-#### `CommunityInvestorService`
-Main service managing:
-- User trust scores
-- Recommendations
-- Trade execution
-- Performance metrics
-
-**Methods:**
-- `getLeaderboard()`
-- `getUserTrustScore(userId)`
-- `submitRecommendation(params)`
-- `processTradeDecisions()`
-- `updateMetrics()`
-
-### Events
-
-#### Trade Execution Event
-Fired when a community trade is executed:
-```typescript
-{
-  event: 'trade_executed',
-  data: {
-    userId: string,
-    tokenAddress: string,
-    action: 'buy' | 'sell',
-    amount: number,
-    price: number
-  }
-}
-```
-
-#### Recommendation Update Event
-Fired when new recommendation is submitted:
-```typescript
-{
-  event: 'recommendation_updated',
-  data: {
-    userId: string,
-    tokenAddress: string,
-    recommendation: 'buy' | 'sell' | 'hold',
-    confidence: number
-  }
-}
-```
-
-### Routes
-
-#### `GET /api/community/leaderboard`
-Returns community leaderboard with trust scores.
-
-#### `GET /api/community/recommendations`
-Returns current active recommendations.
-
-#### `GET /api/community/user/:userId/score`
-Returns specific user's trust score and stats.
-
-### Configuration
-
-```env
-PROCESS_TRADE_DECISION_INTERVAL_HOURS=1
-METRIC_REFRESH_INTERVAL_HOURS=24
-USER_TRADE_COOLDOWN_HOURS=12
-SCAM_PENALTY=-100
-SCAM_CORRECT_CALL_BONUS=100
-MAX_RECOMMENDATIONS_IN_PROFILE=50
-```
-
-### Trust Score Calculation
-
-```
-Trust Score = Base Score + Performance Bonus - Penalties
-
-Performance Bonus:
-- Winning trades: +10 per trade
-- Accurate scam calls: +100
-- Consistent performance: +50
-
-Penalties:
-- Losing trades: -5 per trade
-- Incorrect scam calls: -100
-- Inactivity: -10 per month
-```
-
----
-
-## Autofun Trader Plugin
-
-**Name:** `autofunTrader`  
-**Purpose:** Autonomous trading for auto.fun platform
-
-### Features
-
-- Automated buy signal generation
-- Position monitoring
-- Auto.fun IDL integration
-- Raydium vault support
-
-### Services
-
-#### `DegenTradingService`
-Main trading orchestration:
-- `buyService.generateSignal()`
-- `sellService.generateSignal()`
-- Position tracking
-- Risk management
-
-### Tasks
-
-#### `AFTRADER_GOTO_MARKET`
-Generates buy signals every 5 minutes:
-- Analyzes market conditions
-- Identifies opportunities
-- Executes buy orders
-
-#### `AFTRADER_CHECK_POSITIONS`
-Monitors positions every 5 minutes:
-- Checks take profit levels
-- Monitors stop loss
-- Executes sell orders
-
-### Configuration
-
-Tasks are automatically registered on plugin initialization and run continuously.
-
----
-
 ## KOL Plugin
 
 **Name:** `kol`  
@@ -1071,8 +927,6 @@ degenIntel → account
 multiwallet → degenIntel, account
 trading → multiwallet, degenIntel, account
 analytics → (standalone or enhanced by others)
-communityInvestor → account, degenIntel
-autofunTrader → degenIntel
 ```
 
 ### Inter-Plugin Communication

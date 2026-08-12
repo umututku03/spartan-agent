@@ -496,8 +496,8 @@ export default {
                     v && v !== 'null' && v !== 'undefined' && v !== '' ? v : undefined;
                 const inputSym = cleanTok(content.inputTokenSymbol) || 'ETH';
 
-                // --- Phase 4 / 4.2: deterministic regime-aware risk guard (pre-execution) ---
-                // Vol-target the swap size against the wallet's spendable balance. Routed through the
+                // Deterministic pre-execution risk guard: vol-target the swap size against the
+                // wallet's spendable balance. Routed through the
                 // shared RiskService (single source of truth, cached regime); falls back to the pure
                 // sizeSwap guard if the service isn't available. When enforcing, clamp the amount to
                 // the sized budget (which also corrects absurd LLM-extracted amounts, since the budget

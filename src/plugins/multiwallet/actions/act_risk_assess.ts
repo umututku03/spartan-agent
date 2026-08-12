@@ -15,9 +15,9 @@ import {
 import { RiskService } from '../services/srv_risk';
 
 /**
- * RISK_ASSESS (Phase 4.2): a read-only, deterministic risk advisory. Answers "how much should/can I
- * swap or borrow?" using the RiskService - NO trade is executed. Complements the RISK_GOVERNANCE
- * provider (always-on context) and the swap/lending guards (hard backstop).
+ * Read-only, deterministic risk advisory. Answers "how much should/can I swap or borrow?" using the
+ * RiskService - NO trade is executed. Complements the always-on RISK_GOVERNANCE provider and the
+ * swap/lending guards (hard backstop).
  */
 const riskAssessAction: Action = {
   name: 'RISK_ASSESS',

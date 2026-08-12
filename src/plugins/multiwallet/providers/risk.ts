@@ -3,11 +3,10 @@ import { getAccountFromMessage } from '../../autonomous-trader/utils';
 import { RiskService } from '../services/srv_risk';
 
 /**
- * RISK_GOVERNANCE provider (Phase 4.2). Injects the deterministic risk state - current regime
- * (realized vol), the vol-targeted max position, and Aave health-factor headroom - into the agent's
- * context on every DM turn. This is what makes the risk layer AGENT-INTEGRATED: Spartan's replies are
- * risk-aware and it self-limits its own proposals, regardless of which action the LLM ends up picking.
- * The deterministic guards in the swap/lending handlers remain the hard backstop.
+ * RISK_GOVERNANCE provider. Injects the deterministic risk state - current regime (realized vol),
+ * the vol-targeted max position, and Aave health-factor headroom - into the agent's context on every
+ * turn, so Spartan's replies are risk-aware and it self-limits its own proposals regardless of which
+ * action the LLM picks. The deterministic guards in the swap/lending handlers remain the hard backstop.
  */
 export const riskProvider: Provider = {
   name: 'RISK_GOVERNANCE',

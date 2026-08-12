@@ -32,7 +32,7 @@ export const multiwalletPlugin: Plugin = {
     userMetawalletSwap,
     userMetawalletSweep,
     ethereumLendingAction,
-    riskAssessAction, // Phase 4.2: deterministic risk advisory (read-only)
+    riskAssessAction, // deterministic risk advisory (read-only)
     userMetawalletList,
   ],
   services: [InterfaceWalletService, RiskService],

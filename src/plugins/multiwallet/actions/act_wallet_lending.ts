@@ -155,11 +155,10 @@ const ethereumLendingAction: Action = {
             };
         }
 
-        // --- Phase 4 / 4.2: deterministic health-factor floor guard (pre-execution) on borrow ---
-        // Routed through the shared RiskService: refuse a borrow that would push the projected Aave
-        // health factor below the configured floor (default 1.5). Base currency is USD (8 decimals);
-        // the new debt is valued at ~$1/token (accurate for the stablecoin borrows in scope). See
-        // docs/PHASE4_RISK.md / docs/PHASE4_2_AGENT_RISK.md.
+        // Deterministic pre-execution health-factor guard on borrow, via the shared RiskService:
+        // refuse a borrow that would push the projected Aave health factor below the configured floor
+        // (default 1.5). Base currency is USD (8 decimals); the new debt is valued at ~$1/token
+        // (accurate for the stablecoin borrows in scope).
         if (content.action === 'borrow') {
             try {
                 const risk = runtime.getService(RiskService.serviceType) as RiskService | null;
