@@ -31,7 +31,10 @@ ETH prices to illustrate the layer's behavior. Our contribution is a proposal an
 implementation, not a result proven at scale; we picked up most of these ideas recently and treat
 the evaluation accordingly. On a two-month stretch of high volatility, volatility targeting cut
 realized volatility from about 88\% to 60\% per year and reduced maximum drawdown from 43\% to 35\%
-relative to holding ETH, without claiming any excess return.
+relative to holding ETH, without claiming any excess return. A follow-up places a language model in
+the decision loop and executes its choices through the real agent on the fork; across three models
+from two providers the behaviour is dominated by risk posture rather than model choice, reported as an
+illustrative result rather than a performance claim.
 \end{abstract}
 
 \section{Introduction and the gap}\label{sec:intro}
@@ -279,6 +282,44 @@ those surveys recommend: preliminary unless supported by stronger evidence. Stan
 such as InvestorBench~\cite{investorbench}, STOCKBENCH~\cite{stockbench}, and
 CryptoTrade~\cite{cryptotrade} are the natural next targets for a fuller evaluation.
 
+\section{LLM-in-the-loop evaluation (follow-up)}\label{sec:llm}
+As a follow-up we put a language model in the decision loop, in two stages, and we are careful to keep
+the claims small.
+
+\subsection{Deterministic policy comparison}
+Using the same no-lookahead stepping, we let a model choose a target ETH exposure each day from only
+past returns and trailing volatility (temperature 0, with decisions cached so runs are reproducible),
+and compared three models across two providers (\texttt{gpt-4o-mini}, \texttt{gpt-4o},
+\texttt{claude-haiku-4.5}). We report three arms: the model's exposure used directly
+(\emph{llm-raw}), the model's exposure clamped to our volatility-targeted budget (\emph{llm+risk}), and
+the deterministic baselines. Over the same bear year, all three models, prompted to be risk-aware,
+stayed cautious and cut drawdown sharply relative to holding ETH (about 24\%, 28\%, and 30\% versus
+67\%), with the model and the provider mattering little. This lines up with AI-Trader's observation
+that risk control, not raw model strength, drives robustness~\cite{aitrader}. In this run the
+deterministic guard did not bind (\emph{llm+risk} equalled \emph{llm-raw}) because the models never
+asked for more than the budget the guard enforces; the guard is a backstop against oversizing, and its
+binding case is the deterministic result in Section~\ref{sec:results}. Figure~\ref{fig:llm} shows the
+drawdown and volatility by arm.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/llm_benchmark.pdf}
+\caption{LLM-in-the-loop vs.\ deterministic sizing on ETH (full year). All three models, prompted to be
+risk-aware, hold low exposure and so cut drawdown and volatility relative to buy-and-hold;
+\emph{llm+risk} equals \emph{llm-raw} because the guard never binds here.}
+\label{fig:llm}
+\end{figure}
+
+\subsection{Agent-in-the-loop proof of concept}
+We then replayed the model's own cached decisions through the real deployed agent: each decision became
+a chat command that the Spartan agent executed as an actual Uniswap V2 swap on the mainnet fork. Six
+consecutive decisions produced six confirmed transactions (status success) from the imported wallet.
+This closes the loop end to end, from a language-model decision to an on-chain action through the
+deployed agent. It is a capability demonstration at a single forked block, not a historical backtest:
+the fork does not advance through the six days, and the exposure-to-swap mapping is illustrative. The
+two stages answer different questions, reproducible measurement and end-to-end execution; details are
+in \texttt{docs/BENCHMARK\_LLM.md}.
+
 \section{Limitations and reproducibility}\label{sec:limits}
 The honest caveats are as follows. A fork is not live trading: state is pinned, there are no
 adversarial counterparties, and MEV is absent. The backtest is one asset over one year with single
@@ -294,7 +335,8 @@ the fork smoke test, the risk demo, and the backtest are scripts in \code{script
 ships with the exact ETH price series it used so its numbers can be regenerated offline.
 
 Future work is the part we have not earned yet: a multi-seed, multi-asset, out-of-sample evaluation
-against a standardized benchmark; a live-agent variant where the model is in the decision loop; richer
+against a standardized benchmark; scaling the LLM-in-the-loop evaluation of Section~\ref{sec:llm}
+(more assets, seeds, and a third-party benchmark harness); richer
 regime inputs (funding, open interest, on-chain flows, macro); and MEV-protected execution for larger
 orders.
 
