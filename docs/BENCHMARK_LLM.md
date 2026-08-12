@@ -24,8 +24,8 @@ deterministic run comes first by design.
 ## Setup
 - Harness: `scripts/backtest-llm.ts`, sharing the no-lookahead stepping, cost model, and metrics with
   the deterministic backtest via `scripts/lib/backtest-core.ts`.
-- Data: one year of daily ETH prices, `paper/data/eth_daily.csv` (12 Sep 2025 to 12 Aug 2026, a year
-  in which ETH fell about 58%).
+- Data: one year of daily ETH prices, `paper/data/eth_daily.csv` (13 Aug 2025 to 12 Aug 2026, a year
+  in which ETH fell about 58%). With the 30-day volatility warmup, the first scored day is mid-September.
 - Each day the model sees only information available up to that day: the last 30 daily returns (as
   percentages, no dates or price levels) and the trailing 30-day annualized volatility. It returns a
   target ETH exposure in [0,1] as JSON. `temperature=0`. Decisions are cached per (model, date) in
