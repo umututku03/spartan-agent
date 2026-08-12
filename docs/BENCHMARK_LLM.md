@@ -16,7 +16,10 @@ guard would allow.
   percentages, no dates or price levels) and the trailing 30-day annualized volatility. It returns a
   target ETH exposure in [0,1] as JSON. `temperature=0`. Decisions are cached per (model, date) in
   `paper/data/llm_decisions_<model>.json`, so re-runs are offline and deterministic.
-- Models: `gpt-4o-mini` and `gpt-4o`.
+- Models: `gpt-4o-mini`, `gpt-4o` (OpenAI), and `claude-haiku-4-5-20251001` (Anthropic) - a
+  cross-provider comparison. `claude-sonnet-5` was attempted but the new API key's rate tier throttled
+  the ~335 daily calls to an impractical duration this session; the harness caches decisions, so it
+  can be finished later by re-running (it resumes from the cache).
 - Arms: `llm-raw` (the model's exposure), `llm+risk` (the model's exposure clamped to our
   volatility-targeted budget, `min(e_llm, targetVol/sigma)` capped at 1.0), and three deterministic
   baselines (buy-and-hold, fixed half-exposure, vol-target+cap).
@@ -32,11 +35,13 @@ guard would allow.
 | gpt-4o-mini | llm+risk | -19.4% | 17.5% | -1.26 | -1.70 | -24.3% | +38.3% |
 | gpt-4o | llm-raw | -21.5% | 19.1% | -1.28 | -1.75 | -27.5% | +36.2% |
 | gpt-4o | llm+risk | -21.5% | 19.1% | -1.28 | -1.75 | -27.5% | +36.2% |
+| claude-haiku-4.5 | llm-raw | -23.5% | 21.7% | -1.23 | -1.67 | -29.7% | +34.2% |
+| claude-haiku-4.5 | llm+risk | -23.5% | 21.7% | -1.23 | -1.67 | -29.7% | +34.2% |
 
 Recent 90-day slice (15 May to 12 Aug 2026), the least-contaminated window: buy-and-hold returned
 -17.5% at 48.8% vol and -31.5% max drawdown; `gpt-4o-mini` llm-raw returned -6.3% at 14.3% vol and
--10.8% drawdown; `gpt-4o` llm-raw returned -5.6% at 15.9% vol and -11.4% drawdown. Both models stayed
-cautious here too.
+-10.8% drawdown; `gpt-4o` llm-raw returned -5.6% at 15.9% vol and -11.4% drawdown; `claude-haiku-4.5`
+llm-raw returned -7.1% at 18.2% vol and -13.0% drawdown. All three stayed cautious here too.
 
 ![LLM benchmark](figures/llm_benchmark.png)
 
@@ -47,8 +52,9 @@ cautious here too.
    the same caution would underperform in a strong bull market. The models are not predicting
    direction; they are being conservative, which lines up with CryptoBench's finding that prediction
    is the weak axis and AI-Trader's finding that risk control, not raw intelligence, drives outcomes.
-2. **Model size barely mattered.** `gpt-4o` and `gpt-4o-mini` produced very similar risk and drawdown
-   profiles. The behavior came from the prompt and the task, not the backbone.
+2. **Model and provider barely mattered.** `gpt-4o-mini`, `gpt-4o`, and `claude-haiku-4.5` produced
+   very similar risk and drawdown profiles (full-year drawdowns of 24%, 28%, and 30% versus 67% for
+   buy-and-hold). The behavior came from the prompt and the task, not the backbone or the vendor.
 3. **The deterministic guard was a no-op in this run.** `llm+risk` equals `llm-raw` for both models,
    because the models' exposures never exceeded the volatility-targeted budget the guard enforces. The
    guard is a backstop against oversizing; it binds and helps only when the agent is aggressive. The
@@ -73,6 +79,7 @@ cautious here too.
 git checkout step2-llm-benchmark
 OPENAI_API_KEY=sk-... bun run scripts/backtest-llm.ts gpt-4o-mini   # first run fetches + caches
 OPENAI_API_KEY=sk-... bun run scripts/backtest-llm.ts gpt-4o
+ANTHROPIC_API_KEY=sk-ant-... bun run scripts/backtest-llm.ts claude-haiku-4-5-20251001
 python3 scripts/make-figure-llm.py
 ```
 Re-running with the committed decision caches needs no API key and reproduces the numbers exactly.

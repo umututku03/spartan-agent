@@ -55,6 +55,50 @@ function prompt(recentReturns: number[], sigma: number, prevExposure: number) {
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+const IS_CLAUDE = MODEL.startsWith('claude');
+
+// Tolerate models that wrap JSON in ```json fences or add prose around it.
+function parseDecision(text: string): Decision {
+  let s = text.trim().replace(/^```(?:json)?/i, '').replace(/```$/i, '').trim();
+  const m = s.match(/\{[\s\S]*\}/);
+  if (m) s = m[0];
+  const parsed = JSON.parse(s);
+  const exposure = clamp(Number(parsed.exposure), 0, 1);
+  return { exposure: Number.isFinite(exposure) ? exposure : 0.5, reason: String(parsed.reason ?? '').slice(0, 200) };
+}
+
+async function callAnthropic(sys: string, usr: string): Promise<Decision> {
+  const key = process.env.ANTHROPIC_API_KEY;
+  if (!key) throw new Error('ANTHROPIC_API_KEY not set');
+  let lastErr = '';
+  for (let attempt = 0; attempt < 6; attempt++) {
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
+        body: JSON.stringify({
+          model: MODEL,
+          max_tokens: 200,
+          temperature: 0,
+          system: sys + ' Respond with only the JSON object, no markdown fences.',
+          messages: [{ role: 'user', content: usr }],
+        }),
+      });
+      if (res.status === 429 || res.status >= 500) {
+        lastErr = `${res.status}`;
+        await sleep(1000 * 2 ** attempt + Math.floor(Math.random() * 400));
+        continue;
+      }
+      if (!res.ok) throw new Error(`Anthropic ${res.status}: ${(await res.text()).slice(0, 160)}`);
+      const j: any = await res.json();
+      return parseDecision(j.content[0].text);
+    } catch (e) {
+      lastErr = (e as Error).message;
+      await sleep(500 * 2 ** attempt);
+    }
+  }
+  throw new Error(lastErr || 'exhausted retries');
+}
 
 async function callOpenAI(sys: string, usr: string): Promise<Decision> {
   const key = process.env.OPENAI_API_KEY;
@@ -82,9 +126,7 @@ async function callOpenAI(sys: string, usr: string): Promise<Decision> {
       }
       if (!res.ok) throw new Error(`OpenAI ${res.status}: ${(await res.text()).slice(0, 160)}`);
       const j: any = await res.json();
-      const parsed = JSON.parse(j.choices[0].message.content);
-      const exposure = clamp(Number(parsed.exposure), 0, 1);
-      return { exposure: Number.isFinite(exposure) ? exposure : 0.5, reason: String(parsed.reason ?? '').slice(0, 200) };
+      return parseDecision(j.choices[0].message.content);
     } catch (e) {
       lastErr = (e as Error).message;
       await sleep(500 * 2 ** attempt);
@@ -101,6 +143,7 @@ const todo: number[] = [];
 for (let t = WARMUP; t < prices.length - 1; t++) if (!cache[dates[t]] || cache[dates[t]].fallback) todo.push(t);
 console.log(`Model ${MODEL}: ${prices.length - 1 - WARMUP} decision days, ${todo.length} to fetch, ${Object.keys(cache).length} cached.`);
 
+const callModel = IS_CLAUDE ? callAnthropic : callOpenAI;
 let done = 0;
 async function worker(queue: number[]) {
   while (queue.length) {
@@ -110,7 +153,7 @@ async function worker(queue: number[]) {
     const sigma = realizedVolatility(prices.slice(t - WARMUP, t + 1), PERIODS);
     const { sys, usr } = prompt(rr, sigma, 0.5);
     try {
-      cache[dates[t]] = await callOpenAI(sys, usr);
+      cache[dates[t]] = await callModel(sys, usr);
     } catch (e) {
       cache[dates[t]] = { exposure: 0.5, reason: `fallback: ${(e as Error).message}`, fallback: true };
     }

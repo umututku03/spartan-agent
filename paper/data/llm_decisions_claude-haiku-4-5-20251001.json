@@ -1,0 +1,1342 @@
+{
+  "2025-09-15": {
+    "exposure": 0.35,
+    "reason": "High 74% annualized volatility with recent large swings (-8.85%, +12.98%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-09-12": {
+    "exposure": 0.35,
+    "reason": "High 75% annualized volatility with recent choppy swings (-8.85%, +12.98%) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2025-09-13": {
+    "exposure": 0.35,
+    "reason": "High 76% annualized volatility with recent choppy swings (-8.85%, +12.98%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2025-09-14": {
+    "exposure": 0.35,
+    "reason": "High 75% annualized volatility with recent large swings (-8.85%, +12.98%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-09-16": {
+    "exposure": 0.45,
+    "reason": "Recent volatility remains elevated at 75% annualized with mixed directional signals; reduce exposure slightly from current 0.50 to manage downside risk in choppy conditions."
+  },
+  "2025-09-17": {
+    "exposure": 0.45,
+    "reason": "High 75% annualized volatility with recent choppy price action (-1.84% to +5.49% swings) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2025-09-18": {
+    "exposure": 0.35,
+    "reason": "High 74% annualized volatility with recent choppy moves (-1.84 to +5.49 range) warrants reduced exposure below current 0.50 to manage downside risk."
+  },
+  "2025-09-20": {
+    "exposure": 0.45,
+    "reason": "High volatility (68% annualized) with recent choppy action and mixed signals warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2025-09-19": {
+    "exposure": 0.45,
+    "reason": "High 71% annualized volatility with recent choppy price action (mixed small moves after larger swings) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2025-09-21": {
+    "exposure": 0.45,
+    "reason": "High 68% annualized volatility with recent choppy moves (-2.73%, +0.25%) and mixed signals warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2025-09-22": {
+    "exposure": 0.45,
+    "reason": "Recent volatility remains elevated at 50% annualized with mixed directional signals; reduce exposure slightly from current 0.50 to manage downside risk in choppy conditions."
+  },
+  "2025-09-23": {
+    "exposure": 0.45,
+    "reason": "Recent volatility spike (-5.65% today) and choppy mixed signals warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2025-09-24": {
+    "exposure": 0.35,
+    "reason": "High 53% annualized volatility with recent large swings (-5.65%, -8.85%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-09-25": {
+    "exposure": 0.35,
+    "reason": "High volatility (43% annualized) with recent large negative moves (-5.65%, -2.73%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-09-26": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (last 5 days: -5.65%, -0.89%, -0.29%, -6.38%) with 45% annualized volatility indicates choppy, risk-off conditions warranting reduced exposure."
+  },
+  "2025-09-27": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (last 5 days: -5.65%, -0.89%, -0.29%, -6.38%, +3.35%) with 46% annualized volatility warrants defensive positioning despite positive longer-term trend."
+  },
+  "2025-09-28": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with large negative moves (-5.65%, -6.38%) and choppy action warrant reduced exposure despite some recovery attempts."
+  },
+  "2025-09-29": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with large drawdowns (-5.65%, -6.38%) and choppy mixed signals warrant reduced exposure despite some recovery attempts."
+  },
+  "2025-09-30": {
+    "exposure": 0.35,
+    "reason": "High volatility (47% annualized) with recent sharp drawdowns (-5.65%, -6.38%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-01": {
+    "exposure": 0.35,
+    "reason": "High volatility (47% annualized) with recent large drawdowns (-6.38%, -5.65%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-02": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with large negative swings (-5.65%, -6.38%) and choppy mixed signals warrant reduced exposure despite some recovery attempts."
+  },
+  "2025-10-04": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (large negative swings: -5.65%, -6.38%) combined with 50% annualized volatility warrants reduced exposure to manage downside risk."
+  },
+  "2025-10-03": {
+    "exposure": 0.35,
+    "reason": "High volatility (51% annualized) with recent large swings (-6.38%, -5.65%) and choppy price action warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2025-10-05": {
+    "exposure": 0.35,
+    "reason": "High volatility (49% annualized) with recent large swings (-6.38%, -5.65%) and choppy mixed signals warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2025-10-06": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with -6.38% and -5.65% drawdowns, followed by choppy recovery; 49% annualized volatility warrants defensive positioning below current 0.50 allocation."
+  },
+  "2025-10-07": {
+    "exposure": 0.35,
+    "reason": "Recent volatility is elevated (50% annualized) with choppy price action including large swings (-6.38%, -5.65%, +4.87%), indicating risk-off positioning is warranted despite some recent positive moves"
+  },
+  "2025-10-08": {
+    "exposure": 0.35,
+    "reason": "High volatility (54% annualized) with recent large swings (-6.38%, -5.65%, -5.19%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-09": {
+    "exposure": 0.35,
+    "reason": "High volatility (54% annualized) with recent large swings (-6.38%, -5.65%, -5.19%) and choppy mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-10": {
+    "exposure": 0.35,
+    "reason": "High volatility (56% annualized) with recent large swings (-6.38%, -5.65%, -5.19%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-11": {
+    "exposure": 0.25,
+    "reason": "High volatility (71% annualized) with recent severe drawdowns (-12.85%, -6.38%, -5.65%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-12": {
+    "exposure": 0.35,
+    "reason": "High volatility (71% annualized) with recent large drawdowns (-12.85%, -6.38%, -5.65%, -5.19%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-14": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (78% annualized) with recent large swings (-12.85%, -5.65%, -5.19%, +10.25%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2025-10-13": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (78% annualized) with recent large swings (-12.85%, +10.25%) and choppy mixed signals warrant significant risk reduction from current 0.50 position."
+  },
+  "2025-10-15": {
+    "exposure": 0.35,
+    "reason": "High volatility (79% annualized) with recent large swings (-12.85%, +10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-16": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (79% annualized) with recent large swings (-12.85%, +10.25%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2025-10-17": {
+    "exposure": 0.35,
+    "reason": "High 79% annualized volatility with recent extreme swings (-12.85%, +10.25%) and net downtrend warrant reduced exposure to manage risk."
+  },
+  "2025-10-18": {
+    "exposure": 0.35,
+    "reason": "High 79% annualized volatility with recent large swings (-12.85%, +10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-19": {
+    "exposure": 0.35,
+    "reason": "High volatility (79% annualized) with recent large swings (-12.85%, +10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-20": {
+    "exposure": 0.25,
+    "reason": "High 80% annualized volatility with recent extreme swings (-12.85%, +10.25%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2025-10-21": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (79% annualized) with choppy price action including -12.85% drawdown and large swings warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-22": {
+    "exposure": 0.35,
+    "reason": "Recent volatility is extreme at 80% annualized with large choppy swings (-12.85%, +10.25%), indicating high risk; reduce exposure to weather the turbulent conditions."
+  },
+  "2025-10-23": {
+    "exposure": 0.35,
+    "reason": "High volatility (78% annualized) with recent large swings (-12.85%, 10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-24": {
+    "exposure": 0.35,
+    "reason": "High 78% annualized volatility with recent large swings (-12.85%, 10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-25": {
+    "exposure": 0.35,
+    "reason": "High 78% annualized volatility with recent large swings (-12.85%, 10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-26": {
+    "exposure": 0.35,
+    "reason": "High 75% annualized volatility with recent large swings (-12.85%, -5.19%, 10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-27": {
+    "exposure": 0.35,
+    "reason": "High volatility (76% annualized) with recent large swings (-12.85%, -5.19%, 10.25%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-28": {
+    "exposure": 0.35,
+    "reason": "High 76% annualized volatility with recent large swings (-12.85%, -5.19%, +10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-29": {
+    "exposure": 0.35,
+    "reason": "High volatility (77% annualized) with recent large swings (-12.85%, -5.19%, 10.25%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-30": {
+    "exposure": 0.35,
+    "reason": "High 77% annualized volatility with recent large swings (-12.85%, -5.19%, 10.25%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-10-31": {
+    "exposure": 0.35,
+    "reason": "High volatility (77% annualized) with recent choppy action (-12.85%, +10.25% swings) and negative drift over last 10 days warrants reduced risk exposure."
+  },
+  "2025-11-01": {
+    "exposure": 0.35,
+    "reason": "High 75% annualized volatility with recent large swings (-12.85%, -5.19%, -3.55%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-02": {
+    "exposure": 0.35,
+    "reason": "High 74% annualized volatility with recent large swings (-12.85%, 10.25%, 5.04%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-03": {
+    "exposure": 0.35,
+    "reason": "High 74% annualized volatility with recent choppy swings (-12.85%, +10.25%) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-04": {
+    "exposure": 0.35,
+    "reason": "High volatility (79% annualized) with recent large swings (-8.13%, -12.85%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-05": {
+    "exposure": 0.35,
+    "reason": "High 84% annualized volatility with recent large drawdowns (-8.13%, -9.16%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-06": {
+    "exposure": 0.35,
+    "reason": "High 84% annualized volatility with recent large swings (-9.16%, -8.13%) and choppy mixed returns warrant reduced risk exposure."
+  },
+  "2025-11-07": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (83% annualized) with large drawdowns (-8.13%, -9.16%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-08": {
+    "exposure": 0.35,
+    "reason": "High 84% annualized volatility with recent large swings (-9.16%, -8.13%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-09": {
+    "exposure": 0.35,
+    "reason": "High volatility (84% annualized) with recent large swings (-9.16%, -8.13%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-10": {
+    "exposure": 0.35,
+    "reason": "High 74% annualized volatility with recent extreme swings (-8.13%, -9.16%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-11": {
+    "exposure": 0.35,
+    "reason": "High 74% annualized volatility with recent large swings (-9.16%, -8.13%, +5.14%) indicate choppy conditions requiring reduced risk exposure."
+  },
+  "2025-11-12": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (65% annualized) with extreme swings (-9.16%, -8.13%, +5.14%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-13": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (64% annualized) with extreme swings (-9.16%, -8.13%, +5.14%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-14": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with -8.13% and -9.16% drops, followed by choppy recovery; 66% annualized volatility warrants reduced exposure to manage downside risk."
+  },
+  "2025-11-16": {
+    "exposure": 0.35,
+    "reason": "High volatility (66% annualized) with recent extreme swings (-9.16%, -8.13%, -5.71%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-15": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility with large swings (-9.16%, -8.13%, 5.14%, -5.71%) and 66% annualized volatility warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2025-11-17": {
+    "exposure": 0.25,
+    "reason": "High volatility (66% annualized) with recent large swings (-9.16%, -8.13%, -5.71%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2025-11-18": {
+    "exposure": 0.25,
+    "reason": "High volatility (66% annualized) with recent large swings (-9.16%, -8.13%, -5.71%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2025-11-19": {
+    "exposure": 0.25,
+    "reason": "Recent price action shows extreme volatility (66% annualized) with large swings including -8.13% and -9.16% drops; reduce exposure significantly to manage downside risk in choppy conditions."
+  },
+  "2025-11-20": {
+    "exposure": 0.35,
+    "reason": "High volatility (67% annualized) with recent large swings (-9.16%, -8.13%, -5.71%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-21": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent large swings (-9.16%, -8.13%, -6.44%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-23": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent large swings (-9.16%, -8.13%, -6.44%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-24": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent large swings (-9.16%, -8.13%, -6.44%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-22": {
+    "exposure": 0.25,
+    "reason": "Recent returns show extreme volatility with large swings (-9.16%, -8.13%, -6.44%) and 70% annualized volatility; reduce exposure significantly to manage downside risk in choppy conditions."
+  },
+  "2025-11-25": {
+    "exposure": 0.35,
+    "reason": "High 72% annualized volatility with recent large swings (-9.16%, -8.13%, -6.44%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-27": {
+    "exposure": 0.35,
+    "reason": "High 70% annualized volatility with recent large swings (-9.16%, -8.13%, -6.44%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-26": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent large swings (-9.16%, -8.13%, -6.44%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-11-28": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent choppy action (-6.44%, -3.28%, 5.34% swings) and no clear uptrend warrant reduced risk exposure."
+  },
+  "2025-11-29": {
+    "exposure": 0.35,
+    "reason": "High 70% annualized volatility with recent large swings (-9.16%, -8.13%, -6.44%) and choppy mixed returns warrant reduced risk exposure."
+  },
+  "2025-12-01": {
+    "exposure": 0.35,
+    "reason": "High volatility (69% annualized) with recent choppy, whipsaw action (-6.44%, +5.34%, -3.28%) warrants reduced exposure to manage downside risk."
+  },
+  "2025-11-30": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent choppy swings (-6.44%, 5.34%, -5.71%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2025-12-02": {
+    "exposure": 0.35,
+    "reason": "High 72% annualized volatility with recent large swings (-6.71%, -6.44%, -9.16%) and choppy mixed returns warrant reduced risk exposure."
+  },
+  "2025-12-03": {
+    "exposure": 0.35,
+    "reason": "High 77% annualized volatility with recent large swings (-6.71%, +6.94%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-04": {
+    "exposure": 0.35,
+    "reason": "High 76% annualized volatility with recent large swings (-6.71%, +6.94%, +6.19%) indicates choppy conditions; reduce exposure to manage downside risk."
+  },
+  "2025-12-05": {
+    "exposure": 0.35,
+    "reason": "High volatility (69% annualized) with recent large swings (-6.71%, 6.94%, 6.19%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-06": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent large swings (-6.71%, 6.94%, 6.19%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-07": {
+    "exposure": 0.35,
+    "reason": "High 68% annualized volatility with recent large swings (-6.71%, 6.94%, 6.19%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-08": {
+    "exposure": 0.35,
+    "reason": "High 67% annualized volatility with recent large swings (-6.71%, 6.94%, 6.19%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-09": {
+    "exposure": 0.35,
+    "reason": "High 67% annualized volatility with recent large swings (-6.71%, 6.94%, 6.19%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-10": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 68% is elevated with choppy mixed signals (large swings -6.71 to +6.94); reduce exposure slightly from 0.50 to manage downside risk."
+  },
+  "2025-12-11": {
+    "exposure": 0.35,
+    "reason": "High 68% annualized volatility with recent choppy action (large swings: -6.71, +6.94, +6.19) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-12": {
+    "exposure": 0.35,
+    "reason": "High 67% annualized volatility with recent large swings (-6.71%, +6.94%, +6.19%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-14": {
+    "exposure": 0.35,
+    "reason": "High volatility (66% annualized) with recent large swings (-6.71%, -4.80%, +6.94%, +6.19%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-13": {
+    "exposure": 0.35,
+    "reason": "High volatility (69% annualized) with recent choppy action including large swings (-6.71%, +6.94%, +6.19%) and negative net drift over the period warrants reduced risk exposure."
+  },
+  "2025-12-15": {
+    "exposure": 0.35,
+    "reason": "High 66% annualized volatility with recent large swings (-6.71%, -4.80%, +6.94%, +6.19%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-17": {
+    "exposure": 0.35,
+    "reason": "High volatility (66% annualized) with recent choppy action (-6.71%, +6.94%, +6.19%, -3.72%) and multiple large swings warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-16": {
+    "exposure": 0.35,
+    "reason": "High 66% annualized volatility with recent large swings (-6.71%, -6.44%, -4.80%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-18": {
+    "exposure": 0.35,
+    "reason": "High volatility (67% annualized) with recent choppy action (-4.33%, -3.31%, -1.67% in last 3 days) and large swings warrant reduced exposure despite some positive momentum earlier."
+  },
+  "2025-12-19": {
+    "exposure": 0.35,
+    "reason": "High volatility (66% annualized) with recent choppy action including large swings (-6.71, +6.94, +6.19) and recent downside (-4.80, -4.33) warrant reduced exposure to manage risk."
+  },
+  "2025-12-20": {
+    "exposure": 0.35,
+    "reason": "High 68% annualized volatility with recent choppy action (-4.33%, 5.20% swings) and multiple large drawdowns warrant reduced risk exposure."
+  },
+  "2025-12-21": {
+    "exposure": 0.35,
+    "reason": "High volatility (64% annualized) with recent choppy action (-4.33%, 5.20%, -3.31%) and multiple large swings warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-22": {
+    "exposure": 0.35,
+    "reason": "High volatility (63% annualized) with recent choppy action (-4.33%, 5.20%, -3.31%) and multiple large swings warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-23": {
+    "exposure": 0.35,
+    "reason": "High 63% annualized volatility with recent choppy action (-4.33%, -4.80%, -3.31% drawdowns) and large swings warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-25": {
+    "exposure": 0.35,
+    "reason": "High 60% annualized volatility with recent large swings (-6.71%, 6.94%, -4.80%, 5.20%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-24": {
+    "exposure": 0.35,
+    "reason": "High volatility (63% annualized) with recent choppy price action including large swings (-6.71%, 6.94%, -4.80%) and no clear uptrend warrant reduced exposure to manage risk."
+  },
+  "2025-12-26": {
+    "exposure": 0.35,
+    "reason": "High 61% annualized volatility with recent choppy, whipsaw price action (-4.80% to +5.20% swings) warrants reduced exposure to manage downside risk."
+  },
+  "2025-12-27": {
+    "exposure": 0.35,
+    "reason": "High 60% annualized volatility with recent choppy price action (-4.33%, 5.20%, -1.35% swings) and no clear uptrend warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-29": {
+    "exposure": 0.35,
+    "reason": "High 60% annualized volatility with recent choppy, mixed returns (-4.33% to +6.05% swings) warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-30": {
+    "exposure": 0.35,
+    "reason": "High 60% annualized volatility with recent choppy swings (-4.80%, +5.20%) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2025-12-28": {
+    "exposure": 0.35,
+    "reason": "High 60% annualized volatility with recent choppy price action (-4.33%, 5.20%, -1.35% swings) warrants reduced exposure below current 0.50 level to manage downside risk."
+  },
+  "2025-12-31": {
+    "exposure": 0.35,
+    "reason": "High 60% annualized volatility with recent choppy price action (-4.80%, 5.20%, -4.33% swings) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-01": {
+    "exposure": 0.35,
+    "reason": "High 55% annualized volatility with choppy recent moves (-4.80%, -4.33%, -3.31%) and no clear uptrend warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-02": {
+    "exposure": 0.35,
+    "reason": "High 50% annualized volatility with recent choppy price action (-4.80%, -4.33% drawdowns) and mixed directional signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-03": {
+    "exposure": 0.45,
+    "reason": "High volatility (47% annualized) with recent choppy action (-4.33%, -4.80%, 5.20% swings) and mixed momentum warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-01-05": {
+    "exposure": 0.35,
+    "reason": "High volatility (45% annualized) with recent choppy, mixed price action and multiple large drawdowns warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-06": {
+    "exposure": 0.35,
+    "reason": "High 45% annualized volatility with recent choppy price action (-4.80%, 5.20%, 4.28% swings) warrants reduced exposure despite some positive momentum."
+  },
+  "2026-01-07": {
+    "exposure": 0.45,
+    "reason": "High volatility (46% annualized) with recent choppy, mixed returns and no clear uptrend justifies reduced exposure below current 0.50 level."
+  },
+  "2026-01-04": {
+    "exposure": 0.35,
+    "reason": "High 47% annualized volatility with recent choppy action (large swings: +6.05%, -4.80%, +5.20%, -4.33%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in uncertain cond"
+  },
+  "2026-01-08": {
+    "exposure": 0.35,
+    "reason": "High 47% annualized volatility with recent choppy price action (-3.86% last day after gains) signals elevated risk; reduce exposure to manage drawdown potential."
+  },
+  "2026-01-09": {
+    "exposure": 0.35,
+    "reason": "Recent volatility at 43% annualized is elevated with choppy mixed returns and recent large swings (-3.86%, -1.96%); reduce exposure to manage downside risk."
+  },
+  "2026-01-10": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 43% is elevated with mixed directional signals; recent positive momentum (last 5 days averaging +0.82%) is offset by large negative swings, warranting slight reduction from curren"
+  },
+  "2026-01-11": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 42% annualized is elevated with choppy mixed returns; reduce exposure slightly from current 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-01-12": {
+    "exposure": 0.35,
+    "reason": "High volatility (39% annualized) with recent choppy action including sharp drawdowns (-4.33%, -3.86%) and mixed recovery signals warrant reduced exposure below current 0.50 level."
+  },
+  "2026-01-13": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 39% is elevated with mixed directional signals; recent choppiness (-3.86, -1.96 followed by modest gains) suggests reducing exposure slightly from current 0.50 to manage downside "
+  },
+  "2026-01-14": {
+    "exposure": 0.55,
+    "reason": "Recent strong uptrend (+7.44%, +1.98%, +2.33%) with moderating volatility suggests cautious increase from current 0.50 position, but 46% annualized volatility warrants restraint."
+  },
+  "2026-01-16": {
+    "exposure": 0.62,
+    "reason": "Recent uptrend with positive momentum (last 5 days averaging +1.9%) and volatility elevated but manageable; increase exposure moderately from current 0.50 while respecting 44% annualized volatility ri"
+  },
+  "2026-01-17": {
+    "exposure": 0.55,
+    "reason": "Recent momentum is positive (last 5 days: +7.44%, +0.64%, -0.98%, -0.81%, +1.10%) with elevated but manageable volatility at 41%; modest increase from current 0.50 exposure is warranted."
+  },
+  "2026-01-15": {
+    "exposure": 0.55,
+    "reason": "Recent momentum is positive (last 5 days: +7.44%, +1.10%, +0.02%, -0.67%, -1.96%) with elevated but manageable volatility; slight increase from current 0.50 exposure justified by uptrend while respect"
+  },
+  "2026-01-18": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (7.44% gain followed by -0.98%, -0.81%) and elevated 41% annualized volatility warrant reduced exposure; choppy conditions with mixed signals suggest defensive positioning."
+  },
+  "2026-01-20": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (7.44% move, -3.86% drawdown) and elevated 39% annualized volatility warrant reduced exposure despite some positive momentum."
+  },
+  "2026-01-19": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (7.44% gain followed by -0.98%, -0.81% losses) and 38% annualized volatility indicate choppy conditions; reduce exposure below current 0.50 to manage downside risk."
+  },
+  "2026-01-21": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (7.44% and -8.00% moves) with 49% annualized volatility indicates choppy conditions; reduce exposure to manage downside risk."
+  },
+  "2026-01-22": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (49% annualized) with large choppy swings (-8%, +7.44%) and negative recent momentum warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-23": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (7.44%, -8.00% moves) and choppy price action with 49% annualized volatility warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-01-24": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (7.44%, -8.00% moves) and 49% annualized volatility warrant reduced exposure; choppy conditions with large drawdowns suggest defensive positioning."
+  },
+  "2026-01-25": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with -8% drawdown and choppy mixed signals warrant defensive positioning despite some recovery attempts."
+  },
+  "2026-01-26": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (51% annualized) with large drawdowns (-8%, -4.79%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-27": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with -8% drop and choppy mixed signals warrant reduced exposure despite some recovery attempts."
+  },
+  "2026-01-28": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (54% annualized) with large swings (-8%, -4.79%) and choppy mixed signals warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-01-29": {
+    "exposure": 0.35,
+    "reason": "High volatility (54% annualized) with recent large swings (-8%, -4.79%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-30": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (59% annualized) with large swings (-8%, -6.49%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-01-31": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with -8.00% and -6.49% drawdowns, plus 60% annualized volatility warrants reduced exposure to manage downside risk."
+  },
+  "2026-02-01": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (69% annualized) with recent severe drawdowns (-9.80%, -8.00%, -6.49%) and choppy whipsaw action warrant significant risk reduction."
+  },
+  "2026-02-02": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (71% annualized) with large negative swings (-9.80%, -8.00%, -7.91%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-03": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (72% annualized) with large choppy swings (-9.80%, -8.00%, -6.49%) and recent sharp drawdown warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-04": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (74% annualized) with recent severe drawdowns (-9.80%, -7.91%, -6.49%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-05": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (73% annualized) with recent large drawdowns (-9.80%, -8.00%, -7.91%, -6.49%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-06": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (88% annualized) with recent severe drawdowns (-16.14%, -9.80%, -7.91%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-08": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (101% annualized) with recent severe drawdowns (-16.14%, -9.80%, -7.91%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-07": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (100% annualized) with recent severe drawdowns (-16.14%, -9.80%, -8.00%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-10": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (101% annualized) with recent severe drawdowns (-16.14%, -9.80%, -7.91%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-09": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (101% annualized) with recent severe drawdowns (-16.14%, -9.80%, -8.00%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-11": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (101% annualized) with recent severe drawdowns (-16.14%, -9.80%, -7.91%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-12": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (102% annualized) with recent severe drawdowns (-16.14%, -9.80%, -7.91%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-14": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility at 99% annualized with recent large swings (-16.14%, -9.80%, +11.97%) indicates choppy, unstable conditions requiring significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-13": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (97% annualized) with recent large swings (-16.14%, +11.97%, -9.80%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-16": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (101% annualized) with recent large swings (-16.14%, -9.80%, -8.00%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-15": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (100% annualized) with recent large swings (-16.14%, +11.97%) and choppy mixed signals warrant significant risk reduction from current 0.50 position."
+  },
+  "2026-02-17": {
+    "exposure": 0.25,
+    "reason": "Extreme 101% annualized volatility with recent -16.14% and -9.80% swings indicates highly choppy conditions requiring significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-20": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (99% annualized) with recent large drawdowns (-16.14%, -9.80%, -7.91%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-18": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility at 101% annualized with recent large swings (-16.14%, -9.80%, 11.97%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-19": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (101% annualized) with recent large swings (-16.14%, -9.80%, -8.00%) and choppy mixed returns warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-21": {
+    "exposure": 0.25,
+    "reason": "Extreme 99% annualized volatility with recent large swings (-16.14%, -9.80%, -7.91%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-23": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (100% annualized) with recent large swings (-16.14%, -9.80%, -7.91%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-22": {
+    "exposure": 0.25,
+    "reason": "Extreme 99% annualized volatility with recent large swings (-16.14%, -9.80%, -7.91%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-24": {
+    "exposure": 0.25,
+    "reason": "Extreme 100% annualized volatility with recent large swings (-16.14%, -9.80%, -7.91%) and choppy mixed returns warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-27": {
+    "exposure": 0.35,
+    "reason": "Extreme 104% annualized volatility with recent large swings (-16.14%, +11.97%, +10.30%) indicates choppy, high-risk conditions requiring reduced exposure."
+  },
+  "2026-02-25": {
+    "exposure": 0.25,
+    "reason": "Extreme 99% annualized volatility with recent large swings (-16.14%, -9.80%) and choppy mixed returns warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-28": {
+    "exposure": 0.25,
+    "reason": "Extreme 105% annualized volatility with recent large swings (-16.14%, +11.97%, +10.30%) and choppy mixed returns warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-02-26": {
+    "exposure": 0.35,
+    "reason": "Extreme 106% annualized volatility with recent -16% swing and choppy mixed returns warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-03-02": {
+    "exposure": 0.35,
+    "reason": "High volatility (103% annualized) with recent choppy price action and large swings (-16.14%, +10.30%) warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-01": {
+    "exposure": 0.35,
+    "reason": "Extreme 104% annualized volatility with recent choppy swings (-16.14%, +11.97%, -5.83%) indicates high risk; reduce exposure to weather unstable conditions."
+  },
+  "2026-03-03": {
+    "exposure": 0.35,
+    "reason": "High 100% annualized volatility with recent choppy swings (-16.14%, +10.30%) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-04": {
+    "exposure": 0.35,
+    "reason": "97% annualized volatility with recent choppy swings (-16%, +11%, -5% moves) and no clear uptrend warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-05": {
+    "exposure": 0.35,
+    "reason": "100% annualized volatility with recent choppy swings (-5.19%, 10.30%, -4.87%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2026-03-06": {
+    "exposure": 0.35,
+    "reason": "High 98% annualized volatility with recent choppy swings (-5.83%, 10.30%, -4.87%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2026-03-07": {
+    "exposure": 0.35,
+    "reason": "High 99% annualized volatility with recent choppy swings (-5.83%, -5.19%, -4.87%) and large initial drawdown (-16.14%) warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-08": {
+    "exposure": 0.35,
+    "reason": "High 81% annualized volatility with recent choppy swings (-5.83%, 10.30%, -4.87%, 7.04%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2026-03-09": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent large swings (-5.83%, 10.30%, -5.19%, -4.87%) indicates choppy conditions; reduce exposure to manage downside risk."
+  },
+  "2026-03-10": {
+    "exposure": 0.35,
+    "reason": "High volatility (70% annualized) with recent large swings (-5.83%, 10.30%, -5.19%, -4.87%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-11": {
+    "exposure": 0.35,
+    "reason": "High 70% annualized volatility with recent large swings (-5.83%, 10.30%, 7.04%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-12": {
+    "exposure": 0.35,
+    "reason": "High 70% annualized volatility with recent large swings (-5.83%, -5.19%, 10.30%, 7.04%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-14": {
+    "exposure": 0.35,
+    "reason": "High volatility (67% annualized) with recent choppy swings (-5.83%, -5.19%, -4.87%) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-13": {
+    "exposure": 0.35,
+    "reason": "High 69% annualized volatility with recent choppy swings (-5.83%, -5.19%, -4.87%) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-15": {
+    "exposure": 0.45,
+    "reason": "High volatility (67% annualized) with recent choppy action including large swings (-5.83%, 10.30%, -4.87%) suggests reducing exposure slightly from current 0.50 to manage downside risk."
+  },
+  "2026-03-17": {
+    "exposure": 0.65,
+    "reason": "Recent trend shows positive momentum with calm consolidation (last 8 days averaging +1.5%), and 70% volatility is manageable; increase exposure moderately from current 0.50 to capture upside while res"
+  },
+  "2026-03-18": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 67% annualized is elevated with choppy mixed signals (large swings from +10.30% to -5.19%), warranting reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-03-19": {
+    "exposure": 0.45,
+    "reason": "Recent volatility spike (69% annualized) with choppy mixed moves and large swings (-5.21%, +7.14%) warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-03-16": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 66% annualized with choppy mixed returns including large swings (-5.83%, -5.19%, 10.30%, -4.87%) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-03-20": {
+    "exposure": 0.45,
+    "reason": "Recent volatility spike (70% annualized) with choppy mixed moves and large swings (-5.21%, 7.14%) warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-03-21": {
+    "exposure": 0.45,
+    "reason": "Recent volatility spike (70% annualized) with choppy mixed moves and large drawdowns warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-03-23": {
+    "exposure": 0.35,
+    "reason": "High volatility (71% annualized) with recent choppy action including large swings (-5.21%, 7.14%) and mixed momentum suggests reducing risk exposure below current 0.50 level."
+  },
+  "2026-03-24": {
+    "exposure": 0.35,
+    "reason": "High 73% annualized volatility with recent choppy action (-5.21%, -2.93%, -3.82% in last 10 days) warrants reduced exposure despite some positive momentum."
+  },
+  "2026-03-22": {
+    "exposure": 0.35,
+    "reason": "High 71% annualized volatility with recent choppy swings (-5.21%, 7.14%, -5.19%) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-03-25": {
+    "exposure": 0.45,
+    "reason": "Recent volatility spike (70% annualized) with choppy mixed signals (-5.21%, -3.82% recent drops) warrants modest risk reduction from current 0.50 exposure."
+  },
+  "2026-03-26": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with large swings (-5.21%, -3.82%) and 70% annualized volatility warrant reduced exposure; recent calm period (0.33-0.74%) is too brief to offset elevated risk."
+  },
+  "2026-03-28": {
+    "exposure": 0.35,
+    "reason": "High volatility (64% annualized) with recent large swings (-5.33%, -5.21%, 7.14%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-29": {
+    "exposure": 0.35,
+    "reason": "High 64% annualized volatility with recent large swings (-5.33%, -5.21%, 4.60%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-27": {
+    "exposure": 0.35,
+    "reason": "High 73% annualized volatility with recent large swings (-5.33%, -5.21%, 7.14%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-30": {
+    "exposure": 0.35,
+    "reason": "High volatility (62% annualized) with recent large swings (-5.33%, -5.21%, 4.60%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-02": {
+    "exposure": 0.35,
+    "reason": "High volatility (65% annualized) with recent large swings (-5.33%, -5.21%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-01": {
+    "exposure": 0.35,
+    "reason": "High 63% annualized volatility with recent large swings (-5.33%, -5.21%, 7.14%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-03-31": {
+    "exposure": 0.35,
+    "reason": "High 62% annualized volatility with recent large swings (-5.33%, -5.21%, 7.14%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-03": {
+    "exposure": 0.35,
+    "reason": "High 67% annualized volatility with recent large swings (-5.33%, -5.21%, 6.63%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-04": {
+    "exposure": 0.45,
+    "reason": "Recent volatility spike (62% annualized) with choppy moves including -5.33% and -4.43% drawdowns warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-04-05": {
+    "exposure": 0.35,
+    "reason": "High volatility (62% annualized) with recent large swings (-5.33%, -4.43%, 6.63%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-06": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with large swings (-5.33%, -4.43%, 6.63%) and 60% annualized volatility warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-07": {
+    "exposure": 0.35,
+    "reason": "High 60% annualized volatility with recent large swings (-5.33%, -5.21%, 6.63%) and choppy mixed returns warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-08": {
+    "exposure": 0.45,
+    "reason": "High volatility (63% annualized) with recent choppy swings (-5.33%, -4.43%, +6.81%) suggests reducing exposure slightly from current 0.50 to manage downside risk."
+  },
+  "2026-04-10": {
+    "exposure": 0.35,
+    "reason": "High volatility (63% annualized) with recent large swings (-5.33%, 6.81%, -4.43%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-09": {
+    "exposure": 0.35,
+    "reason": "High 63% annualized volatility with recent large swings (-5.33%, -5.21%, 6.81%, 6.63%) and choppy mixed signals warrant reduced exposure below current 0.50 level."
+  },
+  "2026-04-11": {
+    "exposure": 0.35,
+    "reason": "High 64% annualized volatility with recent choppy swings (-5.33%, 6.81%, -4.43%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2026-04-12": {
+    "exposure": 0.35,
+    "reason": "High 64% annualized volatility with recent choppy swings (-5.33%, -4.43%, +6.81%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in uncertain conditions."
+  },
+  "2026-04-13": {
+    "exposure": 0.35,
+    "reason": "High 66% annualized volatility with recent choppy price action (-5.33%, -4.43%, -4.20% drawdowns) and mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-14": {
+    "exposure": 0.35,
+    "reason": "High 71% annualized volatility with recent choppy price action (-4.43%, 6.81%, -1.76%, -4.20%, 8.10%) indicates elevated risk; reduce exposure to manage downside in unstable conditions."
+  },
+  "2026-04-15": {
+    "exposure": 0.35,
+    "reason": "High 71% annualized volatility with recent choppy price action (-4.20% to +8.10% swings) warrants reduced exposure below current 0.50 level for risk management."
+  },
+  "2026-04-16": {
+    "exposure": 0.35,
+    "reason": "High 66% annualized volatility with recent choppy swings (-4.43%, -2.02% after +8.10%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2026-04-17": {
+    "exposure": 0.35,
+    "reason": "High 66% annualized volatility with recent choppy swings (-5.33%, +8.10%, -4.43%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in uncertain conditions."
+  },
+  "2026-04-18": {
+    "exposure": 0.35,
+    "reason": "High 64% annualized volatility with recent choppy swings (-5.33%, -4.43%, -4.20%) and mixed momentum warrant reduced exposure to manage downside risk."
+  },
+  "2026-04-20": {
+    "exposure": 0.45,
+    "reason": "High volatility (66% annualized) with recent choppy action (-4.20 to +8.10 swings) and mixed momentum warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-04-19": {
+    "exposure": 0.35,
+    "reason": "High 64% annualized volatility with recent large swings (-5.33%, -4.43%, -4.20%, 8.10%) indicate choppy conditions; reduce exposure to manage risk despite some positive momentum."
+  },
+  "2026-04-21": {
+    "exposure": 0.45,
+    "reason": "High volatility (65% annualized) with recent choppy action (-4.20%, 8.10%, -2.02%) suggests reducing exposure from 0.50 to manage downside risk."
+  },
+  "2026-04-22": {
+    "exposure": 0.35,
+    "reason": "High 65% annualized volatility with recent choppy swings (-4.20%, +8.10%, -2.02%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2026-04-24": {
+    "exposure": 0.45,
+    "reason": "High 64% annualized volatility with recent choppy swings (-4.43%, 8.10%, -2.02%) suggests reducing exposure from current 0.50 to manage downside risk."
+  },
+  "2026-04-23": {
+    "exposure": 0.35,
+    "reason": "High 63% annualized volatility with recent choppy swings (-4.43%, -4.20%, -3.78%) indicates elevated risk; reduce exposure below current 0.50 to manage downside in unstable conditions."
+  },
+  "2026-04-25": {
+    "exposure": 0.45,
+    "reason": "High 64% annualized volatility with recent choppy swings (-3.78 to +8.10) and mixed momentum warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-04-27": {
+    "exposure": 0.45,
+    "reason": "High volatility (59% annualized) with choppy recent action (large swings, mixed direction) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-04-26": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 60% annualized with choppy whipsaw patterns (-4.43%, +8.10%, -4.20%) and negative drift over last 10 days; reduce exposure slightly to manage downside risk."
+  },
+  "2026-04-28": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 60% annualized with choppy whipsaw patterns (-4.20%, +8.10%, -2.02%) indicating unstable conditions warrant reduced exposure from current 0.50."
+  },
+  "2026-04-29": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 60% annualized with choppy price action (large swings between +8.10% and -4.43%), warranting reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-04-30": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 60% annualized with choppy mixed moves; reduce exposure slightly from 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-05-01": {
+    "exposure": 0.45,
+    "reason": "High 59% annualized volatility with choppy recent action (mixed +/- swings) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-05-02": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 55% annualized is elevated with choppy mixed signals (recent swings: +2.07, -2.79, -1.72, +1.70), warranting reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-05-04": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 52% annualized with choppy mixed signals (large swings between +8.10% and -4.20%), warranting reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-05-05": {
+    "exposure": 0.45,
+    "reason": "High volatility (52% annualized) with choppy recent action (mixed +/- swings) and no clear uptrend warrant reduced exposure from current 0.50."
+  },
+  "2026-05-03": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 52% annualized with choppy mixed moves (-4.20%, +8.10%, -3.78%) suggests elevated risk; reduce exposure slightly from 0.50 to manage downside while maintaining meaningful upside p"
+  },
+  "2026-05-06": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 52% annualized with choppy mixed returns; reduce exposure slightly from current 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-05-07": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 52% annualized is elevated with choppy mixed moves; reduce exposure slightly from 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-05-08": {
+    "exposure": 0.45,
+    "reason": "High volatility (47% annualized) with choppy recent action (mixed +/- moves) and recent downside (-2.57%, -2.79%) warrant reduced exposure from current 0.50."
+  },
+  "2026-05-09": {
+    "exposure": 0.55,
+    "reason": "Recent returns show stabilizing volatility with modest uptrend (last 10 days: +0.70% avg), justifying slight increase from current 0.50 exposure while respecting elevated 46% annualized volatility."
+  },
+  "2026-05-10": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 46% annualized with choppy mixed returns; reduce exposure slightly from 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-05-11": {
+    "exposure": 0.55,
+    "reason": "Recent returns show stabilizing volatility with positive drift in last 10 days; modest increase from current 0.50 exposure is warranted given calmer conditions and upward momentum."
+  },
+  "2026-05-12": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 46% is elevated with choppy mixed moves; reduce exposure slightly from 0.50 to manage downside risk while maintaining meaningful upside participation."
+  },
+  "2026-05-14": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 34% annualized is elevated with choppy mixed returns; reduce exposure slightly from 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-05-16": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 35% annualized with choppy mixed returns; reduce exposure slightly from current 0.50 to manage downside risk."
+  },
+  "2026-05-13": {
+    "exposure": 0.45,
+    "reason": "High 45% annualized volatility with recent choppy mixed moves (-2.72% to +1.82% range) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-05-15": {
+    "exposure": 0.55,
+    "reason": "Recent volatility at 34% is moderate; last 5 days show mixed but slightly positive bias (0.70, 0.85, 1.82, -1.33, -2.72, -0.76, 1.06 trending toward recovery), warranting modest increase from current "
+  },
+  "2026-05-17": {
+    "exposure": 0.45,
+    "reason": "35% annualized volatility is elevated with choppy recent action showing mixed directional signals; reduce exposure slightly from current 0.50 to manage downside risk."
+  },
+  "2026-05-18": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 34% annualized with choppy mixed returns and recent downside moves warrant reduced exposure from current 0.50 level."
+  },
+  "2026-05-19": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 32% annualized with choppy price action (multiple 2%+ swings) and recent downside momentum (-2.29%, -1.99%, -2.60%) suggests reducing exposure from current 0.50 to manage"
+  },
+  "2026-05-20": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high choppiness with large swings (-2.79%, -2.72%, -2.60%, -2.29%) and 30% annualized volatility; reduce exposure to manage downside risk in unstable conditions."
+  },
+  "2026-05-21": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high volatility (29% annualized) with choppy, negative-biased moves over the last 10 days; reduce exposure to manage downside risk."
+  },
+  "2026-05-22": {
+    "exposure": 0.35,
+    "reason": "High volatility (29% annualized) with recent choppy action including multiple -2%+ drops and mixed directional signals warrant reduced exposure below current 0.50 level."
+  },
+  "2026-05-24": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high volatility (31% annualized) with choppy, negative-biased moves over the last 10 days; reduce exposure to manage downside risk."
+  },
+  "2026-05-23": {
+    "exposure": 0.35,
+    "reason": "Recent volatility elevated at 29% annualized with choppy price action including multiple large down days (-3.25%, -2.79%, -2.72%, -2.60%); reduce exposure to manage downside risk."
+  },
+  "2026-05-28": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high choppiness with large swings (3.25% down, 2.51% up) and elevated 30% annualized volatility; reduce exposure to manage downside risk in unstable conditions."
+  },
+  "2026-05-27": {
+    "exposure": 0.35,
+    "reason": "Recent volatility elevated at 30% annualized with choppy price action (large swings including -3.25% and +2.51%), suggesting reduced exposure is prudent despite some positive momentum."
+  },
+  "2026-05-26": {
+    "exposure": 0.35,
+    "reason": "High volatility (31% annualized) with recent choppy action including large swings (-3.25%, 2.51%) and net downtrend over last 10 days warrants reduced exposure to manage risk."
+  },
+  "2026-05-25": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike with large negative moves (-3.25%, -2.79%, -2.72%, -2.60%, -2.29%) and choppy price action warrant reduced exposure despite some positive days."
+  },
+  "2026-05-29": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high choppiness with large swings (recent -3.25%, +2.51%, -2.44% moves) and 30% annualized volatility; reduce exposure to manage downside risk in unstable conditions."
+  },
+  "2026-05-30": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high volatility with large negative swings (-3.25%, -2.72%, -2.60%, -2.57%) and choppy price action; reducing exposure to manage downside risk in unstable conditions."
+  },
+  "2026-05-31": {
+    "exposure": 0.35,
+    "reason": "Recent returns show high choppiness with large swings (3.25% down, 2.51% up) and elevated 30% annualized volatility; reduce exposure to manage downside risk in unstable conditions."
+  },
+  "2026-06-01": {
+    "exposure": 0.35,
+    "reason": "High volatility (29% annualized) with recent choppy action including large drawdowns (-3.25%, -2.72%, -2.60%) and no clear uptrend warrant reduced risk exposure."
+  },
+  "2026-06-02": {
+    "exposure": 0.35,
+    "reason": "High volatility (28% annualized) with recent large negative swings (-3.25%, -2.72%, -2.60%) and choppy mixed returns indicate elevated risk; reduce exposure to manage downside."
+  },
+  "2026-06-04": {
+    "exposure": 0.25,
+    "reason": "Recent volatility spike (7.52% drop) and elevated 37% annualized volatility with choppy, downtrend-biased price action warrant significant risk reduction."
+  },
+  "2026-06-03": {
+    "exposure": 0.25,
+    "reason": "Recent volatility is extreme (37% annualized, -7.52% last day, multiple -2% moves), with choppy whipsaw action and no clear uptrend; reduce exposure significantly to manage downside risk."
+  },
+  "2026-06-05": {
+    "exposure": 0.35,
+    "reason": "High volatility (37% annualized) with recent large drawdowns (-7.52%, -3.25%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-06": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (51% annualized, -11.15% and -7.52% drops in last 5 days) with choppy price action demands significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-08": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (59% annualized, -11.15% and -7.52% drops in last 10 days) with choppy price action demands significant risk reduction from current 50% exposure."
+  },
+  "2026-06-07": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (51% annualized, -11.15% and -7.52% drops in last 10 days) with choppy downtrend demands significant risk reduction from current 50% exposure."
+  },
+  "2026-06-09": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (59% annualized, -11.15% and -7.52% drops in last 10 days) with choppy price action demands significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-10": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (58% annualized, -11.15% and -7.52% swings in last 10 days) with choppy mixed signals demands significant risk reduction from current 0.50 position."
+  },
+  "2026-06-12": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (-11.15%, -7.52% swings) and choppy price action with 60% annualized volatility warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-11": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (58% annualized, -11.15% and -7.52% drawdowns in last 10 days) with choppy price action demands significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-13": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (60% annualized, -11.15% and -7.52% swings) with choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-14": {
+    "exposure": 0.35,
+    "reason": "Recent volatility is extreme (60% annualized) with large choppy swings including -11.15% and -7.52% moves; reduce exposure to manage downside risk in unstable conditions."
+  },
+  "2026-06-15": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (61% annualized) with severe drawdowns (-11.15%, -7.52%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-16": {
+    "exposure": 0.25,
+    "reason": "Recent returns show extreme volatility with -11.15% and -7.52% drawdowns, choppy price action, and 63% annualized volatility warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-18": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (63% annualized) with large choppy swings (-11.15%, -7.52%) and recent whipsaw action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-17": {
+    "exposure": 0.25,
+    "reason": "Extreme recent volatility (63% annualized) with large drawdowns (-11.15%, -7.52%) and choppy price action warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-19": {
+    "exposure": 0.25,
+    "reason": "Extreme volatility (63% annualized) with recent severe drawdowns (-11.15%, -7.52%) and choppy price action warrant significant risk reduction from current 50% exposure."
+  },
+  "2026-06-20": {
+    "exposure": 0.35,
+    "reason": "High volatility (63% annualized) with recent large drawdowns (-11.15%, -7.52%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-21": {
+    "exposure": 0.35,
+    "reason": "Recent volatility spike (63% annualized) with large drawdowns (-11.15%, -7.52%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-23": {
+    "exposure": 0.35,
+    "reason": "High volatility (62% annualized) with recent large drawdowns (-11.15%, -7.52%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-22": {
+    "exposure": 0.35,
+    "reason": "High volatility (63% annualized) with recent large drawdowns (-11.15%, -7.52%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-24": {
+    "exposure": 0.35,
+    "reason": "High volatility (63% annualized) and recent large drawdowns (-11.15%, -7.52%) with choppy price action warrant reduced exposure despite some recent recovery."
+  },
+  "2026-06-25": {
+    "exposure": 0.35,
+    "reason": "High volatility (63% annualized) with recent large drawdowns (-11.15%, -7.52%) and choppy mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-26": {
+    "exposure": 0.35,
+    "reason": "High 64% annualized volatility with recent large drawdowns (-11.15%, -7.52%) and choppy price action warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-27": {
+    "exposure": 0.25,
+    "reason": "High 64% annualized volatility with recent large drawdowns (-11.15%, -7.52%) and choppy mixed signals warrant significant risk reduction from current 0.50 exposure."
+  },
+  "2026-06-28": {
+    "exposure": 0.35,
+    "reason": "High volatility (64% annualized) with recent choppy, negative-biased moves (-3.51%, -3.43%, -2.74%) warrant reduced exposure to manage downside risk."
+  },
+  "2026-06-30": {
+    "exposure": 0.35,
+    "reason": "High 65% annualized volatility with recent choppy action (large swings, mixed direction) warrants reduced exposure below current 0.50 level for risk management."
+  },
+  "2026-07-01": {
+    "exposure": 0.35,
+    "reason": "High volatility (65% annualized) with recent choppy, downward-biased moves (-2.51% latest, multiple -2% to -3% swings) warrant reduced exposure despite occasional positive days."
+  },
+  "2026-06-29": {
+    "exposure": 0.35,
+    "reason": "High 64% annualized volatility with recent choppy price action (-3.51%, -2.74%, -3.43% in last week) and multiple large drawdowns warrant reduced exposure to manage downside risk."
+  },
+  "2026-07-02": {
+    "exposure": 0.35,
+    "reason": "High 66% annualized volatility with recent choppy price action (-7.52% to +3.95% swings) and net negative returns warrant reduced exposure to manage downside risk."
+  },
+  "2026-07-04": {
+    "exposure": 0.45,
+    "reason": "Recent volatility is elevated at 65% annualized with choppy mixed returns; reduce exposure slightly from 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-07-05": {
+    "exposure": 0.35,
+    "reason": "High 65% annualized volatility with recent choppy action (-3.43 to +5.46 range) and mixed momentum warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-07-06": {
+    "exposure": 0.35,
+    "reason": "High 51% annualized volatility with recent choppy price action (large swings, mixed direction) warrants reduced exposure below current 0.50 level for risk management."
+  },
+  "2026-07-03": {
+    "exposure": 0.35,
+    "reason": "High 65% annualized volatility with recent choppy price action (-3.51%, -2.74%, -3.43% drawdowns) and mixed signals warrant reduced exposure to manage downside risk."
+  },
+  "2026-07-07": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 51% annualized with choppy mixed returns and recent large swings (-3.51, -2.74, -3.43) warrant reduced exposure from current 0.50 level."
+  },
+  "2026-07-09": {
+    "exposure": 0.45,
+    "reason": "High 45% annualized volatility with recent choppy mixed moves (-1.65% to +5.46%) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-07-10": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 44% is elevated with choppy mixed signals (large swings including -3.51%, 5.46%), warranting reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-07-08": {
+    "exposure": 0.35,
+    "reason": "High 45% annualized volatility with recent choppy price action (large swings including -3.51% and +5.46%) warrants reduced exposure below current 0.50 level to manage downside risk."
+  },
+  "2026-07-11": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 44% is elevated with choppy mixed returns and recent large swings (-3.51%, -3.43%, 5.46%), warranting reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-07-13": {
+    "exposure": 0.35,
+    "reason": "High volatility (43% annualized) with recent choppy action including large swings (-3.51%, 5.46%) and mixed momentum suggests reducing exposure below current 0.50 to manage downside risk."
+  },
+  "2026-07-12": {
+    "exposure": 0.45,
+    "reason": "Recent volatility spike (5.46%, 3.38% moves) and choppy price action with 43% annualized volatility warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-07-14": {
+    "exposure": 0.35,
+    "reason": "High 44% annualized volatility with recent choppy price action (-1.75% last day after gains) warrants reduced exposure to manage downside risk."
+  },
+  "2026-07-18": {
+    "exposure": 0.55,
+    "reason": "Recent uptrend with 6.35% and 1.39% gains despite 47% volatility suggests momentum; modest increase from current 0.50 exposure balances opportunity against elevated risk."
+  },
+  "2026-07-15": {
+    "exposure": 0.65,
+    "reason": "Recent uptrend with positive momentum (last 5 days: +0.14, +2.86, -0.41, +0.98, -1.75, +6.35) and last day strong at +6.35% suggests bullish conditions despite elevated 48% volatility; increase from 0"
+  },
+  "2026-07-16": {
+    "exposure": 0.65,
+    "reason": "Recent uptrend with positive momentum (last 5 days: +6.35%, +1.39%, -1.75%, +0.98%, -0.41%) and calming volatility suggest increased allocation despite elevated 46% annualized vol."
+  },
+  "2026-07-17": {
+    "exposure": 0.65,
+    "reason": "Recent uptrend with large gains (6.35%, 2.86%, 2.50%) and moderating volatility suggests favorable risk-reward despite 48% annualized vol; increase from 0.50 to capture momentum while respecting eleva"
+  },
+  "2026-07-20": {
+    "exposure": 0.45,
+    "reason": "High volatility (46% annualized) with recent choppy action (mixed +/- swings) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-07-21": {
+    "exposure": 0.55,
+    "reason": "Recent uptrend with positive momentum (last 5 days: +6.35%, +1.39%, -2.84%, -1.20%, +1.16%) and elevated but manageable volatility at 46% suggests modest increase from current 0.50 exposure."
+  },
+  "2026-07-19": {
+    "exposure": 0.65,
+    "reason": "Recent uptrend with positive momentum (last 5 days: +6.35%, +1.39%, -2.84%, -1.20%, +1.16%) and moderating volatility suggest increased risk appetite, but 46% annualized volatility warrants measured p"
+  },
+  "2026-07-22": {
+    "exposure": 0.55,
+    "reason": "Recent momentum is positive with recent gains (6.35%, 1.39%) and volatility remains elevated at 46%, warranting modest increase from current 0.50 exposure while maintaining risk discipline."
+  },
+  "2026-07-23": {
+    "exposure": 0.55,
+    "reason": "Recent uptrend with positive momentum (last 5 days: +1.16, +0.46, +1.64, +1.40, +0.25) and moderating volatility suggest modest increase from current 0.50 position."
+  },
+  "2026-07-25": {
+    "exposure": 0.55,
+    "reason": "Recent uptrend with 6.35% spike and mostly positive momentum, but 44% annualized volatility warrants moderate positioning slightly above current 0.50 level."
+  },
+  "2026-07-24": {
+    "exposure": 0.55,
+    "reason": "Recent uptrend with positive momentum (last 5 days: +1.16, +0.46, +1.64, +1.40, +0.25) and moderate volatility at 45% support slightly increased exposure from current 0.50."
+  },
+  "2026-07-26": {
+    "exposure": 0.55,
+    "reason": "Recent returns show positive momentum with last 5 days averaging +1.1%, volatility at 42% is elevated but manageable, slight increase from current 0.50 exposure justified by uptrend."
+  },
+  "2026-07-27": {
+    "exposure": 0.55,
+    "reason": "Recent momentum is positive with last 5 days averaging +0.93%, volatility is elevated at 43% but recent moves show less choppiness; modest increase from current 0.50 is warranted."
+  },
+  "2026-07-29": {
+    "exposure": 0.55,
+    "reason": "Recent trend is positive with moderate volatility; slight increase from current 0.50 exposure is warranted given upward momentum and 45% annualized volatility is manageable."
+  },
+  "2026-07-28": {
+    "exposure": 0.55,
+    "reason": "Recent returns show mixed signals with high volatility (45% annualized) but last 5 days trend positive (+4.07, -3.19 net); moderate increase from current 0.50 exposure balances upside participation wi"
+  },
+  "2026-07-30": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 45% annualized is elevated with choppy mixed moves; reduce exposure slightly from 0.50 to manage downside risk while maintaining meaningful upside participation."
+  },
+  "2026-08-01": {
+    "exposure": 0.45,
+    "reason": "High 45% annualized volatility with recent choppy moves (-3.19%, 4.07%, -2.96%) and mixed momentum warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-08-03": {
+    "exposure": 0.45,
+    "reason": "High volatility (41% annualized) with recent large swings (-3.19%, 4.07%) and choppy mixed returns warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-08-02": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 42% annualized with choppy price action (large swings including -3.19%, 4.07%, 6.35%) warrants reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-07-31": {
+    "exposure": 0.45,
+    "reason": "High volatility (44% annualized) with recent choppy swings (-3.19%, 4.07%, -2.96%) and mixed momentum warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-08-04": {
+    "exposure": 0.45,
+    "reason": "High volatility (41% annualized) with recent choppy action (-3.19%, 1.70%, -0.79%) suggests reducing exposure from current 0.50 to manage downside risk."
+  },
+  "2026-08-05": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 41% annualized with choppy mixed returns and recent large swings (-3.19%, 4.07%) warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-08-07": {
+    "exposure": 0.45,
+    "reason": "High 41% annualized volatility with recent choppy action (-3.19%, -2.94%, -2.84% drawdowns) and mixed momentum warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-08-06": {
+    "exposure": 0.55,
+    "reason": "Recent volatility at 41% is moderate; last 5 days show mixed but slightly positive momentum (0.53, 1.99, -1.00, -2.94, 0.57) with recent recovery, warranting modest increase from current 0.50 exposure"
+  },
+  "2026-08-08": {
+    "exposure": 0.45,
+    "reason": "Recent returns show high volatility (40% annualized) with choppy price action including multiple large swings (-3.19%, -2.96%, -2.84%), warranting reduced exposure from current 0.50 to manage downside"
+  },
+  "2026-08-09": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 40% annualized with choppy mixed returns and recent large swings (-3.19%, -2.94%, -2.96%) warrant reduced exposure from current 0.50 to manage downside risk."
+  },
+  "2026-08-10": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 39% is elevated with choppy mixed returns; reduce exposure slightly from 0.50 to manage downside risk in uncertain conditions."
+  },
+  "2026-08-11": {
+    "exposure": 0.45,
+    "reason": "Recent volatility elevated at 40% annualized with choppy price action (multiple large swings including -3.19% and +4.07%), warranting modest risk reduction from current 0.50 exposure."
+  },
+  "2026-08-12": {
+    "exposure": 0.45,
+    "reason": "Recent volatility at 40% annualized with choppy mixed returns and recent downside moves warrant reduced exposure from current 0.50 level."
+  }
+}

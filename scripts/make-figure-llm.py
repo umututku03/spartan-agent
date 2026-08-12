@@ -14,10 +14,13 @@ import numpy as np
 
 os.makedirs("paper/figures", exist_ok=True)
 data = json.load(open("paper/data/llm_results.json"))
-models = list(data.keys())  # e.g. gpt-4o-mini, gpt-4o
+models = list(data.keys())  # gpt-4o-mini, gpt-4o, claude-haiku-4-5-...
 arms = ["buy-and-hold", "fixed-fraction", "vol-target+cap", "llm-raw", "llm+risk"]
 labels = ["buy &\nhold", "fixed\nfrac", "vol-tgt\n+cap", "llm\nraw", "llm\n+risk"]
-mcolors = {"gpt-4o-mini": "#E69F00", "gpt-4o": "#0072B2"}
+PALETTE = ["#E69F00", "#0072B2", "#009E73", "#CC79A7"]  # Okabe-Ito, colorblind-safe
+mcolors = {m: PALETTE[i % len(PALETTE)] for i, m in enumerate(models)}
+def short(m):
+    return m.replace("-20251001", "").replace("claude-haiku-4-5", "claude-haiku-4.5")
 
 def series(model, key):
     a = data[model]["FULL"]["arms"]
@@ -25,7 +28,7 @@ def series(model, key):
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9.2, 3.6))
 x = np.arange(len(arms))
-w = 0.38
+w = 0.8 / len(models)
 
 for ax, key, title, ylab in [
     (ax1, "maxDrawdown", "Maximum drawdown (full year)", "drawdown (%)"),
@@ -33,8 +36,8 @@ for ax, key, title, ylab in [
 ]:
     for i, m in enumerate(models):
         vals = series(m, key)
-        ax.bar(x + (i - (len(models) - 1) / 2) * w, vals, w, label=m,
-               color=mcolors.get(m, "#009E73"), edgecolor="white", linewidth=0.5)
+        ax.bar(x + (i - (len(models) - 1) / 2) * w, vals, w, label=short(m),
+               color=mcolors[m], edgecolor="white", linewidth=0.5)
     ax.set_title(title, fontsize=11)
     ax.set_ylabel(ylab, fontsize=9)
     ax.set_xticks(x)
