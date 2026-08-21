@@ -941,7 +941,7 @@ async function verifyEip712Authorization(
 
                 try {
                     // Get private key for executing transactions
-                    const privateKey = runtime.getSetting?.(`${network.toUpperCase()}_PRIVATE_KEY`) || '0x0c34bc2f399a0e1e3b1afd4194d28ce6b73db810b5719c914cbc4a5846efc975';
+                    const privateKey = runtime.getSetting?.(`${network.toUpperCase()}_PRIVATE_KEY`);
                     if (!privateKey) {
                         logError(`✗ Missing private key for ${network}. Set ${network.toUpperCase()}_PRIVATE_KEY in environment.`);
                         logError('⚠️  Accepting payment but cannot execute transfer (no private key)');
