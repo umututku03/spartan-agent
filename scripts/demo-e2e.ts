@@ -15,7 +15,7 @@
  * onboarding also tee the agent stdout to a file and pass AGENT_LOG (the verification code is printed
  * there, not in chat). If the box already has a verified wallet imported, run with SKIP_ONBOARDING=1.
  *
- *   # already-seeded box (this VM): skip onboarding, just do the actions
+ *   # already-seeded box: skip onboarding, just do the actions
  *   SKIP_ONBOARDING=1 bun run scripts/demo-e2e.ts
  *
  *   # fresh box: full flow (needs the agent log for the verification code)

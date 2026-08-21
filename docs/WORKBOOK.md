@@ -5,8 +5,8 @@ went. It covers where the idea came from, what I read, the decisions I made and 
 broke, and what I deliberately left for later. If you only read the paper (`paper/main.pdf`) you get
 the tidy version. This is the messy version, which is the useful one.
 
-Two people are behind it: me (the developer, doing this as a school project) and my advisor, Srisht,
-who set the milestone. The work is learner-level. The honest framing that runs through everything is
+This is my project (a school project) with guidance from my advisor, who set the milestone. The work
+is learner-level. The honest framing that runs through everything is
 that this is a proposal plus a first implementation, fork-verified, not a result proven at scale.
 
 ## Where it started
