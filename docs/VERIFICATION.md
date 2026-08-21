@@ -127,9 +127,9 @@ Executing the full flow (rather than only reading the code) surfaced four real b
 
 | Artifact | Where it runs | Status |
 |---|---|---|
-| Unit tests (pure helpers) | any machine (`bun`) | ✅ 21/21 |
-| Live read-only mainnet (reads + Uniswap quote) | any machine + public RPC | ✅ live |
-| On-chain write path (transfer/swap/supply/borrow) | mainnet fork (Anvil) | ✅ 4 tx hashes |
+| Unit tests (pure helpers) | any machine (`bun`) | 21/21 |
+| Live read-only mainnet (reads + Uniswap quote) | any machine + public RPC | live |
+| On-chain write path (transfer/swap/supply/borrow) | mainnet fork (Anvil) | 4 tx hashes |
 
 The Ethereum DeFi execution layer is verified end-to-end on real contracts. The agent/LLM layer
 (driving these from chat) is documented in `docs/PHASE2_AGENT_CHAT.md` and `docs/PHASE3_ACTIONS.md`.
