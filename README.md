@@ -36,20 +36,16 @@ Some Ethereum work is still in progress and should be treated as MVP-stage rathe
 
 The Ethereum DeFi logic (wallet import, in-chat detection, transfers, Uniswap V2 swaps, and
 Aave V3 supply/borrow) lives in `src/plugins/multiwallet/` — see
-`utils/ethereum.ts` and the `act_wallet_*` actions. Two docs cover how to run and verify it:
+`utils/ethereum.ts` and the `act_wallet_*` actions. These docs cover how to run and verify it:
 
-- **[docs/ETH_MVP_SETUP.md](./docs/ETH_MVP_SETUP.md)** — setup + verification runbook. Run inside
-  the eliza monorepo, point `ETHEREUM_RPC_URL` at a local **Anvil mainnet fork**
-  (`anvil --fork-url <rpc>`), then drive all five pipeline stages end-to-end with a throwaway,
-  pre-funded key (no real funds at risk).
+- **[docs/SETUP_FROM_SCRATCH.md](./docs/SETUP_FROM_SCRATCH.md)** — reproducible setup runbook: clone
+  the eliza monorepo, drop this in as `packages/spartan`, point `ETHEREUM_RPC_URL` at a local **Anvil
+  mainnet fork**, build, and run the agent end-to-end.
 - **[docs/ETH_MVP_DECISIONS.md](./docs/ETH_MVP_DECISIONS.md)** — decision log: every choice made
   (monorepo run path, fork-based testing, import-only wallets, declaring `viem`, the
   unit-test + fork verification strategy) and the rationale behind it.
-- **[docs/ETH_MVP_NEXT_STEPS.md](./docs/ETH_MVP_NEXT_STEPS.md)** — concrete, copy-pasteable next
-  steps to run it: unit tests, a no-runtime on-chain smoke test against an Anvil fork, and the
-  full chat-driven agent e2e.
-- **[docs/ETH_MVP_LIMITATIONS.md](./docs/ETH_MVP_LIMITATIONS.md)** — known MVP limitations and
-  the post-merge work list (CoW/V3 execution, multi-network, Aave health-factor guard, etc.).
+- **[docs/VERIFICATION.md](./docs/VERIFICATION.md)** — reproducible evidence that the DeFi layer works:
+  unit tests, a live read-only mainnet demo, and the on-chain write path on a fork with real tx hashes.
 
 **Key Capabilities:**
 - Multi-tenant wallet management with per-user custody

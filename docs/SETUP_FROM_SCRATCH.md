@@ -5,18 +5,17 @@ core 1.6.5-alpha), serves the web chat UI at http://localhost:3000, and responds
 Every blocker we hit is fixed inline, in order.
 
 > Honest scope: at this state the agent **boots, serves the UI, and understands** wallet commands.
-> Getting the wallet **actions to fire from chat** is a separate open item (see the troubleshooting
-> note + `docs/PLAN_PROMPTS.md` Phase 3). The DeFi execution itself is independently verified via
-> the Anvil fork smoke test (`scripts/smoke.ts`, real tx hashes — see `docs/ETH_MVP_WORKLOG.md`).
+> Getting the wallet **actions to fire from chat** is covered in `docs/PHASE3_ACTIONS.md`. The DeFi
+> execution itself is independently verified via the Anvil fork smoke test (`scripts/smoke.ts`, real
+> tx hashes — see `docs/VERIFICATION.md`).
 
 Assumed local paths (adjust to yours — examples are macOS):
 - eliza clone:        `~/dev/eliza`
 - this repo (Spartan): `~/dev/spartan-agent`
 - fixed `ethereum.ts`: from this repo, `src/plugins/multiwallet/utils/ethereum.ts`
 
-Related docs: `PHASE2_AGENT_CHAT.md` (agent boot + chat, VERIFIED on the VM),
-`ETH_MVP_SETUP.md` (fork verification), `ETH_MVP_NEXT_STEPS.md` (tiered run),
-`ETH_MVP_WORKLOG.md` (full history), `ETH_MVP_LIMITATIONS.md`, `PLAN_PROMPTS.md` (next phases).
+Related docs: `PHASE2_AGENT_CHAT.md` (agent boot + chat), `PHASE3_ACTIONS.md` (actions fire on-chain),
+`VERIFICATION.md` (fork verification evidence), `ETH_MVP_DECISIONS.md` (decision log).
 
 ---
 
@@ -183,7 +182,7 @@ DeFi execution is separately proven via `scripts/smoke.ts` on the fork.)
 
 ## Fast checks that don't need the full agent (run in this repo, no monorepo)
 ```bash
-# unit tests (pure helpers, offline)      — needs viem in a scratch dir; see ETH_MVP_NEXT_STEPS.md
+# unit tests (pure helpers, offline)      — needs viem in a scratch dir
 bun test
 # live read-only mainnet demo (address + balances + Uniswap quote)
 ETHEREUM_RPC_URL=https://ethereum-rpc.publicnode.com bun run scripts/demo-readonly.ts
