@@ -90,7 +90,7 @@ i.e. the LLM ran and chose the **IGNORE** action rather than firing `WALLET_IMPO
 expected Phase-2 boundary: the wallet action's `validate()` gates (entity + registered/verified
 account) aren't satisfied for a raw session user, so the model has no wallet action to select and
 falls back to IGNORE for a bare command (while it answers conversational messages normally). Making
-the action actually fire is **Phase 3** (`docs/PLAN_PROMPTS.md`).
+the action actually fire is **Phase 3** (`docs/PHASE3_ACTIONS.md`).
 
 The `Error creating entities … duplicate key value violates unique constraint "entities_pkey"`
 lines in the log are **benign** — the session layer already created the author entity via

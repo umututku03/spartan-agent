@@ -2,7 +2,7 @@
 
 This document records **every significant decision** made while turning this repo's Ethereum work
 into a runnable, verified MVP, and **why** each choice was made. It is the companion to the
-hands-on [`ETH_MVP_SETUP.md`](./ETH_MVP_SETUP.md) runbook.
+hands-on [`SETUP_FROM_SCRATCH.md`](./SETUP_FROM_SCRATCH.md) runbook.
 
 Project context: this is the ElizaOS **Spartan** trading agent, adapted into an Ethereum-focused
 DeFi MVP for a school project. The guiding milestone is *"implement the agent on Ethereum —

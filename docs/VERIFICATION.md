@@ -5,7 +5,7 @@ exact command, expected output, and a real captured result. Artifacts 1–2 run 
 `bun` + `viem` (no monorepo); artifact 3 is the on-chain write path on a mainnet fork.
 
 Code under test: `src/plugins/multiwallet/utils/ethereum.ts` (viem). Scripts: `scripts/demo-readonly.ts`,
-`scripts/smoke.ts`. See also `docs/ETH_MVP_NEXT_STEPS.md` (run tiers) and `docs/ETH_MVP_WORKLOG.md`.
+`scripts/smoke.ts`. See also `docs/SETUP_FROM_SCRATCH.md` for the full end-to-end run.
 
 ---
 
@@ -15,7 +15,7 @@ Covers the network-free helpers: private-key/address detection, normalization, a
 and known-token resolution.
 
 **Command** (scratch dir, since the repo root uses `workspace:*` and can't `bun install`
-standalone — see NEXT_STEPS):
+standalone):
 ```bash
 mkdir -p /tmp/eth-verify/__tests__ && cd /tmp/eth-verify
 cp <repo>/src/plugins/multiwallet/utils/ethereum.ts ethereum.ts
@@ -106,7 +106,7 @@ supply (need an ERC-20), supply before borrow (need collateral).
 | Borrow DAI (Aave V3) → 10 DAI | `0x5774d1bd62d4fd4ad6df86f7ad190c7f23b940a8e86163c2768c628261ba9882` |
 
 Inspect any hash on the fork with `cast receipt <hash> --rpc-url http://127.0.0.1:8545` (status 1).
-Full re-run instructions: `docs/ETH_MVP_NEXT_STEPS.md`.
+Full re-run instructions: `docs/SETUP_FROM_SCRATCH.md`.
 
 ---
 
@@ -121,8 +121,6 @@ Executing the full flow (rather than only reading the code) surfaced four real b
 | Aave borrow ran out of gas (viem under-estimated the health-factor/oracle path) | Pinned an explicit gas limit on supply/borrow | `1fbc728` |
 | Calls didn't check `receipt.status` → a reverted tx returned a "success" hash | Throw on non-success | `19d28bc` |
 
-Narrative and diagnosis details: `docs/ETH_MVP_WORKLOG.md`.
-
 ---
 
 ## Summary
@@ -134,4 +132,4 @@ Narrative and diagnosis details: `docs/ETH_MVP_WORKLOG.md`.
 | On-chain write path (transfer/swap/supply/borrow) | mainnet fork (Anvil) | ✅ 4 tx hashes |
 
 The Ethereum DeFi execution layer is verified end-to-end on real contracts. The agent/LLM layer
-(driving these from chat) is tracked separately — see `docs/PLAN_PROMPTS.md` (Phases 2–3).
+(driving these from chat) is documented in `docs/PHASE2_AGENT_CHAT.md` and `docs/PHASE3_ACTIONS.md`.

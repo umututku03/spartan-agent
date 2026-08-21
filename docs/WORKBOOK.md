@@ -140,8 +140,7 @@ moderate math for the Uniswap output and price impact, the Aave health factor an
 volatility targeting and Kelly sizing. It ships with a deterministic, no-lookahead sizing backtest on a
 year of ETH prices and a colorblind-safe figure. The honest result I reported: on a volatile window,
 volatility targeting with a cap cut realized volatility from about 88% to 60% a year and drawdown from
-about 43% to 35% versus holding ETH, with no claim of excess return. I ran the humanizer pass on it
-because I did not want the obvious AI tells.
+about 43% to 35% versus holding ETH, with no claim of excess return.
 
 ## Step 2, the future-work benchmarks (12 Aug 2026)
 
