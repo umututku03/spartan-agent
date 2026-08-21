@@ -16,7 +16,7 @@ import { coinMarketingPlugin } from './plugins/coin_marketing';
 
 import { initCharacter } from './init';
 
-const imagePath = path.resolve('./src/spartan/assets/portrait.jpg');
+const imagePath = path.resolve('./src/assets/portrait.jpg');
 
 // Read and convert to Base64
 const avatar = fs.existsSync(imagePath)
