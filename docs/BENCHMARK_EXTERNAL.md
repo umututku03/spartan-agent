@@ -50,7 +50,7 @@ Table 3 ETH numbers.
 
 \* contamination-prone and handicapped; see the ledger below. Not a like-for-like model verdict.
 
-![InvestorBench ETH comparison](figures/investorbench_eth.png)
+![InvestorBench ETH comparison](../paper/figures/investorbench_eth.png)
 
 ## What we read from this
 

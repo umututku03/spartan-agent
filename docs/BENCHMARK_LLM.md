@@ -57,7 +57,7 @@ Recent 90-day slice (15 May to 12 Aug 2026), the least-contaminated window: buy-
 -10.8% drawdown; `gpt-4o` llm-raw returned -5.6% at 15.9% vol and -11.4% drawdown; `claude-haiku-4.5`
 llm-raw returned -7.1% at 18.2% vol and -13.0% drawdown. All three stayed cautious here too.
 
-![LLM benchmark](figures/llm_benchmark.png)
+![LLM benchmark](../paper/figures/llm_benchmark.png)
 
 ## What we read from this
 1. **Risk-aware prompting made both models cautious, which paid off in a falling market.** Both
