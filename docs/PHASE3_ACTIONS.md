@@ -1,6 +1,6 @@
-# Phase 3 — Live wallet actions firing from chat → real on-chain txs — VERIFIED on the VM
+# Phase 3 — Live wallet actions firing from chat → real on-chain txs — VERIFIED
 
-**Status: ✅ complete (and exceeded).** Driving the Spartan agent purely through chat (the Sessions
+**Status: complete (and exceeded).** Driving the Spartan agent purely through chat (the Sessions
 API, the scriptable equivalent of the web UI), the full flow **register → verify → import → swap →
 supply** fired real multiwallet ACTIONS, and the swap + supply produced **confirmed on-chain
 transactions** on the Docker-anvil mainnet fork.
@@ -14,9 +14,9 @@ successful on-chain writes from chat (2 swaps + 1 Aave supply).
 
 | Chat command | Action fired | Tx hash | Block | Status |
 |---|---|---|---|---|
-| swap 0.05 ETH → USDC | `MULTIWALLET_SWAP` | `0x99b65f21494fd855f5eea847cbf23f8e769030150532ecbb810f0f7d4e457d04` | 25736320 | ✅ 0x1 |
-| swap 0.05 ETH → USDC | `MULTIWALLET_SWAP` | `0xee1a46951eb5c1333b06dd1545e4eb31b2de7e4efcfc59449b175ced47c90ec9` | 25736321 | ✅ 0x1 |
-| supply USDC → Aave | `MULTIWALLET_ETHEREUM_LENDING` | `0x765bce0033e3d857043aeff0925adf8892fbcb8119bf02a15186238ba727cc2c` | 25736323 | ✅ 0x1 |
+| swap 0.05 ETH → USDC | `MULTIWALLET_SWAP` | `0x99b65f21494fd855f5eea847cbf23f8e769030150532ecbb810f0f7d4e457d04` | 25736320 | 0x1 |
+| swap 0.05 ETH → USDC | `MULTIWALLET_SWAP` | `0xee1a46951eb5c1333b06dd1545e4eb31b2de7e4efcfc59449b175ced47c90ec9` | 25736321 | 0x1 |
+| supply USDC → Aave | `MULTIWALLET_ETHEREUM_LENDING` | `0x765bce0033e3d857043aeff0925adf8892fbcb8119bf02a15186238ba727cc2c` | 25736323 | 0x1 |
 
 All `from` the imported wallet `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266` (anvil account-0, derived
 from the imported private key). Verify any hash:
@@ -38,7 +38,7 @@ curl -s -X POST -H 'content-type: application/json' \
           -> WALLET_IMPORT validate PASSED; handler stored keypairs.ethereum;
              reply: "Made a meta-wallet … Public key: 0xf39Fd6…2266 … please fund it".
 [USER]    Execute a swap now: 0.05 ETH to USDC using my wallet 0xf39Fd6…2266
-          -> MULTIWALLET_SWAP fired; reply: "✅ Ethereum swap completed successfully!
+          -> MULTIWALLET_SWAP fired; reply: "Ethereum swap completed successfully!
              0.05 ETH → ~93.83 USDC  Transaction ID: 0xee1a46…"  (on-chain, status 0x1)
 [USER]    supply 100 USDC to Aave from my wallet 0xf39Fd6…2266
           -> MULTIWALLET_ETHEREUM_LENDING fired; reply: "Supplied 187.66 USDC on Aave V3.

@@ -107,8 +107,8 @@ and calls not checking `receipt.status`, so reverts were returning fake success 
 throwing on non-success. I also added unit tests on the pure helpers. This is the part I am most
 comfortable defending, because it is verifiable and it found real problems.
 
-Phase 2, the agent boots and talks (11 Aug 2026). Getting the full Spartan runtime to start on the
-Linux VM was its own saga, all written up in `docs/SETUP_FROM_SCRATCH.md`. The short list of things that
+Phase 2, the agent boots and talks (11 Aug 2026). Getting the full Spartan runtime to start on a fresh Linux machine was its own saga, all written up in
+`docs/SETUP_FROM_SCRATCH.md`. The short list of things that
 bit me: the `bun run build` npm indirection silently no-ops, so you build each package with `bun run
 build.ts` directly; the `node_modules/.bin/bun` shims were Windows `.exe` files that had to be
 repointed; and the character kept loading as default Eliza until I learned to launch from

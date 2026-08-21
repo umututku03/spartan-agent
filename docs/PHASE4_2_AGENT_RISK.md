@@ -1,6 +1,6 @@
-# Phase 4.2 — Agent-integrated risk layer — VERIFIED on the VM
+# Phase 4.2 — Agent-integrated risk layer — VERIFIED
 
-**Status: ✅ complete.** The deterministic risk core from Phase 4 is now **native to the Spartan
+**Status: complete.** The deterministic risk core from Phase 4 is now **native to the Spartan
 agent**: a shared `RiskService` is the single source of truth, an always-on provider injects the
 user's risk budget into every turn (so the agent is proactively risk-aware and self-limits), a
 read-only `RISK_ASSESS` action answers "how much can I safely swap/borrow?", and the swap/borrow

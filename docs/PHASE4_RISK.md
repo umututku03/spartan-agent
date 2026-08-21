@@ -1,6 +1,6 @@
 # Phase 4 — Deterministic, regime-aware risk-governance layer (the project's novelty)
 
-**Status: ✅ complete.** A new deterministic position-sizing layer sits between signal and execution
+**Status: complete.** A new deterministic position-sizing layer sits between signal and execution
 and answers the question most crypto agents skip: **how much to risk given the regime.** The LLM is
 never in the multiply-by-size step. 30 unit tests pass, a deterministic demo shows regime-responsive
 sizing, and the borrow guard is verified refusing an over-leverage against **real on-chain Aave state**
@@ -51,16 +51,16 @@ $ bun run scripts/demo-risk.ts
          2.00     0.2500     2.5000   volatility-target
          4.00     0.1250     1.2500   volatility-target
     -> as regime vol rises the position shrinks ~1/vol; calm regimes clamp at the wallet cap.
-[3] Aave HF floor (1.5):  borrow $100 -> HF 8.000 ✅ ;  borrow $700 -> HF 1.143 ⛔ REFUSED
+[3] Aave HF floor (1.5):  borrow $100 -> HF 8.000;  borrow $700 -> HF 1.143 REFUSED
 ```
 
 ### 2c. Borrow guard vs REAL on-chain Aave state — `scripts/verify-hf-guard.ts` (on the fork)
 ```
 $ ETHEREUM_RPC_URL=http://127.0.0.1:8545 bun run scripts/verify-hf-guard.ts 0xf39Fd6…2266
 Live Aave account data (fork): collateral $187.63, debt $0.00, liqThreshold 78.0%, HF ∞
-  borrow $ 20 -> ✅ ALLOWED  (projected health factor 7.318 ≥ floor 1.50)
-  borrow $ 50 -> ✅ ALLOWED  (projected health factor 2.927 ≥ floor 1.50)
-  borrow $300 -> ⛔ REFUSED  (projected health factor 0.488 < floor 1.50 — borrow refused …)
+  borrow $ 20 -> ALLOWED  (projected health factor 7.318 ≥ floor 1.50)
+  borrow $ 50 -> ALLOWED  (projected health factor 2.927 ≥ floor 1.50)
+  borrow $300 -> REFUSED  (projected health factor 0.488 < floor 1.50 — borrow refused …)
 ```
 This reads the wallet's **actual** `getUserAccountData` from the fork (the USDC supplied in Phase 3)
 and refuses the over-leverage — the guard's real integration point, decoupled from the LLM.
@@ -69,7 +69,7 @@ and refuses the over-leverage — the guard's real integration point, decoupled 
 - `ethereum.ts` (read-only additions): `getUserAccountData` added to `AAVE_V3_POOL_ABI`; new exports
   `getAaveUserAccountData()` and `getEthereumTokenBalance()`. **No existing write function changed.**
 - `act_wallet_swap.ts` (Ethereum branch): before `swapEthereumExactIn`, reads the spendable input
-  balance, calls `sizeSwap(...)`, clamps the amount when enforcing, and appends a `🛡️ Risk layer:` note
+  balance, calls `sizeSwap(...)`, clamps the amount when enforcing, and appends a `Risk layer:` note
   to the chat reply.
 - `act_wallet_lending.ts` (borrow branch): before `executeEthereumLendingAction`, reads Aave account
   data and **refuses** the borrow when the projected HF is below the floor.

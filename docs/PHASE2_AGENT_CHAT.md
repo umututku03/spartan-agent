@@ -1,6 +1,6 @@
-# Phase 2 — Full Spartan agent chat (talking + understanding) — VERIFIED on the Linux VM
+# Phase 2 — Full Spartan agent chat (talking + understanding) — VERIFIED
 
-**Status: ✅ complete.** The full Spartan/ElizaOS agent boots on this Cerebras Linux VM, loads the
+**Status: complete.** The full Spartan/ElizaOS agent boots on a local Linux machine, loads the
 **Spartan** character (not the default Eliza), registers the multiwallet (custodial-wallet) service,
 serves the web UI on `:3000`, and responds coherently to chat via OpenAI — demonstrating it
 understands Ethereum wallet / DeFi requests.
@@ -9,7 +9,7 @@ understands Ethereum wallet / DeFi requests.
 > (an on-chain tx driven from chat) is Phase 3 — see the "IGNORE action" note below. The DeFi
 > execution itself is independently verified on the Anvil fork (`docs/VERIFICATION.md`).
 
-Runs entirely on the VM: agent natively via `bun`; the mainnet fork via **Docker-anvil**.
+Runs locally: the agent natively via `bun`; the mainnet fork via **Docker-anvil** (or native anvil).
 
 ---
 
@@ -18,7 +18,7 @@ Runs entirely on the VM: agent natively via `bun`; the mainnet fork via **Docker
 ```
  Info       Loaded character: Spartan
  Info       Web UI enabled
- Info       [STATIC] Serving static files from: .../packages/server/dist/client
+ Info       [STATIC] Serving static files from:.../packages/server/dist/client
 AgentServer is listening on port 3000
  Info       Started 1 agents
 ```
@@ -35,7 +35,7 @@ Services registered by the Spartan project (from the runtime log):
 
 ```bash
 curl -s http://127.0.0.1:3000/api/server/health
-# {"status":"OK", ... "dependencies":{"agents":"healthy"}}
+# {"status":"OK",... "dependencies":{"agents":"healthy"}}
 curl -s http://127.0.0.1:3000/api/agents
 # {"success":true,"data":{"agents":[{"id":"479233fd-...","name":"Spartan","status":"active"}]}}
 ```
@@ -98,34 +98,33 @@ lines in the log are **benign** — the session layer already created the author
 
 ---
 
-## 4. Exact run sequence on this VM (what actually worked)
+## 4. Exact run sequence (what actually worked)
 
-Prereqs already in place: eliza on `develop` at `/cb/home/utkuu/repos/eliza`; Spartan copied to
+Prereqs already in place: eliza on `develop` at `~/dev/eliza`; Spartan copied to
 `packages/spartan`; `.env` with `OPENAI_API_KEY` (+ `OPENAI_LARGE_MODEL=gpt-4o`, small/embedding
 models) and `ETHEREUM_RPC_URL=http://127.0.0.1:8545`.
 
 ```bash
 export PATH="$HOME/.bun/bin:$PATH"
 
-# Fork (Terminal A) — Docker-anvil (native anvil needs glibc 2.35; VM has 2.34):
+# Fork (Terminal A) — Docker-anvil (or native `anvil` if Foundry is installed):
 docker run --rm -d --name anvil -p 8545:8545 ghcr.io/foundry-rs/foundry:latest \
   "anvil --host 0.0.0.0 --fork-url https://eth-mainnet.g.alchemy.com/v2/<KEY>"
 
 # Build the workspace packages the runtime needs — run each build.ts DIRECTLY (see fixes below):
-cd /cb/home/utkuu/repos/eliza
+cd ~/dev/eliza
 for p in core plugin-sql plugin-bootstrap api-client server cli; do (cd packages/$p && bun run build.ts); done
 (cd packages/client && bun --bun x vite build)       # client needs bun runtime, not node16
 (cd packages/server && bun run build.ts)             # rebuild AFTER client so the web UI is bundled
 
 # Run the agent (Terminal B) — from packages/spartan, absolute CLI path:
-cd /cb/home/utkuu/repos/eliza/packages/spartan
-bun /cb/home/utkuu/repos/eliza/packages/cli/dist/index.js start
+cd ~/dev/eliza/packages/spartan
+bun ~/dev/eliza/packages/cli/dist/index.js start
 ```
 
-Then open the web UI via SSH tunnel from your laptop:
-`ssh -L 3000:localhost:3000 utkuu@172.31.51.116` → http://localhost:3000.
+Then open the web UI at http://localhost:3000.
 
-## 5. VM-specific fixes discovered in Phase 2 (added to SETUP_FROM_SCRATCH.md troubleshooting)
+## 5. Build/run fixes discovered in Phase 2 (added to SETUP_FROM_SCRATCH.md troubleshooting)
 
 | Symptom | Root cause | Fix |
 |---|---|---|

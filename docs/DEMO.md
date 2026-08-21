@@ -39,8 +39,7 @@ bun ~/dev/eliza/packages/cli/dist/index.js start 2>&1 | tee /tmp/agent.output
 # watch for:  "Loaded character: Spartan"  ->  "Started 1 agents"  ->  ":3000"
 ```
 
-Remote VM only: tunnel the web UI to your laptop with `ssh -L 3000:localhost:3000 <host>`, then open
-`http://localhost:3000`.
+The agent serves the web UI at `http://localhost:3000`.
 
 ## T-5 pre-flight checklist
 
@@ -156,7 +155,7 @@ State plainly what is not done yet, mirroring the paper's future-work section:
 | Model rate-limited / slow | Use OpenAI (`OPENAI_API_KEY`) rather than the Groq free tier; the Spartan prompt is large. |
 | Loads "Eliza (Default)" not Spartan | Launch from `packages/spartan`, not the eliza root. |
 | Stale identity / wallet between runs | `rm -rf packages/spartan/.eliza` and restart, then re-onboard. |
-| Web UI unreachable on a remote VM | Open the SSH tunnel `-L 3000:localhost:3000` and browse to `http://localhost:3000`. |
+| Web UI doesn't load | Confirm the agent logged "Started 1 agents", then browse to `http://localhost:3000`. |
 | RISK_ASSESS text not in the driver output | Expected: it replies privately (DM). Show it live in the web UI. |
 
 ## Caveats to keep honest

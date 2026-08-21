@@ -110,15 +110,14 @@ done
 
 ## 8. Start the mainnet fork (Terminal A — leave running)
 
-**On this Cerebras Linux VM (glibc 2.34), the native `anvil` binary won't run** (it needs
-glibc 2.35). Docker is installed, so run `anvil` in a container — same deterministic accounts,
-exposed on `127.0.0.1:8545`:
+Run the mainnet fork with Anvil, exposed on `127.0.0.1:8545`. The easiest cross-platform way is Docker
+(no Foundry install needed; same deterministic accounts):
 ```bash
 docker run --rm -d --name anvil -p 8545:8545 ghcr.io/foundry-rs/foundry:latest \
   "anvil --host 0.0.0.0 --fork-url https://eth-mainnet.g.alchemy.com/v2/<YOUR_KEY>"
 docker logs -f anvil     # watch it fork; Ctrl-C to stop watching (container keeps running)
 ```
-On a machine with glibc ≥ 2.35 (recent macOS/Linux) you can instead run it natively:
+Or, if you have Foundry installed (recent macOS/Linux), run it natively:
 ```bash
 anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/<YOUR_KEY>
 ```
@@ -135,14 +134,8 @@ bun ~/dev/eliza/packages/cli/dist/index.js start
 # watch for:  "Loaded character: Spartan"  ->  "Started 1 agents"  ->  ":3000"
 ```
 
-### Accessing the web UI (when the agent runs on a remote VM)
-The agent serves on the VM's `localhost:3000`, which your laptop browser can't reach directly.
-Open an **SSH tunnel from your laptop** (add `-L 3000:localhost:3000` to your normal ssh command):
-```bash
-ssh -L 3000:localhost:3000 utkuu@utkuu-vm.cerebras.aws     # or utkuu@172.31.51.116
-```
-Keep that session open, then open **http://localhost:3000** in your laptop browser and pick the
-Spartan agent. (On a fully local machine, just open http://localhost:3000 directly — no tunnel.)
+### Open the web UI
+Open **http://localhost:3000** in your browser and pick the Spartan agent.
 
 ## 10. Test in the web UI (anvil running)
 ```
@@ -168,7 +161,7 @@ DeFi execution is separately proven via `scripts/smoke.ts` on the fork.)
 | Model error: Groq `model_not_found` | Use `llama-3.3-70b-versatile` / `llama-3.1-8b-instant`. |
 | Model error: OpenAI `429 insufficient_quota` | Add credit to the OpenAI account. |
 | Tried to "match versions" with beta.57 and hit `zod/v3` not found | Don't — stay on `develop`. |
-| `bun run build` no-ops (no `dist`, no error) | The `bun run build → bun run build.ts` npm-script indirection silently no-op'd on this VM. Run **`bun run build.ts` directly** in each package. |
+| `bun run build` no-ops (no `dist`, no error) | The `bun run build → bun run build.ts` npm-script indirection silently no-ops. Run **`bun run build.ts` directly** in each package. |
 | `bun: Exec format error: node_modules/.bin/bun` (or `bunx`) | The `bun` npm dep shipped a **Windows** `bun.exe`/`bunx.exe` as the `.bin` shim. `ln -sf $HOME/.bun/bin/bun node_modules/.bin/bun` and same for `bunx`. |
 | client `vite build`: `crypto.getRandomValues is not a function` / "Node 16" | vite ran under the system Node 16 (needs 20+). Use **`bun --bun x vite build`** to force the bun runtime. |
 | `elizaos start`: `ENOEXEC posix_spawn 'bunx'` from spartan `build.ts` | spartan's original `build.ts` shells out to `bunx vite`. Use this repo's node-only `build.ts` (only `dist/index.js` is needed at runtime; the web UI is already bundled in `@elizaos/server`). |
