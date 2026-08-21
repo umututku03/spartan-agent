@@ -2,7 +2,7 @@
 
 **Status: ✅ complete.** A new deterministic position-sizing layer sits between signal and execution
 and answers the question most crypto agents skip: **how much to risk given the regime.** The LLM is
-never in the multiply-by-size step. 25 unit tests pass, a deterministic demo shows regime-responsive
+never in the multiply-by-size step. 30 unit tests pass, a deterministic demo shows regime-responsive
 sizing, and the borrow guard is verified refusing an over-leverage against **real on-chain Aave state**
 on the fork.
 
@@ -35,7 +35,7 @@ that would push the projected HF below `RISK_HF_FLOOR` (default 1.5) is refused.
 ### 2a. Unit tests (offline, deterministic) — `src/plugins/multiwallet/risk/__tests__/sizing.test.ts`
 ```
 $ bun test src/plugins/multiwallet/risk
- 25 pass  0 fail   Ran 25 tests
+ 30 pass  0 fail   Ran 30 tests
 ```
 Cover: realized-vol from a price series; `volTargetFraction` monotonically decreasing in realized vol
 and capped; fractional-Kelly bounds/λ scaling; `computePositionSize` picks the binding constraint and
@@ -89,7 +89,7 @@ and refuses the over-leverage — the guard's real integration point, decoupled 
 
 ## 5. Reproduce
 ```bash
-bun test src/plugins/multiwallet/risk        # 25/25
+bun test src/plugins/multiwallet/risk        # 30/30
 bun run scripts/demo-risk.ts                 # regime-responsive sizing + HF floor
 ETHEREUM_RPC_URL=http://127.0.0.1:8545 bun run scripts/verify-hf-guard.ts   # guard vs real Aave state
 ```
