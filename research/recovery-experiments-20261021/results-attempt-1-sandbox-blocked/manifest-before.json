@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-21T22:44:48.301Z",
+  "classification": "exploratory synthetic local-EVM engineering study; no model calls",
+  "sourcePath": "/Users/utkueumut/Desktop/utku/apps-projects/defi/spartan-agent/src/plugins/multiwallet/utils/ethereum.ts",
+  "sourceSha256": "e8afecb15e6350d489f492c451bd2dcfecf795091d6a22d0156456d97f603068",
+  "helperSha256": "e9783727f8e8944832db0908abb37666b2c09d6de3a1568ebc4a896b461f92ff",
+  "bun": "1.3.14",
+  "platform": "darwin",
+  "arch": "arm64",
+  "files": {
+    "protocol.md": "c2c3f5a0275a5ca37a2835e351651127d92eade33d35f1ef2b9f3dde6eff557a",
+    "TestMarket.sol": "a5bcfc29ce87d1fc0092eb763bd8f162ced8ec79353f3c504fca1eb07d0547d0",
+    "run-experiments.ts": "0edcdebdeb46c37bce351f6ebe9ccc2eafd1d5511c9f0961b5168a468005ba69",
+    "package-lock.json": "c63907641163327d049474f5129552bb42b570a011465af21db56872d1e532b5"
+  }
+}
