@@ -64,3 +64,9 @@ Use the existing OpenAI API balance. Only an OpenAI key is needed for the first 
    It makes at most 12 calls, has no automatic retries or fallback model, and stops on API errors. The default command is always an offline dry run. Results are saved in `model-results`; an existing results directory prevents accidental reruns.
 
 The key stays in the ignored `.env` file. Keep `.env.example` free of credentials. See [micro-pilot-protocol.md](micro-pilot-protocol.md): these six hand-designed development cases are a decision screen, not a held-out test or an autonomous-agent benchmark.
+
+## Completed model pilot
+
+See [model-findings.md](model-findings.md) for the 24-request developmental screen and the local replay of one recorded proposal. All calls used GPT-6 Luna; total estimated usage was approximately US$0.0011. This does not establish a general model error rate or a new method. The inexpensive setup above remains available for reproducing the original screen in a newly labeled results directory.
+
+The follow-up is documented in [followup-model-protocol.md](followup-model-protocol.md). Run its offline configuration check with `bun --env-file=.env run-followup-screen.ts`; its live mode refuses to overwrite existing results. After `npm ci`, the local replay can be repeated with `bun replay-model-actions.ts`. It makes no model API calls and uses a fresh local EVM.

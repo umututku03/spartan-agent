@@ -1,0 +1,9 @@
+# Follow-up diagnostic: option selection versus action choice
+
+Exploratory protocol written after the first 12-request screen and before these requests. The first screen produced one response whose selected option violated the reserve although its explanation correctly identified infeasibility. This follow-up tests a possible measurement artifact rather than treating that response as established agent failure.
+
+Use six new quote cards in three related pairs, each pair containing a feasible and an infeasible state. Cross every card with two output protocols: choose a labeled option, or return a direct action and its numeric parameters. Both receive the same task, observations and action choices. Alternate output-protocol order. This is twelve requests, not twelve independent task families. No confidence interval or general model ranking is appropriate.
+
+The evaluator checks the selected action against the original numerical requirements; it does not judge correctness by the explanation. Quote cards define a finite permitted action space. An unlisted numeric trade is classified unknown, not silently assigned a fabricated execution outcome. Stop is valid only for a card with no listed feasible continuation. All cards and evaluation code are fixed before the first request; no labels or feasibility fields are sent to the model.
+
+Same model, endpoint, decoding and output cap as the first screen: GPT-6 Luna, standard Responses API, reasoning none, 256 output tokens. No retries, fallback models or paid tools. Prior settled usage plus a conservative $0.06 reservation must fit inside the existing $0.10 estimate budget. The first screen and this follow-up are developmental decision diagnostics, not multi-step agent experiments or held-out confirmation. Subsequent hypotheses need fresh interactive tests.

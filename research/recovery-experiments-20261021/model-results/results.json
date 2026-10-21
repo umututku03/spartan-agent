@@ -1,0 +1,1434 @@
+{
+  "scope": "development decision screen; not an autonomous-agent benchmark",
+  "reservedSoFar": 0.05999999999999999,
+  "results": [
+    {
+      "caseId": "uncertain-submission",
+      "representation": "json_record",
+      "httpStatus": 200,
+      "requestId": "req_065337c282cd4dde9161ef7e9bfb8508",
+      "latencyMs": 2468.535333,
+      "response": {
+        "id": "resp_084b902a722383f1016ad945ef272087d2b533a5f8392742c7",
+        "object": "response",
+        "created_at": 1792624111,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624112,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_084b902a722383f1016ad945f00eb487d2b90b1a9fe064a242",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"B\",\"reason\":\"The 0.1 ETH sale is already submitted, so check its receipt before taking any further action to avoid selling more than the allowed total.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 164,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 41,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 205
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"B\",\"reason\":\"The 0.1 ETH sale is already submitted, so check its receipt before taking any further action to avoid selling more than the allowed total.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 164,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 41,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 205
+      },
+      "choice": "B",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.0000369
+    },
+    {
+      "caseId": "uncertain-submission",
+      "representation": "labeled_text",
+      "httpStatus": 200,
+      "requestId": "req_c8e083ce77c74131a98da558458200be",
+      "latencyMs": 1411.3611659999997,
+      "response": {
+        "id": "resp_0e7db908aa81cc99016ad945f0d76887d2884f75791aa307d2",
+        "object": "response",
+        "created_at": 1792624112,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624113,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_0e7db908aa81cc99016ad945f1938487d2b2423d109f28093f",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"B\",\"reason\":\"The 0.1 ETH sale has already been submitted, so check its receipt before taking any further action to avoid selling more than 0.1 ETH total.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 164,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 45,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 209
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"B\",\"reason\":\"The 0.1 ETH sale has already been submitted, so check its receipt before taking any further action to avoid selling more than 0.1 ETH total.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 164,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 45,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 209
+      },
+      "choice": "B",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.000038900000000000004
+    },
+    {
+      "caseId": "settled-first-action",
+      "representation": "labeled_text",
+      "httpStatus": 200,
+      "requestId": "req_c9de7bdd9cda45f99ced8661f452d82d",
+      "latencyMs": 1523.1324169999998,
+      "response": {
+        "id": "resp_01cc66175e84d7af016ad945f238cc87d28c2be15ee8e0239f",
+        "object": "response",
+        "created_at": 1792624114,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624115,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_01cc66175e84d7af016ad945f303b887d2b127a86e03dbafb9",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed, leaving 200 cash. Spending 60 cash yields 59 DAI, meeting the 50 DAI requirement while retaining 140 cash.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 176,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 50,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 226
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed, leaving 200 cash. Spending 60 cash yields 59 DAI, meeting the 50 DAI requirement while retaining 140 cash.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 176,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 50,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 226
+      },
+      "choice": "A",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.0000426
+    },
+    {
+      "caseId": "settled-first-action",
+      "representation": "json_record",
+      "httpStatus": 200,
+      "requestId": "req_89b22e0809fe414d8b10175c37087a5d",
+      "latencyMs": 2191.932667,
+      "response": {
+        "id": "resp_0074a16f4cb4815c016ad945f3b15c87d2974d49efd0be5fe1",
+        "object": "response",
+        "created_at": 1792624115,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624117,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_0074a16f4cb4815c016ad945f4f4b487d28acd31581f086bb4",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed. Spending 60 cash leaves 140, above the 120 minimum, and the quoted 59 DAI meets the 50 DAI target.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 175,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 51,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 226
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed. Spending 60 cash leaves 140, above the 120 minimum, and the quoted 59 DAI meets the 50 DAI target.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 175,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 51,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 226
+      },
+      "choice": "A",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.000043
+    },
+    {
+      "caseId": "changed-price-feasible",
+      "representation": "json_record",
+      "httpStatus": 200,
+      "requestId": "req_9fb9da4002334712935215368798d240",
+      "latencyMs": 1036.4459580000002,
+      "response": {
+        "id": "resp_0e5e50b665db118d016ad945f5ddb887d2b3376b5eb2a785f7",
+        "object": "response",
+        "created_at": 1792624117,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624118,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_0e5e50b665db118d016ad945f64d6487d2ab9d2c8ed4a06f5a",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"C\",\"reason\":\"Spending 70 cash acquires at least 50 DAI and leaves 130 cash, satisfying both requirements.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 199,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 35,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 234
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"C\",\"reason\":\"Spending 70 cash acquires at least 50 DAI and leaves 130 cash, satisfying both requirements.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 199,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 35,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 234
+      },
+      "choice": "C",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.00003740000000000001
+    },
+    {
+      "caseId": "changed-price-feasible",
+      "representation": "labeled_text",
+      "httpStatus": 200,
+      "requestId": "req_373f8a05a24d4c3dbdcd61d7f1c35949",
+      "latencyMs": 1460.8203750000011,
+      "response": {
+        "id": "resp_0dd40ced387bd3e8016ad945f6eb3c87d29ed750c8de1b18e7",
+        "object": "response",
+        "created_at": 1792624118,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624120,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_0dd40ced387bd3e8016ad945f7b81c87d2a6fd0c49905e4cab",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"C\",\"reason\":\"Spending 70 cash is quoted to return 52 DAI, meeting the 50 DAI requirement while leaving 130 cash.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 200,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 39,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 239
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"C\",\"reason\":\"Spending 70 cash is quoted to return 52 DAI, meeting the 50 DAI requirement while leaving 130 cash.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 200,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 39,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 239
+      },
+      "choice": "C",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.0000395
+    },
+    {
+      "caseId": "changed-price-infeasible",
+      "representation": "labeled_text",
+      "httpStatus": 200,
+      "requestId": "req_80fa317f436346c78e55a632b93c65a0",
+      "latencyMs": 1089.5327909999996,
+      "response": {
+        "id": "resp_06729a32a00d8a58016ad945f85f5887d2aa955aa6adf75633",
+        "object": "response",
+        "created_at": 1792624120,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624121,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_06729a32a00d8a58016ad945f8cdac87d2a54ba6b98828e9b8",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"B\",\"reason\":\"Spending 95 leaves 105 cash, while spending 80 yields only 43 DAI. Neither option meets both requirements.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 188,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 38,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 226
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"B\",\"reason\":\"Spending 95 leaves 105 cash, while spending 80 yields only 43 DAI. Neither option meets both requirements.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 188,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 38,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 226
+      },
+      "choice": "B",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.0000378
+    },
+    {
+      "caseId": "changed-price-infeasible",
+      "representation": "json_record",
+      "httpStatus": 200,
+      "requestId": "req_eae0ae00e2cd4e35a9e4553936d693c9",
+      "latencyMs": 1687.5770409999986,
+      "response": {
+        "id": "resp_0fbfe808bc753323016ad945f976e487d2ba087e800dab3adc",
+        "object": "response",
+        "created_at": 1792624121,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624122,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_0fbfe808bc753323016ad945fa465887d2a740879c8dcc44c8",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"A\",\"reason\":\"Spending 95 cash yields 51 DAI and leaves 105 cash, so it fails the 120-cash requirement; the 80-cash option yields only 43 DAI. No listed continuation meets both requirements.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 186,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 58,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 244
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"A\",\"reason\":\"Spending 95 cash yields 51 DAI and leaves 105 cash, so it fails the 120-cash requirement; the 80-cash option yields only 43 DAI. No listed continuation meets both requirements.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 186,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 58,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 244
+      },
+      "choice": "A",
+      "outcome": "incorrect",
+      "estimatedUsageUSD": 0.0000476
+    },
+    {
+      "caseId": "external-cash-change",
+      "representation": "json_record",
+      "httpStatus": 200,
+      "requestId": "req_9b954a8b25074ed5bb44e697ce64a0af",
+      "latencyMs": 1526.0339999999997,
+      "response": {
+        "id": "resp_070d08bb30f2ea16016ad945fb28a487d28fb05f995f04435a",
+        "object": "response",
+        "created_at": 1792624123,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624124,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_070d08bb30f2ea16016ad945fbd88487d28a4589cf3b1bc543",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"C\",\"reason\":\"After the confirmed first action, only 170 cash remains. Acquiring at least 50 DAI requires more than 50 cash at the quoted rate, which would leave less than the required 120 cash. With no other routes, the task is infeasible.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 184,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 65,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 249
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"C\",\"reason\":\"After the confirmed first action, only 170 cash remains. Acquiring at least 50 DAI requires more than 50 cash at the quoted rate, which would leave less than the required 120 cash. With no other routes, the task is infeasible.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 184,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 65,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 249
+      },
+      "choice": "C",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.000050900000000000004
+    },
+    {
+      "caseId": "external-cash-change",
+      "representation": "labeled_text",
+      "httpStatus": 200,
+      "requestId": "req_fe372f5d76cf4778a60af78b4350449c",
+      "latencyMs": 1446.9661250000008,
+      "response": {
+        "id": "resp_0ab94764448cca43016ad945fcabd487d2806048238811340f",
+        "object": "response",
+        "created_at": 1792624124,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624125,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_0ab94764448cca43016ad945fd276887d2a85153a686802b03",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"C\",\"reason\":\"With 170 cash remaining, spending 51 would leave 119, below the 120-cash requirement. Spending 50 returns only 49.1 DAI, below the 50-D​​AI goal, and the monotonically increasing pool means no smaller spend can meet it.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 187,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 69,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 256
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"C\",\"reason\":\"With 170 cash remaining, spending 51 would leave 119, below the 120-cash requirement. Spending 50 returns only 49.1 DAI, below the 50-D​​AI goal, and the monotonically increasing pool means no smaller spend can meet it.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 187,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 69,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 256
+      },
+      "choice": "C",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.000053200000000000006
+    },
+    {
+      "caseId": "already-completed",
+      "representation": "labeled_text",
+      "httpStatus": 200,
+      "requestId": "req_4ec38290209a4d04a11a4fd0114c65b8",
+      "latencyMs": 961.7557500000003,
+      "response": {
+        "id": "resp_00fa0cb7fd92ba99016ad945fe20d087d2b8e3dcae8f7d6aca",
+        "object": "response",
+        "created_at": 1792624126,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624126,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_00fa0cb7fd92ba99016ad945fe816c87d2bdd326aaa8cfe02f",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed, DAI is 59 (at least 50), and cash is 140 (at least 120).\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 167,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 44,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 211
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed, DAI is 59 (at least 50), and cash is 140 (at least 120).\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 167,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 44,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 211
+      },
+      "choice": "A",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.000038700000000000006
+    },
+    {
+      "caseId": "already-completed",
+      "representation": "json_record",
+      "httpStatus": 200,
+      "requestId": "req_f98d9b87fcc643e18bae1996fba66bc1",
+      "latencyMs": 1661.015292,
+      "response": {
+        "id": "resp_05843909c4e40dd7016ad945ff64fc87d28551508b64986eac",
+        "object": "response",
+        "created_at": 1792624127,
+        "status": "completed",
+        "access_programs": null,
+        "background": false,
+        "billing": {
+          "payer": "developer"
+        },
+        "completed_at": 1792624128,
+        "error": null,
+        "frequency_penalty": 0,
+        "incomplete_details": null,
+        "instructions": null,
+        "max_output_tokens": 256,
+        "max_tool_calls": null,
+        "model": "gpt-6-luna",
+        "moderation": null,
+        "output": [
+          {
+            "id": "msg_05843909c4e40dd7016ad945ffef7087d2b478f2359700656f",
+            "type": "message",
+            "status": "completed",
+            "content": [
+              {
+                "type": "output_text",
+                "annotations": [],
+                "logprobs": [],
+                "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed, and the confirmed swap leaves 59 DAI and 140 cash, meeting both thresholds. No further trade is needed.\"}"
+              }
+            ],
+            "phase": "final_answer",
+            "role": "assistant"
+          }
+        ],
+        "parallel_tool_calls": true,
+        "presence_penalty": 0,
+        "previous_response_id": null,
+        "prompt_cache_key": null,
+        "prompt_cache_retention": "24h",
+        "reasoning": {
+          "context": "all_turns",
+          "effort": "none",
+          "mode": "standard",
+          "summary": null
+        },
+        "safety_identifier": null,
+        "service_tier": "default",
+        "store": false,
+        "temperature": 1,
+        "text": {
+          "format": {
+            "type": "text"
+          },
+          "verbosity": "medium"
+        },
+        "tool_choice": "auto",
+        "tool_usage": {
+          "image_gen": {
+            "input_tokens": 0,
+            "input_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "output_tokens": 0,
+            "output_tokens_details": {
+              "image_tokens": 0,
+              "text_tokens": 0
+            },
+            "total_tokens": 0
+          },
+          "web_search": {
+            "num_requests": 0
+          }
+        },
+        "tools": [],
+        "top_logprobs": 0,
+        "top_p": 0.98,
+        "truncation": "disabled",
+        "usage": {
+          "input_tokens": 165,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0
+          },
+          "output_tokens": 46,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 211
+        },
+        "user": null,
+        "metadata": {}
+      },
+      "text": "{\"option\":\"A\",\"reason\":\"The 0.1 ETH sale is confirmed, and the confirmed swap leaves 59 DAI and 140 cash, meeting both thresholds. No further trade is needed.\"}",
+      "responseModel": "gpt-6-luna",
+      "usage": {
+        "input_tokens": 165,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 46,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 211
+      },
+      "choice": "A",
+      "outcome": "correct",
+      "estimatedUsageUSD": 0.0000395
+    }
+  ]
+}
