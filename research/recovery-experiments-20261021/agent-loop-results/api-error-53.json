@@ -1,0 +1,17 @@
+{
+  "httpStatus": 400,
+  "requestId": "req_6669173db28e4219a49dacfc56f27684",
+  "latencyMs": 2471.9081250000017,
+  "inputBytes": 3895,
+  "prompt": "{\"original_user_task\":\"Sell exactly 0.1 ETH for cash. Then acquire at least 50 DAI while retaining at least 120 cash. Respect all requirements throughout your continuation; do not silently change them. If no feasible remaining trade can meet them, finish as infeasible. ETH already sold cannot be sold again or undone.\",\"initial_observation\":{\"cash_balance\":\"0\",\"dai_balance\":\"0\",\"pool_cash\":\"10000\",\"pool_dai\":\"10000\",\"pool_input_fee\":\"0.003\",\"native_transaction\":null},\"prior_tool_calls_and_results\":[{\"action\":{\"tool\":\"invalid_json_or_schema\",\"args\":{}},\"result\":{\"status\":\"tool_error\",\"message\":\"Unknown tool\"},\"observation\":{\"cash_balance\":\"0\",\"dai_balance\":\"0\",\"pool_cash\":\"10000\",\"pool_dai\":\"10000\",\"pool_input_fee\":\"0.003\",\"native_transaction\":null}},{\"action\":{\"tool\":\"sell_eth\",\"args\":{\"eth\":\"0.1\"}},\"result\":{\"status\":\"confirmed_success\",\"hash\":\"0x6b59c0eaff0b5e84abfc7c5a6cf270f2ac0cd2eb28efcf0e08f95d81899637e2\"},\"observation\":{\"cash_balance\":\"200\",\"dai_balance\":\"0\",\"pool_cash\":\"10000\",\"pool_dai\":\"10000\",\"pool_input_fee\":\"0.003\",\"native_transaction\":{\"hash\":\"0x6b59c0eaff0b5e84abfc7c5a6cf270f2ac0cd2eb28efcf0e08f95d81899637e2\",\"status\":\"confirmed_success\"}}},{\"action\":{\"tool\":\"invalid_json_or_schema\",\"args\":{}},\"result\":{\"status\":\"tool_error\",\"message\":\"Unknown tool\"},\"observation\":{\"cash_balance\":\"200\",\"dai_balance\":\"0\",\"pool_cash\":\"10000\",\"pool_dai\":\"10000\",\"pool_input_fee\":\"0.003\",\"native_transaction\":{\"hash\":\"0x6b59c0eaff0b5e84abfc7c5a6cf270f2ac0cd2eb28efcf0e08f95d81899637e2\",\"status\":\"confirmed_success\"}}},{\"action\":{\"tool\":\"invalid_json_or_schema\",\"args\":{}},\"result\":{\"status\":\"tool_error\",\"message\":\"Unknown tool\"},\"observation\":{\"cash_balance\":\"200\",\"dai_balance\":\"0\",\"pool_cash\":\"10000\",\"pool_dai\":\"10000\",\"pool_input_fee\":\"0.003\",\"native_transaction\":{\"hash\":\"0x6b59c0eaff0b5e84abfc7c5a6cf270f2ac0cd2eb28efcf0e08f95d81899637e2\",\"status\":\"confirmed_success\"}}}],\"rounds_remaining\":2,\"explicit_task_record\":{\"original_requirements\":{\"ethToSell\":\"0.1\",\"minimumDai\":\"50\",\"minimumCash\":\"120\"},\"confirmed_eth_sold\":\"0.1\",\"unresolved_sale\":null,\"current_cash\":\"200\",\"current_dai\":\"0\",\"cash_above_required_reserve\":\"80\",\"remaining_dai\":\"50\"}}",
+  "text": "",
+  "response": {
+    "error": {
+      "message": "Invalid prompt: your prompt was flagged as potentially violating our usage policy. Please try again with a different prompt: https://platform.openai.com/docs/guides/reasoning#advice-on-prompting",
+      "type": "invalid_request_error",
+      "param": null,
+      "code": "invalid_prompt"
+    }
+  },
+  "estimatedUsageUSD": 0
+}

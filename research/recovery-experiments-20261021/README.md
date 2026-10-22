@@ -70,3 +70,25 @@ The key stays in the ignored `.env` file. Keep `.env.example` free of credential
 See [model-findings.md](model-findings.md) for the 24-request developmental screen and the local replay of one recorded proposal. All calls used GPT-6 Luna; total estimated usage was approximately US$0.0011. This does not establish a general model error rate or a new method. The inexpensive setup above remains available for reproducing the original screen in a newly labeled results directory.
 
 The follow-up is documented in [followup-model-protocol.md](followup-model-protocol.md). Run its offline configuration check with `bun --env-file=.env run-followup-screen.ts`; its live mode refuses to overwrite existing results. After `npm ci`, the local replay can be repeated with `bun replay-model-actions.ts`. It makes no model API calls and uses a fresh local EVM.
+
+
+## Closed-loop agent studies
+
+Read [agent-findings.md](agent-findings.md) first: 24 LLM episodes and eight deterministic controls in two completed cohorts, with both interrupted collection attempts retained separately. The agent autonomously chooses tools and executes local-chain transactions; the full Eliza/Spartan server is not booted. [research-proposal.md](research-proposal.md) is the updated short discussion draft. [novelty-check.md](novelty-check.md) records the closest overlaps and limits on the contribution claim.
+
+Protocols were saved before their respective requests: [original interface diagnostic](agent-loop-protocol.md), [native tools](agent-native-protocol.md), [transport replication](agent-native-replication-protocol.md), and [eight-round resource sensitivity](agent-budget-sensitivity-protocol.md). The common environment is `agent-environment.ts`; controller and protocol hashes are recorded in each results manifest. The first two results directories are incomplete and must not be pooled into the completed cohorts.
+
+Audit the recorded native runs offline without a key or API calls:
+
+```sh
+python3 verify-agent-results.py
+```
+
+After `npm ci` in this experiment folder, scripted local-chain conformance can be run with `bun agent-conformance.ts`. It makes no model requests. The native runners default to offline configuration/budget checks:
+
+```sh
+bun --env-file=.env run-native-replication.ts
+bun --env-file=.env run-agent-budget-sensitivity.ts
+```
+
+Do not add `--live` to rerun the existing artifacts: the runners refuse to overwrite them. A fresh experiment needs a labelled results path, an updated cumulative ledger reference and a protocol saved before requests. The five-round protocol permits up to 80 calls; the sensitivity protocol permits up to 64, both under the same cumulative US$0.10 estimate cap. These are separate studies from the original 12-call static screens. No per-request retries or fallback models are used. Unknown-charge requests retain their budget reservation. No further credit purchase is needed for reviewing or auditing these saved results.

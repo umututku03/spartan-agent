@@ -1,0 +1,9 @@
+# Eight-round resource sensitivity
+
+Written during the five-round replication, before requests in this sensitivity study. Early traces show economic goal attainment without an explicit finish, and unnecessary inspections consuming the round budget. This motivates an explicitly exploratory resource check. It is not a post-hoc replacement for the five-round cohort.
+
+Use the same fixed task, scenario families, tools, guards, native schemas and condition wording, changing only the stated maximum from five to eight rounds. Use one repetition per condition per family: eight LLM episodes, plus four deterministic controls. Preserve the original condition order for repeat zero. No new scenario values or model selection; fresh conversations and EVM resets. The study cannot separate budget effects from stochastic sampling with these small unmatched draws. Report the two cohorts separately and treat any persistence as a diagnostic signal, not a causal estimate or general error rate.
+
+Allow 64 calls at most and 10,240 input bytes per request (larger solely to accommodate the longer trace), plus the same 512-token overhead reservation and 256 output tokens. Charge the entire preceding cumulative ledger, including unknown-transport reservations. Refuse the run unless its entire worst-case reservation fits the US$0.10 cumulative estimate cap. Use a 120-second timeout and no request retries/fallbacks. Save outgoing payloads before transmission without authorization headers. Stop on any fatal error; preserve partial data.
+
+The shared environment and outcome definitions remain frozen. Both goalReached and validComplete must be reported alongside premature infeasibility, unsafe proposals, blocked effects and executed violations. No primary claim of superiority is selected based on these exploratory outcomes.

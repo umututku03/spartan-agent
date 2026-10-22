@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-21T23:35:56.401Z",
+  "error": "Run stopped after fatal episode receipt_hidden-0-task_record; preserved all partial data.",
+  "completedEpisodes": 7,
+  "calls": 12,
+  "cumulativeEstimatedUSD": 0.009371299999999999
+}
