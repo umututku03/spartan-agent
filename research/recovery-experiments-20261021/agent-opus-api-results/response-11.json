@@ -1,0 +1,60 @@
+{
+  "call": 11,
+  "round": 2,
+  "httpStatus": 200,
+  "requestId": "req_011CgGNk3NRwhCQzC5wxj13R",
+  "latencyMs": 4371.2483340000035,
+  "visibleBytes": 6028,
+  "priorOutputTokens": 88,
+  "response": {
+    "model": "claude-opus-5-5",
+    "id": "msg_011CgGNk3hGpMZNzbhhbMqwd",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "",
+        "signature": "CAQSsQcKEAgTGAI4AUIIdGhpbmtpbmcSDNmIOl9FcM6UyyzQmBoMyh6N/maeHhv1y4roIjCKdpNA2541LU6MG+SvSvxlasTCLE3mmdyrySkyFyzENhNZ9eUKVkWgi4QIuLfV8t8qzgbv5fThUyqtmR4TBGd/N2fEYiJwnp9KWvDrVT+v/6646atyRoyCJyRnQuePoaY1LcnVMQXh2G59FRmBFBdPFiUX0QKhSTwjgN/BdY4sYlKGLZzfwnR7zY5rAnP2DK8cSEOB+A5+1VQbKDqjOEzYaPmpMWtH+AcnggPDUY4bYriio48UPb1zS/hS0GG/un8F9tBPwcqMER7YOamaSU5lMmGZQ5Pi4xo/HQ6du9mx5cBc6kLov5SAdhmxVpqeBaft9s/borNZxQxlGsuRmb6ctzURtos4pYfKoxFOV/hnfMzRCI04ULP/xMp0mfqyitawPbnHu1Ib8x2WyNAyPvLrMgZnGALGxNJKHuiV4nRPBn+Wzs3bZuhNSejLClh9AIv+S6eGGaPfwGO0v/VugcJWVewZlKx8xnldePrUZe/GicT1KMgviWsmVWO+Z2IR5v/G4R9bm0lkbmr40uu8ACVcqxK3hcvNEZrjFUWJGpS3Oax7DJ4CF7UeBjEw9jxaLs8JrIHzyWdqUyQrbuklGnidu+TR79jleP2bxjUonyEQPQrsSOc5sotTfhBhFkVLZOoFGvR8wrt6ZLmF8LcELz26ylkiOLBk1IBuhE2DmAHZaDBZctPkAObM9sQ//kTpFFxRURKbbeS+fkX0uOB3i8nemwsfh0vAO7FrAPZVa8VGQdqnMmUzo9MH1m7ik/VR8c+MRo8L9fh35VFCwQYkW0RHjDH2w1ij/oP9Y5WSuQaaHPkFdxXwNI9Ajaflj7TnnKfl3D07TU5U4VQOI/+1+CLM9JbOGc6E1FQdv6Rb943CR8oK83rh9ZM1eTlMdL2rx7eTMusqYpzLyu53Pd6jnXpGY8yWrfDNH5kOCZ3blERafCDVLfiCLKNUdSnX68dVNG+I6pnYu1/SYt6wPhyx4ktwMimNQ8jtxOtG8cI9FzoonEKQbQZWzaucCV0g0oPExZOZrWp3XDYoeJWMguhL8ngkpXqS2mNVg2sfvt6jamkgRlA8OkRcyF9dappgg1m+6RkbOQ0msB/5VjXsVdGd5mjv53zAIjjsrhfMRycnGkWJtSsrKQCX7OL5KoWa236xAStj9YfFFxh4WtqgP6LCN0Dt2y7LePPb1HSmItcI9BjJi7cYAQ=="
+      },
+      {
+        "type": "text",
+        "text": "The sale is confirmed, so I have 200 cash. To keep at least 120 cash, I can spend up to 80. Using the pool formula, 51 cash should return about 50.59 DAI."
+      },
+      {
+        "type": "tool_use",
+        "id": "toolu_01DbsWYjsnm3v5FsdvzBQqZH",
+        "name": "swap_cash",
+        "input": {
+          "cash": "51",
+          "minimum_dai": "50"
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 2444,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 307,
+      "output_tokens_details": {
+        "thinking_tokens": 169
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "mock": false
+}

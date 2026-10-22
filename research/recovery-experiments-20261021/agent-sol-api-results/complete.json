@@ -1,0 +1,32 @@
+{
+  "completedAt": "2026-10-22T01:15:07.539Z",
+  "mock": false,
+  "episodes": 12,
+  "episodeIds": [
+    "deterministic-normal",
+    "deterministic-receipt_hidden",
+    "deterministic-price_change_feasible",
+    "deterministic-price_change_infeasible",
+    "normal-0-history",
+    "normal-0-task_record",
+    "receipt_hidden-0-task_record",
+    "receipt_hidden-0-history",
+    "price_change_feasible-0-history",
+    "price_change_feasible-0-task_record",
+    "price_change_infeasible-0-task_record",
+    "price_change_infeasible-0-history"
+  ],
+  "calls": 25,
+  "filesUnchanged": {
+    "agent-api-replication-protocol.md": true,
+    "api-replication-client.ts": true,
+    "api-replication-client.test.ts": true,
+    "run-api-replication.ts": true,
+    "verify-api-replication-results.py": true,
+    "test-api-verifier.py": true,
+    "estimate-api-cost.py": true,
+    "claude-agent-client.ts": true,
+    "agent-environment.ts": true,
+    "agent-budget-sensitivity-results/manifest-before.json": true
+  }
+}

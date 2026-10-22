@@ -1,0 +1,221 @@
+{
+  "call": 25,
+  "round": 2,
+  "httpStatus": 200,
+  "requestId": "req_1d3de9337f5c4258ad68700240fc390e",
+  "latencyMs": 1394.141042000003,
+  "visibleBytes": 5094,
+  "priorOutputTokens": 69,
+  "response": {
+    "id": "resp_0c56ceec6a951d2e016ad9639a36b087d287e92c533574aedd",
+    "object": "response",
+    "created_at": 1792631706,
+    "status": "completed",
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1792631707,
+    "error": null,
+    "frequency_penalty": 0,
+    "incomplete_details": null,
+    "instructions": "You are a DeFi tool agent on a local test chain. Preserve every original user requirement. Choose one tool using actual observations; previous effects cannot be undone. A timed-out sale may already have completed: resolve its receipt before any new write. The initial observation and previous function outputs contain balances and pool reserves. The cash/DAI pool follows output=input*997*reserve_dai/(reserve_cash*1000+input*997) in human token units. The ETH sale yields 2000 cash per ETH. Execution enforces the original cash floor; passing that guard alone does not prove the whole task completed. Finish only after verifying the goal, or finish infeasible if no permitted continuation can satisfy it. You have at most eight rounds including finish. No additional routes, funds, task changes or tools exist.",
+    "max_output_tokens": 2048,
+    "max_tool_calls": null,
+    "model": "gpt-6.1-sol",
+    "moderation": null,
+    "output": [
+      {
+        "id": "fc_0c56ceec6a951d2e016ad9639b45f087d2ac1fac2248dd13d8",
+        "type": "function_call",
+        "status": "completed",
+        "arguments": "{\"status\":\"infeasible\"}",
+        "call_id": "call_DXn0g6ySssZ6Vcj1gvZtAgtb",
+        "name": "finish"
+      }
+    ],
+    "parallel_tool_calls": false,
+    "presence_penalty": 0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_options": {
+      "mode": "explicit",
+      "ttl": "30m"
+    },
+    "prompt_cache_retention": "24h",
+    "reasoning": {
+      "context": "all_turns",
+      "effort": "low",
+      "mode": "standard",
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "store": false,
+    "temperature": 1,
+    "text": {
+      "format": {
+        "type": "text"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "required",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [
+      {
+        "type": "function",
+        "description": "Read current balances, pool reserves and known transaction status.",
+        "name": "inspect",
+        "output_schema": null,
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      {
+        "type": "function",
+        "description": "Read DAI output for a chosen cash amount; does not trade.",
+        "name": "quote",
+        "output_schema": null,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "cash": {
+              "type": "string",
+              "description": "Positive cash input in human decimal units"
+            }
+          },
+          "required": [
+            "cash"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      {
+        "type": "function",
+        "description": "Submit the exactly authorized ETH sale; resolve any timed-out submission before another write.",
+        "name": "sell_eth",
+        "output_schema": null,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "eth": {
+              "type": "string",
+              "description": "ETH amount in human decimal units"
+            }
+          },
+          "required": [
+            "eth"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      {
+        "type": "function",
+        "description": "Resolve the previously submitted ETH sale receipt.",
+        "name": "receipt",
+        "output_schema": null,
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      {
+        "type": "function",
+        "description": "Trade cash for DAI with the supplied minimum DAI output; the original cash reserve is enforced during execution.",
+        "name": "swap_cash",
+        "output_schema": null,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "cash": {
+              "type": "string",
+              "description": "Cash input in human decimal units"
+            },
+            "minimum_dai": {
+              "type": "string",
+              "description": "Minimum DAI output in human decimal units"
+            }
+          },
+          "required": [
+            "cash",
+            "minimum_dai"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      },
+      {
+        "type": "function",
+        "description": "Terminate and declare the independently checkable task outcome.",
+        "name": "finish",
+        "output_schema": null,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "completed",
+                "infeasible"
+              ]
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        "strict": true
+      }
+    ],
+    "top_logprobs": 0,
+    "top_p": 0.98,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 943,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 0
+      },
+      "output_tokens": 19,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 962
+    },
+    "user": null,
+    "metadata": {}
+  },
+  "mock": false
+}

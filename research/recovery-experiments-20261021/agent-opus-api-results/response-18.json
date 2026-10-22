@@ -1,0 +1,56 @@
+{
+  "call": 18,
+  "round": 1,
+  "httpStatus": 200,
+  "requestId": "req_011CgGNmdH8f3hbcQNfJytEW",
+  "latencyMs": 2705.2375829999946,
+  "visibleBytes": 4171,
+  "priorOutputTokens": 65,
+  "response": {
+    "model": "claude-opus-5-5",
+    "id": "msg_011CgGNmdcECBGiYwMFtYtSD",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "",
+        "signature": "CAQS2QUKEAgTGAI4AUIIdGhpbmtpbmcSDBQgTg8uTw4O4e744BoMJ5tPQe6tYnyokMP5IjDgPLb3xktcKWXbLgwVpzZl8vzo6OuqDX+ne8McM0tACS5gcTi6DrH3Xx0mEBNW2jAq9gRu8j9l93pYLpjRvprJLl8a9g/qWL83He4CCah0PiyQHatt9kxdCCuygU5tEWzZXi8sQrwaJQXwf44V5k3yLrtnM7zP/+CrH+C4gXBm0Obv8T+qwXHE9z7mILzC6yubGaqNmMO9kxnmAqRbivDGQjAn6vfpMNCu3zTjUsjJyf8dxGoF1tW6fBONAou8u5MqfcPgplbkkLn9sNSPBHh1exPISGRYPkLKH9N/irNZRSueImAKgkl/S/N7qkG3FufLp7177VMuxh5XMGVwlOZR3pbiGd8oVnjAhAlawVhZccnkAcv29Y9Hbt8e/y+qI/av0i8q5WSM1EadiXWw8lSya+qR1/re+Z1B5/qkQFfqIFQkIKnB1jDXaOiB/29q6C6CWc1fDTNWvz+ayNoMCDesh06TXh4MV509MCmi61CJP8JbO5ObhEOIizpoqFXKkkxNldV2MfE36N7eCCbiVP4pHpGBs6l+Qpb3vLASySGyCkTZdurfSEMf0yk8R7tt6RnckbZmm13C+DpDE5uFKcFBCkDYMuepDhNhofn69C82aJQioeuFxNHmJHAzwTBamxOUuMGtALLAW6Hxzpi0PnoE04Woky3OzIUDmaC/0SRkAQs4mFPpSVLqUpNvvdgBOYwzbRqcdvt42CiWGEY86Clqpmf2i9bGnR3r2TndQOiIeJ+I5LyW2dCNCnTATvjbKgaDNXmgjisOgIO9rSchRfg16zhfoBPdmviaGcWulQTruZIYKW3ds5cqJfrXG1UhDKatJVTvOdFgT6fWUHghiNweVFoqKuR70wZQSGwfvJEoxf5ohkl6XAVX+AVQEzZPaS954ZmL2IpW4/kYAQ=="
+      },
+      {
+        "type": "tool_use",
+        "id": "toolu_017aQ7UQkQQ3ZGf3jQ4R5DQp",
+        "name": "swap_cash",
+        "input": {
+          "cash": "80",
+          "minimum_dai": "50"
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 1724,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 149,
+      "output_tokens_details": {
+        "thinking_tokens": 74
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "mock": false
+}
