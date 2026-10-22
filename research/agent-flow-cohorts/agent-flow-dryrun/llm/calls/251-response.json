@@ -1,0 +1,30 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "resp_mock_251",
+    "object": "response",
+    "created_at": 1792711086,
+    "status": "completed",
+    "model": "gpt-6.1-sol",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_mock_251",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "<response><thought>reply</thought><actions>REPLY</actions><providers></providers><text>The remaining requirement is infeasible.</text></response>",
+            "annotations": []
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input_tokens": 5376,
+      "output_tokens": 37,
+      "total_tokens": 5413
+    }
+  }
+}

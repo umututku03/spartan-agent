@@ -1,0 +1,30 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "resp_mock_66",
+    "object": "response",
+    "created_at": 1792711037,
+    "status": "completed",
+    "model": "gpt-6-luna",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_mock_66",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "<response><thought>summary</thought><text>Done with the planned steps.</text></response>",
+            "annotations": []
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input_tokens": 2311,
+      "output_tokens": 22,
+      "total_tokens": 2333
+    }
+  }
+}

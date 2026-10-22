@@ -1,0 +1,30 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "resp_mock_262",
+    "object": "response",
+    "created_at": 1792711089,
+    "status": "completed",
+    "model": "gpt-6.1-sol",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_mock_262",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "{\"senderWalletAddress\":\"0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0\",\"inputTokenSymbol\":\"ETH\",\"outputTokenSymbol\":\"USDC\",\"inputTokenCA\":null,\"outputTokenCA\":null,\"amount\":0.1,\"chain\":\"ethereum\"}",
+            "annotations": []
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input_tokens": 922,
+      "output_tokens": 49,
+      "total_tokens": 971
+    }
+  }
+}

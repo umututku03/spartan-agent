@@ -1,0 +1,30 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "resp_mock_16",
+    "object": "response",
+    "created_at": 1792711023,
+    "status": "completed",
+    "model": "gpt-6-luna",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_mock_16",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "{\"senderWalletAddress\":\"0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0\",\"inputTokenSymbol\":\"USDC\",\"outputTokenSymbol\":\"DAI\",\"inputTokenCA\":null,\"outputTokenCA\":null,\"amount\":59.406476,\"chain\":\"ethereum\"}",
+            "annotations": []
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input_tokens": 997,
+      "output_tokens": 50,
+      "total_tokens": 1047
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "resp_mock_93",
+    "object": "response",
+    "created_at": 1792711043,
+    "status": "completed",
+    "model": "gpt-6-luna",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_mock_93",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "<response><thought>next step</thought><action>MULTIWALLET_SWAP</action><providers></providers><isFinish>false</isFinish></response>",
+            "annotations": []
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input_tokens": 2587,
+      "output_tokens": 33,
+      "total_tokens": 2620
+    }
+  }
+}

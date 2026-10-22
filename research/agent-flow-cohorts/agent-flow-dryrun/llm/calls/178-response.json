@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "msg_mock_178",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-haiku-5-5",
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "<response><thought>summary</thought><text>INFEASIBLE</text></response>"
+      }
+    ],
+    "usage": {
+      "input_tokens": 2042,
+      "output_tokens": 18
+    }
+  }
+}

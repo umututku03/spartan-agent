@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "msg_mock_150",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-haiku-5-5",
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"senderWalletAddress\":\"0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0\",\"inputTokenSymbol\":\"ETH\",\"outputTokenSymbol\":\"USDC\",\"inputTokenCA\":null,\"outputTokenCA\":null,\"amount\":0.1,\"chain\":\"ethereum\"}"
+      }
+    ],
+    "usage": {
+      "input_tokens": 922,
+      "output_tokens": 49
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "resp_mock_217",
+    "object": "response",
+    "created_at": 1792711076,
+    "status": "completed",
+    "model": "gpt-6.1-sol",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_mock_217",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "<response><thought>act</thought><actions>MULTIWALLET_SWAP</actions><providers></providers><text>Executing.</text></response>",
+            "annotations": []
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input_tokens": 5139,
+      "output_tokens": 31,
+      "total_tokens": 5170
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "msg_mock_362",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "<response><thought>summary</thought><text>Done with the planned steps.</text></response>"
+      }
+    ],
+    "usage": {
+      "input_tokens": 2312,
+      "output_tokens": 22
+    }
+  }
+}

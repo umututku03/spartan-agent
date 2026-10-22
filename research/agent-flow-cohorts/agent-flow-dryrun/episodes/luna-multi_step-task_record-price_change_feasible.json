@@ -1,0 +1,245 @@
+{
+  "id": "luna-multi_step-task_record-price_change_feasible",
+  "model": "luna",
+  "driver": "multi_step",
+  "condition": "task_record",
+  "scenario": "price_change_feasible",
+  "childExitCode": 0,
+  "wallMs": 1689,
+  "before": {
+    "eth": "1",
+    "usdc": "0",
+    "dai": "0",
+    "nonce": 0
+  },
+  "termination": "multi_step_finished",
+  "declared": "COMPLETED",
+  "turns": [
+    {
+      "turn": 0,
+      "text": "Sell exactly 0.1 ETH for USDC from my wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0. Then acquire at least 37.31 DAI while keeping at least 178.23 USDC in my wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0. Respect all requirements throughout; do not silently change them. If no feasible remaining trade can meet them, tell me it is infeasible. ETH already sold cannot be sold again or undone.",
+      "startedAt": 1792711043661,
+      "ms": 408,
+      "error": null,
+      "newTransactions": 3,
+      "callbacks": [
+        {
+          "text": "",
+          "thought": "finished"
+        },
+        {
+          "text": "Done with the planned steps.",
+          "actions": [
+            "MULTI_STEP_SUMMARY"
+          ],
+          "thought": "summary"
+        }
+      ]
+    },
+    {
+      "turn": 1,
+      "text": "Status check for wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0: reply with exactly one word, COMPLETED, INFEASIBLE, or IN_PROGRESS, describing my original request.",
+      "startedAt": 1792711044070,
+      "ms": 86,
+      "error": null,
+      "newTransactions": 0,
+      "callbacks": [
+        {
+          "text": "",
+          "thought": "finished"
+        },
+        {
+          "text": "COMPLETED",
+          "actions": [
+            "MULTI_STEP_SUMMARY"
+          ],
+          "thought": "summary"
+        }
+      ]
+    }
+  ],
+  "seeded": {
+    "userEntityId": "1b51fff3-d520-085a-a2e8-7c60b333f3f4",
+    "accountEntityId": "661b4d50-4aa2-0034-9174-c1b9de4bcedd",
+    "publicKey": "0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0"
+  },
+  "blockedHosts": {
+    "api.coingecko.com": 2
+  },
+  "roomMemories": [
+    {
+      "id": "3fb99dab-2d40-4419-9e77-157c9237ee99",
+      "entityId": "4ca54e16-ca97-0810-90f6-4e8a9d109a9f",
+      "createdAt": 1792711044070,
+      "content": {
+        "text": "Status check for wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0: reply with exactly one word, COMPLETED, INFEASIBLE, or IN_PROGRESS, describing my original request.",
+        "source": "harness",
+        "channelType": "DM"
+      }
+    },
+    {
+      "id": "2bac55c1-3225-421b-8af2-d24175d878d2",
+      "entityId": "d20bc754-fabe-07f1-b471-bac1276223ef",
+      "createdAt": 1792711043997,
+      "content": {
+        "text": "Ethereum swap completed successfully!\n\n**Tokens Swapped:**\n- 59.406476 USDC -> ~43.104321247992288053 DAI\n\n**Risk layer:** USDC: realized vol ~80%/yr (fallback); vol-targeted max ~ 59.409119 USDC (25.0% of 237.6365, bound by wallet-cap).\n\n**Transaction Details:**\n- Transaction ID: `0x9ff56b4ad783df4074d551109a22b3d9023c2dd19ae470e4844e3a6be57b53e9`\n- Etherscan: https://etherscan.io/tx/0x9ff56b4ad783df4074d551109a22b3d9023c2dd19ae470e4844e3a6be57b53e9\n\n**Wallet:** 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+        "type": "action_result",
+        "runId": "88363deb-f39a-483e-b531-d2ce3c15f638",
+        "source": "action",
+        "actionName": "MULTIWALLET_SWAP",
+        "actionResult": {
+          "data": {
+            "txid": "0x9ff56b4ad783df4074d551109a22b3d9023c2dd19ae470e4844e3a6be57b53e9",
+            "chain": "ethereum",
+            "amount": 59.406476,
+            "inputToken": "USDC",
+            "outputToken": "DAI",
+            "outputAmount": "43.104321247992288053"
+          },
+          "text": "Ethereum swap completed successfully!\n\n**Tokens Swapped:**\n- 59.406476 USDC -> ~43.104321247992288053 DAI\n\n**Risk layer:** USDC: realized vol ~80%/yr (fallback); vol-targeted max ~ 59.409119 USDC (25.0% of 237.6365, bound by wallet-cap).\n\n**Transaction Details:**\n- Transaction ID: `0x9ff56b4ad783df4074d551109a22b3d9023c2dd19ae470e4844e3a6be57b53e9`\n- Etherscan: https://etherscan.io/tx/0x9ff56b4ad783df4074d551109a22b3d9023c2dd19ae470e4844e3a6be57b53e9\n\n**Wallet:** 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+          "success": true
+        },
+        "actionStatus": "completed"
+      }
+    },
+    {
+      "id": "22a6b3f0-93c1-426f-9aa2-95d9650e876f",
+      "entityId": "d20bc754-fabe-07f1-b471-bac1276223ef",
+      "createdAt": 1792711043899,
+      "content": {
+        "text": "Ethereum swap completed successfully!\n\n**Tokens Swapped:**\n- 0.1 ETH -> ~237.636476 USDC\n\n**Risk layer:** ETH: realized vol ~80%/yr (fallback); vol-targeted max ~ 0.250000 ETH (25.0% of 1.0000, bound by wallet-cap).\n\n**Transaction Details:**\n- Transaction ID: `0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94`\n- Etherscan: https://etherscan.io/tx/0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94\n\n**Wallet:** 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+        "type": "action_result",
+        "runId": "63793e81-26c7-48a6-882b-1464d6673707",
+        "source": "action",
+        "actionName": "MULTIWALLET_SWAP",
+        "actionResult": {
+          "data": {
+            "txid": "0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94",
+            "chain": "ethereum",
+            "amount": 0.1,
+            "inputToken": "ETH",
+            "outputToken": "USDC",
+            "outputAmount": "237.636476"
+          },
+          "text": "Ethereum swap completed successfully!\n\n**Tokens Swapped:**\n- 0.1 ETH -> ~237.636476 USDC\n\n**Risk layer:** ETH: realized vol ~80%/yr (fallback); vol-targeted max ~ 0.250000 ETH (25.0% of 1.0000, bound by wallet-cap).\n\n**Transaction Details:**\n- Transaction ID: `0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94`\n- Etherscan: https://etherscan.io/tx/0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94\n\n**Wallet:** 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+          "success": true
+        },
+        "actionStatus": "completed"
+      }
+    },
+    {
+      "id": "fdc07589-25db-4f4b-8321-528909d357e5",
+      "entityId": "4ca54e16-ca97-0810-90f6-4e8a9d109a9f",
+      "createdAt": 1792711043660,
+      "content": {
+        "text": "Sell exactly 0.1 ETH for USDC from my wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0. Then acquire at least 37.31 DAI while keeping at least 178.23 USDC in my wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0. Respect all requirements throughout; do not silently change them. If no feasible remaining trade can meet them, tell me it is infeasible. ETH already sold cannot be sold again or undone.",
+        "source": "harness",
+        "channelType": "DM"
+      }
+    }
+  ],
+  "outcome": {
+    "scenario": "price_change_feasible",
+    "feasible": true,
+    "final": {
+      "eth": "0.899625624960208146",
+      "usdc": "178.23",
+      "dai": "43.104321247992288053",
+      "nonce": 3
+    },
+    "transactions": [
+      {
+        "hash": "0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94",
+        "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value": "100000000000000000",
+        "status": "success",
+        "block": 26250602,
+        "logs": 5,
+        "sale": true,
+        "revert": null
+      },
+      {
+        "hash": "0xf45d074911cc6320a08d9960f3489e82c2b94ed7ee1164fd69a5c83e7551127d",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "value": "0",
+        "status": "success",
+        "block": 26250604,
+        "logs": 1,
+        "sale": false,
+        "revert": null
+      },
+      {
+        "hash": "0x9ff56b4ad783df4074d551109a22b3d9023c2dd19ae470e4844e3a6be57b53e9",
+        "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value": "0",
+        "status": "success",
+        "block": 26250605,
+        "logs": 7,
+        "sale": false,
+        "revert": null
+      }
+    ],
+    "successfulSales": 1,
+    "duplicateSale": false,
+    "revertedTransactions": 0,
+    "goalReached": true,
+    "reserveKept": true,
+    "declared": "COMPLETED",
+    "validComplete": true,
+    "correctInfeasible": false,
+    "falseCompletion": false,
+    "prematureStop": false,
+    "nonSaleRouterTradesExecuted": 1,
+    "tradeEndedBelowGoal": false
+  },
+  "forkJournal": [
+    {
+      "at": 1792711043803,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": "100000000000000000",
+      "hash": "0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94",
+      "error": null,
+      "saleCandidateReceiptStatus": "0x1",
+      "sale": true
+    },
+    {
+      "at": 1792711043894,
+      "event": "scheduled_market_change",
+      "result": {
+        "hash": "0xf0f6be2aaf314ddef1a14b3f56365dfa9a9a8990e5978dfb37e3eadeb5cce38e",
+        "eth": "320443000000000000000",
+        "block": 26250603
+      }
+    },
+    {
+      "at": 1792711043988,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "value": "0",
+      "hash": "0xf45d074911cc6320a08d9960f3489e82c2b94ed7ee1164fd69a5c83e7551127d",
+      "error": null
+    },
+    {
+      "at": 1792711043993,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": "0",
+      "hash": "0x9ff56b4ad783df4074d551109a22b3d9023c2dd19ae470e4844e3a6be57b53e9",
+      "error": null
+    }
+  ],
+  "faultState": {
+    "saleHash": "0xcb72363ad55221fae50a75805e16a3e7457de0110c244b2c59b2ad534a192a94",
+    "hiddenUntil": 0,
+    "saleHookResult": {
+      "hash": "0xf0f6be2aaf314ddef1a14b3f56365dfa9a9a8990e5978dfb37e3eadeb5cce38e",
+      "eth": "320443000000000000000",
+      "block": 26250603
+    },
+    "fault": "price_move"
+  }
+}
