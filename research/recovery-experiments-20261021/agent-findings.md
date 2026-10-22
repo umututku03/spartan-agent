@@ -1,6 +1,6 @@
 # Closed-loop agent findings
 
-Exploratory local-EVM experiments, 21 October 2026. **Decision: continue investigating task-level behaviour, but do not claim a new recovery mechanism or a demonstrated benefit from a task record.**
+Exploratory local-EVM experiments, 21 October 2026. For the subsequent Claude replication and updated decision, see [cross-model-findings.md](cross-model-findings.md). **Decision: continue investigating task-level behaviour, but do not claim a new recovery mechanism or a demonstrated benefit from a task record.**
 
 ## What was actually run
 

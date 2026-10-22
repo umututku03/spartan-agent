@@ -96,7 +96,7 @@ Do not add `--live` to rerun the existing artifacts: the runners refuse to overw
 
 ## Claude comparison setup
 
-The prepared second-provider screen uses Claude Haiku 5.5, the same eight-round task/prompt/guards and eight LLM episodes plus four deterministic controls. See [agent-claude-protocol.md](agent-claude-protocol.md) for the fixed comparison and decision rules. It has not produced results until `agent-claude-results/complete.json` exists; check `run-error.json` for any interrupted attempt. Do not infer novelty or provider superiority from this small screen.
+The prepared second-provider screen uses Claude Haiku 5.5, the same eight-round task/prompt/guards and eight LLM episodes plus four deterministic controls. See [agent-claude-protocol.md](agent-claude-protocol.md) for the fixed comparison and decision rules. The completed run is saved in `agent-claude-results`, with eight LLM episodes, four controls and 47 model requests. See [cross-model-findings.md](cross-model-findings.md) for the comparison and decision: Claude resolved all episodes, but one reserve-breaking proposal was blocked; the executed DAI-goal reduction did not replicate. Claude usage was approximately US$0.0109 and cumulative estimated spend approximately US$0.0337. Do not infer novelty or provider superiority from this small screen.
 
 Open the existing ignored configuration file on macOS:
 
@@ -114,3 +114,5 @@ bun --env-file=.env run-claude-agent.ts
 ```
 
 The dry run reports `keyConfigured` without showing the key and makes zero API calls. Live execution uses `bun --env-file=.env run-claude-agent.ts --live`, refuses to overwrite prior results, allows up to 64 requests with no per-request retries/fallbacks, and retains the cumulative US$0.10 estimate cap across providers. The initial worst-case cumulative reservation is US$0.0998479; typical usage should be much smaller. A dry run does not validate account credit or model access. Review the saved results with `python3 verify-agent-results.py`.
+
+Reproduce the matched eight-round comparison offline with `python3 compare-model-results.py`. It checks shared task/environment/schema contents before reporting counts and submitted cash trades. Saved outputs are in `cross-model-comparison.json` and `agent-audit.json`; no API calls are needed to inspect or verify the evidence.
