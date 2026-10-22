@@ -1,0 +1,16 @@
+{
+  "completedAt": "2026-10-22T00:44:03.684Z",
+  "mock": true,
+  "episodes": 20,
+  "filesUnchanged": {
+    "agent-api-replication-protocol.md": true,
+    "api-replication-client.ts": true,
+    "api-replication-client.test.ts": true,
+    "run-api-replication.ts": true,
+    "verify-api-replication-results.py": true,
+    "estimate-api-cost.py": true,
+    "claude-agent-client.ts": true,
+    "agent-environment.ts": true,
+    "agent-budget-sensitivity-results/manifest-before.json": true
+  }
+}

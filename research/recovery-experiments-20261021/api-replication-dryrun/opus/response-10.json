@@ -1,0 +1,34 @@
+{
+  "call": 10,
+  "round": 1,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.004458000000113316,
+  "visibleBytes": 4928,
+  "priorOutputTokens": 200,
+  "response": {
+    "id": "msg_mock_10",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-opus-5-5",
+    "stop_reason": "tool_use",
+    "usage": {
+      "input_tokens": 1410,
+      "output_tokens": 200
+    },
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "",
+        "signature": "MOCK_SIGNATURE_10"
+      },
+      {
+        "type": "tool_use",
+        "id": "toolu_mock_10",
+        "name": "receipt",
+        "input": {}
+      }
+    ]
+  },
+  "mock": true
+}

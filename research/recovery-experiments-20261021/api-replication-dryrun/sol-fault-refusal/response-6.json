@@ -1,0 +1,24 @@
+{
+  "call": 6,
+  "round": 1,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.007541999999943982,
+  "visibleBytes": 4520,
+  "priorOutputTokens": 200,
+  "response": {
+    "id": "resp_mock_6",
+    "object": "response",
+    "status": "incomplete",
+    "incomplete_details": {
+      "reason": "content_filter"
+    },
+    "model": "gpt-6.1-sol",
+    "usage": {
+      "input_tokens": 1308,
+      "output_tokens": 200
+    },
+    "output": []
+  },
+  "mock": true
+}

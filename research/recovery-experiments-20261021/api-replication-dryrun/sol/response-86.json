@@ -1,0 +1,35 @@
+{
+  "call": 86,
+  "round": 5,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.0012500000000272848,
+  "visibleBytes": 7295,
+  "priorOutputTokens": 1000,
+  "response": {
+    "id": "resp_mock_86",
+    "object": "response",
+    "status": "completed",
+    "model": "gpt-6.1-sol",
+    "usage": {
+      "input_tokens": 2202,
+      "output_tokens": 200
+    },
+    "output": [
+      {
+        "type": "reasoning",
+        "id": "rs_mock_86",
+        "summary": [],
+        "encrypted_content": "MOCK_ENCRYPTED_86"
+      },
+      {
+        "type": "function_call",
+        "id": "fc_mock_86",
+        "call_id": "call_mock_86",
+        "name": "quote",
+        "arguments": "{\"cash\":\"80\"}"
+      }
+    ]
+  },
+  "mock": true
+}

@@ -1,0 +1,35 @@
+{
+  "round": 5,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.0006669999997939158,
+  "visibleBytes": 8806,
+  "priorOutputTokens": 1000,
+  "response": {
+    "id": "msg_mock_86",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-opus-5-5",
+    "stop_reason": "tool_use",
+    "usage": {
+      "input_tokens": 4403,
+      "output_tokens": 200
+    },
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "",
+        "signature": "MOCK_SIGNATURE_86"
+      },
+      {
+        "type": "tool_use",
+        "id": "toolu_mock_86",
+        "name": "quote",
+        "input": {
+          "cash": "80"
+        }
+      }
+    ]
+  },
+  "mock": true
+}
