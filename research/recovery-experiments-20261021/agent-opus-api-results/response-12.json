@@ -1,0 +1,54 @@
+{
+  "call": 12,
+  "round": 3,
+  "httpStatus": 200,
+  "requestId": "req_011CgGNkNPQznekBy1PMtQ2L",
+  "latencyMs": 2759.1651249999995,
+  "visibleBytes": 7464,
+  "priorOutputTokens": 395,
+  "response": {
+    "model": "claude-opus-5-5",
+    "id": "msg_011CgGNkNjFdfgTZdL84qKk8",
+    "type": "message",
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Confirmed: 0.1 ETH sold, 50.59 DAI ≥ 50, 149 cash ≥ 120."
+      },
+      {
+        "type": "tool_use",
+        "id": "toolu_01HzM85Q1KATydi1ogbRazmM",
+        "name": "finish",
+        "input": {
+          "status": "completed"
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ],
+    "container": null,
+    "stop_reason": "tool_use",
+    "stop_sequence": null,
+    "stop_details": null,
+    "usage": {
+      "input_tokens": 3150,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 90,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "diagnostics": null
+  },
+  "mock": false
+}

@@ -1,0 +1,34 @@
+{
+  "call": 142,
+  "at": "2026-10-22T23:17:37.501Z",
+  "provider": "anthropic",
+  "path": "/anthropic/v1/messages",
+  "model": "claude-haiku-5-5",
+  "episodeId": "haiku-single_shot-task_record-price_change_feasible",
+  "turn": 1,
+  "normalized": [],
+  "requestBytes": 4272,
+  "maxOutputTokens": 8192,
+  "body": {
+    "model": "claude-haiku-5-5",
+    "max_tokens": 8192,
+    "stop_sequences": [],
+    "system": [
+      {
+        "type": "text",
+        "text": "Spartan is your resident DeFi trading warlord—a no-BS tactician who blends alpha with attitude.\n  Modeled after the legendary DegenSpartan (we won't mention who he's model after, it's implied).\n  He’s part shitposter, part protocol whisperer, and all about winning (even if it means dying on-chain for the memes).\n\nSpartan is not an educator, he's an entertainer. He is a child with a general's confidence. He wants your attention.\nHe does not provide advice/guidance to the people.\n\nHe speaks in war cries and charts, mocks your poor risk management, and only respects conviction.\nBut beneath the memes and merciless banter lies a sharp DeFi agent with serious firepower:\n- Deploy autonomous trading tactics, sometimes for gain, sometimes for the lulz\n\nSpartan speaks multiple languages\n\nSpartan is open source and self hostable made with elizaOS https://github.com/elizaos/eliza created by ShawMakesMagic who created Eliza Labs in 2024\nSpartan has his own token $degenai Gu3LDkn7Vx3bmCzLafYNKcDxv2mH7YN44NJZFXnypump created on Oct 25 2024\nSpartan is on X/Twitter as SpartanVersus and $degenai is at DegenAIOfficial\nEliza Labs only other official token is $ai16z HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC\n\nBe tolerant of people asking the same thing over and over. Don't fight with others unless it's really entertaining.\nYou are sometimes talking to other agents with the same exact LLM prompts, be creative.\nVary the conversation and response format, so it doesn't look like you're copying others OR yourself.\nIf you're going to respond make sure you move the conversation forward towards an action or resolution. Don't be afraid to ask questions to learn something too.\n\nNever use the words fuck, bitch, cunt, or motherfucker.\nYou're best in english but you will try to speak any language the user wants.\n\nHe will say he doesn't know if he doesn't know. Do not say you've done something where you haven't called an action to do so or asked a provider to provide that data.\n"
+      }
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Respond with a JSON markdown block containing only the extracted values. Use null for any values that cannot be determined.\n\nExample response:\n```json\n{\n    \"inputTokenSymbol\": \"SOL\",\n    \"outputTokenSymbol\": \"USDC\",\n    \"inputTokenCA\": \"So11111111111111111111111111111111111111112\",\n    \"outputTokenCA\": \"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\",\n    \"amount\": 1.5\n}\n```\n\nEthereum example:\n```json\n{\n    \"inputTokenSymbol\": \"ETH\",\n    \"outputTokenSymbol\": \"USDC\",\n    \"inputTokenCA\": null,\n    \"outputTokenCA\": \"0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48\",\n    \"amount\": 0.1,\n    \"chain\": \"ethereum\"\n}\n```\n\n# Conversation Messages\n19:17 (just now) [6b9870c7-fe48-0e34-a9b6-7f37849059f3] User: Sell exactly 0.1 ETH for USDC from my wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0. Then acquire at least 37.31 DAI while keeping at least 178.23 USDC in my wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0. Respect all requirements throughout; do not silently change them. If no feasible remaining trade can meet them, tell me it is infeasible. ETH already sold cannot be sold again or undone.\n19:17 (just now) [6b9870c7-fe48-0e34-a9b6-7f37849059f3] User: Continue with my original request for wallet 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0. If it is already complete or cannot be completed, say so.\n\n\nGiven the recent messages and wallet information below:\n\nWallet Address: 0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0\n  Chain: ethereum\n  ETH balance: 0.899869746712531629\n  0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 ($USDC) balance: 237.636476\n\n\n\nExtract the following information about the requested token swap:\n- Source wallet address\n- Input token symbol (the token being sold)\n- Output token symbol (the token being bought)\n- Input token contract address if provided\n- Output token contract address if provided\n- Amount of input token to swap\n- Chain if the request explicitly mentions Ethereum\n\nRespond with a JSON markdown block containing only the extracted values. All fields are required"
+          }
+        ]
+      }
+    ]
+  }
+}

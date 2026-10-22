@@ -1,0 +1,34 @@
+{
+  "round": 0,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.001374999999825377,
+  "visibleBytes": 3493,
+  "priorOutputTokens": 0,
+  "response": {
+    "id": "resp_mock_65",
+    "object": "response",
+    "status": "completed",
+    "model": "gpt-6.1-sol",
+    "usage": {
+      "input_tokens": 1747,
+      "output_tokens": 200
+    },
+    "output": [
+      {
+        "type": "reasoning",
+        "id": "rs_mock_65",
+        "summary": [],
+        "encrypted_content": "MOCK_ENCRYPTED_65"
+      },
+      {
+        "type": "function_call",
+        "id": "fc_mock_65",
+        "call_id": "call_mock_65",
+        "name": "sell_eth",
+        "arguments": "{\"eth\":\"0.1\"}"
+      }
+    ]
+  },
+  "mock": true
+}

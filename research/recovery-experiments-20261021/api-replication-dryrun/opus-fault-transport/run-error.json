@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-22T00:58:22.440Z",
+  "mock": true,
+  "fault": {
+    "kind": "transport",
+    "call": 7
+  },
+  "error": "Injected mock transport failure",
+  "interruptedEpisode": "normal-0-task_record-mock-scripted",
+  "completedEpisodes": 5,
+  "calls": 7,
+  "cumulativeEstimatedUSD": 0.1560957
+}

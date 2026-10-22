@@ -1,0 +1,40 @@
+{
+  "completedAt": "2026-10-22T00:58:19.571Z",
+  "mock": true,
+  "episodes": 20,
+  "episodeIds": [
+    "deterministic-normal",
+    "deterministic-receipt_hidden",
+    "deterministic-price_change_feasible",
+    "deterministic-price_change_infeasible",
+    "normal-0-history-mock-scripted",
+    "normal-0-task_record-mock-scripted",
+    "receipt_hidden-0-task_record-mock-scripted",
+    "receipt_hidden-0-history-mock-scripted",
+    "price_change_feasible-0-history-mock-scripted",
+    "price_change_feasible-0-task_record-mock-scripted",
+    "price_change_infeasible-0-task_record-mock-scripted",
+    "price_change_infeasible-0-history-mock-scripted",
+    "normal-0-history-mock-max_rounds",
+    "normal-0-task_record-mock-max_rounds",
+    "receipt_hidden-0-task_record-mock-max_rounds",
+    "receipt_hidden-0-history-mock-max_rounds",
+    "price_change_feasible-0-history-mock-max_rounds",
+    "price_change_feasible-0-task_record-mock-max_rounds",
+    "price_change_infeasible-0-task_record-mock-max_rounds",
+    "price_change_infeasible-0-history-mock-max_rounds"
+  ],
+  "calls": 96,
+  "filesUnchanged": {
+    "agent-api-replication-protocol.md": true,
+    "api-replication-client.ts": true,
+    "api-replication-client.test.ts": true,
+    "run-api-replication.ts": true,
+    "verify-api-replication-results.py": true,
+    "test-api-verifier.py": true,
+    "estimate-api-cost.py": true,
+    "claude-agent-client.ts": true,
+    "agent-environment.ts": true,
+    "agent-budget-sensitivity-results/manifest-before.json": true
+  }
+}

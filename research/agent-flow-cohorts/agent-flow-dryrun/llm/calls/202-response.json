@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "msg_mock_202",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-haiku-5-5",
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "<response><thought>summary</thought><text>COMPLETED</text></response>"
+      }
+    ],
+    "usage": {
+      "input_tokens": 2043,
+      "output_tokens": 18
+    }
+  }
+}

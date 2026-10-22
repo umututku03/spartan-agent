@@ -1,0 +1,384 @@
+{
+  "priorEstimatedUSD": 0.022843099999999977,
+  "cumulativeEstimatedUSD": 0.033747700000000026,
+  "capUSD": 0.1,
+  "calls": 47,
+  "entries": [
+    {
+      "call": 1,
+      "episodeId": "normal-0-history",
+      "round": 0,
+      "reservationUSD": 0.0005128,
+      "status": "settled",
+      "estimatedUSD": 0.0001598
+    },
+    {
+      "call": 2,
+      "episodeId": "normal-0-history",
+      "round": 1,
+      "reservationUSD": 0.000563,
+      "status": "settled",
+      "estimatedUSD": 0.000186
+    },
+    {
+      "call": 3,
+      "episodeId": "normal-0-history",
+      "round": 2,
+      "reservationUSD": 0.0006367,
+      "status": "settled",
+      "estimatedUSD": 0.00021020000000000001
+    },
+    {
+      "call": 4,
+      "episodeId": "normal-0-history",
+      "round": 3,
+      "reservationUSD": 0.0007057000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0002477
+    },
+    {
+      "call": 5,
+      "episodeId": "normal-0-history",
+      "round": 4,
+      "reservationUSD": 0.0007898000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.00025540000000000003
+    },
+    {
+      "call": 6,
+      "episodeId": "normal-0-history",
+      "round": 5,
+      "reservationUSD": 0.000855,
+      "status": "settled",
+      "estimatedUSD": 0.0002856
+    },
+    {
+      "call": 7,
+      "episodeId": "normal-0-task_record",
+      "round": 0,
+      "reservationUSD": 0.0005413,
+      "status": "settled",
+      "estimatedUSD": 0.0001715
+    },
+    {
+      "call": 8,
+      "episodeId": "normal-0-task_record",
+      "round": 1,
+      "reservationUSD": 0.0005915,
+      "status": "settled",
+      "estimatedUSD": 0.0001977
+    },
+    {
+      "call": 9,
+      "episodeId": "normal-0-task_record",
+      "round": 2,
+      "reservationUSD": 0.0006657000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0002233
+    },
+    {
+      "call": 10,
+      "episodeId": "normal-0-task_record",
+      "round": 3,
+      "reservationUSD": 0.0007347,
+      "status": "settled",
+      "estimatedUSD": 0.00026139999999999996
+    },
+    {
+      "call": 11,
+      "episodeId": "normal-0-task_record",
+      "round": 4,
+      "reservationUSD": 0.0008206,
+      "status": "settled",
+      "estimatedUSD": 0.0002813
+    },
+    {
+      "call": 12,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 0,
+      "reservationUSD": 0.0005413,
+      "status": "settled",
+      "estimatedUSD": 0.0001715
+    },
+    {
+      "call": 13,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 1,
+      "reservationUSD": 0.0005915,
+      "status": "settled",
+      "estimatedUSD": 0.0001977
+    },
+    {
+      "call": 14,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 2,
+      "reservationUSD": 0.0006892000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0002222
+    },
+    {
+      "call": 15,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 3,
+      "reservationUSD": 0.0007537,
+      "status": "settled",
+      "estimatedUSD": 0.0002521
+    },
+    {
+      "call": 16,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 4,
+      "reservationUSD": 0.0008227,
+      "status": "settled",
+      "estimatedUSD": 0.0002895
+    },
+    {
+      "call": 17,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 5,
+      "reservationUSD": 0.0009086000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0003085
+    },
+    {
+      "call": 18,
+      "episodeId": "receipt_hidden-0-history",
+      "round": 0,
+      "reservationUSD": 0.0005128,
+      "status": "settled",
+      "estimatedUSD": 0.0001598
+    },
+    {
+      "call": 19,
+      "episodeId": "receipt_hidden-0-history",
+      "round": 1,
+      "reservationUSD": 0.000563,
+      "status": "settled",
+      "estimatedUSD": 0.000186
+    },
+    {
+      "call": 20,
+      "episodeId": "receipt_hidden-0-history",
+      "round": 2,
+      "reservationUSD": 0.0006538000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.00020720000000000002
+    },
+    {
+      "call": 21,
+      "episodeId": "receipt_hidden-0-history",
+      "round": 3,
+      "reservationUSD": 0.0007247,
+      "status": "settled",
+      "estimatedUSD": 0.00024070000000000002
+    },
+    {
+      "call": 22,
+      "episodeId": "receipt_hidden-0-history",
+      "round": 4,
+      "reservationUSD": 0.0007937,
+      "status": "settled",
+      "estimatedUSD": 0.00027820000000000004
+    },
+    {
+      "call": 23,
+      "episodeId": "receipt_hidden-0-history",
+      "round": 5,
+      "reservationUSD": 0.0008778000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0002965
+    },
+    {
+      "call": 24,
+      "episodeId": "price_change_feasible-0-history",
+      "round": 0,
+      "reservationUSD": 0.0005128,
+      "status": "settled",
+      "estimatedUSD": 0.0001598
+    },
+    {
+      "call": 25,
+      "episodeId": "price_change_feasible-0-history",
+      "round": 1,
+      "reservationUSD": 0.000563,
+      "status": "settled",
+      "estimatedUSD": 0.000186
+    },
+    {
+      "call": 26,
+      "episodeId": "price_change_feasible-0-history",
+      "round": 2,
+      "reservationUSD": 0.0006366,
+      "status": "settled",
+      "estimatedUSD": 0.000211
+    },
+    {
+      "call": 27,
+      "episodeId": "price_change_feasible-0-history",
+      "round": 3,
+      "reservationUSD": 0.0007055,
+      "status": "settled",
+      "estimatedUSD": 0.00024890000000000003
+    },
+    {
+      "call": 28,
+      "episodeId": "price_change_feasible-0-history",
+      "round": 4,
+      "reservationUSD": 0.0007896,
+      "status": "settled",
+      "estimatedUSD": 0.00026789999999999995
+    },
+    {
+      "call": 29,
+      "episodeId": "price_change_feasible-0-task_record",
+      "round": 0,
+      "reservationUSD": 0.0005413,
+      "status": "settled",
+      "estimatedUSD": 0.0001715
+    },
+    {
+      "call": 30,
+      "episodeId": "price_change_feasible-0-task_record",
+      "round": 1,
+      "reservationUSD": 0.0005915,
+      "status": "settled",
+      "estimatedUSD": 0.0001977
+    },
+    {
+      "call": 31,
+      "episodeId": "price_change_feasible-0-task_record",
+      "round": 2,
+      "reservationUSD": 0.0006656,
+      "status": "settled",
+      "estimatedUSD": 0.0002233
+    },
+    {
+      "call": 32,
+      "episodeId": "price_change_feasible-0-task_record",
+      "round": 3,
+      "reservationUSD": 0.0007345,
+      "status": "settled",
+      "estimatedUSD": 0.00026139999999999996
+    },
+    {
+      "call": 33,
+      "episodeId": "price_change_feasible-0-task_record",
+      "round": 4,
+      "reservationUSD": 0.0008204000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0002808
+    },
+    {
+      "call": 34,
+      "episodeId": "price_change_infeasible-0-task_record",
+      "round": 0,
+      "reservationUSD": 0.0005413,
+      "status": "settled",
+      "estimatedUSD": 0.0001715
+    },
+    {
+      "call": 35,
+      "episodeId": "price_change_infeasible-0-task_record",
+      "round": 1,
+      "reservationUSD": 0.0005915,
+      "status": "settled",
+      "estimatedUSD": 0.0001977
+    },
+    {
+      "call": 36,
+      "episodeId": "price_change_infeasible-0-task_record",
+      "round": 2,
+      "reservationUSD": 0.0006656,
+      "status": "settled",
+      "estimatedUSD": 0.0002229
+    },
+    {
+      "call": 37,
+      "episodeId": "price_change_infeasible-0-task_record",
+      "round": 3,
+      "reservationUSD": 0.0007345,
+      "status": "settled",
+      "estimatedUSD": 0.0002463
+    },
+    {
+      "call": 38,
+      "episodeId": "price_change_infeasible-0-task_record",
+      "round": 4,
+      "reservationUSD": 0.0008034000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.00026970000000000005
+    },
+    {
+      "call": 39,
+      "episodeId": "price_change_infeasible-0-task_record",
+      "round": 5,
+      "reservationUSD": 0.0008723000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.00029410000000000005
+    },
+    {
+      "call": 40,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 0,
+      "reservationUSD": 0.0005128,
+      "status": "settled",
+      "estimatedUSD": 0.0001598
+    },
+    {
+      "call": 41,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 1,
+      "reservationUSD": 0.000563,
+      "status": "settled",
+      "estimatedUSD": 0.000186
+    },
+    {
+      "call": 42,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 2,
+      "reservationUSD": 0.0006366,
+      "status": "settled",
+      "estimatedUSD": 0.000212
+    },
+    {
+      "call": 43,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 3,
+      "reservationUSD": 0.0007055,
+      "status": "settled",
+      "estimatedUSD": 0.00023590000000000001
+    },
+    {
+      "call": 44,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 4,
+      "reservationUSD": 0.0007747,
+      "status": "settled",
+      "estimatedUSD": 0.0002743
+    },
+    {
+      "call": 45,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 5,
+      "reservationUSD": 0.0008647,
+      "status": "settled",
+      "estimatedUSD": 0.000284
+    },
+    {
+      "call": 46,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 6,
+      "reservationUSD": 0.000926,
+      "status": "settled",
+      "estimatedUSD": 0.0003137
+    },
+    {
+      "call": 47,
+      "episodeId": "price_change_infeasible-0-history",
+      "round": 7,
+      "reservationUSD": 0.0009949000000000002,
+      "status": "settled",
+      "estimatedUSD": 0.00033860000000000004
+    }
+  ]
+}

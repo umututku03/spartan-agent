@@ -1,0 +1,104 @@
+{
+  "priorEstimatedUSD": 0.007641799999999999,
+  "cumulativeEstimatedUSD": 0.009371299999999999,
+  "capUSD": 0.1,
+  "calls": 12,
+  "entries": [
+    {
+      "call": 1,
+      "episodeId": "normal-0-history",
+      "round": 0,
+      "reservationUSD": 0.0005031,
+      "status": "settled",
+      "estimatedUSD": 0.0000651
+    },
+    {
+      "call": 2,
+      "episodeId": "normal-0-history",
+      "round": 1,
+      "reservationUSD": 0.0005545,
+      "status": "settled",
+      "estimatedUSD": 0.0000768
+    },
+    {
+      "call": 3,
+      "episodeId": "normal-0-history",
+      "round": 2,
+      "reservationUSD": 0.0006297999999999999,
+      "status": "settled",
+      "estimatedUSD": 0.00009330000000000002
+    },
+    {
+      "call": 4,
+      "episodeId": "normal-0-history",
+      "round": 3,
+      "reservationUSD": 0.0007004,
+      "status": "settled",
+      "estimatedUSD": 0.0001116
+    },
+    {
+      "call": 5,
+      "episodeId": "normal-0-history",
+      "round": 4,
+      "reservationUSD": 0.0007865,
+      "status": "settled",
+      "estimatedUSD": 0.0001269
+    },
+    {
+      "call": 6,
+      "episodeId": "normal-0-task_record",
+      "round": 0,
+      "reservationUSD": 0.0005316,
+      "status": "settled",
+      "estimatedUSD": 0.0000753
+    },
+    {
+      "call": 7,
+      "episodeId": "normal-0-task_record",
+      "round": 1,
+      "reservationUSD": 0.0006074000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.00009240000000000001
+    },
+    {
+      "call": 8,
+      "episodeId": "normal-0-task_record",
+      "round": 2,
+      "reservationUSD": 0.000678,
+      "status": "settled",
+      "estimatedUSD": 0.00011090000000000001
+    },
+    {
+      "call": 9,
+      "episodeId": "normal-0-task_record",
+      "round": 3,
+      "reservationUSD": 0.0007659000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0001274
+    },
+    {
+      "call": 10,
+      "episodeId": "normal-0-task_record",
+      "round": 4,
+      "reservationUSD": 0.0008323000000000001,
+      "status": "settled",
+      "estimatedUSD": 0.0001436
+    },
+    {
+      "call": 11,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 0,
+      "reservationUSD": 0.0005316,
+      "status": "settled",
+      "estimatedUSD": 0.0000753
+    },
+    {
+      "call": 12,
+      "episodeId": "receipt_hidden-0-task_record",
+      "round": 1,
+      "reservationUSD": 0.0006309000000000001,
+      "status": "reserved",
+      "error": "TimeoutError"
+    }
+  ]
+}

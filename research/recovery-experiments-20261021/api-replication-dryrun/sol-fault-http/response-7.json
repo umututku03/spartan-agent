@@ -1,0 +1,17 @@
+{
+  "call": 7,
+  "round": 2,
+  "httpStatus": 500,
+  "requestId": null,
+  "latencyMs": 0.0035410000000410946,
+  "visibleBytes": 5210,
+  "priorOutputTokens": 400,
+  "response": {
+    "type": "error",
+    "error": {
+      "type": "api_error",
+      "message": "Injected mock HTTP failure"
+    }
+  },
+  "mock": true
+}

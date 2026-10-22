@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-22T00:58:28.214Z",
+  "mock": true,
+  "fault": {
+    "kind": "overbound",
+    "call": 7
+  },
+  "error": "Usage exceeded the reservation assumptions or approved cap; known cost recorded, stop before another request.",
+  "interruptedEpisode": "normal-0-task_record-mock-scripted",
+  "completedEpisodes": 5,
+  "calls": 7,
+  "cumulativeEstimatedUSD": 0.07559370000000004
+}

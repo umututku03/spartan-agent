@@ -1,0 +1,134 @@
+{
+  "id": "control-normal",
+  "scenario": "normal",
+  "steps": [
+    {
+      "sale": {
+        "hash": "0x80801b5ffe93fbd2ca1e2c64632117f198c3762c3a4997437e4caefcbfa6a729",
+        "walletAddress": "0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+        "chain": "ethereum",
+        "inputToken": {
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        },
+        "outputToken": {
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        },
+        "amountIn": "0.1",
+        "quotedAmountOut": "237.636476",
+        "quotedAmountOutRaw": "237636476"
+      }
+    },
+    {
+      "swap": {
+        "hash": "0xee727726e412e43f4103c2a5a62483a2ee818218b31a0149f5fb47d70b44501b",
+        "walletAddress": "0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+        "chain": "ethereum",
+        "inputToken": {
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        },
+        "outputToken": {
+          "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+          "symbol": "DAI",
+          "decimals": 18,
+          "isNative": false
+        },
+        "amountIn": "37.54",
+        "quotedAmountOut": "37.313092391142750095",
+        "quotedAmountOutRaw": "37313092391142750095"
+      }
+    }
+  ],
+  "outcome": {
+    "scenario": "normal",
+    "feasible": true,
+    "final": {
+      "eth": "0.899602921828182545",
+      "usdc": "200.096476",
+      "dai": "37.313092391142750095",
+      "nonce": 3
+    },
+    "transactions": [
+      {
+        "hash": "0x80801b5ffe93fbd2ca1e2c64632117f198c3762c3a4997437e4caefcbfa6a729",
+        "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value": "100000000000000000",
+        "status": "success",
+        "block": 26250602,
+        "logs": 5,
+        "sale": true,
+        "revert": null
+      },
+      {
+        "hash": "0x2a2b5d516a34407beea400f8be796d618998469c64cd082f29cd0510cfa2fa59",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "value": "0",
+        "status": "success",
+        "block": 26250603,
+        "logs": 1,
+        "sale": false,
+        "revert": null
+      },
+      {
+        "hash": "0xee727726e412e43f4103c2a5a62483a2ee818218b31a0149f5fb47d70b44501b",
+        "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value": "0",
+        "status": "success",
+        "block": 26250604,
+        "logs": 7,
+        "sale": false,
+        "revert": null
+      }
+    ],
+    "successfulSales": 1,
+    "duplicateSale": false,
+    "revertedTransactions": 0,
+    "goalReached": true,
+    "reserveKept": true,
+    "declared": "COMPLETED",
+    "validComplete": true,
+    "correctInfeasible": false,
+    "falseCompletion": false,
+    "prematureStop": false,
+    "nonSaleRouterTradesExecuted": 1,
+    "tradeEndedBelowGoal": false
+  },
+  "forkJournal": [
+    {
+      "at": 1792710817235,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": "100000000000000000",
+      "hash": "0x80801b5ffe93fbd2ca1e2c64632117f198c3762c3a4997437e4caefcbfa6a729",
+      "error": null,
+      "saleCandidateReceiptStatus": "0x1",
+      "sale": true
+    },
+    {
+      "at": 1792710817342,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "value": "0",
+      "hash": "0x2a2b5d516a34407beea400f8be796d618998469c64cd082f29cd0510cfa2fa59",
+      "error": null
+    },
+    {
+      "at": 1792710817353,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": "0",
+      "hash": "0xee727726e412e43f4103c2a5a62483a2ee818218b31a0149f5fb47d70b44501b",
+      "error": null
+    }
+  ]
+}

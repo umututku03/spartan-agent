@@ -1,0 +1,37 @@
+{
+  "classification": "developmental decision diagnostics; not autonomous-agent evaluation",
+  "model": "gpt-6-luna",
+  "requests": 24,
+  "input_tokens": 4851,
+  "output_tokens": 1150,
+  "estimated_usage_usd": 0.0010601,
+  "groups": [
+    {
+      "screen": "Initial screen",
+      "condition": "json_record",
+      "correct": 5,
+      "trials": 6
+    },
+    {
+      "screen": "Initial screen",
+      "condition": "labeled_text",
+      "correct": 6,
+      "trials": 6
+    },
+    {
+      "screen": "Follow-up",
+      "condition": "direct_action",
+      "correct": 5,
+      "trials": 6
+    },
+    {
+      "screen": "Follow-up",
+      "condition": "option_label",
+      "correct": 4,
+      "trials": 6
+    }
+  ],
+  "no_automatic_retries": true,
+  "no_model_substitution": true,
+  "onchain_replay": "local testing EVM only"
+}

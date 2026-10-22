@@ -1,0 +1,12 @@
+{
+  "completedAt": "2026-10-22T00:18:35.741Z",
+  "episodes": 12,
+  "filesUnchanged": {
+    "agent-claude-protocol.md": true,
+    "claude-agent-client.ts": true,
+    "claude-agent-client.test.ts": true,
+    "run-claude-agent.ts": true,
+    "agent-environment.ts": true,
+    "agent-budget-sensitivity-results/manifest-before.json": true
+  }
+}

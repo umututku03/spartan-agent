@@ -1,0 +1,37 @@
+{
+  "call": 10,
+  "round": 3,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.026833000000010543,
+  "visibleBytes": 7001,
+  "priorOutputTokens": 600,
+  "response": {
+    "id": "msg_mock_10",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-opus-5-5",
+    "stop_reason": "tool_use",
+    "usage": {
+      "input_tokens": 2029,
+      "output_tokens": 200
+    },
+    "content": [
+      {
+        "type": "thinking",
+        "thinking": "",
+        "signature": "MOCK_SIGNATURE_10"
+      },
+      {
+        "type": "tool_use",
+        "id": "toolu_mock_10",
+        "name": "swap_cash",
+        "input": {
+          "cash": "50.41",
+          "minimum_dai": "50"
+        }
+      }
+    ]
+  },
+  "mock": true
+}

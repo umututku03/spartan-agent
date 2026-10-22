@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-21T22:44:54.083Z",
+  "error": {
+    "name": "AssertionError",
+    "message": "Local Anvil failed to start; check anvil-errors.log",
+    "hash": null,
+    "ownKeys": [
+      "generatedMessage",
+      "actual",
+      "expected",
+      "operator",
+      "code"
+    ]
+  },
+  "completedEpisodes": 0
+}

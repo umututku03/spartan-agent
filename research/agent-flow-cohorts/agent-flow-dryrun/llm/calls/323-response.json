@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "msg_mock_323",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "<response><thought>reply</thought><actions>REPLY</actions><providers></providers><text>Done.</text></response>"
+      }
+    ],
+    "usage": {
+      "input_tokens": 5421,
+      "output_tokens": 28
+    }
+  }
+}

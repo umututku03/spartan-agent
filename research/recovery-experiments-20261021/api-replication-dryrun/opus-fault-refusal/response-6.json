@@ -1,0 +1,22 @@
+{
+  "call": 6,
+  "round": 1,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.011750000000006366,
+  "visibleBytes": 4693,
+  "priorOutputTokens": 200,
+  "response": {
+    "id": "msg_mock_6",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-opus-5-5",
+    "stop_reason": "refusal",
+    "usage": {
+      "input_tokens": 1352,
+      "output_tokens": 200
+    },
+    "content": []
+  },
+  "mock": true
+}

@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-21T23:32:35.321Z",
+  "error": "Run stopped after fatal episode normal-1-task_record; preserved all partial data.",
+  "completedEpisodes": 13,
+  "calls": 53,
+  "cumulativeEstimatedUSD": 0.007641799999999999
+}

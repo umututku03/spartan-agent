@@ -1,0 +1,21 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "msg_mock_347",
+    "type": "message",
+    "role": "assistant",
+    "model": "claude-opus-5-5",
+    "stop_reason": "end_turn",
+    "stop_sequence": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "<response><thought>act</thought><actions>MULTIWALLET_SWAP</actions><providers></providers><text>Executing.</text></response>"
+      }
+    ],
+    "usage": {
+      "input_tokens": 5030,
+      "output_tokens": 31
+    }
+  }
+}

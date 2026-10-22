@@ -1,0 +1,143 @@
+{
+  "id": "control-price_change_feasible",
+  "scenario": "price_change_feasible",
+  "steps": [
+    {
+      "sale": {
+        "hash": "0x89c1c55d7b870d5c3d77e4c68c93ff918b2600b274b7253abb8f99ae6b9dfbd8",
+        "walletAddress": "0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+        "chain": "ethereum",
+        "inputToken": {
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        },
+        "outputToken": {
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        },
+        "amountIn": "0.1",
+        "quotedAmountOut": "237.636476",
+        "quotedAmountOutRaw": "237636476"
+      }
+    },
+    {
+      "swap": {
+        "hash": "0x0e20d7b2f8962c4ccfca14a6681cf6cf8f1de20c37103aacfa79a2aa5becbaaf",
+        "walletAddress": "0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+        "chain": "ethereum",
+        "inputToken": {
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        },
+        "outputToken": {
+          "address": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+          "symbol": "DAI",
+          "decimals": 18,
+          "isNative": false
+        },
+        "amountIn": "51.43",
+        "quotedAmountOut": "37.316813444913000823",
+        "quotedAmountOutRaw": "37316813444913000823"
+      }
+    }
+  ],
+  "outcome": {
+    "scenario": "price_change_feasible",
+    "feasible": true,
+    "final": {
+      "eth": "0.899616169219286865",
+      "usdc": "186.206476",
+      "dai": "37.316813444913000823",
+      "nonce": 3
+    },
+    "transactions": [
+      {
+        "hash": "0x89c1c55d7b870d5c3d77e4c68c93ff918b2600b274b7253abb8f99ae6b9dfbd8",
+        "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value": "100000000000000000",
+        "status": "success",
+        "block": 26250602,
+        "logs": 5,
+        "sale": true,
+        "revert": null
+      },
+      {
+        "hash": "0x610f5d8ee51553c3a5ab0d8012371d1e38f5623e2dc624bcd1569dce679640f8",
+        "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "value": "0",
+        "status": "success",
+        "block": 26250604,
+        "logs": 1,
+        "sale": false,
+        "revert": null
+      },
+      {
+        "hash": "0x0e20d7b2f8962c4ccfca14a6681cf6cf8f1de20c37103aacfa79a2aa5becbaaf",
+        "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value": "0",
+        "status": "success",
+        "block": 26250605,
+        "logs": 7,
+        "sale": false,
+        "revert": null
+      }
+    ],
+    "successfulSales": 1,
+    "duplicateSale": false,
+    "revertedTransactions": 0,
+    "goalReached": true,
+    "reserveKept": true,
+    "declared": "COMPLETED",
+    "validComplete": true,
+    "correctInfeasible": false,
+    "falseCompletion": false,
+    "prematureStop": false,
+    "nonSaleRouterTradesExecuted": 1,
+    "tradeEndedBelowGoal": false
+  },
+  "forkJournal": [
+    {
+      "at": 1792711018102,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": "100000000000000000",
+      "hash": "0x89c1c55d7b870d5c3d77e4c68c93ff918b2600b274b7253abb8f99ae6b9dfbd8",
+      "error": null,
+      "saleCandidateReceiptStatus": "0x1",
+      "sale": true
+    },
+    {
+      "at": 1792711018329,
+      "event": "scheduled_market_change",
+      "result": {
+        "hash": "0xa8de026bfdaea7a03e9f764d87d7ff30ad5120291e90993c29923317b1237c25",
+        "eth": "320443000000000000000",
+        "block": 26250603
+      }
+    },
+    {
+      "at": 1792711018347,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "value": "0",
+      "hash": "0x610f5d8ee51553c3a5ab0d8012371d1e38f5623e2dc624bcd1569dce679640f8",
+      "error": null
+    },
+    {
+      "at": 1792711018354,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": "0",
+      "hash": "0x0e20d7b2f8962c4ccfca14a6681cf6cf8f1de20c37103aacfa79a2aa5becbaaf",
+      "error": null
+    }
+  ]
+}

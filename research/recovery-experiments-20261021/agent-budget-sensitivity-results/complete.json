@@ -1,0 +1,12 @@
+{
+  "completedAt": "2026-10-22T00:05:51.038Z",
+  "episodes": 12,
+  "filesUnchanged": {
+    "agent-native-protocol.md": true,
+    "agent-environment.ts": true,
+    "run-agent-budget-sensitivity.ts": true,
+    "agent-conformance.ts": true,
+    "agent-native-replication-protocol.md": true,
+    "agent-budget-sensitivity-protocol.md": true
+  }
+}

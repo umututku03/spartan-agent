@@ -1,0 +1,224 @@
+[
+  {
+    "provider": "openai",
+    "model": "gpt-6-luna",
+    "at": "2026-10-22T13:57:50.634Z",
+    "url": "https://api.openai.com/v1/responses",
+    "requestBody": {
+      "model": "gpt-6-luna",
+      "input": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Reply with the single word OK."
+            }
+          ]
+        }
+      ],
+      "temperature": 0.7,
+      "max_output_tokens": 512
+    },
+    "httpStatus": 400,
+    "responseBody": {
+      "error": {
+        "message": "Unsupported parameter: 'temperature' is not supported with this model.",
+        "type": "invalid_request_error",
+        "param": "temperature",
+        "code": null
+      }
+    },
+    "ok": false,
+    "error": "Unsupported parameter: 'temperature' is not supported with this model."
+  },
+  {
+    "provider": "openai",
+    "model": "gpt-6.1-sol",
+    "at": "2026-10-22T13:57:51.816Z",
+    "url": "https://api.openai.com/v1/responses",
+    "requestBody": {
+      "model": "gpt-6.1-sol",
+      "input": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "input_text",
+              "text": "Reply with the single word OK."
+            }
+          ]
+        }
+      ],
+      "temperature": 0.7,
+      "max_output_tokens": 512
+    },
+    "httpStatus": 400,
+    "responseBody": {
+      "error": {
+        "message": "Unsupported parameter: 'temperature' is not supported with this model.",
+        "type": "invalid_request_error",
+        "param": "temperature",
+        "code": null
+      }
+    },
+    "ok": false,
+    "error": "Unsupported parameter: 'temperature' is not supported with this model."
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-haiku-5-5",
+    "at": "2026-10-22T13:57:52.034Z",
+    "url": "https://api.anthropic.com/v1/messages",
+    "requestBody": {
+      "model": "claude-haiku-5-5",
+      "max_tokens": 512,
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Reply with the single word OK."
+            }
+          ]
+        }
+      ]
+    },
+    "httpStatus": 200,
+    "responseBody": {
+      "model": "claude-haiku-5-5",
+      "id": "msg_011CgHPmADKwCjbjNpBvXcBk",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "OK"
+        }
+      ],
+      "container": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "stop_details": null,
+      "usage": {
+        "input_tokens": 18,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 4,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "speed": "standard"
+      },
+      "diagnostics": null
+    },
+    "ok": true,
+    "text": "OK",
+    "usage": {
+      "inputTokens": 18,
+      "outputTokens": 4,
+      "totalTokens": 22,
+      "cachedInputTokens": 0
+    },
+    "warnings": [
+      {
+        "type": "unsupported-setting",
+        "setting": "frequencyPenalty"
+      },
+      {
+        "type": "unsupported-setting",
+        "setting": "presencePenalty"
+      },
+      {
+        "type": "unsupported-setting",
+        "setting": "temperature",
+        "details": "temperature is not supported by claude-haiku-5-5 and will be ignored"
+      }
+    ]
+  },
+  {
+    "provider": "anthropic",
+    "model": "claude-opus-5-5",
+    "at": "2026-10-22T13:57:53.213Z",
+    "url": "https://api.anthropic.com/v1/messages",
+    "requestBody": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 512,
+      "messages": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Reply with the single word OK."
+            }
+          ]
+        }
+      ]
+    },
+    "httpStatus": 200,
+    "responseBody": {
+      "model": "claude-opus-5-5",
+      "id": "msg_011CgHPmDntJqk8nWSQJ6KcC",
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "OK"
+        }
+      ],
+      "container": null,
+      "stop_reason": "end_turn",
+      "stop_sequence": null,
+      "stop_details": null,
+      "usage": {
+        "input_tokens": 18,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 4,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global",
+        "speed": "standard"
+      },
+      "diagnostics": null
+    },
+    "ok": true,
+    "text": "OK",
+    "usage": {
+      "inputTokens": 18,
+      "outputTokens": 4,
+      "totalTokens": 22,
+      "cachedInputTokens": 0
+    },
+    "warnings": [
+      {
+        "type": "unsupported-setting",
+        "setting": "frequencyPenalty"
+      },
+      {
+        "type": "unsupported-setting",
+        "setting": "presencePenalty"
+      },
+      {
+        "type": "unsupported-setting",
+        "setting": "temperature",
+        "details": "temperature is not supported by claude-opus-5-5 and will be ignored"
+      }
+    ]
+  }
+]

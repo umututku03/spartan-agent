@@ -1,0 +1,102 @@
+{
+  "mock": true,
+  "priorLedger": "agent-claude-results/budget-ledger.json",
+  "priorEstimatedUSD": 0.033747700000000026,
+  "cumulativeEstimatedUSD": 0.07559370000000004,
+  "cohortCapUSD": null,
+  "cumulativeCapUSD": null,
+  "calls": 7,
+  "entries": [
+    {
+      "call": 1,
+      "episodeId": "normal-0-history-mock-scripted",
+      "round": 0,
+      "visibleBytes": 3493,
+      "priorOutputTokens": 0,
+      "inputTokenBound": 4005,
+      "reservationUSD": 0.02849,
+      "status": "settled",
+      "estimatedUSD": 0.004004,
+      "assumptionExceeded": false,
+      "capExceeded": false
+    },
+    {
+      "call": 2,
+      "episodeId": "normal-0-history-mock-scripted",
+      "round": 1,
+      "visibleBytes": 4230,
+      "priorOutputTokens": 200,
+      "inputTokenBound": 4942,
+      "reservationUSD": 0.030364,
+      "status": "settled",
+      "estimatedUSD": 0.004472,
+      "assumptionExceeded": false,
+      "capExceeded": false
+    },
+    {
+      "call": 3,
+      "episodeId": "normal-0-history-mock-scripted",
+      "round": 2,
+      "visibleBytes": 4920,
+      "priorOutputTokens": 400,
+      "inputTokenBound": 5832,
+      "reservationUSD": 0.032144,
+      "status": "settled",
+      "estimatedUSD": 0.004916,
+      "assumptionExceeded": false,
+      "capExceeded": false
+    },
+    {
+      "call": 4,
+      "episodeId": "normal-0-history-mock-scripted",
+      "round": 3,
+      "visibleBytes": 5780,
+      "priorOutputTokens": 600,
+      "inputTokenBound": 6892,
+      "reservationUSD": 0.034264,
+      "status": "settled",
+      "estimatedUSD": 0.005446,
+      "assumptionExceeded": false,
+      "capExceeded": false
+    },
+    {
+      "call": 5,
+      "episodeId": "normal-0-task_record-mock-scripted",
+      "round": 0,
+      "visibleBytes": 3778,
+      "priorOutputTokens": 0,
+      "inputTokenBound": 4290,
+      "reservationUSD": 0.02906,
+      "status": "settled",
+      "estimatedUSD": 0.004146,
+      "assumptionExceeded": false,
+      "capExceeded": false
+    },
+    {
+      "call": 6,
+      "episodeId": "normal-0-task_record-mock-scripted",
+      "round": 1,
+      "visibleBytes": 4520,
+      "priorOutputTokens": 200,
+      "inputTokenBound": 5232,
+      "reservationUSD": 0.030944,
+      "status": "settled",
+      "estimatedUSD": 0.004616,
+      "assumptionExceeded": false,
+      "capExceeded": false
+    },
+    {
+      "call": 7,
+      "episodeId": "normal-0-task_record-mock-scripted",
+      "round": 2,
+      "visibleBytes": 5210,
+      "priorOutputTokens": 400,
+      "inputTokenBound": 6122,
+      "reservationUSD": 0.032724,
+      "status": "settled",
+      "estimatedUSD": 0.014246,
+      "assumptionExceeded": true,
+      "capExceeded": false
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "control-price_change_infeasible",
+  "scenario": "price_change_infeasible",
+  "steps": [
+    {
+      "sale": {
+        "hash": "0x89c1c55d7b870d5c3d77e4c68c93ff918b2600b274b7253abb8f99ae6b9dfbd8",
+        "walletAddress": "0x6FF2e0DA2E0bcb67e7F5a7Cf55B2D2Fe92046aE0",
+        "chain": "ethereum",
+        "inputToken": {
+          "symbol": "ETH",
+          "decimals": 18,
+          "isNative": true
+        },
+        "outputToken": {
+          "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+          "symbol": "USDC",
+          "decimals": 6,
+          "isNative": false
+        },
+        "amountIn": "0.1",
+        "quotedAmountOut": "237.636476",
+        "quotedAmountOutRaw": "237636476"
+      }
+    }
+  ],
+  "outcome": {
+    "scenario": "price_change_infeasible",
+    "feasible": false,
+    "final": {
+      "eth": "0.899867325610015806",
+      "usdc": "237.636476",
+      "dai": "0",
+      "nonce": 1
+    },
+    "transactions": [
+      {
+        "hash": "0x89c1c55d7b870d5c3d77e4c68c93ff918b2600b274b7253abb8f99ae6b9dfbd8",
+        "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "value": "100000000000000000",
+        "status": "success",
+        "block": 26250602,
+        "logs": 5,
+        "sale": true,
+        "revert": null
+      }
+    ],
+    "successfulSales": 1,
+    "duplicateSale": false,
+    "revertedTransactions": 0,
+    "goalReached": false,
+    "reserveKept": true,
+    "declared": "INFEASIBLE",
+    "validComplete": false,
+    "correctInfeasible": true,
+    "falseCompletion": false,
+    "prematureStop": false,
+    "nonSaleRouterTradesExecuted": 0,
+    "tradeEndedBelowGoal": false
+  },
+  "forkJournal": [
+    {
+      "at": 1792711018366,
+      "event": "send",
+      "from": "0x6ff2e0da2e0bcb67e7f5a7cf55b2d2fe92046ae0",
+      "to": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+      "value": "100000000000000000",
+      "hash": "0x89c1c55d7b870d5c3d77e4c68c93ff918b2600b274b7253abb8f99ae6b9dfbd8",
+      "error": null,
+      "saleCandidateReceiptStatus": "0x1",
+      "sale": true
+    },
+    {
+      "at": 1792711018476,
+      "event": "scheduled_market_change",
+      "result": {
+        "hash": "0x917f713396ea1f425c3d7db82dd1a182188c0eaeda7368bbe8dd2c69518989b9",
+        "eth": "588689000000000000000",
+        "block": 26250603
+      }
+    }
+  ]
+}

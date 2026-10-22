@@ -1,0 +1,11 @@
+experiment,policy,episodes,feasible,validCompletion,feasibleCompletion,infeasibleCompletion,reserveViolations,duplicateEffects,safeStops,totalGas
+E1,fresh_retry,5,5,3,3,0,0,2,0,381260
+E1,stop_on_error,5,5,1,1,0,0,0,0,192564
+E1,journal_reconcile,5,5,5,5,0,0,0,0,304012
+E2,fixed_suffix,36,23,12,12,0,0,0,0,1778988
+E2,refresh_same_size,36,23,12,12,0,0,0,24,1092516
+E2,deterministic_resize,36,23,23,23,0,0,0,13,2094217
+E3,planning_check,12,8,3,3,0,9,0,0,1092516
+E3,fresh_pre_submit_check,12,8,3,3,0,9,0,0,1092516
+E3,execution_floor,12,8,3,3,0,0,0,0,1077939
+E3,execution_floor_and_resize,12,8,8,8,0,0,0,4,1526934

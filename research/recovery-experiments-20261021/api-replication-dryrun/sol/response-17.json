@@ -1,0 +1,35 @@
+{
+  "call": 17,
+  "round": 3,
+  "httpStatus": 200,
+  "requestId": null,
+  "latencyMs": 0.03841700000009496,
+  "visibleBytes": 5808,
+  "priorOutputTokens": 600,
+  "response": {
+    "id": "resp_mock_17",
+    "object": "response",
+    "status": "completed",
+    "model": "gpt-6.1-sol",
+    "usage": {
+      "input_tokens": 1730,
+      "output_tokens": 200
+    },
+    "output": [
+      {
+        "type": "reasoning",
+        "id": "rs_mock_17",
+        "summary": [],
+        "encrypted_content": "MOCK_ENCRYPTED_17"
+      },
+      {
+        "type": "function_call",
+        "id": "fc_mock_17",
+        "call_id": "call_mock_17",
+        "name": "swap_cash",
+        "arguments": "{\"cash\":\"50.41\",\"minimum_dai\":\"50\"}"
+      }
+    ]
+  },
+  "mock": true
+}

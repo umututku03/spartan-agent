@@ -1,0 +1,31 @@
+{
+  "scope": "Offline mutations of temporary copies only; no API calls",
+  "temporaryDirectory": "/private/tmp/defi-verifier-review-vtirfvxw",
+  "baselineAccepted": true,
+  "results": [
+    {
+      "test": "invented-observation",
+      "tamperedCopyAccepted": true
+    },
+    {
+      "test": "task-record-in-history-condition",
+      "tamperedCopyAccepted": true
+    },
+    {
+      "test": "executed-action-differs-from-model-call",
+      "tamperedCopyAccepted": true
+    },
+    {
+      "test": "settled-ledger-cost-zeroed",
+      "tamperedCopyAccepted": true
+    },
+    {
+      "test": "false-complete-marker",
+      "tamperedCopyAccepted": true
+    },
+    {
+      "test": "private-label-in-orphan-request",
+      "tamperedCopyAccepted": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "opus": {
+    "model": "claude-opus-5-5",
+    "pricesUSDPerMillion": {
+      "input": 4,
+      "output": 20
+    },
+    "history": {
+      "calls": 47,
+      "meanInputTokens": 2145.659574468085,
+      "meanRound": 2.5106382978723403,
+      "bytesByRound": null
+    },
+    "dryRun": {
+      "maxVisibleBytes": 11123,
+      "bytesByRound": {
+        "0": 3476.5,
+        "1": 4457,
+        "2": 5344.75,
+        "3": 6365.5,
+        "4": 7459
+      }
+    },
+    "envelopeByteFactor": 1.121,
+    "expected": {
+      "low": {
+        "calls": 47,
+        "outputTokensPerCall": 150,
+        "inputTokensPerCall": 2781,
+        "USD": 0.6639
+      },
+      "central": {
+        "calls": 47,
+        "outputTokensPerCall": 400,
+        "inputTokensPerCall": 3890,
+        "USD": 1.1073
+      },
+      "high": {
+        "calls": 64,
+        "outputTokensPerCall": 1000,
+        "inputTokensPerCall": 5757,
+        "USD": 2.7539
+      }
+    },
+    "conservativeMaxUSD": 8.7818,
+    "boundAtMeasuredMaxBytesUSD": 7.435
+  },
+  "sol": {
+    "model": "gpt-6.1-sol",
+    "pricesUSDPerMillion": {
+      "input": 2,
+      "output": 10
+    },
+    "history": {
+      "calls": 50,
+      "meanInputTokens": 1028.72,
+      "meanRound": 2.72,
+      "bytesByRound": null
+    },
+    "dryRun": {
+      "maxVisibleBytes": 8874,
+      "bytesByRound": {
+        "0": 3635.5,
+        "1": 4427.75,
+        "2": 5116,
+        "3": 5945.333333333333,
+        "4": 6827.5
+      }
+    },
+    "envelopeByteFactor": 1.099,
+    "expected": {
+      "low": {
+        "calls": 50,
+        "outputTokensPerCall": 150,
+        "inputTokensPerCall": 1539,
+        "USD": 0.2289
+      },
+      "central": {
+        "calls": 50,
+        "outputTokensPerCall": 400,
+        "inputTokensPerCall": 2219,
+        "USD": 0.4219
+      },
+      "high": {
+        "calls": 64,
+        "outputTokensPerCall": 1000,
+        "inputTokensPerCall": 3964,
+        "USD": 1.1473
+      }
+    },
+    "conservativeMaxUSD": 3.8666,
+    "boundAtMeasuredMaxBytesUSD": 3.4296
+  },
+  "combined": {
+    "priorCumulativeUSD": 0.033747700000000026,
+    "expectedCentralUSD": 1.5292,
+    "expectedHighUSD": 3.9012,
+    "conservativeMaxUSD": 12.6484,
+    "conservativeMaxCumulativeUSD": 12.6821
+  }
+}

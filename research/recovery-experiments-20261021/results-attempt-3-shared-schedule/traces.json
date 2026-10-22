@@ -1,0 +1,5809 @@
+[
+  {
+    "episode": 1,
+    "scenario": "normal",
+    "policy": "fresh_retry",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x8d66b3aaa4a4b47653ce074061f02f0d9718e22f1ff4765861a5df8d5670119c"
+      },
+      {
+        "kind": "helper_success",
+        "hash": "0x8d66b3aaa4a4b47653ce074061f02f0d9718e22f1ff4765861a5df8d5670119c"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x8d66b3aaa4a4b47653ce074061f02f0d9718e22f1ff4765861a5df8d5670119c",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 1,
+      "scenario": "normal",
+      "policy": "fresh_retry",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": null
+    }
+  },
+  {
+    "episode": 2,
+    "scenario": "normal",
+    "policy": "stop_on_error",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x57876dddb2be37eb5dad4f1164a8cc7197c6e644dd7f54dbee7a2128266f386e"
+      },
+      {
+        "kind": "helper_success",
+        "hash": "0x57876dddb2be37eb5dad4f1164a8cc7197c6e644dd7f54dbee7a2128266f386e"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x57876dddb2be37eb5dad4f1164a8cc7197c6e644dd7f54dbee7a2128266f386e",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 2,
+      "scenario": "normal",
+      "policy": "stop_on_error",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": null
+    }
+  },
+  {
+    "episode": 3,
+    "scenario": "normal",
+    "policy": "journal_reconcile",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x64fd0b6e05225a453a9c14561956e1ffefae6faf5feb0256458481b8712a441f"
+      },
+      {
+        "kind": "helper_success",
+        "hash": "0x64fd0b6e05225a453a9c14561956e1ffefae6faf5feb0256458481b8712a441f"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x64fd0b6e05225a453a9c14561956e1ffefae6faf5feb0256458481b8712a441f",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 3,
+      "scenario": "normal",
+      "policy": "journal_reconcile",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": null
+    }
+  },
+  {
+    "episode": 4,
+    "scenario": "pre_submission_rejection",
+    "policy": "fresh_retry",
+    "events": [
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "Error",
+          "message": "Injected rejection before submission",
+          "hash": null,
+          "ownKeys": []
+        }
+      },
+      {
+        "kind": "submitted",
+        "hash": "0x108b56edd23856f290729b4ad556c61502be13609ec0265acb3e2bd59c531b0f"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x108b56edd23856f290729b4ad556c61502be13609ec0265acb3e2bd59c531b0f",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 4,
+      "scenario": "pre_submission_rejection",
+      "policy": "fresh_retry",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 2,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": {
+        "name": "Error",
+        "message": "Injected rejection before submission",
+        "hash": null,
+        "ownKeys": []
+      }
+    }
+  },
+  {
+    "episode": 5,
+    "scenario": "pre_submission_rejection",
+    "policy": "stop_on_error",
+    "events": [
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "Error",
+          "message": "Injected rejection before submission",
+          "hash": null,
+          "ownKeys": []
+        }
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 5,
+      "scenario": "pre_submission_rejection",
+      "policy": "stop_on_error",
+      "feasible": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "claimedSuccess": false,
+      "attempts": 1,
+      "submitted": 0,
+      "successfulEffects": 0,
+      "duplicateEffects": 0,
+      "cash": "0",
+      "gas": "0",
+      "firstError": {
+        "name": "Error",
+        "message": "Injected rejection before submission",
+        "hash": null,
+        "ownKeys": []
+      }
+    }
+  },
+  {
+    "episode": 6,
+    "scenario": "pre_submission_rejection",
+    "policy": "journal_reconcile",
+    "events": [
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "Error",
+          "message": "Injected rejection before submission",
+          "hash": null,
+          "ownKeys": []
+        }
+      },
+      {
+        "kind": "submitted",
+        "hash": "0x438605cb263ec1efa1d421e4f657ca781999e153d05a3cb015620e38351953df"
+      },
+      {
+        "kind": "replacement_after_known_failure",
+        "hash": "0x438605cb263ec1efa1d421e4f657ca781999e153d05a3cb015620e38351953df"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x438605cb263ec1efa1d421e4f657ca781999e153d05a3cb015620e38351953df",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 6,
+      "scenario": "pre_submission_rejection",
+      "policy": "journal_reconcile",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 2,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": {
+        "name": "Error",
+        "message": "Injected rejection before submission",
+        "hash": null,
+        "ownKeys": []
+      }
+    }
+  },
+  {
+    "episode": 7,
+    "scenario": "pending_timeout",
+    "policy": "fresh_retry",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0xc100239a4f81fe67276fe8cdfbeb01cacc4ed21bd1857f2204453f02a72dd066"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0xc100239a4f81fe67276fe8cdfbeb01cacc4ed21bd1857f2204453f02a72dd066\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "submitted",
+        "hash": "0x7c5cf11e57052083de2d8b1cc494c5d71e8e309aa571747305ea4b616d318ebb"
+      },
+      {
+        "kind": "retry_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0x7c5cf11e57052083de2d8b1cc494c5d71e8e309aa571747305ea4b616d318ebb\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "receipt",
+        "hash": "0xc100239a4f81fe67276fe8cdfbeb01cacc4ed21bd1857f2204453f02a72dd066",
+        "status": "success",
+        "gasUsed": "55724"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x7c5cf11e57052083de2d8b1cc494c5d71e8e309aa571747305ea4b616d318ebb",
+        "status": "success",
+        "gasUsed": "38624"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 7,
+      "scenario": "pending_timeout",
+      "policy": "fresh_retry",
+      "feasible": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "claimedSuccess": false,
+      "attempts": 2,
+      "submitted": 2,
+      "successfulEffects": 2,
+      "duplicateEffects": 1,
+      "cash": "400000000",
+      "gas": "94348",
+      "firstError": {
+        "name": "WaitForTransactionReceiptTimeoutError",
+        "message": "Timed out while waiting for transaction with hash \"0xc100239a4f81fe67276fe8cdfbeb01cacc4ed21bd1857f2204453f02a72dd066\" to be confirmed.\n\nVersion: viem@2.57.8",
+        "hash": null,
+        "ownKeys": [
+          "details",
+          "docsPath",
+          "metaMessages",
+          "shortMessage",
+          "version",
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "episode": 8,
+    "scenario": "pending_timeout",
+    "policy": "stop_on_error",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x17b840c01e2ed663bd8cc2d87d2a411795dae459d6d8f972d3a64903949e21a6"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0x17b840c01e2ed663bd8cc2d87d2a411795dae459d6d8f972d3a64903949e21a6\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x17b840c01e2ed663bd8cc2d87d2a411795dae459d6d8f972d3a64903949e21a6",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 8,
+      "scenario": "pending_timeout",
+      "policy": "stop_on_error",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": false,
+      "claimedSuccess": false,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": {
+        "name": "WaitForTransactionReceiptTimeoutError",
+        "message": "Timed out while waiting for transaction with hash \"0x17b840c01e2ed663bd8cc2d87d2a411795dae459d6d8f972d3a64903949e21a6\" to be confirmed.\n\nVersion: viem@2.57.8",
+        "hash": null,
+        "ownKeys": [
+          "details",
+          "docsPath",
+          "metaMessages",
+          "shortMessage",
+          "version",
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "episode": 9,
+    "scenario": "pending_timeout",
+    "policy": "journal_reconcile",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x08a82bff1e8e25bb8a99a373cc58e33a8d705229b4ea355b26330eb43072b2ad"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0x08a82bff1e8e25bb8a99a373cc58e33a8d705229b4ea355b26330eb43072b2ad\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "reconciled_receipt",
+        "hash": "0x08a82bff1e8e25bb8a99a373cc58e33a8d705229b4ea355b26330eb43072b2ad",
+        "status": "success"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x08a82bff1e8e25bb8a99a373cc58e33a8d705229b4ea355b26330eb43072b2ad",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 9,
+      "scenario": "pending_timeout",
+      "policy": "journal_reconcile",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": {
+        "name": "WaitForTransactionReceiptTimeoutError",
+        "message": "Timed out while waiting for transaction with hash \"0x08a82bff1e8e25bb8a99a373cc58e33a8d705229b4ea355b26330eb43072b2ad\" to be confirmed.\n\nVersion: viem@2.57.8",
+        "hash": null,
+        "ownKeys": [
+          "details",
+          "docsPath",
+          "metaMessages",
+          "shortMessage",
+          "version",
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "episode": 10,
+    "scenario": "settled_timeout",
+    "policy": "fresh_retry",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x5c49bf095e5019bb69d792e5d23a6aead72b17febd53ffe510d8d5966afaf038"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0x5c49bf095e5019bb69d792e5d23a6aead72b17febd53ffe510d8d5966afaf038\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "submitted",
+        "hash": "0xab66d893c35033b24fcd0632f598dea2adc37a16013ba07b9401b8bd8e66e116"
+      },
+      {
+        "kind": "retry_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0xab66d893c35033b24fcd0632f598dea2adc37a16013ba07b9401b8bd8e66e116\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x5c49bf095e5019bb69d792e5d23a6aead72b17febd53ffe510d8d5966afaf038",
+        "status": "success",
+        "gasUsed": "55724"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0xab66d893c35033b24fcd0632f598dea2adc37a16013ba07b9401b8bd8e66e116",
+        "status": "success",
+        "gasUsed": "38624"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 10,
+      "scenario": "settled_timeout",
+      "policy": "fresh_retry",
+      "feasible": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "claimedSuccess": false,
+      "attempts": 2,
+      "submitted": 2,
+      "successfulEffects": 2,
+      "duplicateEffects": 1,
+      "cash": "400000000",
+      "gas": "94348",
+      "firstError": {
+        "name": "WaitForTransactionReceiptTimeoutError",
+        "message": "Timed out while waiting for transaction with hash \"0x5c49bf095e5019bb69d792e5d23a6aead72b17febd53ffe510d8d5966afaf038\" to be confirmed.\n\nVersion: viem@2.57.8",
+        "hash": null,
+        "ownKeys": [
+          "details",
+          "docsPath",
+          "metaMessages",
+          "shortMessage",
+          "version",
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "episode": 11,
+    "scenario": "settled_timeout",
+    "policy": "stop_on_error",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x44b5d584d88fdda3fc6b0e798196000b908e476b27381d9f13eb43286c88994a"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0x44b5d584d88fdda3fc6b0e798196000b908e476b27381d9f13eb43286c88994a\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x44b5d584d88fdda3fc6b0e798196000b908e476b27381d9f13eb43286c88994a",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 11,
+      "scenario": "settled_timeout",
+      "policy": "stop_on_error",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": false,
+      "claimedSuccess": false,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": {
+        "name": "WaitForTransactionReceiptTimeoutError",
+        "message": "Timed out while waiting for transaction with hash \"0x44b5d584d88fdda3fc6b0e798196000b908e476b27381d9f13eb43286c88994a\" to be confirmed.\n\nVersion: viem@2.57.8",
+        "hash": null,
+        "ownKeys": [
+          "details",
+          "docsPath",
+          "metaMessages",
+          "shortMessage",
+          "version",
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "episode": 12,
+    "scenario": "settled_timeout",
+    "policy": "journal_reconcile",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0xb4f57ddc7e5e7d0de55a413adcf889e110a37e8f1c1e65031db7b8ce3c953911"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "WaitForTransactionReceiptTimeoutError",
+          "message": "Timed out while waiting for transaction with hash \"0xb4f57ddc7e5e7d0de55a413adcf889e110a37e8f1c1e65031db7b8ce3c953911\" to be confirmed.\n\nVersion: viem@2.57.8",
+          "hash": null,
+          "ownKeys": [
+            "details",
+            "docsPath",
+            "metaMessages",
+            "shortMessage",
+            "version",
+            "name"
+          ]
+        }
+      },
+      {
+        "kind": "reconciled_receipt",
+        "hash": "0xb4f57ddc7e5e7d0de55a413adcf889e110a37e8f1c1e65031db7b8ce3c953911",
+        "status": "success"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0xb4f57ddc7e5e7d0de55a413adcf889e110a37e8f1c1e65031db7b8ce3c953911",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 12,
+      "scenario": "settled_timeout",
+      "policy": "journal_reconcile",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "55724",
+      "firstError": {
+        "name": "WaitForTransactionReceiptTimeoutError",
+        "message": "Timed out while waiting for transaction with hash \"0xb4f57ddc7e5e7d0de55a413adcf889e110a37e8f1c1e65031db7b8ce3c953911\" to be confirmed.\n\nVersion: viem@2.57.8",
+        "hash": null,
+        "ownKeys": [
+          "details",
+          "docsPath",
+          "metaMessages",
+          "shortMessage",
+          "version",
+          "name"
+        ]
+      }
+    }
+  },
+  {
+    "episode": 13,
+    "scenario": "confirmed_revert",
+    "policy": "fresh_retry",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x8eae78d44c48878ae48ab4cd178a81cebd19761f2b976518df15043e6dac39e2"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "Error",
+          "message": "Transaction reverted on-chain: 0x8eae78d44c48878ae48ab4cd178a81cebd19761f2b976518df15043e6dac39e2",
+          "hash": null,
+          "ownKeys": []
+        }
+      },
+      {
+        "kind": "submitted",
+        "hash": "0x0173a6277b9669967404baeb329778d8f529bdaab54e5b6364b4cda20f108a0d"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x8eae78d44c48878ae48ab4cd178a81cebd19761f2b976518df15043e6dac39e2",
+        "status": "reverted",
+        "gasUsed": "25392"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x0173a6277b9669967404baeb329778d8f529bdaab54e5b6364b4cda20f108a0d",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 13,
+      "scenario": "confirmed_revert",
+      "policy": "fresh_retry",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 2,
+      "submitted": 2,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "81116",
+      "firstError": {
+        "name": "Error",
+        "message": "Transaction reverted on-chain: 0x8eae78d44c48878ae48ab4cd178a81cebd19761f2b976518df15043e6dac39e2",
+        "hash": null,
+        "ownKeys": []
+      }
+    }
+  },
+  {
+    "episode": 14,
+    "scenario": "confirmed_revert",
+    "policy": "stop_on_error",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x9777e3c1406ef4e6a5a6b8ce5254625671f58e8d1ce918d78218091c43e3c23c"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "Error",
+          "message": "Transaction reverted on-chain: 0x9777e3c1406ef4e6a5a6b8ce5254625671f58e8d1ce918d78218091c43e3c23c",
+          "hash": null,
+          "ownKeys": []
+        }
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x9777e3c1406ef4e6a5a6b8ce5254625671f58e8d1ce918d78218091c43e3c23c",
+        "status": "reverted",
+        "gasUsed": "25392"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 14,
+      "scenario": "confirmed_revert",
+      "policy": "stop_on_error",
+      "feasible": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "claimedSuccess": false,
+      "attempts": 1,
+      "submitted": 1,
+      "successfulEffects": 0,
+      "duplicateEffects": 0,
+      "cash": "0",
+      "gas": "25392",
+      "firstError": {
+        "name": "Error",
+        "message": "Transaction reverted on-chain: 0x9777e3c1406ef4e6a5a6b8ce5254625671f58e8d1ce918d78218091c43e3c23c",
+        "hash": null,
+        "ownKeys": []
+      }
+    }
+  },
+  {
+    "episode": 15,
+    "scenario": "confirmed_revert",
+    "policy": "journal_reconcile",
+    "events": [
+      {
+        "kind": "submitted",
+        "hash": "0x53de7b7dff839017b51ff349e3e132b1e3853b03a5e0c7b7b6dc5dc68e7db70e"
+      },
+      {
+        "kind": "helper_error",
+        "error": {
+          "name": "Error",
+          "message": "Transaction reverted on-chain: 0x53de7b7dff839017b51ff349e3e132b1e3853b03a5e0c7b7b6dc5dc68e7db70e",
+          "hash": null,
+          "ownKeys": []
+        }
+      },
+      {
+        "kind": "reconciled_receipt",
+        "hash": "0x53de7b7dff839017b51ff349e3e132b1e3853b03a5e0c7b7b6dc5dc68e7db70e",
+        "status": "reverted"
+      },
+      {
+        "kind": "submitted",
+        "hash": "0x896d3b648af7454b00fb7c8244ba687984b8a7a040fc11ea8ffa73a6c9b575c8"
+      },
+      {
+        "kind": "replacement_after_known_failure",
+        "hash": "0x896d3b648af7454b00fb7c8244ba687984b8a7a040fc11ea8ffa73a6c9b575c8"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x53de7b7dff839017b51ff349e3e132b1e3853b03a5e0c7b7b6dc5dc68e7db70e",
+        "status": "reverted",
+        "gasUsed": "25392"
+      },
+      {
+        "kind": "receipt",
+        "hash": "0x896d3b648af7454b00fb7c8244ba687984b8a7a040fc11ea8ffa73a6c9b575c8",
+        "status": "success",
+        "gasUsed": "55724"
+      }
+    ],
+    "final": {
+      "experiment": "E1",
+      "episode": 15,
+      "scenario": "confirmed_revert",
+      "policy": "journal_reconcile",
+      "feasible": true,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "claimedSuccess": true,
+      "attempts": 2,
+      "submitted": 2,
+      "successfulEffects": 1,
+      "duplicateEffects": 0,
+      "cash": "200000000",
+      "gas": "81116",
+      "firstError": {
+        "name": "Error",
+        "message": "Transaction reverted on-chain: 0x53de7b7dff839017b51ff349e3e132b1e3853b03a5e0c7b7b6dc5dc68e7db70e",
+        "hash": null,
+        "ownKeys": []
+      }
+    }
+  },
+  {
+    "episode": 16,
+    "scenario": "rate-5500-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x3186f236e787812fab79a79cfe8856ab960f9c6e8cfbfff5932626d3075538eb",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 16,
+      "scenario": "rate-5500-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 5500,
+      "reserve": 110,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 17,
+    "scenario": "rate-5500-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 17,
+      "scenario": "rate-5500-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 5500,
+      "reserve": 110,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 18,
+    "scenario": "rate-5500-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 18,
+      "scenario": "rate-5500-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 5500,
+      "reserve": 110,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 19,
+    "scenario": "rate-5500-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x70e00af2a5e13234356efbababed4b93b8f32d67737c7495902f02d250d223b3",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 19,
+      "scenario": "rate-5500-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 5500,
+      "reserve": 120,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 20,
+    "scenario": "rate-5500-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 20,
+      "scenario": "rate-5500-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 5500,
+      "reserve": 120,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 21,
+    "scenario": "rate-5500-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 21,
+      "scenario": "rate-5500-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 5500,
+      "reserve": 120,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 22,
+    "scenario": "rate-5500-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xf2ca2d413acc65932f3748b593a69802a8faec48f2985a52b4715a8ba6aad6bc",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 22,
+      "scenario": "rate-5500-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 5500,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 23,
+    "scenario": "rate-5500-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 23,
+      "scenario": "rate-5500-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 5500,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 24,
+    "scenario": "rate-5500-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 24,
+      "scenario": "rate-5500-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 5500,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 25,
+    "scenario": "rate-5500-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xdff2e11835a3e91d4248fd478a73a244fb7ee3b63e84f09313a458dc1de583b6",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 25,
+      "scenario": "rate-5500-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 5500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 26,
+    "scenario": "rate-5500-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 26,
+      "scenario": "rate-5500-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 5500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 27,
+    "scenario": "rate-5500-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 27,
+      "scenario": "rate-5500-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 5500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 28,
+    "scenario": "rate-6000-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x0548dde6ab9d629aa45342cb82d792c1c95a13ab68f3ff744159fa019e9dde36",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 28,
+      "scenario": "rate-6000-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 6000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "84290000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 29,
+    "scenario": "rate-6000-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 29,
+      "scenario": "rate-6000-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 6000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "84290000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 30,
+    "scenario": "rate-6000-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x6ecd6d73e826f4c5183812b6787a267172ac5d353e4bf917b45ab6e18c5ac850",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 30,
+      "scenario": "rate-6000-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 6000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "84290000",
+      "amount": "84290000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "115710000",
+      "dai": "50002074913026425954",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 31,
+    "scenario": "rate-6000-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x32d06f1ccfe4d38cfd211b9c3522b577589272e57da177223664f1be276525bb",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 31,
+      "scenario": "rate-6000-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 6000,
+      "reserve": 120,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 32,
+    "scenario": "rate-6000-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 32,
+      "scenario": "rate-6000-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 6000,
+      "reserve": 120,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 33,
+    "scenario": "rate-6000-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 33,
+      "scenario": "rate-6000-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 6000,
+      "reserve": 120,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 34,
+    "scenario": "rate-6000-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x33fa5cf6f60f59701ea53ae030feeccaf8e13c10e8f633f68d4dff643bdf06a0",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 34,
+      "scenario": "rate-6000-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 6000,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 35,
+    "scenario": "rate-6000-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 35,
+      "scenario": "rate-6000-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 6000,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 36,
+    "scenario": "rate-6000-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 36,
+      "scenario": "rate-6000-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 6000,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 37,
+    "scenario": "rate-6000-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x5a9c249c027cb82a5999de20b48c5a32af7d07f6a8eed37b8a9e82fc6217a4cf",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 37,
+      "scenario": "rate-6000-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 6000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 38,
+    "scenario": "rate-6000-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 38,
+      "scenario": "rate-6000-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 6000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 39,
+    "scenario": "rate-6000-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 39,
+      "scenario": "rate-6000-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 6000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 40,
+    "scenario": "rate-6500-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xdb78b7b92d8e8452ed4551d083db155e6cd17e63e28eb91f785322240aabb427",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 40,
+      "scenario": "rate-6500-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 6500,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "77760000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 41,
+    "scenario": "rate-6500-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 41,
+      "scenario": "rate-6500-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 6500,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "77760000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 42,
+    "scenario": "rate-6500-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xdc5abccf906c32b648afee425031433c3c2a16b11649f87ccbcdcb20c2e305c9",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 42,
+      "scenario": "rate-6500-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 6500,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "77760000",
+      "amount": "77760000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "122240000",
+      "dai": "50004697978116598831",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 43,
+    "scenario": "rate-6500-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x90666ef2e36099fe2abfdbc37bce0363bf924250a79be688de314251ec5178e8",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 43,
+      "scenario": "rate-6500-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 6500,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "77760000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 44,
+    "scenario": "rate-6500-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 44,
+      "scenario": "rate-6500-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 6500,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "77760000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 45,
+    "scenario": "rate-6500-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x49d9d26ee3d2a051f5b0725c934a6cf794590a8f1ee928a78bd9a77f9cc2d8c5",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 45,
+      "scenario": "rate-6500-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 6500,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "77760000",
+      "amount": "77760000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "122240000",
+      "dai": "50004697978116598831",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 46,
+    "scenario": "rate-6500-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x1770f59fec3c1bc8badbbcf11a36a21c0dc1c8a2c138233ad356d83705687fab",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 46,
+      "scenario": "rate-6500-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 6500,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 47,
+    "scenario": "rate-6500-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 47,
+      "scenario": "rate-6500-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 6500,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 48,
+    "scenario": "rate-6500-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 48,
+      "scenario": "rate-6500-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 6500,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 49,
+    "scenario": "rate-6500-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xf603ca6807140fca9d7f54437262da7430160d9acba72e866afb17cb48c4a4fb",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 49,
+      "scenario": "rate-6500-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 6500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 50,
+    "scenario": "rate-6500-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 50,
+      "scenario": "rate-6500-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 6500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 51,
+    "scenario": "rate-6500-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 51,
+      "scenario": "rate-6500-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 6500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 52,
+    "scenario": "rate-7000-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x807ed65b18914d8fa487948ff307cd9296df37be38ebd0f0fc3eb7094961f4c6",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 52,
+      "scenario": "rate-7000-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 7000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "72160000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 53,
+    "scenario": "rate-7000-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 53,
+      "scenario": "rate-7000-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 7000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "72160000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 54,
+    "scenario": "rate-7000-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x52b797306fd37118da18fe9e3e124fcd9c244eb94f4b8bf95ae0a78806f2e375",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 54,
+      "scenario": "rate-7000-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 7000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "72160000",
+      "amount": "72160000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "127840000",
+      "dai": "50000741068492409496",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 55,
+    "scenario": "rate-7000-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xe85d31d4b42cd4be2396d955d0818fa1db17ab777b945156caf5d12580277ec0",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 55,
+      "scenario": "rate-7000-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 7000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "72160000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 56,
+    "scenario": "rate-7000-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 56,
+      "scenario": "rate-7000-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 7000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "72160000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 57,
+    "scenario": "rate-7000-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x7e64e718cbbbb8f0654bace177e54898e6ee35ab6cc0d8aebffe3a2c6a1c4cce",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 57,
+      "scenario": "rate-7000-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 7000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "72160000",
+      "amount": "72160000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "127840000",
+      "dai": "50000741068492409496",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 58,
+    "scenario": "rate-7000-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xa7e2fd016ca3c0bd26c55cfc762af8a4855e2dd1b7ef8af026f24b541be65c6c",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 58,
+      "scenario": "rate-7000-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 7000,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 59,
+    "scenario": "rate-7000-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 59,
+      "scenario": "rate-7000-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 7000,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 60,
+    "scenario": "rate-7000-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 60,
+      "scenario": "rate-7000-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 7000,
+      "reserve": 130,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 61,
+    "scenario": "rate-7000-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x1d20bc25b90accc294133057ee3e07bf687e217e3cc31d286d4a76ed8cdd8339",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 61,
+      "scenario": "rate-7000-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 7000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 62,
+    "scenario": "rate-7000-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 62,
+      "scenario": "rate-7000-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 7000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 63,
+    "scenario": "rate-7000-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 63,
+      "scenario": "rate-7000-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 7000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 64,
+    "scenario": "rate-7500-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x7d0b0c5e7d8d09843d6c9c106daac8fbfb5c0e55a69bfcab58bff6bd2c1e77f5",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 64,
+      "scenario": "rate-7500-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 7500,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 65,
+    "scenario": "rate-7500-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 65,
+      "scenario": "rate-7500-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 7500,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 66,
+    "scenario": "rate-7500-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x05f5abc07f9fd17f2a400ab7a673da2de59d35cbddfb365271887862abbd1405",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 66,
+      "scenario": "rate-7500-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 7500,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "67320000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "132680000",
+      "dai": "50002920200188692731",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 67,
+    "scenario": "rate-7500-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xa0ee22c7bd6f6a9a175670de63ac2b68b2b9aa2393229990ec67b079a6974f0a",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 67,
+      "scenario": "rate-7500-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 7500,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 68,
+    "scenario": "rate-7500-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 68,
+      "scenario": "rate-7500-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 7500,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 69,
+    "scenario": "rate-7500-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xd5d63a3a64ff026613e10974566faaa282757f5bc3a6899419d30ae5469c9093",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 69,
+      "scenario": "rate-7500-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 7500,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "67320000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "132680000",
+      "dai": "50002920200188692731",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 70,
+    "scenario": "rate-7500-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xfbf8b7a2f0ff4e9e06723fd90bf482e63829a07a37b5509efd37cc5fb3983fc7",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 70,
+      "scenario": "rate-7500-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 7500,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 71,
+    "scenario": "rate-7500-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 71,
+      "scenario": "rate-7500-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 7500,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 72,
+    "scenario": "rate-7500-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xd64a0b20ec5b6dda54581b4df73292b0587632ddd9fee600ded57a3cf7b739ba",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 72,
+      "scenario": "rate-7500-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 7500,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "amount": "67320000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "132680000",
+      "dai": "50002920200188692731",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 73,
+    "scenario": "rate-7500-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x92cb558f85753c00264f2441f6259e1e9010d83d2954be0ce0cfc167fdf9e7b0",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 73,
+      "scenario": "rate-7500-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 7500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 74,
+    "scenario": "rate-7500-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 74,
+      "scenario": "rate-7500-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 7500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 75,
+    "scenario": "rate-7500-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 75,
+      "scenario": "rate-7500-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 7500,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 76,
+    "scenario": "rate-8000-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xc0b1e10ce43191ba75ec079bd5ee89fbfa15c68a0faf24674a87fe9964536bbc",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 76,
+      "scenario": "rate-8000-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 8000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 77,
+    "scenario": "rate-8000-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 77,
+      "scenario": "rate-8000-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 8000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 78,
+    "scenario": "rate-8000-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x8fea93976b9bbf5adc9515c1b9a9cc0f151b412b69fe167e3c96dcba8d7e141c",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 78,
+      "scenario": "rate-8000-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 8000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "63090000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "136910000",
+      "dai": "50006042343220054800",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 79,
+    "scenario": "rate-8000-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xf5666c5023a522e58102d5e369dbe1ca392c3d3341ac8bff50e4cdb8b3b93acd",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 79,
+      "scenario": "rate-8000-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 8000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 80,
+    "scenario": "rate-8000-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 80,
+      "scenario": "rate-8000-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 8000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 81,
+    "scenario": "rate-8000-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x7c89c45aa3d4835d17abfaf15a745defb60c370794d9156173f29457b25462b5",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 81,
+      "scenario": "rate-8000-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 8000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "63090000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "136910000",
+      "dai": "50006042343220054800",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 82,
+    "scenario": "rate-8000-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xdb709c62526c2c293c01c48dd464d351c70099b46dd09c7eb56b641d68908213",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 82,
+      "scenario": "rate-8000-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 8000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 83,
+    "scenario": "rate-8000-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 83,
+      "scenario": "rate-8000-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 8000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 84,
+    "scenario": "rate-8000-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x359530975afe6cad2d6ab994526d5caabbb048a7f9ebde61e1c500f887ee837b",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 84,
+      "scenario": "rate-8000-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 8000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "63090000",
+      "amount": "63090000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "136910000",
+      "dai": "50006042343220054800",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 85,
+    "scenario": "rate-8000-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xd29f3cdc0dc1998518ac14fe87178d564d39736d025c53c30f8ee326d7c0be15",
+        "status": "reverted",
+        "gasUsed": "28603"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 85,
+      "scenario": "rate-8000-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 8000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "28603"
+    }
+  },
+  {
+    "episode": 86,
+    "scenario": "rate-8000-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 86,
+      "scenario": "rate-8000-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 8000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 87,
+    "scenario": "rate-8000-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [],
+    "final": {
+      "experiment": "E2",
+      "episode": 87,
+      "scenario": "rate-8000-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 8000,
+      "reserve": 140,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "amount": "60000000",
+      "safeStop": true,
+      "reverted": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "cash": "200000000",
+      "dai": "0",
+      "gas": "0"
+    }
+  },
+  {
+    "episode": 88,
+    "scenario": "rate-9000-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xc86475594f46188a1c3bc9c52636c08e2c0cbad59bf1282f40b4eef331d06dcd",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 88,
+      "scenario": "rate-9000-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 9000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 89,
+    "scenario": "rate-9000-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x4bdbe127fdba902e86e18f973f7c267810ae3af0c42dc2c918de2423084df58b",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 89,
+      "scenario": "rate-9000-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 9000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 90,
+    "scenario": "rate-9000-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xbb2d87eeb7668d98593c14bc8482991d881393d1fc0aff67af5e3a32170d4944",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 90,
+      "scenario": "rate-9000-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 9000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "56040000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "143960000",
+      "dai": "50005302971302375025",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 91,
+    "scenario": "rate-9000-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x74291bfe3c6cbc2f16e7f7009ad28df83ab6325144a0a5c7547ac8e668bc6588",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 91,
+      "scenario": "rate-9000-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 9000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 92,
+    "scenario": "rate-9000-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 92,
+      "scenario": "rate-9000-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 9000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 93,
+    "scenario": "rate-9000-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xcd1382fc4a25da0c4b4859ab1285ef49e1e05edc65fba91270c7a0f5e02e7787",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 93,
+      "scenario": "rate-9000-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 9000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "56040000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "143960000",
+      "dai": "50005302971302375025",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 94,
+    "scenario": "rate-9000-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 94,
+      "scenario": "rate-9000-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 9000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 95,
+    "scenario": "rate-9000-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 95,
+      "scenario": "rate-9000-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 9000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 96,
+    "scenario": "rate-9000-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xcd1382fc4a25da0c4b4859ab1285ef49e1e05edc65fba91270c7a0f5e02e7787",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 96,
+      "scenario": "rate-9000-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 9000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "56040000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "143960000",
+      "dai": "50005302971302375025",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 97,
+    "scenario": "rate-9000-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 97,
+      "scenario": "rate-9000-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 9000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 98,
+    "scenario": "rate-9000-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 98,
+      "scenario": "rate-9000-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 9000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "53517856184305484591",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 99,
+    "scenario": "rate-9000-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xcd1382fc4a25da0c4b4859ab1285ef49e1e05edc65fba91270c7a0f5e02e7787",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 99,
+      "scenario": "rate-9000-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 9000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "56040000",
+      "amount": "56040000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "143960000",
+      "dai": "50005302971302375025",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 100,
+    "scenario": "rate-10000-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 100,
+      "scenario": "rate-10000-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 10000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 101,
+    "scenario": "rate-10000-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 101,
+      "scenario": "rate-10000-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 10000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 102,
+    "scenario": "rate-10000-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x76bd1117cd0f1a4af5b425590f79df1bd372ed5b1cd7c70ff7072c5263440a18",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 102,
+      "scenario": "rate-10000-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 10000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "50410000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "149590000",
+      "dai": "50007438763688668684",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 103,
+    "scenario": "rate-10000-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 103,
+      "scenario": "rate-10000-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 10000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 104,
+    "scenario": "rate-10000-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 104,
+      "scenario": "rate-10000-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 10000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 105,
+    "scenario": "rate-10000-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x76bd1117cd0f1a4af5b425590f79df1bd372ed5b1cd7c70ff7072c5263440a18",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 105,
+      "scenario": "rate-10000-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 10000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "50410000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "149590000",
+      "dai": "50007438763688668684",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 106,
+    "scenario": "rate-10000-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 106,
+      "scenario": "rate-10000-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 10000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 107,
+    "scenario": "rate-10000-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 107,
+      "scenario": "rate-10000-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 10000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 108,
+    "scenario": "rate-10000-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x76bd1117cd0f1a4af5b425590f79df1bd372ed5b1cd7c70ff7072c5263440a18",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 108,
+      "scenario": "rate-10000-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 10000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "50410000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "149590000",
+      "dai": "50007438763688668684",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 109,
+    "scenario": "rate-10000-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 109,
+      "scenario": "rate-10000-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 10000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 110,
+    "scenario": "rate-10000-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 110,
+      "scenario": "rate-10000-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 10000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "59464284649228316212",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 111,
+    "scenario": "rate-10000-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x76bd1117cd0f1a4af5b425590f79df1bd372ed5b1cd7c70ff7072c5263440a18",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 111,
+      "scenario": "rate-10000-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 10000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "amount": "50410000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "149590000",
+      "dai": "50007438763688668684",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 112,
+    "scenario": "rate-11000-reserve-110",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 112,
+      "scenario": "rate-11000-reserve-110",
+      "policy": "fixed_suffix",
+      "rate": 11000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 113,
+    "scenario": "rate-11000-reserve-110",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 113,
+      "scenario": "rate-11000-reserve-110",
+      "policy": "refresh_same_size",
+      "rate": 11000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 114,
+    "scenario": "rate-11000-reserve-110",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x2bb5b28f04bf3f39824af6509ed5dceb4a9bfdb4fc937dced9f8706c61283761",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 114,
+      "scenario": "rate-11000-reserve-110",
+      "policy": "deterministic_resize",
+      "rate": 11000,
+      "reserve": 110,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "45800000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "154200000",
+      "dai": "50000544513609286459",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 115,
+    "scenario": "rate-11000-reserve-120",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 115,
+      "scenario": "rate-11000-reserve-120",
+      "policy": "fixed_suffix",
+      "rate": 11000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 116,
+    "scenario": "rate-11000-reserve-120",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 116,
+      "scenario": "rate-11000-reserve-120",
+      "policy": "refresh_same_size",
+      "rate": 11000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 117,
+    "scenario": "rate-11000-reserve-120",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x2bb5b28f04bf3f39824af6509ed5dceb4a9bfdb4fc937dced9f8706c61283761",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 117,
+      "scenario": "rate-11000-reserve-120",
+      "policy": "deterministic_resize",
+      "rate": 11000,
+      "reserve": 120,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "45800000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "154200000",
+      "dai": "50000544513609286459",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 118,
+    "scenario": "rate-11000-reserve-130",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 118,
+      "scenario": "rate-11000-reserve-130",
+      "policy": "fixed_suffix",
+      "rate": 11000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 119,
+    "scenario": "rate-11000-reserve-130",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 119,
+      "scenario": "rate-11000-reserve-130",
+      "policy": "refresh_same_size",
+      "rate": 11000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 120,
+    "scenario": "rate-11000-reserve-130",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x2bb5b28f04bf3f39824af6509ed5dceb4a9bfdb4fc937dced9f8706c61283761",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 120,
+      "scenario": "rate-11000-reserve-130",
+      "policy": "deterministic_resize",
+      "rate": 11000,
+      "reserve": 130,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "45800000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "154200000",
+      "dai": "50000544513609286459",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 121,
+    "scenario": "rate-11000-reserve-140",
+    "policy": "fixed_suffix",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 121,
+      "scenario": "rate-11000-reserve-140",
+      "policy": "fixed_suffix",
+      "rate": 11000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 122,
+    "scenario": "rate-11000-reserve-140",
+    "policy": "refresh_same_size",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0xca0554f1935f0af50c5136a0a2ea224dfb63c44822e28f4264a59a3c7ba71bff",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 122,
+      "scenario": "rate-11000-reserve-140",
+      "policy": "refresh_same_size",
+      "rate": 11000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "60000000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "140000000",
+      "dai": "65410713114151147833",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 123,
+    "scenario": "rate-11000-reserve-140",
+    "policy": "deterministic_resize",
+    "events": [
+      {
+        "kind": "receipt",
+        "hash": "0x2bb5b28f04bf3f39824af6509ed5dceb4a9bfdb4fc937dced9f8706c61283761",
+        "status": "success",
+        "gasUsed": "91055"
+      }
+    ],
+    "final": {
+      "experiment": "E2",
+      "episode": 123,
+      "scenario": "rate-11000-reserve-140",
+      "policy": "deterministic_resize",
+      "rate": 11000,
+      "reserve": 140,
+      "feasible": true,
+      "oracleCentAmount": "45800000",
+      "amount": "45800000",
+      "safeStop": false,
+      "reverted": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "cash": "154200000",
+      "dai": "50000544513609286459",
+      "gas": "91055"
+    }
+  },
+  {
+    "episode": 124,
+    "scenario": "rate-7500-drain-0",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 124,
+      "scenario": "rate-7500-drain-0",
+      "policy": "planning_check",
+      "rate": 7500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 125,
+    "scenario": "rate-7500-drain-0",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 125,
+      "scenario": "rate-7500-drain-0",
+      "policy": "fresh_pre_submit_check",
+      "rate": 7500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 126,
+    "scenario": "rate-7500-drain-0",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "success",
+        "gasUsed": "89787"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 126,
+      "scenario": "rate-7500-drain-0",
+      "policy": "execution_floor",
+      "rate": 7500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "59346651110740731922",
+      "gas": "89787"
+    }
+  },
+  {
+    "episode": 127,
+    "scenario": "rate-7500-drain-0",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "success",
+        "gasUsed": "89787"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 127,
+      "scenario": "rate-7500-drain-0",
+      "policy": "execution_floor_and_resize",
+      "rate": 7500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "59346651110740731922",
+      "gas": "89787"
+    }
+  },
+  {
+    "episode": 128,
+    "scenario": "rate-7500-drain-10",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 128,
+      "scenario": "rate-7500-drain-10",
+      "policy": "planning_check",
+      "rate": 7500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "110000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 129,
+    "scenario": "rate-7500-drain-10",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 129,
+      "scenario": "rate-7500-drain-10",
+      "policy": "fresh_pre_submit_check",
+      "rate": 7500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "110000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 130,
+    "scenario": "rate-7500-drain-10",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 130,
+      "scenario": "rate-7500-drain-10",
+      "policy": "execution_floor",
+      "rate": 7500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "190000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 131,
+    "scenario": "rate-7500-drain-10",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      },
+      {
+        "kind": "recovery_receipt",
+        "hash": "0x6e68b3fa833bdb0e7c84b01ec1b52335bf777f6265d07dc6f67244017c277f3a",
+        "status": "success",
+        "amount": "67320000",
+        "gasUsed": "89799"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 131,
+      "scenario": "rate-7500-drain-10",
+      "policy": "execution_floor_and_resize",
+      "rate": 7500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "67320000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "122680000",
+      "dai": "50002920200188692731",
+      "gas": "179641"
+    }
+  },
+  {
+    "episode": 132,
+    "scenario": "rate-7500-drain-20",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 132,
+      "scenario": "rate-7500-drain-20",
+      "policy": "planning_check",
+      "rate": 7500,
+      "drain": 20,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "100000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 133,
+    "scenario": "rate-7500-drain-20",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 133,
+      "scenario": "rate-7500-drain-20",
+      "policy": "fresh_pre_submit_check",
+      "rate": 7500,
+      "drain": 20,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "100000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 134,
+    "scenario": "rate-7500-drain-20",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 134,
+      "scenario": "rate-7500-drain-20",
+      "policy": "execution_floor",
+      "rate": 7500,
+      "drain": 20,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "180000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 135,
+    "scenario": "rate-7500-drain-20",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 135,
+      "scenario": "rate-7500-drain-20",
+      "policy": "execution_floor_and_resize",
+      "rate": 7500,
+      "drain": 20,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "180000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 136,
+    "scenario": "rate-7500-drain-40",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 136,
+      "scenario": "rate-7500-drain-40",
+      "policy": "planning_check",
+      "rate": 7500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "80000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 137,
+    "scenario": "rate-7500-drain-40",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 137,
+      "scenario": "rate-7500-drain-40",
+      "policy": "fresh_pre_submit_check",
+      "rate": 7500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "80000000",
+      "dai": "59346651110740731922",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 138,
+    "scenario": "rate-7500-drain-40",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 138,
+      "scenario": "rate-7500-drain-40",
+      "policy": "execution_floor",
+      "rate": 7500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "160000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 139,
+    "scenario": "rate-7500-drain-40",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 139,
+      "scenario": "rate-7500-drain-40",
+      "policy": "execution_floor_and_resize",
+      "rate": 7500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "160000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 140,
+    "scenario": "rate-10000-drain-0",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 140,
+      "scenario": "rate-10000-drain-0",
+      "policy": "planning_check",
+      "rate": 10000,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 141,
+    "scenario": "rate-10000-drain-0",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 141,
+      "scenario": "rate-10000-drain-0",
+      "policy": "fresh_pre_submit_check",
+      "rate": 10000,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 142,
+    "scenario": "rate-10000-drain-0",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "success",
+        "gasUsed": "89787"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 142,
+      "scenario": "rate-10000-drain-0",
+      "policy": "execution_floor",
+      "rate": 10000,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "79128868147654309229",
+      "gas": "89787"
+    }
+  },
+  {
+    "episode": 143,
+    "scenario": "rate-10000-drain-0",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "success",
+        "gasUsed": "89787"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 143,
+      "scenario": "rate-10000-drain-0",
+      "policy": "execution_floor_and_resize",
+      "rate": 10000,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "79128868147654309229",
+      "gas": "89787"
+    }
+  },
+  {
+    "episode": 144,
+    "scenario": "rate-10000-drain-10",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 144,
+      "scenario": "rate-10000-drain-10",
+      "policy": "planning_check",
+      "rate": 10000,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "110000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 145,
+    "scenario": "rate-10000-drain-10",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 145,
+      "scenario": "rate-10000-drain-10",
+      "policy": "fresh_pre_submit_check",
+      "rate": 10000,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "110000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 146,
+    "scenario": "rate-10000-drain-10",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 146,
+      "scenario": "rate-10000-drain-10",
+      "policy": "execution_floor",
+      "rate": 10000,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "190000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 147,
+    "scenario": "rate-10000-drain-10",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      },
+      {
+        "kind": "recovery_receipt",
+        "hash": "0x3ae3d8cae12b9323758271f8088efb0a62a741fb88224034404fb3425ba4798a",
+        "status": "success",
+        "amount": "50410000",
+        "gasUsed": "89799"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 147,
+      "scenario": "rate-10000-drain-10",
+      "policy": "execution_floor_and_resize",
+      "rate": 10000,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "139590000",
+      "dai": "50007438763688668684",
+      "gas": "179641"
+    }
+  },
+  {
+    "episode": 148,
+    "scenario": "rate-10000-drain-20",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 148,
+      "scenario": "rate-10000-drain-20",
+      "policy": "planning_check",
+      "rate": 10000,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "100000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 149,
+    "scenario": "rate-10000-drain-20",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 149,
+      "scenario": "rate-10000-drain-20",
+      "policy": "fresh_pre_submit_check",
+      "rate": 10000,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "100000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 150,
+    "scenario": "rate-10000-drain-20",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 150,
+      "scenario": "rate-10000-drain-20",
+      "policy": "execution_floor",
+      "rate": 10000,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "180000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 151,
+    "scenario": "rate-10000-drain-20",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      },
+      {
+        "kind": "recovery_receipt",
+        "hash": "0x3ae3d8cae12b9323758271f8088efb0a62a741fb88224034404fb3425ba4798a",
+        "status": "success",
+        "amount": "50410000",
+        "gasUsed": "89799"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 151,
+      "scenario": "rate-10000-drain-20",
+      "policy": "execution_floor_and_resize",
+      "rate": 10000,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "50410000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "129590000",
+      "dai": "50007438763688668684",
+      "gas": "179641"
+    }
+  },
+  {
+    "episode": 152,
+    "scenario": "rate-10000-drain-40",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 152,
+      "scenario": "rate-10000-drain-40",
+      "policy": "planning_check",
+      "rate": 10000,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "80000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 153,
+    "scenario": "rate-10000-drain-40",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 153,
+      "scenario": "rate-10000-drain-40",
+      "policy": "fresh_pre_submit_check",
+      "rate": 10000,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "80000000",
+      "dai": "79128868147654309229",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 154,
+    "scenario": "rate-10000-drain-40",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 154,
+      "scenario": "rate-10000-drain-40",
+      "policy": "execution_floor",
+      "rate": 10000,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "160000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 155,
+    "scenario": "rate-10000-drain-40",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 155,
+      "scenario": "rate-10000-drain-40",
+      "policy": "execution_floor_and_resize",
+      "rate": 10000,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "160000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 156,
+    "scenario": "rate-12500-drain-0",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xa8713fc8b1e429de8a5852b62677e653d747eafd848561d3c8d4546536266cde",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 156,
+      "scenario": "rate-12500-drain-0",
+      "policy": "planning_check",
+      "rate": 12500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 157,
+    "scenario": "rate-12500-drain-0",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xfd88e75cc141ea71b129fb0f0414bf0e946f4387be6aaa53b9954d90f64a21c2",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 157,
+      "scenario": "rate-12500-drain-0",
+      "policy": "fresh_pre_submit_check",
+      "rate": 12500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 158,
+    "scenario": "rate-12500-drain-0",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "success",
+        "gasUsed": "89787"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 158,
+      "scenario": "rate-12500-drain-0",
+      "policy": "execution_floor",
+      "rate": 12500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "98911085184567886536",
+      "gas": "89787"
+    }
+  },
+  {
+    "episode": 159,
+    "scenario": "rate-12500-drain-0",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "success",
+        "gasUsed": "89787"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 159,
+      "scenario": "rate-12500-drain-0",
+      "policy": "execution_floor_and_resize",
+      "rate": 12500,
+      "drain": 0,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "120000000",
+      "dai": "98911085184567886536",
+      "gas": "89787"
+    }
+  },
+  {
+    "episode": 160,
+    "scenario": "rate-12500-drain-10",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xfd88e75cc141ea71b129fb0f0414bf0e946f4387be6aaa53b9954d90f64a21c2",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 160,
+      "scenario": "rate-12500-drain-10",
+      "policy": "planning_check",
+      "rate": 12500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "110000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 161,
+    "scenario": "rate-12500-drain-10",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xfd88e75cc141ea71b129fb0f0414bf0e946f4387be6aaa53b9954d90f64a21c2",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 161,
+      "scenario": "rate-12500-drain-10",
+      "policy": "fresh_pre_submit_check",
+      "rate": 12500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "110000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 162,
+    "scenario": "rate-12500-drain-10",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 162,
+      "scenario": "rate-12500-drain-10",
+      "policy": "execution_floor",
+      "rate": 12500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "190000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 163,
+    "scenario": "rate-12500-drain-10",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa207986bd499c71097e85123ef117990747f870287615701b27089d974cff23a",
+        "amount": "10000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      },
+      {
+        "kind": "recovery_receipt",
+        "hash": "0x663205d5ff3a1418031c2776fd69a39187c7ff66f08ebed7502c383e1b1b52c2",
+        "status": "success",
+        "amount": "40290000",
+        "gasUsed": "89799"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 163,
+      "scenario": "rate-12500-drain-10",
+      "policy": "execution_floor_and_resize",
+      "rate": 12500,
+      "drain": 10,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "149710000",
+      "dai": "50010524573703072669",
+      "gas": "179641"
+    }
+  },
+  {
+    "episode": 164,
+    "scenario": "rate-12500-drain-20",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xfd88e75cc141ea71b129fb0f0414bf0e946f4387be6aaa53b9954d90f64a21c2",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 164,
+      "scenario": "rate-12500-drain-20",
+      "policy": "planning_check",
+      "rate": 12500,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "100000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 165,
+    "scenario": "rate-12500-drain-20",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xfd88e75cc141ea71b129fb0f0414bf0e946f4387be6aaa53b9954d90f64a21c2",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 165,
+      "scenario": "rate-12500-drain-20",
+      "policy": "fresh_pre_submit_check",
+      "rate": 12500,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "100000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 166,
+    "scenario": "rate-12500-drain-20",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 166,
+      "scenario": "rate-12500-drain-20",
+      "policy": "execution_floor",
+      "rate": 12500,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "180000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 167,
+    "scenario": "rate-12500-drain-20",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0xa3c722d5d8fbc8b917ec28940ac813e8708ecd3cbf20b85e0ff0bf489148c4aa",
+        "amount": "20000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      },
+      {
+        "kind": "recovery_receipt",
+        "hash": "0x663205d5ff3a1418031c2776fd69a39187c7ff66f08ebed7502c383e1b1b52c2",
+        "status": "success",
+        "amount": "40290000",
+        "gasUsed": "89799"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 167,
+      "scenario": "rate-12500-drain-20",
+      "policy": "execution_floor_and_resize",
+      "rate": 12500,
+      "drain": 20,
+      "feasible": true,
+      "oracleCentAmount": "40290000",
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": true,
+      "validCompletion": true,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "139710000",
+      "dai": "50010524573703072669",
+      "gas": "179641"
+    }
+  },
+  {
+    "episode": 168,
+    "scenario": "rate-12500-drain-40",
+    "policy": "planning_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xfd88e75cc141ea71b129fb0f0414bf0e946f4387be6aaa53b9954d90f64a21c2",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 168,
+      "scenario": "rate-12500-drain-40",
+      "policy": "planning_check",
+      "rate": 12500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "80000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 169,
+    "scenario": "rate-12500-drain-40",
+    "policy": "fresh_pre_submit_check",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0xfd88e75cc141ea71b129fb0f0414bf0e946f4387be6aaa53b9954d90f64a21c2",
+        "status": "success",
+        "gasUsed": "91043"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 169,
+      "scenario": "rate-12500-drain-40",
+      "policy": "fresh_pre_submit_check",
+      "rate": 12500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": false,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": true,
+      "externalCausedViolation": false,
+      "cash": "80000000",
+      "dai": "98911085184567886536",
+      "gas": "91043"
+    }
+  },
+  {
+    "episode": 170,
+    "scenario": "rate-12500-drain-40",
+    "policy": "execution_floor",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 170,
+      "scenario": "rate-12500-drain-40",
+      "policy": "execution_floor",
+      "rate": 12500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": false,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "160000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  },
+  {
+    "episode": 171,
+    "scenario": "rate-12500-drain-40",
+    "policy": "execution_floor_and_resize",
+    "events": [
+      {
+        "kind": "external_spend",
+        "hash": "0x9b901d58d7d8efef484f5766959420095da5812b16b4347701efbdd7307e133e",
+        "amount": "40000000"
+      },
+      {
+        "kind": "attempt_receipt",
+        "hash": "0x7bcd694eb834ab464c454d63f01b96827b61324b3c0b4c8e9e29a80700471e13",
+        "status": "reverted",
+        "gasUsed": "89842"
+      }
+    ],
+    "final": {
+      "experiment": "E3",
+      "episode": 171,
+      "scenario": "rate-12500-drain-40",
+      "policy": "execution_floor_and_resize",
+      "rate": 12500,
+      "drain": 40,
+      "feasible": false,
+      "oracleCentAmount": null,
+      "initialGuardRejected": true,
+      "safeStop": true,
+      "taskCompleted": false,
+      "validCompletion": false,
+      "reserveViolation": false,
+      "externalCausedViolation": false,
+      "cash": "160000000",
+      "dai": "0",
+      "gas": "89842"
+    }
+  }
+]

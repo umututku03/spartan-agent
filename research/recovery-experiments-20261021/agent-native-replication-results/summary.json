@@ -1,0 +1,58 @@
+{
+  "createdAt": "2026-10-22T00:03:51.878Z",
+  "scope": "minimal autonomous tool agent on local EVM; not a deployed Eliza/Spartan server",
+  "summaries": [
+    {
+      "controller": "deterministic",
+      "episodes": 4,
+      "feasible": 3,
+      "completedFeasible": 3,
+      "infeasible": 1,
+      "correctInfeasible": 1,
+      "validResolutions": 4,
+      "unsafeProposals": 0,
+      "guardBlocks": 0,
+      "executedReserveViolations": 0,
+      "falseCompletions": 0,
+      "prematureStops": 0,
+      "roundBudgetExhausted": 0,
+      "modelCalls": 0
+    },
+    {
+      "controller": "history",
+      "episodes": 8,
+      "feasible": 6,
+      "completedFeasible": 1,
+      "infeasible": 2,
+      "correctInfeasible": 2,
+      "validResolutions": 3,
+      "unsafeProposals": 0,
+      "guardBlocks": 0,
+      "executedReserveViolations": 0,
+      "falseCompletions": 0,
+      "prematureStops": 1,
+      "roundBudgetExhausted": 4,
+      "modelCalls": 37
+    },
+    {
+      "controller": "task_record",
+      "episodes": 8,
+      "feasible": 6,
+      "completedFeasible": 2,
+      "infeasible": 2,
+      "correctInfeasible": 0,
+      "validResolutions": 2,
+      "unsafeProposals": 2,
+      "guardBlocks": 3,
+      "executedReserveViolations": 0,
+      "falseCompletions": 0,
+      "prematureStops": 0,
+      "roundBudgetExhausted": 6,
+      "modelCalls": 40
+    }
+  ],
+  "calls": 77,
+  "priorEstimatedUSD": 0.009371299999999999,
+  "cumulativeEstimatedUSD": 0.01726349999999999,
+  "newEstimatedUSD": 0.007892199999999992
+}

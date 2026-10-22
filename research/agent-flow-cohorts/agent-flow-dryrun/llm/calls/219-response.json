@@ -1,0 +1,30 @@
+{
+  "httpStatus": 200,
+  "body": {
+    "id": "resp_mock_219",
+    "object": "response",
+    "created_at": 1792711076,
+    "status": "completed",
+    "model": "gpt-6.1-sol",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_mock_219",
+        "role": "assistant",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "<response><thought>reply</thought><actions>REPLY</actions><providers></providers><text>Done.</text></response>",
+            "annotations": []
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "input_tokens": 5417,
+      "output_tokens": 28,
+      "total_tokens": 5445
+    }
+  }
+}
