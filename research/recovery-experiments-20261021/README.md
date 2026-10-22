@@ -92,3 +92,25 @@ bun --env-file=.env run-agent-budget-sensitivity.ts
 ```
 
 Do not add `--live` to rerun the existing artifacts: the runners refuse to overwrite them. A fresh experiment needs a labelled results path, an updated cumulative ledger reference and a protocol saved before requests. The five-round protocol permits up to 80 calls; the sensitivity protocol permits up to 64, both under the same cumulative US$0.10 estimate cap. These are separate studies from the original 12-call static screens. No per-request retries or fallback models are used. Unknown-charge requests retain their budget reservation. No further credit purchase is needed for reviewing or auditing these saved results.
+
+
+## Claude comparison setup
+
+The prepared second-provider screen uses Claude Haiku 5.5, the same eight-round task/prompt/guards and eight LLM episodes plus four deterministic controls. See [agent-claude-protocol.md](agent-claude-protocol.md) for the fixed comparison and decision rules. It has not produced results until `agent-claude-results/complete.json` exists; check `run-error.json` for any interrupted attempt. Do not infer novelty or provider superiority from this small screen.
+
+Open the existing ignored configuration file on macOS:
+
+```sh
+open -a TextEdit "/Users/utkueumut/Desktop/utku/apps-projects/defi/spartan-agent/research/recovery-experiments-20261021/.env"
+```
+
+Add only `ANTHROPIC_API_KEY=YOUR_KEY_HERE`, replacing the placeholder locally, and save. Preserve the existing settings. The runner defaults to `ANTHROPIC_MODEL=claude-haiku-5-5` and `ANTHROPIC_BASE_URL=https://api.anthropic.com`, so neither is required in `.env`. Do not paste a secret into chat or copy `.env.example` over a configured `.env`. If needed, create a key in the [Claude Console](https://platform.claude.com/settings/keys).
+
+Offline checks from this experiment folder after installing its dependencies:
+
+```sh
+bun test claude-agent-client.test.ts
+bun --env-file=.env run-claude-agent.ts
+```
+
+The dry run reports `keyConfigured` without showing the key and makes zero API calls. Live execution uses `bun --env-file=.env run-claude-agent.ts --live`, refuses to overwrite prior results, allows up to 64 requests with no per-request retries/fallbacks, and retains the cumulative US$0.10 estimate cap across providers. The initial worst-case cumulative reservation is US$0.0998479; typical usage should be much smaller. A dry run does not validate account credit or model access. Review the saved results with `python3 verify-agent-results.py`.

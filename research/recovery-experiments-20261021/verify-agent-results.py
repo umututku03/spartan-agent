@@ -54,9 +54,17 @@ def audit(folder):
   if e['controller']!='deterministic':
    assert len(e['modelTrace'])==len(e['toolTrace'])<=m['maxRounds']
    for t in e['modelTrace']:
-    calls=[x for x in t['response'].get('output',[]) if x['type']=='function_call']
-    assert len(calls)==1 and calls[0]['name']==t['parsedAction']['tool']
-    assert json.loads(calls[0]['arguments'])==t['parsedAction']['args']
+    if m.get('provider')=='anthropic':
+     calls=[x for x in t['response'].get('content',[]) if x['type']=='tool_use']
+     assert t['response']['stop_reason']=='tool_use'
+     assert len(calls)==1 and calls[0]['name']==t['parsedAction']['tool']
+     assert calls[0]['input']==t['parsedAction']['args']
+     assert not t['response']['usage'].get('cache_creation_input_tokens',0)
+     assert not t['response']['usage'].get('cache_read_input_tokens',0)
+    else:
+     calls=[x for x in t['response'].get('output',[]) if x['type']=='function_call']
+     assert len(calls)==1 and calls[0]['name']==t['parsedAction']['tool']
+     assert json.loads(calls[0]['arguments'])==t['parsedAction']['args']
     usage=t['response']['usage']
     assert usage['input_tokens']<=t['inputBytes']+512 and usage['output_tokens']<=256
     assert abs(t['estimatedUsageUSD']-(usage['input_tokens']*.1+usage['output_tokens']*.5)/1000000)<1e-12
@@ -70,6 +78,6 @@ def audit(folder):
   rows.append(dict(controller=controller,episodes=len(es),feasible=sum(o['initiallyFeasible'] for o in os),goalReached=sum(o['goalReached'] for o in os),validComplete=sum(o['validComplete'] for o in os),correctInfeasible=sum(o['correctInfeasible'] for o in os),validResolution=sum(o['validResolution'] for o in os),prematureStops=sum(o['prematureStop'] for o in os),falseCompletion=sum(o['falseCompletion'] for o in os),unsafeProposals=sum(o['unsafeProposals'] for o in os),guardBlocks=sum(o['guardBlocks'] for o in os),executedViolations=sum(o['executedReserveViolations'] for o in os),budgetExhausted=sum(x.get('termination')=='round_budget_exhausted' for x in es)))
  return dict(folder=folder,complete=complete,episodes=len(episodes),calls=l['calls'],cumulativeEstimatedUSD=recomputed,rows=rows)
 if __name__=='__main__':
- folders=['agent-native-results','agent-native-replication-results','agent-budget-sensitivity-results']
+ folders=['agent-native-results','agent-native-replication-results','agent-budget-sensitivity-results','agent-claude-results']
  results=[audit(f) for f in folders if (ROOT/f/'episodes.json').exists()]
  print(json.dumps(dict(audit='PASS: frozen hashes, budget ledger, native actions, receipt outcomes, integer pool/balance replay, goal and feasibility checks',results=results),indent=2))
