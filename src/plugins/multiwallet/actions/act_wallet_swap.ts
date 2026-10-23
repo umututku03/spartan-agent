@@ -34,6 +34,7 @@ import {
     swapEthereumExactIn,
     getEthereumTokenBalance,
 } from '../utils/ethereum';
+import { selectSwapChain } from '../utils/swapChain';
 import { sizeSwap } from '../risk';
 import { RiskService } from '../services/srv_risk';
 
@@ -444,8 +445,7 @@ export default {
         // clean up symbols
         content.inputTokenSymbol = content.inputTokenSymbol?.replace('$', '')
         content.outputTokenSymbol = content.outputTokenSymbol?.replace('$', '')
-        const requestedChain = content.chain?.toLowerCase();
-        const selectedChain = requestedChain || sourceWallet.chain || (isEthereumAddress(sourceResult.sourceWalletAddress) ? 'ethereum' : 'solana');
+        const selectedChain = selectSwapChain(content.chain, sourceWallet.chain, isEthereumAddress(sourceResult.sourceWalletAddress));
 
         // Fix Handle SOL addresses
         if (selectedChain === 'solana' && content.inputTokenSymbol?.toUpperCase() === 'SOL') {
