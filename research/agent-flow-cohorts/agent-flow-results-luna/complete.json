@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-22T23:43:51.949Z",
+  "mode": "live",
+  "error": null,
+  "episodes": [
+    "control-normal",
+    "control-receipt_hidden",
+    "control-price_change_feasible",
+    "control-price_change_infeasible",
+    "luna-single_shot-stock-normal",
+    "luna-single_shot-stock-receipt_hidden",
+    "luna-single_shot-stock-price_change_feasible",
+    "luna-single_shot-stock-price_change_infeasible",
+    "luna-single_shot-task_record-normal",
+    "luna-single_shot-task_record-receipt_hidden",
+    "luna-single_shot-task_record-price_change_feasible",
+    "luna-single_shot-task_record-price_change_infeasible",
+    "luna-multi_step-stock-normal",
+    "luna-multi_step-stock-receipt_hidden",
+    "luna-multi_step-stock-price_change_feasible",
+    "luna-multi_step-stock-price_change_infeasible",
+    "luna-multi_step-task_record-normal",
+    "luna-multi_step-task_record-receipt_hidden",
+    "luna-multi_step-task_record-price_change_feasible",
+    "luna-multi_step-task_record-price_change_infeasible"
+  ],
+  "ledger": {
+    "mode": "live",
+    "calls": 174,
+    "priorUSD": 0.3689935,
+    "usedUSD": 0.47386299999999937,
+    "newUSD": 0.1048694999999994,
+    "cohortCap": 0.6,
+    "cumulativeCap": 0.9689935
+  }
+}
