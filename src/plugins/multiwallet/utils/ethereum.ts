@@ -12,6 +12,7 @@ import {
 import type { Address, Hex } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { mainnet } from 'viem/chains';
+import { checkUnresolvedTransaction, waitForReceiptOrPending, type PendingCheck } from './ethPending';
 
 const UNISWAP_V2_ROUTER = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D' as Address;
 const WETH_ADDRESS = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2' as Address;
@@ -399,6 +400,14 @@ export async function getEthereumWalletSummary(
   return summary;
 }
 
+/** Resolve an earlier transaction from this wallet whose receipt timed out (see ethPending.ts). */
+export async function checkUnresolvedEthereumTransaction(
+  walletAddress: string,
+  runtime?: { getSetting?: (key: string) => string | undefined }
+): Promise<PendingCheck | null> {
+  return checkUnresolvedTransaction(getPublicClient(runtime), walletAddress);
+}
+
 export async function swapEthereumExactIn(
   request: SwapRequest,
   runtime?: { getSetting?: (key: string) => string | undefined }
@@ -465,7 +474,7 @@ export async function swapEthereumExactIn(
     });
   }
 
-  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await waitForReceiptOrPending(publicClient, hash, account.address);
   if (receipt.status !== 'success') {
     throw new Error(`Transaction reverted on-chain: ${hash}`);
   }
@@ -521,7 +530,7 @@ export async function transferEthereumAsset(
     });
   }
 
-  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await waitForReceiptOrPending(publicClient, hash, account.address);
   if (receipt.status !== 'success') {
     throw new Error(`Transaction reverted on-chain: ${hash}`);
   }
@@ -579,7 +588,7 @@ export async function executeEthereumLendingAction(
     });
   }
 
-  const receipt = await publicClient.waitForTransactionReceipt({ hash });
+  const receipt = await waitForReceiptOrPending(publicClient, hash, account.address);
   if (receipt.status !== 'success') {
     throw new Error(`Transaction reverted on-chain: ${hash}`);
   }

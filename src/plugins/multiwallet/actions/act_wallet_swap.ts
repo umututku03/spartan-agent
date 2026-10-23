@@ -33,7 +33,9 @@ import {
     isEthereumAddress,
     swapEthereumExactIn,
     getEthereumTokenBalance,
+    checkUnresolvedEthereumTransaction,
 } from '../utils/ethereum';
+import { EthereumTxPendingError } from '../utils/ethPending';
 import { sizeSwap } from '../risk';
 import { RiskService } from '../services/srv_risk';
 
@@ -489,6 +491,22 @@ export default {
 
         if (selectedChain === 'ethereum') {
             try {
+                // An earlier swap from this wallet whose receipt timed out may have been mined since.
+                // Don't send another swap until it is resolved; the planner must decide again with the outcome.
+                const earlier = await checkUnresolvedEthereumTransaction(sourceWallet.kp.publicKey, runtime);
+                if (earlier && earlier.status !== 'reverted') {
+                    const text = earlier.status === 'pending'
+                        ? `An earlier transaction from this wallet (\`${earlier.hash}\`) is still unconfirmed. No new swap was sent; check it again before swapping.`
+                        : `An earlier transaction from this wallet (\`${earlier.hash}\`), previously reported as unconfirmed, has now succeeded. No new swap was sent; request the swap again only if it is still needed.`;
+                    callback?.(takeItPrivate(runtime, message, text));
+                    return {
+                        success: false,
+                        text,
+                        error: earlier.status === 'pending' ? 'EARLIER_TX_PENDING' : 'EARLIER_TX_CONFIRMED',
+                        data: { chain: 'ethereum', txid: earlier.hash, status: earlier.status },
+                    };
+                }
+
                 // The LLM sometimes fills contract-address fields with the literal string "null"/
                 // "undefined" (not a real null), which `||` would treat as a valid token and blow up
                 // in resolveEthereumToken. Normalize those away and fall back to the symbol.
@@ -563,6 +581,17 @@ export default {
                     }
                 };
             } catch (error) {
+                if (error instanceof EthereumTxPendingError) {
+                    // Broadcast but not confirmed within the wait: the swap may still execute. Not a failure.
+                    const text = `Ethereum swap submitted but not confirmed yet (\`${error.hash}\`). Its outcome is unknown; do not retry it. It will be checked before the next swap from this wallet.`;
+                    callback?.(takeItPrivate(runtime, message, text));
+                    return {
+                        success: false,
+                        text,
+                        error: 'TX_PENDING',
+                        data: { chain: 'ethereum', txid: error.hash, status: 'pending' },
+                    };
+                }
                 logger.error('Error during Ethereum token swap:', error instanceof Error ? error.message : String(error));
                 const errorMessage = error instanceof Error ? error.message : 'Unknown error';
                 callback?.(takeItPrivate(runtime, message, `Ethereum swap failed: ${errorMessage}`))
