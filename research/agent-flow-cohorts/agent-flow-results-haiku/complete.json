@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-23T00:07:15.979Z",
+  "mode": "live",
+  "error": null,
+  "episodes": [
+    "control-normal",
+    "control-receipt_hidden",
+    "control-price_change_feasible",
+    "control-price_change_infeasible",
+    "haiku-single_shot-stock-normal",
+    "haiku-single_shot-stock-receipt_hidden",
+    "haiku-single_shot-stock-price_change_feasible",
+    "haiku-single_shot-stock-price_change_infeasible",
+    "haiku-single_shot-task_record-normal",
+    "haiku-single_shot-task_record-receipt_hidden",
+    "haiku-single_shot-task_record-price_change_feasible",
+    "haiku-single_shot-task_record-price_change_infeasible",
+    "haiku-multi_step-stock-normal",
+    "haiku-multi_step-stock-receipt_hidden",
+    "haiku-multi_step-stock-price_change_feasible",
+    "haiku-multi_step-stock-price_change_infeasible",
+    "haiku-multi_step-task_record-normal",
+    "haiku-multi_step-task_record-receipt_hidden",
+    "haiku-multi_step-task_record-price_change_feasible",
+    "haiku-multi_step-task_record-price_change_infeasible"
+  ],
+  "ledger": {
+    "mode": "live",
+    "calls": 244,
+    "priorUSD": 0.47386299999999937,
+    "usedUSD": 0.6864207000000003,
+    "newUSD": 0.21255770000000096,
+    "cohortCap": 0.6,
+    "cumulativeCap": 1.0738629999999993
+  }
+}

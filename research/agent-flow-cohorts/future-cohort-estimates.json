@@ -1,0 +1,44 @@
+{
+  "status": "proposal only; not approved or executed",
+  "proposals": [
+    {
+      "target": "sol",
+      "approved": false,
+      "baseline": "agent-flow-results-luna",
+      "observedEpisodes": 16,
+      "observedCalls": 174,
+      "inputTokens": 508804,
+      "outputTokens": 82538,
+      "reportedReasoningOrThinkingTokens": 61689,
+      "reasoningUsageReportedCalls": 174,
+      "frozenEffectiveInputUSDPerMillion": 2.5,
+      "frozenOutputUSDPerMillion": 10,
+      "full16SameUsageEstimatedUSD": 2.0973900000000003,
+      "normalAndReceiptHidden8SameUsageEstimatedUSD": 1.179365,
+      "proposedCapUSD": 4.25,
+      "scopeProposal": "full frozen 16-episode design",
+      "caution": "Same-usage arithmetic only. Different models may use more calls/tokens/reasoning. Verify provider pricing before execution; these are frozen study rates, not current-price assertions. A cap does not guarantee a complete cohort.",
+      "baselineAudit": "PASS"
+    },
+    {
+      "target": "opus",
+      "approved": false,
+      "baseline": "agent-flow-results-haiku",
+      "observedEpisodes": 16,
+      "observedCalls": 244,
+      "inputTokens": 1114562,
+      "outputTokens": 202203,
+      "reportedReasoningOrThinkingTokens": 135603,
+      "reasoningUsageReportedCalls": 244,
+      "frozenEffectiveInputUSDPerMillion": 4,
+      "frozenOutputUSDPerMillion": 20,
+      "full16SameUsageEstimatedUSD": 8.502308,
+      "normalAndReceiptHidden8SameUsageEstimatedUSD": 4.157284,
+      "proposedCapUSD": 5.5,
+      "scopeProposal": "predeclare a smaller balanced stage before approval; no execution authorized",
+      "caution": "Same-usage arithmetic only. Different models may use more calls/tokens/reasoning. Verify provider pricing before execution; these are frozen study rates, not current-price assertions. A cap does not guarantee a complete cohort.",
+      "baselineAudit": "FAIL: label-bearing seeded identity disclosed in final episode; resource accounting only"
+    }
+  ],
+  "prerequisite": "Resolve the blinding leak, test the model-visible account actions, and freeze/document a new stage before any paid launch."
+}
