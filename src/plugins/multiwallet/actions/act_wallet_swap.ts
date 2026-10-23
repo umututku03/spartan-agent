@@ -34,6 +34,7 @@ import {
     swapEthereumExactIn,
     getEthereumTokenBalance,
 } from '../utils/ethereum';
+import { executedAmountFields } from '../utils/swapResult';
 import { sizeSwap } from '../risk';
 import { RiskService } from '../services/srv_risk';
 
@@ -556,7 +557,7 @@ export default {
                     data: {
                         chain: 'ethereum',
                         txid: swapResult.hash,
-                        amount: content.amount,
+                        ...executedAmountFields(content.amount, execAmount),
                         inputToken: swapResult.inputToken.symbol,
                         outputToken: swapResult.outputToken.symbol,
                         outputAmount: swapResult.quotedAmountOut,
