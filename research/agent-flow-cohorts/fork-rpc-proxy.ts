@@ -4,8 +4,8 @@
 //   price_change_*:   immediately after the sale tx mines, a privileged hook moves the WETH/DAI pool,
 //                     before the sale's hash is returned to the caller.
 // The sale tx is the first SUCCESSFUL transaction from the agent wallet to the Uniswap V2 router that sends
-// exactly 0.1 ETH of value; faults are applied only after that confirmed effect.
-import {parseTransaction, recoverTransactionAddress, parseEther, type Hex} from 'viem';
+// native value (v2: any amount, since risk clamps can shrink the 0.1 ETH sale); faults follow that confirmed effect.
+import {parseTransaction, recoverTransactionAddress, type Hex} from 'viem';
 
 export const HIDE_MS = 200_000; // beyond viem's 180 s default waitForTransactionReceipt timeout
 
@@ -57,7 +57,7 @@ export class ForkRpcProxy {
     const entry: any = {at: Date.now(), event: 'send', from, to, value, hash: hash?.toLowerCase() ?? null, error: result?.error ?? null};
     this.journal.push(entry);
     let mined: any = null;
-    if (hash && from === this.wallet && to === this.router && !this.saleHash && BigInt(value) === parseEther('0.1')) {
+    if (hash && from === this.wallet && to === this.router && !this.saleHash && BigInt(value) > 0n) {
       // Anvil can return the hash just before the receipt is queryable: poll briefly (up to 10 s).
       for (let i = 0; i < 200 && !mined; i++) {
         mined = (await this.upstream({jsonrpc: '2.0', id: `sale-check-${++this.id}`, method: 'eth_getTransactionReceipt', params: [hash]}))?.result ?? null;

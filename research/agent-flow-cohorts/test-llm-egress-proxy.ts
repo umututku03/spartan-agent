@@ -47,6 +47,17 @@ const recs = readdirSync(join(a.dest, 'calls')).map(f => readFileSync(join(a.des
 check('no headers or keys in saved records', !recs.includes('authorization') && !recs.includes('x-api-key') && !recs.includes('test-openai-key-123') && !recs.includes('placeholder'));
 a.p.kill();
 
+// v2 blinding gate: a request containing a forbidden term for the active turn is refused and never forwarded.
+const g = await proxy(18674, ['--cohort-cap-usd=1', '--cumulative-cap-usd=1', '--prior-usd=0']);
+await post(`${g.url}/control/turn`, {episodeId: 'luna-multi_step-stock-receipt_hidden', turn: 0, forbidden: ['receipt_hidden', 'luna-multi_step-stock-receipt_hidden']});
+const before = seen.length;
+r = await post(`${g.url}/openai/v1/responses`, {model: 'gpt-6-luna', input: 'user email luna-multi_step-stock-receipt_hidden@x', max_output_tokens: 100});
+const G = ledger(g.dest);
+check('blinding gate refuses a label-bearing request (503), never forwarded, no cost', r.status === 503 && seen.length === before && G[0].status === 'refused_blinding' && !('estimatedUSD' in G[0]));
+r = await post(`${g.url}/openai/v1/responses`, {model: 'gpt-6-luna', input: 'clean request', max_output_tokens: 100});
+check('clean request in the same turn is forwarded', r.status === 200 && seen.length === before + 1);
+g.p.kill();
+
 // Anthropic-shaped settlement includes cache categories in input tokens.
 const b = await proxy(18672, ['--cohort-cap-usd=1', '--cumulative-cap-usd=1', '--prior-usd=0']);
 await post(`${b.url}/control/turn`, {episodeId: 'opus-single_shot-stock-normal', turn: 0});

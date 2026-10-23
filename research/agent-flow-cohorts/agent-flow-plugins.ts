@@ -7,7 +7,7 @@
 //   seedVerifiedAccount: a verified user plus an imported Ethereum wallet, written the way
 //                        VERIFY_REGISTRATION_CODE and WALLET_IMPORT write them, so episodes skip chat registration.
 import {ModelType, VECTOR_DIMS, createUniqueUuid, type IAgentRuntime, type Plugin, type UUID} from '@elizaos/core';
-import {createHash} from 'node:crypto';
+import {createHash, randomBytes} from 'node:crypto';
 import {createPublicClient, http, formatUnits, parseUnits, type Address} from 'viem';
 import {mainnet} from 'viem/chains';
 import {privateKeyToAccount} from 'viem/accounts';
@@ -74,7 +74,7 @@ export async function seedVerifiedAccount(runtime: IAgentRuntime, p: {userSource
   }
   const common = {agentId: runtime.agentId, worldId: p.worldId, roomId: p.roomId, sourceEntityId: p.participantId, createdAt: Date.now()};
   await runtime.createComponent({...common, id: createUniqueUuid(runtime, 'component'), entityId: userEntityId,
-    type: 'component_user_v0', data: {address: p.email, code: 'SEEDED', verified: true}} as any);
+    type: 'component_user_v0', data: {address: p.email, code: randomBytes(3).toString('hex').toUpperCase(), verified: true}} as any);
   await runtime.createComponent({...common, id: createUniqueUuid(runtime, `account-${p.email}`), entityId: accountEntityId,
     type: 'component_account_v0', data: {metawallets: [{strategy: 'No trading strategy',
       keypairs: {ethereum: {privateKey: p.privateKey, publicKey, type: 'imported', createdAt: Date.now()}}}]}} as any);

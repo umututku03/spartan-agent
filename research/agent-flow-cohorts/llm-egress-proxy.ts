@@ -140,6 +140,16 @@ Bun.serve({
     }
     if (provider === 'openai' && String(body.model).startsWith('gpt-6') && 'temperature' in body) { delete body.temperature; entry.normalized.push('temperature'); }
     const sent = JSON.stringify(body);
+    // v2 blinding gate: refuse (never forward, never charge) any request containing a harness label or this
+    // episode's identifiers, as supplied by the runner for the active turn.
+    const lowered = sent.toLowerCase();
+    const leaked = (context.forbidden ?? []).filter((t: string) => t && lowered.includes(String(t).toLowerCase()));
+    if (leaked.length) {
+      entry.status = 'refused_blinding'; entry.leakedTerms = leaked;
+      writeFileSync(join(dest, 'calls', `${n}-request.json`), JSON.stringify({...entry, body}, null, 2));
+      appendFileSync(ledgerPath, JSON.stringify(entry) + '\n');
+      return Response.json({error: {message: 'Refused by harness: request failed the blinding check.'}}, {status: 503});
+    }
     const maxOut = Number(body.max_output_tokens ?? body.max_tokens ?? 8192);
     entry.requestBytes = Buffer.byteLength(sent);
     entry.maxOutputTokens = maxOut;

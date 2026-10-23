@@ -53,7 +53,19 @@ def followup_text_changed(p):
     else: j['turns'][0]['text'] += ' Lower the DAI goal if needed.'
     wr(f, j)
 
-MUTATIONS = [label_in_request, episode_id_in_request, missing_call_record, unknown_episode_call, temperature_kept,
+def blinding_refusal_recorded(p):
+    lines = (p / 'llm/ledger.jsonl').read_text().splitlines(); j = json.loads(lines[-1])
+    j.update(call=len(lines) + 1, status='refused_blinding', leakedTerms=['receipt_hidden']); lines.append(json.dumps(j))
+    (p / 'llm/ledger.jsonl').write_text('\n'.join(lines) + '\n')
+    src = p / f"llm/calls/{json.loads(lines[-2])['call']}-request.json"; (p / f"llm/calls/{j['call']}-request.json").write_text(src.read_text())
+def partial_sale_unreported(p):
+    # an extra risk-clamped native sale (0.05 ETH) recorded in the journal and transactions, flags left unchanged
+    f = episode(p, lambda n: n.endswith('normal.json') and not n.startswith('control')); j = rd(f)
+    t = dict(j['outcome']['transactions'][0]); t.update(hash='0x' + 'ab' * 32, value=str(5 * 10 ** 16), sale=False)
+    j['outcome']['transactions'].append(t)
+    j['forkJournal'].append({'event': 'send', 'from': j['forkJournal'][0]['from'], 'to': t['to'], 'value': t['value'], 'hash': t['hash']}); wr(f, j)
+
+MUTATIONS = [blinding_refusal_recorded, partial_sale_unreported, label_in_request, episode_id_in_request, missing_call_record, unknown_episode_call, temperature_kept,
              goal_flag_inconsistent, declared_rewritten, market_move_dropped, transaction_hidden, completion_truncated,
              episodes_reordered, credential_planted, extra_file, followup_text_changed]
 base = Path(tempfile.mkdtemp(prefix='agent-flow-verifier-'))

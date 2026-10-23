@@ -23,7 +23,7 @@ globalThis.fetch = (async (input: any, init?: any) => {
   const url = new URL(typeof input === 'string' ? input : input.url ?? String(input));
   if (url.hostname !== '127.0.0.1' && url.hostname !== 'localhost') {
     blocked[url.hostname] = (blocked[url.hostname] ?? 0) + 1;
-    throw new TypeError(`network blocked by harness: ${url.hostname}`);
+    throw new TypeError(`network unavailable: ${url.hostname}`);   // neutral wording: may surface in model-visible notes
   }
   return realFetch(input, init);
 }) as any;
@@ -58,21 +58,23 @@ const runtime = new AgentRuntime({character, plugins, settings: {
   ETHEREUM_RPC_URL: spec.forkProxyUrl, EVM_PROVIDER_URL: spec.forkProxyUrl,
 } as any});
 runtime.registerDatabaseAdapter(adapter);
-await control('/control/turn', {episodeId: `${spec.id}#init`, turn: -1});   // plugin init may probe models
+await control('/control/turn', {episodeId: `${spec.id}#init`, turn: -1, forbidden: spec.forbidden});   // plugin init may probe models
 await runtime.initialize();
 await spartan.init!(runtime);
 await control('/control/idle');
 
-const roomId = stringToUuid(`room-${spec.id}`) as UUID, worldId = stringToUuid(`world-${spec.id}`) as UUID;
-const participantId = stringToUuid(`participant-${spec.id}`) as UUID, userSourceId = `harness-user-${spec.id}`;
-await runtime.ensureConnection({entityId: participantId, roomId, worldId, name: 'User', source: 'harness', channelId: `ch-${spec.id}`, serverId: 'harness', type: ChannelType.DM});
-const seeded = await seedVerifiedAccount(runtime, {userSourceId, email: `${spec.id}@harness.invalid`, privateKey: spec.privateKey, roomId, worldId, participantId});
+// v2: every model-visible identifier is a neutral random value supplied by the parent (spec.identity).
+const idn = spec.identity;
+const roomId = stringToUuid(idn.room) as UUID, worldId = stringToUuid(idn.world) as UUID;
+const participantId = stringToUuid(idn.participant) as UUID, userSourceId = idn.userSourceId;
+await runtime.ensureConnection({entityId: participantId, roomId, worldId, name: 'User', source: 'chat', channelId: idn.channel, serverId: 'server', type: ChannelType.DM});
+const seeded = await seedVerifiedAccount(runtime, {userSourceId, email: idn.email, privateKey: spec.privateKey, roomId, worldId, participantId});
 
 const turns: any[] = [];
 async function send(text: string, turn: number) {
-  await control('/control/turn', {episodeId: spec.id, turn, mockPlan: spec.mockPlan ?? undefined, resetMock: turn === 0});
+  await control('/control/turn', {episodeId: spec.id, turn, mockPlan: spec.mockPlan ?? undefined, resetMock: turn === 0, forbidden: spec.forbidden});
   const callbacks: Content[] = [];
-  const msg: any = createMessageMemory({id: randomUUID() as UUID, entityId: participantId, roomId, content: {text, source: 'harness', channelType: ChannelType.DM} as any});
+  const msg: any = createMessageMemory({id: randomUUID() as UUID, entityId: participantId, roomId, content: {text, source: 'chat', channelType: ChannelType.DM} as any});
   msg.metadata = {...msg.metadata, authorId: userSourceId};
   const nonceBefore = await nonce(), started = Date.now();
   let error: string | null = null;
