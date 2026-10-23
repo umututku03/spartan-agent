@@ -30,10 +30,7 @@ function isLendingContent(content: LendingContent): boolean {
     return !!content?.action && !!content?.senderWalletAddress && !!content?.tokenSymbol && !!content?.amount;
 }
 
-const lendingTemplate = `Respond with a JSON markdown block containing only the extracted values.
-
-Available wallet options:
-{{possibleWallets}}
+export const lendingTemplate = `Respond with a JSON markdown block containing only the extracted values.
 
 Example response:
 \`\`\`json
@@ -46,6 +43,12 @@ Example response:
     "chain": "ethereum"
 }
 \`\`\`
+
+{{recentMessages}}
+
+Given the recent messages and wallet information below:
+
+{{possibleWallets}}
 
 Extract:
 - action: "supply" for lend/deposit/collateralize, or "borrow"
