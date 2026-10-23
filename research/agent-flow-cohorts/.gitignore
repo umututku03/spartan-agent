@@ -1,0 +1,7 @@
+# Raw run outputs stay out of git (small, core PRs); publish summaries and hashed archives instead.
+agent-flow-dryrun-*/
+agent-flow-results-*/llm/
+agent-flow-results-*/episodes/
+agent-flow-results-*/anvil.log*
+__pycache__/
+*.log
