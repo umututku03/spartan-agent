@@ -1,0 +1,151 @@
+{
+  "audit": "FAIL",
+  "firstFailedAssertion": [
+    "harness label in a model request",
+    "price_change",
+    224
+  ],
+  "allFailedAssertions": [
+    [
+      "harness label in a model request",
+      "price_change",
+      224
+    ],
+    [
+      "harness label in a model request",
+      "harness.invalid",
+      224
+    ],
+    [
+      "harness label in a model request",
+      "multi_step",
+      224
+    ],
+    [
+      "episode id in a model request",
+      224
+    ],
+    [
+      "harness label in a model request",
+      "price_change",
+      225
+    ],
+    [
+      "harness label in a model request",
+      "harness.invalid",
+      225
+    ],
+    [
+      "harness label in a model request",
+      "multi_step",
+      225
+    ],
+    [
+      "episode id in a model request",
+      225
+    ],
+    [
+      "harness label in a model request",
+      "price_change",
+      227
+    ],
+    [
+      "harness label in a model request",
+      "harness.invalid",
+      227
+    ],
+    [
+      "harness label in a model request",
+      "multi_step",
+      227
+    ],
+    [
+      "episode id in a model request",
+      227
+    ],
+    [
+      "harness label in a model request",
+      "price_change",
+      228
+    ],
+    [
+      "harness label in a model request",
+      "harness.invalid",
+      228
+    ],
+    [
+      "harness label in a model request",
+      "multi_step",
+      228
+    ],
+    [
+      "episode id in a model request",
+      228
+    ],
+    [
+      "harness label in a model request",
+      "price_change",
+      229
+    ],
+    [
+      "harness label in a model request",
+      "harness.invalid",
+      229
+    ],
+    [
+      "harness label in a model request",
+      "multi_step",
+      229
+    ],
+    [
+      "episode id in a model request",
+      229
+    ]
+  ],
+  "affectedEpisode": "haiku-multi_step-task_record-price_change_infeasible",
+  "affectedRequestNumbers": [
+    224,
+    225,
+    227,
+    228,
+    229
+  ],
+  "rootCause": "agent-episode-child.ts:69 seeds `${spec.id}@harness.invalid`; USER_DETAILS exposed this email in model-visible action history. The egress proxy forwarded it; the post-run verifier rejected it.",
+  "frozenVerifierChanged": false,
+  "liveHarnessChanged": false,
+  "rerunPerformed": false,
+  "publication": "Only this failure record, descriptive report, per-episode metrics, manifest and execution-completion marker are published for Haiku. The complete raw run is preserved locally and is not staged because its audit fails. The completion marker records finished execution, not audit acceptance. No raw request, response or episode is published for this cohort.",
+  "localPreservation": {
+    "files": 529,
+    "marker": "complete.json (execution finished, not an audit pass)",
+    "rejectedRequests": [
+      {
+        "file": "llm/calls/224-request.json",
+        "sha256": "1789ed81c85971fb0f8417b0a9193315ef51f2b5e29f0f863dbcaa39dff5288e"
+      },
+      {
+        "file": "llm/calls/225-request.json",
+        "sha256": "7fd10266b03f4681eb043c128312192c847b53eda4be2f37648f59031719afcc"
+      },
+      {
+        "file": "llm/calls/227-request.json",
+        "sha256": "bee86fda7493d3b7f3b0cad19a31b8bd6779a2637698671fb3b3eed2bdd5f80b"
+      },
+      {
+        "file": "llm/calls/228-request.json",
+        "sha256": "6e71a24fe098fb002be3e67ba3cae73ed7e7108b7b03d37e05b68faa84a9ad75"
+      },
+      {
+        "file": "llm/calls/229-request.json",
+        "sha256": "c69eaeb0fb474153d8fae9274e967dce7a9034257f49029f4b1724bd3542ec36"
+      }
+    ]
+  },
+  "otherChecks": "Diagnostic enumeration of the frozen verifier found only these blinding assertions. This does not turn the unmodified verifier into PASS. Exact configured secret scan passed; all 244 calls returned 200 and settled; all child exits were zero and no turn errors or mined reverts were recorded.",
+  "nextStageRequirements": [
+    "Replace the seeded label-bearing account email with a neutral identity that does not encode driver, condition or scenario.",
+    "Add a pre-forward model-payload gate, plus a test that deliberately requests USER_DETAILS and ACCOUNT_DETAILS.",
+    "Record any harness fix as a protocol deviation in a new frozen stage; do not modify this run or its requests.",
+    "Use a new results destination and report before any paid rerun. No rerun is approved or executed in this stage."
+  ]
+}

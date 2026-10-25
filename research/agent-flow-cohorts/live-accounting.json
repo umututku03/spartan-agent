@@ -1,0 +1,59 @@
+{
+  "priorCumulativeEstimatedUSD": 0.3688377,
+  "probeSource": "plugin-compat-probe.json",
+  "probeReturnedUsageEstimatedUSD": 0.0001558,
+  "priorIncludingReturnedProbeUsageUSD": 0.3689935,
+  "probeCalls": [
+    {
+      "model": "gpt-6-luna",
+      "httpStatus": 400,
+      "returnedUsage": false,
+      "accountingNote": "HTTP 400; no returned usage. No charge inferred from missing usage; provider invoice not checked."
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "httpStatus": 400,
+      "returnedUsage": false,
+      "accountingNote": "HTTP 400; no returned usage. No charge inferred from missing usage; provider invoice not checked."
+    },
+    {
+      "model": "claude-haiku-5-5",
+      "httpStatus": 200,
+      "returnedUsage": true,
+      "inputTokens": 18,
+      "outputTokens": 4,
+      "estimatedUSD": 3.8e-06
+    },
+    {
+      "model": "claude-opus-5-5",
+      "httpStatus": 200,
+      "returnedUsage": true,
+      "inputTokens": 18,
+      "outputTokens": 4,
+      "estimatedUSD": 0.000152
+    }
+  ],
+  "approvedNewCohortCapsUSD": {
+    "luna": 0.6,
+    "haiku": 0.6
+  },
+  "otherModelRunsAuthorized": false,
+  "liveStages": [
+    {
+      "model": "luna",
+      "newEstimatedUSD": 0.1048694999999994,
+      "cumulativeEstimatedUSD": 0.47386299999999937,
+      "audit": "PASS",
+      "completeExecution": true
+    },
+    {
+      "model": "haiku",
+      "newEstimatedUSD": 0.21255770000000096,
+      "cumulativeEstimatedUSD": 0.6864207000000003,
+      "audit": "FAIL: model-visible seeded account identity",
+      "completeExecution": true
+    }
+  ],
+  "newEstimatedUSD": 0.31742720000000035,
+  "finalCumulativeEstimatedUSD": 0.6864207000000003
+}

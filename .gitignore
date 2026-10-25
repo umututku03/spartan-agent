@@ -40,3 +40,8 @@ coverage/
 tmp/
 temp/
 *.tmp
+
+# Local live-cohort raw artifacts; keep only core summaries and metadata in PRs
+research/agent-flow-cohorts/agent-flow-results-*/llm/
+research/agent-flow-cohorts/agent-flow-results-*/episodes/
+research/agent-flow-cohorts/agent-flow-results-*/anvil.log*
