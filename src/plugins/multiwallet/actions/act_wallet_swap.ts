@@ -38,6 +38,7 @@ import {
 import { selectSwapChain } from '../utils/swapChain';
 import { executedAmountFields } from '../utils/swapResult';
 import { EthereumTxPendingError } from '../utils/ethPending';
+import { completedSwapsSection, findRepeatInRequest, getCompletedSwaps, recordCompletedSwap } from '../utils/swapRequestLedger';
 import { sizeSwap } from '../risk';
 import { RiskService } from '../services/srv_risk';
 
@@ -244,6 +245,7 @@ Ethereum example:
 
 {{recentMessages}}
 
+{{completedSwaps}}
 Given the recent messages and wallet information below:
 
 {{possibleWallets}}
@@ -398,9 +400,12 @@ export default {
             contextStr += '\n';
         }
 
+        const completedSwaps = await getCompletedSwaps(runtime, message.roomId);
         const swapPrompt = composePromptFromState({
             state: state,
-            template: swapTemplate.replace('{{possibleWallets}}', contextStr),
+            template: swapTemplate
+                .replace('{{possibleWallets}}', contextStr)
+                .replace('{{completedSwaps}}', completedSwapsSection(completedSwaps)),
         });
 
         /*
@@ -490,6 +495,28 @@ export default {
             };
         }
 
+        // Refuse an exact repeat of a swap that already executed for this same request (issue #9).
+        const candidate = {
+            wallet: sourceResult.sourceWalletAddress,
+            inputToken: content.inputTokenSymbol,
+            outputToken: content.outputTokenSymbol,
+            amount: String(content.amount),
+        };
+        const repeat = findRepeatInRequest(completedSwaps, String(message.id), candidate);
+        if (repeat) {
+            const text = `This swap (${repeat.amount} ${repeat.inputToken} -> ${repeat.outputToken}) already executed for this request (tx ${repeat.txid}). It was not repeated. Ask again explicitly if you want another one.`;
+            callback?.(takeItPrivate(runtime, message, text));
+            return {
+                success: false,
+                text,
+                error: 'DUPLICATE_SWAP_IN_REQUEST',
+                data: { txid: repeat.txid },
+            };
+        }
+        const recordSwap = (txid: string, amount: string | number) => recordCompletedSwap(runtime, message.roomId, {
+            ...candidate, amount: String(amount), requestId: String(message.id), txid, at: Date.now(),
+        });
+
         if (selectedChain === 'ethereum') {
             try {
                 // An earlier swap from this wallet whose receipt timed out may have been mined since.
@@ -568,6 +595,7 @@ export default {
 
 **Wallet:** ${sourceResult.sourceWalletAddress}`;
 
+                await recordSwap(swapResult.hash, execAmount);
                 callback?.(takeItPrivate(runtime, message, responseText))
                 return {
                     success: true,
@@ -689,6 +717,7 @@ export default {
             };
             responses.push(memory);
             */
+            await recordSwap(txid, content.amount);
             callback?.(takeItPrivate(runtime, message, responseText))
             return {
                 success: true,
